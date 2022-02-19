@@ -25,6 +25,7 @@
                 height: 100%;
             }
         </style>
+
         <?= session()->getFlashdata('message'); ?>
         <form action="" method="POST">
             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
