@@ -85,7 +85,7 @@ phpunit
 #-------------------------
 vendor/
 tests/
-public/data/geodesa
+public/data/
 #-------------------------
 # IDE / Development Files
 #-------------------------
