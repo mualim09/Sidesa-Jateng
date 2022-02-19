@@ -1,0 +1,17 @@
+.overflow-auto {
+	min-height: auto;
+	max-height: 232px;
+	overflow: auto;
+}
+
+.topnotif {
+	height: 35px;
+}
+
+.panah2 {
+	color: white;
+}
+
+.panah2:hover {
+	color: indigo;
+}

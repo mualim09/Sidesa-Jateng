@@ -1,0 +1,80 @@
+/* ----------------------------------------------------------------- 
+
+                            1.0 GENERAL 
+        
+------------------------------------------------------------------*/
+
+section {
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+section:before,
+section:after {
+    content: " ";
+    display: table;
+}
+
+section:after {
+    clear: both;
+}
+
+section.grey-bg {
+    background-color: #f6f6f6;
+}
+
+section.grey-border {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.vcenter {
+    display: flow-root;
+    height: 250px;
+    width: 100%;
+    text-align: center;
+}
+
+.centrize {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+#wrap {
+    margin: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 28px 0 rgba(0, 0, 0, 1);
+}
+
+
+/* ----------------------------------------------------------------- 
+
+                            4.0 SLIDE-SHOW / VIDEO 
+        
+    ------------------------------------------------------------------*/
+
+
+/* Gradient Overlay Colors */
+
+/* ----------------------------------------------------------------- 
+
+                            18.0 COMING SOON SECTION
+        
+    ------------------------------------------------------------------*/
+
+
+
+/* ----------------------------------------------------------------- 
+
+                            19.0 MEDIA QUERIES
+        
+    ------------------------------------------------------------------*/
+
+@media (max-width: 991px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 640px) {}
