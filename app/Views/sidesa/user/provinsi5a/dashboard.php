@@ -34,6 +34,11 @@
                 <div class="section-title text-center">
                     <h3 style="text-transform: uppercase;">Rekap Realisasi - Salur terhadap DIPA dana desa Jawa Tengah</h3>
                 </div>
+                <form class="needs-validation custom-form pt-2" method="POST" action="<?= base_url('user/provinsi5a'); ?>">
+                    <div class="mb-3" style="text-align:right">
+                        <button type="submit" name="download" class="btn btn-dark waves-effect btn-label waves-light"><i class="bx bxs-download label-icon"></i>Download</button>
+                    </div>
+                </form>
                 <table class="table table-hover table-sm mt-3 mb-5">
                     <hr>
                     <thead>

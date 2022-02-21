@@ -2273,9 +2273,15 @@ class Provinsi5a extends BaseController
             'persen_kph' => $persen_kph,
             'persen_covid' => $persen_covid,
         ];
-        // dd($data['grand_total_anggaran']);
 
         return view('sidesa/user/provinsi5a/dashboard', $data);
+    }
+
+    public function download()
+    {
+        if (isset($_POST['download'])) {
+            # code...
+        }
     }
 
     public function profile()
