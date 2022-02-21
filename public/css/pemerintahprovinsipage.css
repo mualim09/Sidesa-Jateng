@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+a {
+  color: #d9534f;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #761c19;
+  text-decoration: none;
+}
+
+.link-muted {
+  color: #464a4c;
+}
+
+.link-reverse {
+  color: #fff;
+}
+
+.link-reverse:hover {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.text-muted {
+  color: #a7a2ce !important;
+}
+
+/*-----------------------------------
+ * CARDS
+ *-----------------------------------*/
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  margin-top: -5px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}

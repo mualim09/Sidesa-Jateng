@@ -1,0 +1,25 @@
+.card-text {
+	color: white;
+}
+
+.card-text:hover {
+	color: indigo;
+}
+
+.display-4 {
+	font-weight: bold;
+}
+
+.display-5 {
+	font-weight: bold;
+	font-size: 33px;
+}
+
+.card-body-icon {
+	position: absolute;
+	z-index: 0;
+	top: 25px;
+	right: 15px;
+	opacity: 0.4;
+	font-size: 110px;
+}
