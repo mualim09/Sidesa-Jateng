@@ -76,7 +76,7 @@ class Import extends BaseController
                         'jiwa_agama_konghucu_perempuan' => $row[14],
                         'jiwa_agama_alirankepercayaan_pria' => $row[15],
                         'jiwa_agama_alirankepercayaan_perempuan' => $row[16],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dataagama($dataimport);
                 }
@@ -90,7 +90,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -181,7 +181,7 @@ class Import extends BaseController
                         'jiwa_goldar_o_minus_perempuan' => $row[26],
                         'jiwa_goldar_tidaktau_pria' => $row[27],
                         'jiwa_goldar_tidaktau_perempuan' => $row[28],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_datagol_darah($dataimport);
                 }
@@ -195,7 +195,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -262,7 +262,7 @@ class Import extends BaseController
                         'kd_wilayah' => $row[2],
                         'jiwa_pria' => $row[3],
                         'jiwa_perempuan' => $row[4],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_datakelamin($dataimport);
                 }
@@ -276,7 +276,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -373,7 +373,7 @@ class Import extends BaseController
                         'jw_p_74' => $row[32],
                         'jw_l_75' => $row[33],
                         'jw_p_75' => $row[34],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_datausia($dataimport);
                 }
@@ -387,7 +387,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -456,7 +456,7 @@ class Import extends BaseController
                         'kk_perempuan' => $row[4],
                         'kk_kepemilikankk_pria' => $row[5],
                         'kk_kepemilikankk_perempuan' => $row[6],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_datakk($dataimport);
                 }
@@ -470,7 +470,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -555,7 +555,7 @@ class Import extends BaseController
                         'jiwa_kerja_pendudukan_petanipekebun_perempuan' => $row[20],
                         'jiwa_kerja_pendudukan_peternak_pria' => $row[21],
                         'jiwa_kerja_pendudukan_peternak_perempuan' => $row[22],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_datapekerjaan($dataimport);
                 }
@@ -569,7 +569,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -654,7 +654,7 @@ class Import extends BaseController
                         'kk_pendidikan_strata2_perempuan' => $row[20],
                         'kk_pendidikan_strata3_pria' => $row[21],
                         'kk_pendidikan_strata3_perempuan' => $row[22],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_datapendidikan($dataimport);
                 }
@@ -668,7 +668,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -747,7 +747,7 @@ class Import extends BaseController
                         'nmdes' => $row[10],
                         'penetapan' => $row[11],
                         'dtks_version' => $row[12],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dtksbab($dataimport);
                 }
@@ -761,7 +761,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -841,7 +841,7 @@ class Import extends BaseController
                         'nmdes' => $row[11],
                         'penetapan' => $row[12],
                         'dtks_version' => $row[13],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dtksDesilart($dataimport);
                 }
@@ -855,7 +855,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -935,7 +935,7 @@ class Import extends BaseController
                         'nmdes' => $row[11],
                         'penetapan' => $row[12],
                         'dtks_version' => $row[13],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dtksDesilkrt($dataimport);
                 }
@@ -949,7 +949,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1028,7 +1028,7 @@ class Import extends BaseController
                         'nmdes' => $row[10],
                         'penetapan' => $row[11],
                         'dtks_version' => $row[12],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dtksmasak($dataimport);
                 }
@@ -1042,7 +1042,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1122,7 +1122,7 @@ class Import extends BaseController
                         'nmdes' => $row[11],
                         'penetapan' => $row[12],
                         'dtks_version' => $row[13],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dtksminum($dataimport);
                 }
@@ -1136,7 +1136,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1214,7 +1214,7 @@ class Import extends BaseController
                         'nmdes' => $row[9],
                         'penetapan' => $row[10],
                         'dtks_version' => $row[11],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dtkspenerangan($dataimport);
                 }
@@ -1228,7 +1228,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1308,7 +1308,7 @@ class Import extends BaseController
                         'nmdes' => $row[11],
                         'penetapan' => $row[12],
                         'dtks_version' => $row[13],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dtkstinggal($dataimport);
                 }
@@ -1322,7 +1322,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1410,7 +1410,7 @@ class Import extends BaseController
                         'nmdes' => $row[19],
                         'penetapan' => $row[20],
                         'dtks_version' => $row[21],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dtksdisabilitas($dataimport);
                 }
@@ -1424,7 +1424,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1520,7 +1520,7 @@ class Import extends BaseController
                         'dampak_jml' => $row[33],
                         'dampak_score' => $row[34],
                         'jumlah' => $row[35],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_dataBumdes($dataimport);
                 }
@@ -1534,7 +1534,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1601,7 +1601,7 @@ class Import extends BaseController
                         'ikl' => $row[4],
                         'nilai_idm' => $row[5],
                         'status' => $row[6],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_idm($dataimport);
                 }
@@ -1616,7 +1616,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1681,7 +1681,7 @@ class Import extends BaseController
                         'nama_posyandu' => $row[2],
                         'jml_kader' => $row[3],
                         'strata_posyandu' => $row[4],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_kshtposyandu($dataimport);
                 }
@@ -1696,7 +1696,7 @@ class Import extends BaseController
                     'click' => 0,
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1761,7 +1761,7 @@ class Import extends BaseController
                         'nm_kab' => $row[2],
                         'lokasi' => $row[3],
                         'jml_bantuan' => $row[4],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_bankeusalur($dataimport);
                 }
@@ -1776,7 +1776,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');
@@ -1842,7 +1842,7 @@ class Import extends BaseController
                         'tanggal_sk' => $row[3],
                         'jml_anggota' => $row[4],
                         'ketua_satgas' => $row[5],
-                        'created' => date('Y-m-d H:i')
+                        'created' => date('Y-m-d H')
                     ];
                     $this->Import_upload_model->import_sosbudsatgas($dataimport);
                 }
@@ -1857,7 +1857,7 @@ class Import extends BaseController
                     'upload_by' => $this->request->getVar('uploadby'),
                     'user_id' => $this->session->get('id_sidesa'),
                     'click' => 0,
-                    'created' => date('Y-m-d H:i') //ada perbedaan 6 detik pake komputer zakezone
+                    'created' => date('Y-m-d H') //ada perbedaan 6 detik pake komputer zakezone
                 ];
 
                 $builder = $this->db->table('sidesa_review_data');

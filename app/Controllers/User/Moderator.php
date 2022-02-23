@@ -31,7 +31,7 @@ class Moderator extends BaseController
     public function role_management()
     {
         $builder = $this->db->table('sidesa_user');
-        $start = $this->request->getVar('page_user') ? $this->request->getVar('page_user') : 1;
+        $start = $this->request->getVar('page_sidesa_user') ? $this->request->getVar('page_sidesa_user') : 1;
 
         $notif = $this->db->table('sidesa_notifikasi');
         $notif->set('keterangan', "processed");

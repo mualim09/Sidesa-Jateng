@@ -38,12 +38,12 @@ $routes->match(['get', 'post'], 'sidesa/download/(:any)/(:any)', 'Sidesa::downlo
 
 // SIDesa Maintenance
 $routes->get('/pemprov/rtlh', 'Panel::maintenancepagesidesa');
-$routes->get('/pemprov/danadesa', 'Panel::maintenancepagesidesa');
+// $routes->get('/pemprov/danadesaprepare', 'Panel::maintenancepagesidesa');
 $routes->get('/pemprov/keuangan', 'Panel::maintenancepagesidesa');
 $routes->get('/pemkab/keuangan/(:any)', 'Panel::maintenancepagesidesa');
 $routes->get('/pemkab/keuangankec/(:any)', 'Panel::maintenancepagesidesa');
 $routes->get('/pemkab/keuangandes/(:any)', 'Panel::maintenancepagesidesa');
-$routes->get('/pemkab/danadesa/(:any)', 'Panel::maintenancepagesidesa');
+// $routes->get('/pemkab/danadesa/(:any)', 'Panel::maintenancepagesidesa');
 $routes->get('/pemkab/danadesakec/(:any)', 'Panel::maintenancepagesidesa');
 $routes->get('/pemkab/danadesades/(:any)', 'Panel::maintenancepagesidesa');
 $routes->get('/pemkab/rtlh/(:any)', 'Panel::maintenancepagesidesa');

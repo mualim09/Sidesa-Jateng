@@ -68,7 +68,7 @@
                         <div class="card-body text-center">
                             <a target="_blank" href="<?= base_url('pemprov/danadesa') ?>">
                                 <h6 class="card-title" style="font-size: small;"><strong>Dana Desa</strong></h6>
-                                <p style="font-size: 13px;">Online Monitoring SPAN dana desa sumber OMSPAN</p>
+                                <p style="font-size: 13px;">Online Monitoring SPAN Dana Desa</p>
                             </a>
                         </div>
                     </div>

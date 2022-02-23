@@ -2389,257 +2389,257 @@ class Datasidesa extends BaseController
     {
         if ($namadata == "Kependudukan Agama I" && $kdwilayah == 1) { ////////////////////////////// PENDUDUK AGAMA
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_agama');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Agama II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_agama');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Golongan Darah I" && $kdwilayah == 1) { ////////////////////////////// PENDUDUK GOLDAR
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_gol_darah');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Golongan Darah II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_gol_darah');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Jenis Kelamin I" && $kdwilayah == 1) { ////////////////////////////// PENDUDUK JENIS KELAMIN
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_jns_kelamin');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Jenis Kelamin II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_jns_kelamin');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Kelompok Usia I" && $kdwilayah == 1) { ////////////////////////////// PENDUDUK USIA
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_kelompok_usia');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Kelompok Usia II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_kelompok_usia');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Kepemilikan KK I" && $kdwilayah == 1) { ////////////////////////////// PENDUDUK KEPEMILIKAN KK
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_kepemilikan_kk');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Kepemilikan KK II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_kepemilikan_kk');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Pekerjaan I" && $kdwilayah == 1) { ////////////////////////////// PENDUDUK PEKERJAAN
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_pekerjaan');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Pekerjaan II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_pekerjaan');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Pendidikan I" && $kdwilayah == 1) { ////////////////////////////// PENDUDUK PENDIDIKAN
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_pendidikan');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "Kependudukan Pendidikan II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('penduduk_pendidikan');
             $hapusdatabase->delete(['created' => $tanggalupload, 'periode_uid_semester' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS BAB I" && $kdwilayah == 1) { /////////////////////////////////////// DTKS BAB
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_bab');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS BAB II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_bab');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS BAB III" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_bab');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS BAB IV" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_bab');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DESILART I" && $kdwilayah == 1) { ////////////////////////////// DTKS DESIL ART
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_desilart');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DESILART II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_desilart');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DESILART III" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_desilart');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DESILART IV" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_desilart');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DESILKRT I" && $kdwilayah == 1) { ////////////////////////////// DTKS DESIL KRT
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_desilkrt');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DESILKRT II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_desilkrt');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DESILKRT III" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_desilkrt');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DESILKRT IV" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_desilkrt');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS BAHAN MEMASAK I" && $kdwilayah == 1) { ////////////////////////////// DTKS BAHAN MASAK
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_masak');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS BAHAN MEMASAK II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_masak');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS BAHAN MEMASAK III" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_masak');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS BAHAN MEMASAK IV" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_masak');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS SUMBER AIR I" && $kdwilayah == 1) { ////////////////////////////// DTKS MINUM
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_minum');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS SUMBER AIR II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_minum');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS SUMBER AIR III" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_minum');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS SUMBER AIR IV" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_minum');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS PENERANGAN I" && $kdwilayah == 1) { ////////////////////////////// DTKS PENERANGAN 
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_penerangan');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS PENERANGAN II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_penerangan');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS PENERANGAN III" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_penerangan');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS PENERANGAN IV" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_penerangan');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS TEMPAT TINGGAL I" && $kdwilayah == 1) { ////////////////////////////// DTKS TINGGAL
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_tinggal');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS TEMPAT TINGGAL II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_tinggal');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS TEMPAT TINGGAL III" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_tinggal');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS TEMPAT TINGGAL IV" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_tinggal');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DISABILITAS I" && $kdwilayah == 1) { ////////////////////////////// DTKS DISABILITAS 
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_disabilitas');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DISABILITAS II" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_disabilitas');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DISABILITAS III" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_disabilitas');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "DTKS DISABILITAS IV" && $kdwilayah == 1) {
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('dtks_disabilitas');
             $hapusdatabase->delete(['created' => $tanggalupload, 'dtks_version' => $namadata, 'tahun' => $tahun]);
         } elseif ($namadata == "BUMDES" && $kdwilayah == 1) { ////////////////////////////////////////////// BUMDES
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('bumdes');
             $hapusdatabase->delete(['created' => $tanggalupload, 'tahun' => $tahun]);
         } elseif ($namadata == "Indeks Desa Membangun (IDM)" && $kdwilayah == 1) { //////////////////////////////////////// IDM
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('indeks_desa_membangun');
             $hapusdatabase->delete(['created' => $tanggalupload, 'tahun' => $tahun]);
         } elseif ($namadata == "Data POSYANDU" && $kdwilayah == 1) { /////////////////////////////// KESEHATAN POSYANDU
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('ksht_posyandu');
             $hapusdatabase->delete(['created' => $tanggalupload, 'tahun' => $tahun]);
         } elseif ($namadata == "Data Sosial Budaya" && $kdwilayah == 1) { /////////////////////////////// SOSIAL BUDAYA
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('sosbud_satgas');
             $hapusdatabase->delete(['created' => $tanggalupload, 'tahun' => $tahun]);
         } elseif ($namadata == "BANKEU Tersalurkan" && $kdwilayah == 1) { //////////////////////////////////////// BANKEU Tersalurkan
             $hapusreview = $this->db->table('sidesa_review_data');
-            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload]);
+            $hapusreview->delete(['nm_data' => $namadata, 'created' => $tanggalupload, 'tahundata' => $tahun]);
             $hapusdatabase = $this->db->table('bankeu_salur');
             $hapusdatabase->delete(['created' => $tanggalupload, 'tahun' => $tahun]);
         }

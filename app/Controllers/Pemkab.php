@@ -11,6 +11,7 @@ use App\Models\Sidesa\Kesehatan_model;
 use App\Models\Sidesa\Bankeu_model;
 use App\Models\Sidesa\Sosialbudaya_model;
 use App\Models\Sidesa\Kabupaten_model;
+use App\Models\Sidesa\User_kabupaten5a_model;
 
 class Pemkab extends BaseController
 {
@@ -23,6 +24,7 @@ class Pemkab extends BaseController
     protected $Bankeu_model;
     protected $Sosialbudaya_model;
     protected $Kabupaten_model;
+    protected $Kabupaten5a_model;
 
     public function __construct()
     {
@@ -35,6 +37,7 @@ class Pemkab extends BaseController
         $this->Bankeu_model = new Bankeu_model();
         $this->Sosialbudaya_model = new Sosialbudaya_model();
         $this->Kabupaten_model = new Kabupaten_model();
+        $this->Kabupaten5a_model = new User_kabupaten5a_model();
     }
 
     function kabupaten($kode)
@@ -455,13 +458,150 @@ class Pemkab extends BaseController
         $cekkode = $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getRowArray();
         $hurufawal = strtolower($cekkode['nm_kab']);
         $whois = ucwords($hurufawal);
+
+        $tot_salur = $this->Kabupaten5a_model->danadesa_salur($kode);
+        if (isset($tot_salur)) {
+            $total_salur = $tot_salur['januari'] + $tot_salur['februari'] + $tot_salur['maret'] + $tot_salur['april'] + $tot_salur['mei'] + $tot_salur['juni'] + $tot_salur['juli'] + $tot_salur['agustus'] + $tot_salur['september'] + $tot_salur['oktober'] + $tot_salur['november'] + $tot_salur['desember'];
+        } else {
+            $total_salur = 0;
+        }
+        $real_reg = $this->Kabupaten5a_model->danadesa_reguler($kode);
+        if (isset($real_reg)) {
+            $total_reg = $real_reg['januari'] + $real_reg['februari'] + $real_reg['maret'] + $real_reg['april'] + $real_reg['mei'] + $real_reg['juni'] + $real_reg['juli'] + $real_reg['agustus'] + $real_reg['september'] + $real_reg['oktober'] + $real_reg['november'] + $real_reg['desember'];
+        } else {
+            $total_reg = 0;
+        }
+        $real_bltdd = $this->Kabupaten5a_model->danadesa_bltdd($kode);
+        if (isset($real_bltdd)) {
+            $total_bltdd = $real_bltdd['januari'] + $real_bltdd['februari'] + $real_bltdd['maret'] + $real_bltdd['april'] + $real_bltdd['mei'] + $real_bltdd['juni'] + $real_bltdd['juli'] + $real_bltdd['agustus'] + $real_bltdd['september'] + $real_bltdd['oktober'] + $real_bltdd['november'] + $real_bltdd['desember'];
+        } else {
+            $total_bltdd = 0;
+        }
+        $real_kph = $this->Kabupaten5a_model->danadesa_kph($kode);
+        if (isset($real_kph)) {
+            $total_kph = $real_kph['januari'] + $real_kph['februari'] + $real_kph['maret'] + $real_kph['april'] + $real_kph['mei'] + $real_kph['juni'] + $real_kph['juli'] + $real_kph['agustus'] + $real_kph['september'] + $real_kph['oktober'] + $real_kph['november'] + $real_kph['desember'];
+        } else {
+            $total_kph = 0;
+        }
+        $real_covid = $this->Kabupaten5a_model->danadesa_covid($kode);
+        if (isset($real_covid)) {
+            $total_covid = $real_covid['januari'] + $real_covid['februari'] + $real_covid['maret'] + $real_covid['april'] + $real_covid['mei'] + $real_covid['juni'] + $real_covid['juli'] + $real_covid['agustus'] + $real_covid['september'] + $real_covid['oktober'] + $real_covid['november'] + $real_covid['desember'];
+        } else {
+            $total_covid = 0;
+        }
+
+        // logic persentase
+        $reg = $this->Kabupaten5a_model->danadesa_reguler($kode);
+        if (isset($reg)) {
+            $persen_reg = $reg['persentase'];
+        } else {
+            $persen_reg = 0;
+        }
+        $bltdd = $this->Kabupaten5a_model->danadesa_bltdd($kode);
+        if (isset($bltdd)) {
+            $persen_bltdd = $bltdd['persentase'];
+        } else {
+            $persen_bltdd = 0;
+        }
+        $kph = $this->Kabupaten5a_model->danadesa_kph($kode);
+        if (isset($kph)) {
+            $persen_kph = $kph['persentase'];
+        } else {
+            $persen_kph = 0;
+        }
+        $covid = $this->Kabupaten5a_model->danadesa_covid($kode);
+        if (isset($covid)) {
+            $persen_covid = $covid['persentase'];
+        } else {
+            $persen_covid = 0;
+        }
+
+        // logic capaian persentase
+        $anggaran = $this->Kabupaten5a_model->danadesa_anggaran($kode);
+        if (isset($anggaran['danadesa'])) {
+            $anggaran_danadesa = $anggaran['danadesa'];
+        } else {
+            $anggaran_danadesa = 0;
+        }
+        $anggaran_reg = $anggaran_danadesa * $persen_reg / 100;
+        if ($anggaran_reg != 0) {
+            $capaian_reg = number_format($total_reg / $anggaran_reg * 100, 2, '.', '.');
+        } else {
+            $capaian_reg = 0;
+        }
+        $anggaran_bltdd = $anggaran_danadesa * $persen_bltdd / 100;
+        if ($anggaran_bltdd != 0) {
+            $capaian_bltdd = number_format($total_bltdd / $anggaran_bltdd * 100, 2, '.', '.');
+        } else {
+            $capaian_bltdd = 0;
+        }
+        $anggaran_kph = $anggaran_danadesa * $persen_kph / 100;
+        if ($anggaran_kph != 0) {
+            $capaian_kph = number_format($total_kph / $anggaran_kph * 100, 2, '.', '.');
+        } else {
+            $capaian_kph = 0;
+        }
+        $anggaran_covid = $anggaran_danadesa * $persen_covid / 100;
+        if ($anggaran_covid != 0) {
+            $capaian_covid = number_format($total_covid / $anggaran_covid * 100, 2, '.', '.');
+        } else {
+            $capaian_covid = 0;
+        }
+
+        // dd($capaian_kph);
+
+        // logic grand total setelah dipersentasekan
+        $grn_total = $this->Kabupaten5a_model->danadesa_anggaran($kode);
+        if (isset($grn_total['danadesa'])) {
+            $grand_total = $grn_total['danadesa'];
+            $grand_total_reg = $grn_total['danadesa'] * $persen_reg / 100;
+            $grand_total_bltdd = $grn_total['danadesa'] * $persen_bltdd / 100;
+            $grand_total_kph = $grn_total['danadesa'] * $persen_kph / 100;
+            $grand_total_covid = $grn_total['danadesa'] * $persen_covid / 100;
+        } else {
+            $grand_total = 0;
+            $grand_total_reg = 0;
+            $grand_total_bltdd = 0;
+            $grand_total_kph = 0;
+            $grand_total_covid = 0;
+        }
+
         $data = [
             'title' => 'Dana Desa',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Dana Desa Kabupaten ' . $whois, 'li_1' => 'Data', 'li_2' => 'Dana Desa']),
             'kodekab' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'anggaran_danadesa' => $anggaran_danadesa,
+            'total_salur' => $total_salur,
+            'total_realisasi' => $total_reg + $total_bltdd + $total_kph + $total_covid,
+            'capaian_reg' => $capaian_reg,
+            'capaian_bltdd' => $capaian_bltdd,
+            'capaian_kph' => $capaian_kph,
+            'capaian_covid' => $capaian_covid,
+            'realisasi_reg' => $total_reg,
+            'realisasi_bltdd' => $total_bltdd,
+            'realisasi_kph' => $total_kph,
+            'realisasi_covid' => $total_covid,
+            'realisasi_bulanan_danadesa_reguler' => $this->Kabupaten5a_model->danadesa_reguler($kode),
+            'realisasi_bulanan_danadesa_bltdd' => $this->Kabupaten5a_model->danadesa_bltdd($kode),
+            'realisasi_bulanan_danadesa_kph' => $this->Kabupaten5a_model->danadesa_kph($kode),
+            'realisasi_bulanan_danadesa_covid' => $this->Kabupaten5a_model->danadesa_covid($kode),
+            'grand_total_anggaran' => $grand_total,
+            'grand_total_reg' => $grand_total_reg,
+            'grand_total_bltdd' => $grand_total_bltdd,
+            'grand_total_kph' => $grand_total_kph,
+            'grand_total_covid' => $grand_total_covid,
+            'persen_reg' => $persen_reg,
+            'persen_bltdd' => $persen_bltdd,
+            'persen_kph' => $persen_kph,
+            'persen_covid' => $persen_covid,
+            'kab' => $whois
         ];
-        return view('sidesa/pemkab/danadesa', $data);
+        if ($data['total_salur'] != 0) {
+            return view('sidesa/pemkab/danadesa', $data);
+        } else {
+            return view('errors/maintenancepage/sidesa', $data);
+        }
     }
 
     function danadesakec($kode)
