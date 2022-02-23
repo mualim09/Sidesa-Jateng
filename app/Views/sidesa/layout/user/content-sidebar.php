@@ -69,9 +69,31 @@ $this->db = \Config\Database::connect();
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li>
-                                        <a href="<?= base_url('user/menu5a/salur'); ?>">
+                                        <a href="javascript: void(0);" class="has-arrow">
                                             <span data-key="t-salur">Salur</span>
                                         </a>
+                                        <ul class="sub-menu" aria-expanded="false">
+                                            <li>
+                                                <a href="<?= base_url('user/menu5a/salur_reguler'); ?>">
+                                                    <span data-key="t-reguler">Reguler</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<?= base_url('user/menu5a/salur_bltdd'); ?>">
+                                                    <span data-key="t-bltdd">BLTDD</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<?= base_url('user/menu5a/salur_kph'); ?>">
+                                                    <span data-key="t-kph">KPH</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<?= base_url('user/menu5a/salur_covid'); ?>">
+                                                    <span data-key="t-covid">Covid-19</span>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li>
                                         <a href="javascript: void(0);" class="has-arrow">

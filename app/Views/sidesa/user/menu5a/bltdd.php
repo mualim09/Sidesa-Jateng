@@ -145,7 +145,7 @@
             </form>
         <?php else : ?>
             <div class="text-center mt-4">
-                <h3 style="color: crimson;">HARAP INPUT SALUR TERLEBIH DAHULU</h3>
+                <h3 style="color: crimson;">HARAP INPUT SALUR BLTDD TERLEBIH DAHULU</h3>
             </div>
         <?php endif; ?>
 

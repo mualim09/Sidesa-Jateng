@@ -1048,7 +1048,7 @@
     </script>
 <?php endif; ?>
 
-<?php if ($request->uri->getSegment(3) == "salur" || $request->uri->getSegment(3) == "reguler" || $request->uri->getSegment(3) == "bltdd" || $request->uri->getSegment(3) == "kph" || $request->uri->getSegment(3) == "covid") : ?>
+<?php if ($request->uri->getSegment(3) == "reguler" || $request->uri->getSegment(3) == "bltdd" || $request->uri->getSegment(3) == "kph" || $request->uri->getSegment(3) == "covid" || $request->uri->getSegment(3) == "salur_reguler" || $request->uri->getSegment(3) == "salur_bltdd" || $request->uri->getSegment(3) == "salur_kph" || $request->uri->getSegment(3) == "salur_covid") : ?>
     <script>
         var januari = document.getElementById('januari');
         januari.addEventListener('keyup', function(e) {
@@ -1366,7 +1366,7 @@
                 text: 'POSTUR DANA DESA PROVINSI JAWA TENGAH'
             },
             subtitle: {
-                text: 'Total Anggaran Rp. <?= number_format($grand_total_anggaran, 0, '', '.'); ?>'
+                text: 'Total DIPA Rp. <?= number_format($grand_total_anggaran, 0, '', '.'); ?>'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>Rp. {point.y:,.0f}</b>'
@@ -1537,7 +1537,7 @@
                 name: 'Realisasi',
                 data: [<?= $capaian_cilacap_bltdd ?>, <?= $capaian_banyumas_bltdd ?>, <?= $capaian_purbalingga_bltdd ?>, <?= $capaian_banjarnegara_bltdd ?>, <?= $capaian_kebumen_bltdd ?>, <?= $capaian_purworejo_bltdd ?>, <?= $capaian_wonosobo_bltdd ?>, <?= $capaian_magelang_bltdd ?>, <?= $capaian_boyolali_bltdd ?>, <?= $capaian_klaten_bltdd ?>, <?= $capaian_sukoharjo_bltdd ?>, <?= $capaian_wonogiri_bltdd ?>, <?= $capaian_karanganyar_bltdd ?>, <?= $capaian_sragen_bltdd ?>, <?= $capaian_grobogan_bltdd ?>, <?= $capaian_blora_bltdd ?>, <?= $capaian_rembang_bltdd ?>, <?= $capaian_pati_bltdd ?>, <?= $capaian_kudus_bltdd ?>, <?= $capaian_jepara_bltdd ?>, <?= $capaian_demak_bltdd ?>, <?= $capaian_semarang_bltdd ?>, <?= $capaian_temanggung_bltdd ?>, <?= $capaian_kendal_bltdd ?>, <?= $capaian_batang_bltdd ?>, <?= $capaian_pekalongan_bltdd ?>, <?= $capaian_pemalang_bltdd ?>, <?= $capaian_tegal_bltdd ?>, <?= $capaian_brebes_bltdd ?>],
                 tooltip: {
-                    valuePrefix: 'Rp. '
+                    valueSuffix: ' %'
                 },
                 showInLegend: false,
             }]
@@ -1602,7 +1602,7 @@
                 name: 'Realisasi',
                 data: [<?= $capaian_cilacap_kph ?>, <?= $capaian_banyumas_kph ?>, <?= $capaian_purbalingga_kph ?>, <?= $capaian_banjarnegara_kph ?>, <?= $capaian_kebumen_kph ?>, <?= $capaian_purworejo_kph ?>, <?= $capaian_wonosobo_kph ?>, <?= $capaian_magelang_kph ?>, <?= $capaian_boyolali_kph ?>, <?= $capaian_klaten_kph ?>, <?= $capaian_sukoharjo_kph ?>, <?= $capaian_wonogiri_kph ?>, <?= $capaian_karanganyar_kph ?>, <?= $capaian_sragen_kph ?>, <?= $capaian_grobogan_kph ?>, <?= $capaian_blora_kph ?>, <?= $capaian_rembang_kph ?>, <?= $capaian_pati_kph ?>, <?= $capaian_kudus_kph ?>, <?= $capaian_jepara_kph ?>, <?= $capaian_demak_kph ?>, <?= $capaian_semarang_kph ?>, <?= $capaian_temanggung_kph ?>, <?= $capaian_kendal_kph ?>, <?= $capaian_batang_kph ?>, <?= $capaian_pekalongan_kph ?>, <?= $capaian_pemalang_kph ?>, <?= $capaian_tegal_kph ?>, <?= $capaian_brebes_kph ?>],
                 tooltip: {
-                    valuePrefix: 'Rp. '
+                    valueSuffix: ' %'
                 },
                 showInLegend: false,
             }]
@@ -1667,7 +1667,7 @@
                 name: 'Realisasi',
                 data: [<?= $capaian_cilacap_covid ?>, <?= $capaian_banyumas_covid ?>, <?= $capaian_purbalingga_covid ?>, <?= $capaian_banjarnegara_covid ?>, <?= $capaian_kebumen_covid ?>, <?= $capaian_purworejo_covid ?>, <?= $capaian_wonosobo_covid ?>, <?= $capaian_magelang_covid ?>, <?= $capaian_boyolali_covid ?>, <?= $capaian_klaten_covid ?>, <?= $capaian_sukoharjo_covid ?>, <?= $capaian_wonogiri_covid ?>, <?= $capaian_karanganyar_covid ?>, <?= $capaian_sragen_covid ?>, <?= $capaian_grobogan_covid ?>, <?= $capaian_blora_covid ?>, <?= $capaian_rembang_covid ?>, <?= $capaian_pati_covid ?>, <?= $capaian_kudus_covid ?>, <?= $capaian_jepara_covid ?>, <?= $capaian_demak_covid ?>, <?= $capaian_semarang_covid ?>, <?= $capaian_temanggung_covid ?>, <?= $capaian_kendal_covid ?>, <?= $capaian_batang_covid ?>, <?= $capaian_pekalongan_covid ?>, <?= $capaian_pemalang_covid ?>, <?= $capaian_tegal_covid ?>, <?= $capaian_brebes_covid ?>],
                 tooltip: {
-                    valuePrefix: 'Rp. '
+                    valueSuffix: ' %'
                 },
                 showInLegend: false,
             }]
@@ -1714,7 +1714,7 @@
                 text: 'POSTUR DANA DESA'
             },
             subtitle: {
-                text: 'Total Anggaran Rp. <?= number_format($anggaran_danadesa, 0, '', '.'); ?>'
+                text: 'Total DIPA Rp. <?= number_format($anggaran_danadesa, 0, '', '.'); ?>'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>Rp. {point.y:,.0f}</b>'
