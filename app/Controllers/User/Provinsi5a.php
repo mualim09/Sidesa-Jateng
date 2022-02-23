@@ -2204,6 +2204,13 @@ class Provinsi5a extends BaseController
         return view('sidesa/user/provinsi5a/dashboard', $data);
     }
 
+    public function download()
+    {
+        if (isset($_POST['download'])) {
+            # code...
+        }
+    }
+
     public function profile()
     {
         $sessionEmail = $this->session->get('email_sidesa');

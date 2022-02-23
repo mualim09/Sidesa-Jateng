@@ -26,9 +26,9 @@ class Kabupaten5a extends BaseController
         }
 
         // logic cilacap
-        $clp_salur = $this->Kabupaten5a_model->danadesa_salur($sessionKdwil);
-        if (isset($clp_salur)) {
-            $total_salur = $clp_salur['januari'] + $clp_salur['februari'] + $clp_salur['maret'] + $clp_salur['april'] + $clp_salur['mei'] + $clp_salur['juni'] + $clp_salur['juli'] + $clp_salur['agustus'] + $clp_salur['september'] + $clp_salur['oktober'] + $clp_salur['november'] + $clp_salur['desember'];
+        $tot_salur = $this->Kabupaten5a_model->danadesa_salur($sessionKdwil);
+        if (isset($tot_salur)) {
+            $total_salur = $tot_salur['januari'] + $tot_salur['februari'] + $tot_salur['maret'] + $tot_salur['april'] + $tot_salur['mei'] + $tot_salur['juni'] + $tot_salur['juli'] + $tot_salur['agustus'] + $tot_salur['september'] + $tot_salur['oktober'] + $tot_salur['november'] + $tot_salur['desember'];
         } else {
             $total_salur = 0;
         }
