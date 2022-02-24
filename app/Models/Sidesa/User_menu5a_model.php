@@ -6,9 +6,9 @@ use CodeIgniter\Model;
 
 class User_menu5a_model extends Model
 {
-    protected $table = 'danadesa_salur';
+    protected $table = 'danadesa_anggaran';
     protected $primaryKey = 'id';
-    protected $AllowedFields = ['kd_wilayah', 'kabupaten', 'januari', 'februari', 'maret', 'april', 'juni', 'juli', 'agustus', 'september', 'oktober', 'november', 'desember', 'tahun', 'created'];
+    protected $AllowedFields = ['danadesa', 'bantuan_per_kpm', 'tahun', 'created'];
 
     public function danadesa_anggaran($sessionKdwil)
     {

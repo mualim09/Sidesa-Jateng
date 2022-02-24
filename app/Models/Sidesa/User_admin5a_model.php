@@ -19,16 +19,6 @@ class User_admin5a_model extends Model
         return $query->getResultArray();
     }
 
-    public function danadesa_salur($kd_wilayah)
-    {
-        $builder = $this->db->table('danadesa_salur');
-        $builder->select('kabupaten, januari, februari, maret, april, mei, juni, juli, agustus, september, oktober, november, desember, tahun, created');
-        $builder->where('tahun', date('Y'));
-        $builder->where('kd_wilayah', $kd_wilayah);
-        $query = $builder->get();
-        return $query->getRowArray();
-    }
-
     public function salur_reguler($kd_wilayah)
     {
         $builder = $this->db->table('danadesa_reguler');

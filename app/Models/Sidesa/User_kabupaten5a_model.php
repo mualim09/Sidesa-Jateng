@@ -6,9 +6,9 @@ use CodeIgniter\Model;
 
 class User_kabupaten5a_model extends Model
 {
-    protected $table = 'danadesa_salur';
+    protected $table = 'danadesa_anggaran';
     protected $primaryKey = 'id';
-    protected $AllowedFields = ['kd_wilayah', 'kabupaten', 'januari', 'februari', 'maret', 'april', 'juni', 'juli', 'agustus', 'september', 'oktober', 'november', 'desember', 'tahun', 'created'];
+    protected $AllowedFields = ['danadesa', 'bantuan_per_kpm', 'tahun', 'created'];
 
     public function danadesa_anggaran($sessionKdwil)
     {
@@ -20,10 +20,40 @@ class User_kabupaten5a_model extends Model
         return $query->getRowArray();
     }
 
-    public function danadesa_salur($sessionKdwil)
+    public function salur_reguler($sessionKdwil)
     {
-        $builder = $this->db->table('danadesa_salur');
-        $builder->select('kabupaten, januari, februari, maret, april, mei, juni, juli, agustus, september, oktober, november, desember, tahun, created');
+        $builder = $this->db->table('danadesa_reguler');
+        $builder->select('kabupaten, persentase, salur_januari, salur_februari, salur_maret, salur_april, salur_mei, salur_juni, salur_juli, salur_agustus, salur_september, salur_oktober, salur_november, salur_desember, tahun, created, salur_created');
+        $builder->where('tahun', date('Y'));
+        $builder->where('kd_wilayah', $sessionKdwil);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
+    public function salur_bltdd($sessionKdwil)
+    {
+        $builder = $this->db->table('danadesa_bltdd');
+        $builder->select('kabupaten, persentase, salur_januari, salur_februari, salur_maret, salur_april, salur_mei, salur_juni, salur_juli, salur_agustus, salur_september, salur_oktober, salur_november, salur_desember, tahun, created, salur_created');
+        $builder->where('tahun', date('Y'));
+        $builder->where('kd_wilayah', $sessionKdwil);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
+    public function salur_kph($sessionKdwil)
+    {
+        $builder = $this->db->table('danadesa_kph');
+        $builder->select('kabupaten, persentase, salur_januari, salur_februari, salur_maret, salur_april, salur_mei, salur_juni, salur_juli, salur_agustus, salur_september, salur_oktober, salur_november, salur_desember, tahun, created, salur_created');
+        $builder->where('tahun', date('Y'));
+        $builder->where('kd_wilayah', $sessionKdwil);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
+    public function salur_covid($sessionKdwil)
+    {
+        $builder = $this->db->table('danadesa_covid');
+        $builder->select('kabupaten, persentase, salur_januari, salur_februari, salur_maret, salur_april, salur_mei, salur_juni, salur_juli, salur_agustus, salur_september, salur_oktober, salur_november, salur_desember, tahun, created, salur_created');
         $builder->where('tahun', date('Y'));
         $builder->where('kd_wilayah', $sessionKdwil);
         $query = $builder->get();
