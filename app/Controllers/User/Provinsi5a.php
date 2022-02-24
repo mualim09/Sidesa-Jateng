@@ -17,13 +17,68 @@ class Provinsi5a extends BaseController
 
     public function dashboard()
     {
-        // logic cilacap
-        $clp_salur = $this->Provinsi5a_model->danadesa_salur('33.01');
-        if (isset($clp_salur)) {
-            $cilacap_salur = $clp_salur['januari'] + $clp_salur['februari'] + $clp_salur['maret'] + $clp_salur['april'] + $clp_salur['mei'] + $clp_salur['juni'] + $clp_salur['juli'] + $clp_salur['agustus'] + $clp_salur['september'] + $clp_salur['oktober'] + $clp_salur['november'] + $clp_salur['desember'];
-        } else {
-            $cilacap_salur = 0;
-        }
+        // salur cilacap
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.01');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $cilacap_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.01');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $cilacap_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.01');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $cilacap_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.01');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $cilacap_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $clp_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($clp_reg[0])) {
             $cilacap_reg = $clp_reg[0]['januari'] + $clp_reg[0]['februari'] + $clp_reg[0]['maret'] + $clp_reg[0]['april'] + $clp_reg[0]['mei'] + $clp_reg[0]['juni'] + $clp_reg[0]['juli'] + $clp_reg[0]['agustus'] + $clp_reg[0]['september'] + $clp_reg[0]['oktober'] + $clp_reg[0]['november'] + $clp_reg[0]['desember'];
@@ -49,13 +104,68 @@ class Provinsi5a extends BaseController
             $cilacap_covid = 0;
         }
 
-        // logic banyumas
-        $bms_salur = $this->Provinsi5a_model->danadesa_salur('33.02');
-        if (isset($bms_salur)) {
-            $banyumas_salur = $bms_salur['januari'] + $bms_salur['februari'] + $bms_salur['maret'] + $bms_salur['april'] + $bms_salur['mei'] + $bms_salur['juni'] + $bms_salur['juli'] + $bms_salur['agustus'] + $bms_salur['september'] + $bms_salur['oktober'] + $bms_salur['november'] + $bms_salur['desember'];
-        } else {
-            $banyumas_salur = 0;
-        }
+        // salur banyumas
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.02');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $banyumas_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.02');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $banyumas_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.02');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $banyumas_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.02');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $banyumas_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $bms_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($bms_reg[1])) {
             $banyumas_reg = $bms_reg[1]['januari'] + $bms_reg[1]['februari'] + $bms_reg[1]['maret'] + $bms_reg[1]['april'] + $bms_reg[1]['mei'] + $bms_reg[1]['juni'] + $bms_reg[1]['juli'] + $bms_reg[1]['agustus'] + $bms_reg[1]['september'] + $bms_reg[1]['oktober'] + $bms_reg[1]['november'] + $bms_reg[1]['desember'];
@@ -81,13 +191,68 @@ class Provinsi5a extends BaseController
             $banyumas_covid = 0;
         }
 
-        // Purbalingga
-        $pbg_salur = $this->Provinsi5a_model->danadesa_salur('33.03');
-        if (isset($pbg_salur)) {
-            $purbalingga_salur = $pbg_salur['januari'] + $pbg_salur['februari'] + $pbg_salur['maret'] + $pbg_salur['april'] + $pbg_salur['mei'] + $pbg_salur['juni'] + $pbg_salur['juli'] + $pbg_salur['agustus'] + $pbg_salur['september'] + $pbg_salur['oktober'] + $pbg_salur['november'] + $pbg_salur['desember'];
-        } else {
-            $purbalingga_salur = 0;
-        }
+        // salur purbalingga
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.03');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $purbalingga_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.03');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $purbalingga_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.03');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $purbalingga_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.03');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $purbalingga_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $pbg_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($pbg_reg[2])) {
             $purbalingga_reg = $pbg_reg[2]['januari'] + $pbg_reg[2]['februari'] + $pbg_reg[2]['maret'] + $pbg_reg[2]['april'] + $pbg_reg[2]['mei'] + $pbg_reg[2]['juni'] + $pbg_reg[2]['juli'] + $pbg_reg[2]['agustus'] + $pbg_reg[2]['september'] + $pbg_reg[2]['oktober'] + $pbg_reg[2]['november'] + $pbg_reg[2]['desember'];
@@ -113,13 +278,68 @@ class Provinsi5a extends BaseController
             $purbalingga_covid = 0;
         }
 
-        // Banjarnegara
-        $bna_salur = $this->Provinsi5a_model->danadesa_salur('33.04');
-        if (isset($bna_salur)) {
-            $banjarnegara_salur = $bna_salur['januari'] + $bna_salur['februari'] + $bna_salur['maret'] + $bna_salur['april'] + $bna_salur['mei'] + $bna_salur['juni'] + $bna_salur['juli'] + $bna_salur['agustus'] + $bna_salur['september'] + $bna_salur['oktober'] + $bna_salur['november'] + $bna_salur['desember'];
-        } else {
-            $banjarnegara_salur = 0;
-        }
+        // salur banjarnegara
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.04');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $banjarnegara_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.04');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $banjarnegara_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.04');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $banjarnegara_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.04');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $banjarnegara_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $bna_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($bna_reg[3])) {
             $banjarnegara_reg = $bna_reg[3]['januari'] + $bna_reg[3]['februari'] + $bna_reg[3]['maret'] + $bna_reg[3]['april'] + $bna_reg[3]['mei'] + $bna_reg[3]['juni'] + $bna_reg[3]['juli'] + $bna_reg[3]['agustus'] + $bna_reg[3]['september'] + $bna_reg[3]['oktober'] + $bna_reg[3]['november'] + $bna_reg[3]['desember'];
@@ -145,13 +365,68 @@ class Provinsi5a extends BaseController
             $banjarnegara_covid = 0;
         }
 
-        // Kebumen
-        $kbm_salur = $this->Provinsi5a_model->danadesa_salur('33.05');
-        if (isset($kbm_salur)) {
-            $kebumen_salur = $kbm_salur['januari'] + $kbm_salur['februari'] + $kbm_salur['maret'] + $kbm_salur['april'] + $kbm_salur['mei'] + $kbm_salur['juni'] + $kbm_salur['juli'] + $kbm_salur['agustus'] + $kbm_salur['september'] + $kbm_salur['oktober'] + $kbm_salur['november'] + $kbm_salur['desember'];
-        } else {
-            $kebumen_salur = 0;
-        }
+        // salur kebumen
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.05');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $kebumen_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.05');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $kebumen_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.05');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $kebumen_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.05');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $kebumen_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $kbm_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($kbm_reg[4])) {
             $kebumen_reg = $kbm_reg[4]['januari'] + $kbm_reg[4]['februari'] + $kbm_reg[4]['maret'] + $kbm_reg[4]['april'] + $kbm_reg[4]['mei'] + $kbm_reg[4]['juni'] + $kbm_reg[4]['juli'] + $kbm_reg[4]['agustus'] + $kbm_reg[4]['september'] + $kbm_reg[4]['oktober'] + $kbm_reg[4]['november'] + $kbm_reg[4]['desember'];
@@ -177,13 +452,68 @@ class Provinsi5a extends BaseController
             $kebumen_covid = 0;
         }
 
-        // purworejo
-        $pwj_salur = $this->Provinsi5a_model->danadesa_salur('33.06');
-        if (isset($pwj_salur)) {
-            $purworejo_salur = $pwj_salur['januari'] + $pwj_salur['februari'] + $pwj_salur['maret'] + $pwj_salur['april'] + $pwj_salur['mei'] + $pwj_salur['juni'] + $pwj_salur['juli'] + $pwj_salur['agustus'] + $pwj_salur['september'] + $pwj_salur['oktober'] + $pwj_salur['november'] + $pwj_salur['desember'];
-        } else {
-            $purworejo_salur = 0;
-        }
+        // salur purworejo
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.06');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $purworejo_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.06');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $purworejo_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.06');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $purworejo_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.06');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $purworejo_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $pwj_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($pwj_reg[5])) {
             $purworejo_reg = $pwj_reg[5]['januari'] + $pwj_reg[5]['februari'] + $pwj_reg[5]['maret'] + $pwj_reg[5]['april'] + $pwj_reg[5]['mei'] + $pwj_reg[5]['juni'] + $pwj_reg[5]['juli'] + $pwj_reg[5]['agustus'] + $pwj_reg[5]['september'] + $pwj_reg[5]['oktober'] + $pwj_reg[5]['november'] + $pwj_reg[5]['desember'];
@@ -209,13 +539,68 @@ class Provinsi5a extends BaseController
             $purworejo_covid = 0;
         }
 
-        // wonosobo
-        $wnb_salur = $this->Provinsi5a_model->danadesa_salur('33.07');
-        if (isset($wnb_salur)) {
-            $wonosobo_salur = $wnb_salur['januari'] + $wnb_salur['februari'] + $wnb_salur['maret'] + $wnb_salur['april'] + $wnb_salur['mei'] + $wnb_salur['juni'] + $wnb_salur['juli'] + $wnb_salur['agustus'] + $wnb_salur['september'] + $wnb_salur['oktober'] + $wnb_salur['november'] + $wnb_salur['desember'];
-        } else {
-            $wonosobo_salur = 0;
-        }
+        // salur wonosobo
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.07');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $wonosobo_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.07');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $wonosobo_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.07');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $wonosobo_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.07');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $wonosobo_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $wnb_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($wnb_reg[6])) {
             $wonosobo_reg = $wnb_reg[6]['januari'] + $wnb_reg[6]['februari'] + $wnb_reg[6]['maret'] + $wnb_reg[6]['april'] + $wnb_reg[6]['mei'] + $wnb_reg[6]['juni'] + $wnb_reg[6]['juli'] + $wnb_reg[6]['agustus'] + $wnb_reg[6]['september'] + $wnb_reg[6]['oktober'] + $wnb_reg[6]['november'] + $wnb_reg[6]['desember'];
@@ -241,13 +626,68 @@ class Provinsi5a extends BaseController
             $wonosobo_covid = 0;
         }
 
-        // magelang
-        $mgl_salur = $this->Provinsi5a_model->danadesa_salur('33.08');
-        if (isset($mgl_salur)) {
-            $magelang_salur = $mgl_salur['januari'] + $mgl_salur['februari'] + $mgl_salur['maret'] + $mgl_salur['april'] + $mgl_salur['mei'] + $mgl_salur['juni'] + $mgl_salur['juli'] + $mgl_salur['agustus'] + $mgl_salur['september'] + $mgl_salur['oktober'] + $mgl_salur['november'] + $mgl_salur['desember'];
-        } else {
-            $magelang_salur = 0;
-        }
+        // salur magelang
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.08');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $magelang_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.08');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $magelang_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.08');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $magelang_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.08');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $magelang_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $mgl_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($mgl_reg[7])) {
             $magelang_reg = $mgl_reg[7]['januari'] + $mgl_reg[7]['februari'] + $mgl_reg[7]['maret'] + $mgl_reg[7]['april'] + $mgl_reg[7]['mei'] + $mgl_reg[7]['juni'] + $mgl_reg[7]['juli'] + $mgl_reg[7]['agustus'] + $mgl_reg[7]['september'] + $mgl_reg[7]['oktober'] + $mgl_reg[7]['november'] + $mgl_reg[7]['desember'];
@@ -273,13 +713,68 @@ class Provinsi5a extends BaseController
             $magelang_covid = 0;
         }
 
-        // boyolali
-        $byl_salur = $this->Provinsi5a_model->danadesa_salur('33.09');
-        if (isset($byl_salur)) {
-            $boyolali_salur = $byl_salur['januari'] + $byl_salur['februari'] + $byl_salur['maret'] + $byl_salur['april'] + $byl_salur['mei'] + $byl_salur['juni'] + $byl_salur['juli'] + $byl_salur['agustus'] + $byl_salur['september'] + $byl_salur['oktober'] + $byl_salur['november'] + $byl_salur['desember'];
-        } else {
-            $boyolali_salur = 0;
-        }
+        // salur boyolali
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.09');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $boyolali_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.09');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $boyolali_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.09');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $boyolali_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.09');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $boyolali_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $byl_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($byl_reg[8])) {
             $boyolali_reg = $byl_reg[8]['januari'] + $byl_reg[8]['februari'] + $byl_reg[8]['maret'] + $byl_reg[8]['april'] + $byl_reg[8]['mei'] + $byl_reg[8]['juni'] + $byl_reg[8]['juli'] + $byl_reg[8]['agustus'] + $byl_reg[8]['september'] + $byl_reg[8]['oktober'] + $byl_reg[8]['november'] + $byl_reg[8]['desember'];
@@ -305,13 +800,68 @@ class Provinsi5a extends BaseController
             $boyolali_covid = 0;
         }
 
-        // klaten
-        $klt_salur = $this->Provinsi5a_model->danadesa_salur('33.10');
-        if (isset($klt_salur)) {
-            $klaten_salur = $klt_salur['januari'] + $klt_salur['februari'] + $klt_salur['maret'] + $klt_salur['april'] + $klt_salur['mei'] + $klt_salur['juni'] + $klt_salur['juli'] + $klt_salur['agustus'] + $klt_salur['september'] + $klt_salur['oktober'] + $klt_salur['november'] + $klt_salur['desember'];
-        } else {
-            $klaten_salur = 0;
-        }
+        // salur klaten
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.10');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $klaten_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.10');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $klaten_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.10');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $klaten_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.10');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $klaten_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $klt_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($klt_reg[9])) {
             $klaten_reg = $klt_reg[9]['januari'] + $klt_reg[9]['februari'] + $klt_reg[9]['maret'] + $klt_reg[9]['april'] + $klt_reg[9]['mei'] + $klt_reg[9]['juni'] + $klt_reg[9]['juli'] + $klt_reg[9]['agustus'] + $klt_reg[9]['september'] + $klt_reg[9]['oktober'] + $klt_reg[9]['november'] + $klt_reg[9]['desember'];
@@ -337,13 +887,68 @@ class Provinsi5a extends BaseController
             $klaten_covid = 0;
         }
 
-        // sukoharjo
-        $sjo_salur = $this->Provinsi5a_model->danadesa_salur('33.11');
-        if (isset($sjo_salur)) {
-            $sukoharjo_salur = $sjo_salur['januari'] + $sjo_salur['februari'] + $sjo_salur['maret'] + $sjo_salur['april'] + $sjo_salur['mei'] + $sjo_salur['juni'] + $sjo_salur['juli'] + $sjo_salur['agustus'] + $sjo_salur['september'] + $sjo_salur['oktober'] + $sjo_salur['november'] + $sjo_salur['desember'];
-        } else {
-            $sukoharjo_salur = 0;
-        }
+        // salur sukoharjo
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.11');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $sukoharjo_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.11');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $sukoharjo_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.11');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $sukoharjo_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.11');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $sukoharjo_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $sjo_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($sjo_reg[10])) {
             $sukoharjo_reg = $sjo_reg[10]['januari'] + $sjo_reg[10]['februari'] + $sjo_reg[10]['maret'] + $sjo_reg[10]['april'] + $sjo_reg[10]['mei'] + $sjo_reg[10]['juni'] + $sjo_reg[10]['juli'] + $sjo_reg[10]['agustus'] + $sjo_reg[10]['september'] + $sjo_reg[10]['oktober'] + $sjo_reg[10]['november'] + $sjo_reg[10]['desember'];
@@ -369,13 +974,68 @@ class Provinsi5a extends BaseController
             $sukoharjo_covid = 0;
         }
 
-        // wonogiri
-        $wgi_salur = $this->Provinsi5a_model->danadesa_salur('33.12');
-        if (isset($wgi_salur)) {
-            $wonogiri_salur = $wgi_salur['januari'] + $wgi_salur['februari'] + $wgi_salur['maret'] + $wgi_salur['april'] + $wgi_salur['mei'] + $wgi_salur['juni'] + $wgi_salur['juli'] + $wgi_salur['agustus'] + $wgi_salur['september'] + $wgi_salur['oktober'] + $wgi_salur['november'] + $wgi_salur['desember'];
-        } else {
-            $wonogiri_salur = 0;
-        }
+        // salur wonogiri
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.12');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $wonogiri_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.12');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $wonogiri_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.12');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $wonogiri_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.12');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $wonogiri_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $wgi_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($wgi_reg[11])) {
             $wonogiri_reg = $wgi_reg[11]['januari'] + $wgi_reg[11]['februari'] + $wgi_reg[11]['maret'] + $wgi_reg[11]['april'] + $wgi_reg[11]['mei'] + $wgi_reg[11]['juni'] + $wgi_reg[11]['juli'] + $wgi_reg[11]['agustus'] + $wgi_reg[11]['september'] + $wgi_reg[11]['oktober'] + $wgi_reg[11]['november'] + $wgi_reg[11]['desember'];
@@ -401,13 +1061,68 @@ class Provinsi5a extends BaseController
             $wonogiri_covid = 0;
         }
 
-        // karanganyar
-        $kra_salur = $this->Provinsi5a_model->danadesa_salur('33.13');
-        if (isset($kra_salur)) {
-            $karanganyar_salur = $kra_salur['januari'] + $kra_salur['februari'] + $kra_salur['maret'] + $kra_salur['april'] + $kra_salur['mei'] + $kra_salur['juni'] + $kra_salur['juli'] + $kra_salur['agustus'] + $kra_salur['september'] + $kra_salur['oktober'] + $kra_salur['november'] + $kra_salur['desember'];
-        } else {
-            $karanganyar_salur = 0;
-        }
+        // salur karanganyar
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.13');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $karanganyar_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.13');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $karanganyar_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.13');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $karanganyar_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.13');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $karanganyar_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $kra_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($kra_reg[12])) {
             $karanganyar_reg = $kra_reg[12]['januari'] + $kra_reg[12]['februari'] + $kra_reg[12]['maret'] + $kra_reg[12]['april'] + $kra_reg[12]['mei'] + $kra_reg[12]['juni'] + $kra_reg[12]['juli'] + $kra_reg[12]['agustus'] + $kra_reg[12]['september'] + $kra_reg[12]['oktober'] + $kra_reg[12]['november'] + $kra_reg[12]['desember'];
@@ -433,13 +1148,68 @@ class Provinsi5a extends BaseController
             $karanganyar_covid = 0;
         }
 
-        // sragen
-        $srg_salur = $this->Provinsi5a_model->danadesa_salur('33.14');
-        if (isset($srg_salur)) {
-            $sragen_salur = $srg_salur['januari'] + $srg_salur['februari'] + $srg_salur['maret'] + $srg_salur['april'] + $srg_salur['mei'] + $srg_salur['juni'] + $srg_salur['juli'] + $srg_salur['agustus'] + $srg_salur['september'] + $srg_salur['oktober'] + $srg_salur['november'] + $srg_salur['desember'];
-        } else {
-            $sragen_salur = 0;
-        }
+        // salur sragen
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.14');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $sragen_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.14');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $sragen_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.14');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $sragen_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.14');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $sragen_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $srg_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($srg_reg[13])) {
             $sragen_reg = $srg_reg[13]['januari'] + $srg_reg[13]['februari'] + $srg_reg[13]['maret'] + $srg_reg[13]['april'] + $srg_reg[13]['mei'] + $srg_reg[13]['juni'] + $srg_reg[13]['juli'] + $srg_reg[13]['agustus'] + $srg_reg[13]['september'] + $srg_reg[13]['oktober'] + $srg_reg[13]['november'] + $srg_reg[13]['desember'];
@@ -465,13 +1235,68 @@ class Provinsi5a extends BaseController
             $sragen_covid = 0;
         }
 
-        // grobogan
-        $gbn_salur = $this->Provinsi5a_model->danadesa_salur('33.15');
-        if (isset($gbn_salur)) {
-            $grobogan_salur = $gbn_salur['januari'] + $gbn_salur['februari'] + $gbn_salur['maret'] + $gbn_salur['april'] + $gbn_salur['mei'] + $gbn_salur['juni'] + $gbn_salur['juli'] + $gbn_salur['agustus'] + $gbn_salur['september'] + $gbn_salur['oktober'] + $gbn_salur['november'] + $gbn_salur['desember'];
-        } else {
-            $grobogan_salur = 0;
-        }
+        // salur grobogan
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.15');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $grobogan_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.15');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $grobogan_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.15');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $grobogan_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.15');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $grobogan_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $gbn_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($gbn_reg[14])) {
             $grobogan_reg = $gbn_reg[14]['januari'] + $gbn_reg[14]['februari'] + $gbn_reg[14]['maret'] + $gbn_reg[14]['april'] + $gbn_reg[14]['mei'] + $gbn_reg[14]['juni'] + $gbn_reg[14]['juli'] + $gbn_reg[14]['agustus'] + $gbn_reg[14]['september'] + $gbn_reg[14]['oktober'] + $gbn_reg[14]['november'] + $gbn_reg[14]['desember'];
@@ -497,13 +1322,68 @@ class Provinsi5a extends BaseController
             $grobogan_covid = 0;
         }
 
-        // blora
-        $blr_salur = $this->Provinsi5a_model->danadesa_salur('33.16');
-        if (isset($blr_salur)) {
-            $blora_salur = $blr_salur['januari'] + $blr_salur['februari'] + $blr_salur['maret'] + $blr_salur['april'] + $blr_salur['mei'] + $blr_salur['juni'] + $blr_salur['juli'] + $blr_salur['agustus'] + $blr_salur['september'] + $blr_salur['oktober'] + $blr_salur['november'] + $blr_salur['desember'];
-        } else {
-            $blora_salur = 0;
-        }
+        // salur blora
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.16');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $blora_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.16');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $blora_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.16');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $blora_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.16');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $blora_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $blr_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($blr_reg[15])) {
             $blora_reg = $blr_reg[15]['januari'] + $blr_reg[15]['februari'] + $blr_reg[15]['maret'] + $blr_reg[15]['april'] + $blr_reg[15]['mei'] + $blr_reg[15]['juni'] + $blr_reg[15]['juli'] + $blr_reg[15]['agustus'] + $blr_reg[15]['september'] + $blr_reg[15]['oktober'] + $blr_reg[15]['november'] + $blr_reg[15]['desember'];
@@ -529,13 +1409,68 @@ class Provinsi5a extends BaseController
             $blora_covid = 0;
         }
 
-        // rembang
-        $rmb_salur = $this->Provinsi5a_model->danadesa_salur('33.17');
-        if (isset($rmb_salur)) {
-            $rembang_salur = $rmb_salur['januari'] + $rmb_salur['februari'] + $rmb_salur['maret'] + $rmb_salur['april'] + $rmb_salur['mei'] + $rmb_salur['juni'] + $rmb_salur['juli'] + $rmb_salur['agustus'] + $rmb_salur['september'] + $rmb_salur['oktober'] + $rmb_salur['november'] + $rmb_salur['desember'];
-        } else {
-            $rembang_salur = 0;
-        }
+        // salur rembang
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.17');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $rembang_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.17');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $rembang_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.17');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $rembang_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.17');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $rembang_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $rmb_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($rmb_reg[16])) {
             $rembang_reg = $rmb_reg[16]['januari'] + $rmb_reg[16]['februari'] + $rmb_reg[16]['maret'] + $rmb_reg[16]['april'] + $rmb_reg[16]['mei'] + $rmb_reg[16]['juni'] + $rmb_reg[16]['juli'] + $rmb_reg[16]['agustus'] + $rmb_reg[16]['september'] + $rmb_reg[16]['oktober'] + $rmb_reg[16]['november'] + $rmb_reg[16]['desember'];
@@ -561,13 +1496,68 @@ class Provinsi5a extends BaseController
             $rembang_covid = 0;
         }
 
-        // pati
-        $pti_salur = $this->Provinsi5a_model->danadesa_salur('33.18');
-        if (isset($pti_salur)) {
-            $pati_salur = $pti_salur['januari'] + $pti_salur['februari'] + $pti_salur['maret'] + $pti_salur['april'] + $pti_salur['mei'] + $pti_salur['juni'] + $pti_salur['juli'] + $pti_salur['agustus'] + $pti_salur['september'] + $pti_salur['oktober'] + $pti_salur['november'] + $pti_salur['desember'];
-        } else {
-            $pati_salur = 0;
-        }
+        // salur pati
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.18');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $pati_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.18');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $pati_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.18');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $pati_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.18');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $pati_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $pti_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($pti_reg[17])) {
             $pati_reg = $pti_reg[17]['januari'] + $pti_reg[17]['februari'] + $pti_reg[17]['maret'] + $pti_reg[17]['april'] + $pti_reg[17]['mei'] + $pti_reg[17]['juni'] + $pti_reg[17]['juli'] + $pti_reg[17]['agustus'] + $pti_reg[17]['september'] + $pti_reg[17]['oktober'] + $pti_reg[17]['november'] + $pti_reg[17]['desember'];
@@ -593,13 +1583,68 @@ class Provinsi5a extends BaseController
             $pati_covid = 0;
         }
 
-        // kudus
-        $kds_salur = $this->Provinsi5a_model->danadesa_salur('33.19');
-        if (isset($kds_salur)) {
-            $kudus_salur = $kds_salur['januari'] + $kds_salur['februari'] + $kds_salur['maret'] + $kds_salur['april'] + $kds_salur['mei'] + $kds_salur['juni'] + $kds_salur['juli'] + $kds_salur['agustus'] + $kds_salur['september'] + $kds_salur['oktober'] + $kds_salur['november'] + $kds_salur['desember'];
-        } else {
-            $kudus_salur = 0;
-        }
+        // salur kudus
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.19');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $kudus_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.19');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $kudus_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.19');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $kudus_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.19');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $kudus_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $kds_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($kds_reg[18])) {
             $kudus_reg = $kds_reg[18]['januari'] + $kds_reg[18]['februari'] + $kds_reg[18]['maret'] + $kds_reg[18]['april'] + $kds_reg[18]['mei'] + $kds_reg[18]['juni'] + $kds_reg[18]['juli'] + $kds_reg[18]['agustus'] + $kds_reg[18]['september'] + $kds_reg[18]['oktober'] + $kds_reg[18]['november'] + $kds_reg[18]['desember'];
@@ -625,13 +1670,68 @@ class Provinsi5a extends BaseController
             $kudus_covid = 0;
         }
 
-        // jepara
-        $jpr_salur = $this->Provinsi5a_model->danadesa_salur('33.20');
-        if (isset($jpr_salur)) {
-            $jepara_salur = $jpr_salur['januari'] + $jpr_salur['februari'] + $jpr_salur['maret'] + $jpr_salur['april'] + $jpr_salur['mei'] + $jpr_salur['juni'] + $jpr_salur['juli'] + $jpr_salur['agustus'] + $jpr_salur['september'] + $jpr_salur['oktober'] + $jpr_salur['november'] + $jpr_salur['desember'];
-        } else {
-            $jepara_salur = 0;
-        }
+        // salur jepara
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.20');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $jepara_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.20');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $jepara_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.20');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $jepara_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.20');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $jepara_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $jpr_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($jpr_reg[19])) {
             $jepara_reg = $jpr_reg[19]['januari'] + $jpr_reg[19]['februari'] + $jpr_reg[19]['maret'] + $jpr_reg[19]['april'] + $jpr_reg[19]['mei'] + $jpr_reg[19]['juni'] + $jpr_reg[19]['juli'] + $jpr_reg[19]['agustus'] + $jpr_reg[19]['september'] + $jpr_reg[19]['oktober'] + $jpr_reg[19]['november'] + $jpr_reg[19]['desember'];
@@ -657,13 +1757,68 @@ class Provinsi5a extends BaseController
             $jepara_covid = 0;
         }
 
-        // demak
-        $dmk_salur = $this->Provinsi5a_model->danadesa_salur('33.21');
-        if (isset($dmk_salur)) {
-            $demak_salur = $dmk_salur['januari'] + $dmk_salur['februari'] + $dmk_salur['maret'] + $dmk_salur['april'] + $dmk_salur['mei'] + $dmk_salur['juni'] + $dmk_salur['juli'] + $dmk_salur['agustus'] + $dmk_salur['september'] + $dmk_salur['oktober'] + $dmk_salur['november'] + $dmk_salur['desember'];
-        } else {
-            $demak_salur = 0;
-        }
+        // salur demak
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.21');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $demak_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.21');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $demak_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.21');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $demak_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.21');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $demak_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $dmk_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($dmk_reg[20])) {
             $demak_reg = $dmk_reg[20]['januari'] + $dmk_reg[20]['februari'] + $dmk_reg[20]['maret'] + $dmk_reg[20]['april'] + $dmk_reg[20]['mei'] + $dmk_reg[20]['juni'] + $dmk_reg[20]['juli'] + $dmk_reg[20]['agustus'] + $dmk_reg[20]['september'] + $dmk_reg[20]['oktober'] + $dmk_reg[20]['november'] + $dmk_reg[20]['desember'];
@@ -689,13 +1844,68 @@ class Provinsi5a extends BaseController
             $demak_covid = 0;
         }
 
-        // semarang
-        $smg_salur = $this->Provinsi5a_model->danadesa_salur('33.22');
-        if (isset($smg_salur)) {
-            $semarang_salur = $smg_salur['januari'] + $smg_salur['februari'] + $smg_salur['maret'] + $smg_salur['april'] + $smg_salur['mei'] + $smg_salur['juni'] + $smg_salur['juli'] + $smg_salur['agustus'] + $smg_salur['september'] + $smg_salur['oktober'] + $smg_salur['november'] + $smg_salur['desember'];
-        } else {
-            $semarang_salur = 0;
-        }
+        // salur semarang
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.22');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $semarang_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.22');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $semarang_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.22');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $semarang_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.22');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $semarang_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $smg_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($smg_reg[21])) {
             $semarang_reg = $smg_reg[21]['januari'] + $smg_reg[21]['februari'] + $smg_reg[21]['maret'] + $smg_reg[21]['april'] + $smg_reg[21]['mei'] + $smg_reg[21]['juni'] + $smg_reg[21]['juli'] + $smg_reg[21]['agustus'] + $smg_reg[21]['september'] + $smg_reg[21]['oktober'] + $smg_reg[21]['november'] + $smg_reg[21]['desember'];
@@ -721,13 +1931,68 @@ class Provinsi5a extends BaseController
             $semarang_covid = 0;
         }
 
-        // temanggung
-        $tmg_salur = $this->Provinsi5a_model->danadesa_salur('33.23');
-        if (isset($tmg_salur)) {
-            $temanggung_salur = $tmg_salur['januari'] + $tmg_salur['februari'] + $tmg_salur['maret'] + $tmg_salur['april'] + $tmg_salur['mei'] + $tmg_salur['juni'] + $tmg_salur['juli'] + $tmg_salur['agustus'] + $tmg_salur['september'] + $tmg_salur['oktober'] + $tmg_salur['november'] + $tmg_salur['desember'];
-        } else {
-            $temanggung_salur = 0;
-        }
+        // salur temanggung
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.23');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $temanggung_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.23');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $temanggung_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.23');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $temanggung_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.23');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $temanggung_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $tmg_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($tmg_reg[22])) {
             $temanggung_reg = $tmg_reg[22]['januari'] + $tmg_reg[22]['februari'] + $tmg_reg[22]['maret'] + $tmg_reg[22]['april'] + $tmg_reg[22]['mei'] + $tmg_reg[22]['juni'] + $tmg_reg[22]['juli'] + $tmg_reg[22]['agustus'] + $tmg_reg[22]['september'] + $tmg_reg[22]['oktober'] + $tmg_reg[22]['november'] + $tmg_reg[22]['desember'];
@@ -753,13 +2018,68 @@ class Provinsi5a extends BaseController
             $temanggung_covid = 0;
         }
 
-        // kendal
-        $kdl_salur = $this->Provinsi5a_model->danadesa_salur('33.24');
-        if (isset($kdl_salur)) {
-            $kendal_salur = $kdl_salur['januari'] + $kdl_salur['februari'] + $kdl_salur['maret'] + $kdl_salur['april'] + $kdl_salur['mei'] + $kdl_salur['juni'] + $kdl_salur['juli'] + $kdl_salur['agustus'] + $kdl_salur['september'] + $kdl_salur['oktober'] + $kdl_salur['november'] + $kdl_salur['desember'];
-        } else {
-            $kendal_salur = 0;
-        }
+        // salur kendal
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.24');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $kendal_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.24');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $kendal_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.24');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $kendal_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.24');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $kendal_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $kdl_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($kdl_reg[23])) {
             $kendal_reg = $kdl_reg[23]['januari'] + $kdl_reg[23]['februari'] + $kdl_reg[23]['maret'] + $kdl_reg[23]['april'] + $kdl_reg[23]['mei'] + $kdl_reg[23]['juni'] + $kdl_reg[23]['juli'] + $kdl_reg[23]['agustus'] + $kdl_reg[23]['september'] + $kdl_reg[23]['oktober'] + $kdl_reg[23]['november'] + $kdl_reg[23]['desember'];
@@ -785,13 +2105,68 @@ class Provinsi5a extends BaseController
             $kendal_covid = 0;
         }
 
-        // batang
-        $btg_salur = $this->Provinsi5a_model->danadesa_salur('33.25');
-        if (isset($btg_salur)) {
-            $batang_salur = $btg_salur['januari'] + $btg_salur['februari'] + $btg_salur['maret'] + $btg_salur['april'] + $btg_salur['mei'] + $btg_salur['juni'] + $btg_salur['juli'] + $btg_salur['agustus'] + $btg_salur['september'] + $btg_salur['oktober'] + $btg_salur['november'] + $btg_salur['desember'];
-        } else {
-            $batang_salur = 0;
-        }
+        // salur batang
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.25');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $batang_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.25');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $batang_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.25');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $batang_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.25');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $batang_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $btg_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($btg_reg[24])) {
             $batang_reg = $btg_reg[24]['januari'] + $btg_reg[24]['februari'] + $btg_reg[24]['maret'] + $btg_reg[24]['april'] + $btg_reg[24]['mei'] + $btg_reg[24]['juni'] + $btg_reg[24]['juli'] + $btg_reg[24]['agustus'] + $btg_reg[24]['september'] + $btg_reg[24]['oktober'] + $btg_reg[24]['november'] + $btg_reg[24]['desember'];
@@ -817,13 +2192,68 @@ class Provinsi5a extends BaseController
             $batang_covid = 0;
         }
 
-        // pekalongan
-        $pkl_salur = $this->Provinsi5a_model->danadesa_salur('33.26');
-        if (isset($pkl_salur)) {
-            $pekalongan_salur = $pkl_salur['januari'] + $pkl_salur['februari'] + $pkl_salur['maret'] + $pkl_salur['april'] + $pkl_salur['mei'] + $pkl_salur['juni'] + $pkl_salur['juli'] + $pkl_salur['agustus'] + $pkl_salur['september'] + $pkl_salur['oktober'] + $pkl_salur['november'] + $pkl_salur['desember'];
-        } else {
-            $pekalongan_salur = 0;
-        }
+        // salur pekalongan
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.26');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $pekalongan_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.26');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $pekalongan_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.26');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $pekalongan_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.26');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $pekalongan_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $pkl_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($pkl_reg[25])) {
             $pekalongan_reg = $pkl_reg[25]['januari'] + $pkl_reg[25]['februari'] + $pkl_reg[25]['maret'] + $pkl_reg[25]['april'] + $pkl_reg[25]['mei'] + $pkl_reg[25]['juni'] + $pkl_reg[25]['juli'] + $pkl_reg[25]['agustus'] + $pkl_reg[25]['september'] + $pkl_reg[25]['oktober'] + $pkl_reg[25]['november'] + $pkl_reg[25]['desember'];
@@ -849,13 +2279,68 @@ class Provinsi5a extends BaseController
             $pekalongan_covid = 0;
         }
 
-        // pemalang
-        $pml_salur = $this->Provinsi5a_model->danadesa_salur('33.27');
-        if (isset($pml_salur)) {
-            $pemalang_salur = $pml_salur['januari'] + $pml_salur['februari'] + $pml_salur['maret'] + $pml_salur['april'] + $pml_salur['mei'] + $pml_salur['juni'] + $pml_salur['juli'] + $pml_salur['agustus'] + $pml_salur['september'] + $pml_salur['oktober'] + $pml_salur['november'] + $pml_salur['desember'];
-        } else {
-            $pemalang_salur = 0;
-        }
+        // salur pemalang
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.27');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $pemalang_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.27');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $pemalang_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.27');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $pemalang_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.27');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $pemalang_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $pml_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($pml_reg[26])) {
             $pemalang_reg = $pml_reg[26]['januari'] + $pml_reg[26]['februari'] + $pml_reg[26]['maret'] + $pml_reg[26]['april'] + $pml_reg[26]['mei'] + $pml_reg[26]['juni'] + $pml_reg[26]['juli'] + $pml_reg[26]['agustus'] + $pml_reg[26]['september'] + $pml_reg[26]['oktober'] + $pml_reg[26]['november'] + $pml_reg[26]['desember'];
@@ -881,13 +2366,68 @@ class Provinsi5a extends BaseController
             $pemalang_covid = 0;
         }
 
-        // tegal
-        $tgl_salur = $this->Provinsi5a_model->danadesa_salur('33.28');
-        if (isset($tgl_salur)) {
-            $tegal_salur = $tgl_salur['januari'] + $tgl_salur['februari'] + $tgl_salur['maret'] + $tgl_salur['april'] + $tgl_salur['mei'] + $tgl_salur['juni'] + $tgl_salur['juli'] + $tgl_salur['agustus'] + $tgl_salur['september'] + $tgl_salur['oktober'] + $tgl_salur['november'] + $tgl_salur['desember'];
-        } else {
-            $tegal_salur = 0;
-        }
+        // salur tegal
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.28');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $tegal_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.28');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $tegal_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.28');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $tegal_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.28');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $tegal_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $tgl_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($tgl_reg[27])) {
             $tegal_reg = $tgl_reg[27]['januari'] + $tgl_reg[27]['februari'] + $tgl_reg[27]['maret'] + $tgl_reg[27]['april'] + $tgl_reg[27]['mei'] + $tgl_reg[27]['juni'] + $tgl_reg[27]['juli'] + $tgl_reg[27]['agustus'] + $tgl_reg[27]['september'] + $tgl_reg[27]['oktober'] + $tgl_reg[27]['november'] + $tgl_reg[27]['desember'];
@@ -913,13 +2453,68 @@ class Provinsi5a extends BaseController
             $tegal_covid = 0;
         }
 
-        // brebes
-        $brb_salur = $this->Provinsi5a_model->danadesa_salur('33.29');
-        if (isset($brb_salur)) {
-            $brebes_salur = $brb_salur['januari'] + $brb_salur['februari'] + $brb_salur['maret'] + $brb_salur['april'] + $brb_salur['mei'] + $brb_salur['juni'] + $brb_salur['juli'] + $brb_salur['agustus'] + $brb_salur['september'] + $brb_salur['oktober'] + $brb_salur['november'] + $brb_salur['desember'];
-        } else {
-            $brebes_salur = 0;
-        }
+        // salur brebes
+        $jml_salur_reg = $this->Provinsi5a_model->salur_reguler('33.29');
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $brebes_jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_bltdd = $this->Provinsi5a_model->salur_bltdd('33.29');
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $brebes_jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Provinsi5a_model->salur_kph('33.29');
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $brebes_jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Provinsi5a_model->salur_covid('33.29');
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $brebes_jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $brb_reg = $this->Provinsi5a_model->danadesa_reguler();
         if (isset($brb_reg[28])) {
             $brebes_reg = $brb_reg[28]['januari'] + $brb_reg[28]['februari'] + $brb_reg[28]['maret'] + $brb_reg[28]['april'] + $brb_reg[28]['mei'] + $brb_reg[28]['juni'] + $brb_reg[28]['juli'] + $brb_reg[28]['agustus'] + $brb_reg[28]['september'] + $brb_reg[28]['oktober'] + $brb_reg[28]['november'] + $brb_reg[28]['desember'];
@@ -971,7 +2566,907 @@ class Provinsi5a extends BaseController
             $persen_covid = 0;
         }
 
-        // logic capaian persentase
+        // logic capaian persentase salur terhadap DIPA
+        $anggaran_clp = $this->Provinsi5a_model->danadesa_anggaran('33.01');
+        if (isset($anggaran_clp['danadesa'])) {
+            $anggaran_cilacap = $anggaran_clp['danadesa'];
+        } else {
+            $anggaran_cilacap = 0;
+        }
+        $anggaran_reg_cilacap = $anggaran_cilacap * $persen_reg / 100;
+        if ($anggaran_reg_cilacap != 0) {
+            $capaian_salur_cilacap_reg = number_format($cilacap_jumlah_salur_reg / $anggaran_reg_cilacap * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_cilacap_reg = 0;
+        }
+        $anggaran_bltdd_cilacap = $anggaran_cilacap * $persen_bltdd / 100;
+        if ($anggaran_bltdd_cilacap != 0) {
+            $capaian_salur_cilacap_bltdd = number_format($cilacap_jumlah_salur_bltdd / $anggaran_bltdd_cilacap * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_cilacap_bltdd = 0;
+        }
+        $anggaran_kph_cilacap = $anggaran_cilacap * $persen_kph / 100;
+        if ($anggaran_kph_cilacap != 0) {
+            $capaian_salur_cilacap_kph = number_format($cilacap_jumlah_salur_kph / $anggaran_kph_cilacap * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_cilacap_kph = 0;
+        }
+        $anggaran_covid_cilacap = $anggaran_cilacap * $persen_covid / 100;
+        if ($anggaran_covid_cilacap != 0) {
+            $capaian_salur_cilacap_covid = number_format($cilacap_jumlah_salur_covid / $anggaran_covid_cilacap * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_cilacap_covid = 0;
+        }
+
+        $anggaran_bms = $this->Provinsi5a_model->danadesa_anggaran('33.02');
+        if (isset($anggaran_bms['danadesa'])) {
+            $anggaran_banyumas = $anggaran_bms['danadesa'];
+        } else {
+            $anggaran_banyumas = 0;
+        }
+        $anggaran_reg_banyumas = $anggaran_banyumas * $persen_reg / 100;
+        if ($anggaran_reg_banyumas != 0) {
+            $capaian_salur_banyumas_reg = number_format($banyumas_jumlah_salur_reg / $anggaran_reg_banyumas * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_banyumas_reg = 0;
+        }
+        $anggaran_bltdd_banyumas = $anggaran_banyumas * $persen_bltdd / 100;
+        if ($anggaran_bltdd_banyumas != 0) {
+            $capaian_salur_banyumas_bltdd = number_format($banyumas_jumlah_salur_bltdd / $anggaran_bltdd_banyumas * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_banyumas_bltdd = 0;
+        }
+        $anggaran_kph_banyumas = $anggaran_banyumas * $persen_kph / 100;
+        if ($anggaran_kph_banyumas != 0) {
+            $capaian_salur_banyumas_kph = number_format($banyumas_jumlah_salur_kph / $anggaran_kph_banyumas * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_banyumas_kph = 0;
+        }
+        $anggaran_covid_banyumas = $anggaran_banyumas * $persen_covid / 100;
+        if ($anggaran_covid_banyumas != 0) {
+            $capaian_salur_banyumas_covid = number_format($banyumas_jumlah_salur_covid / $anggaran_covid_banyumas * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_banyumas_covid = 0;
+        }
+
+        $anggaran_pbg = $this->Provinsi5a_model->danadesa_anggaran('33.03');
+        if (isset($anggaran_pbg['danadesa'])) {
+            $anggaran_purbalingga = $anggaran_pbg['danadesa'];
+        } else {
+            $anggaran_purbalingga = 0;
+        }
+        $anggaran_reg_purbalingga = $anggaran_purbalingga * $persen_reg / 100;
+        if ($anggaran_reg_purbalingga != 0) {
+            $capaian_salur_purbalingga_reg = number_format($purbalingga_jumlah_salur_reg / $anggaran_reg_purbalingga * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_purbalingga_reg = 0;
+        }
+        $anggaran_bltdd_purbalingga = $anggaran_purbalingga * $persen_bltdd / 100;
+        if ($anggaran_bltdd_purbalingga != 0) {
+            $capaian_salur_purbalingga_bltdd = number_format($purbalingga_jumlah_salur_bltdd / $anggaran_bltdd_purbalingga * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_purbalingga_bltdd = 0;
+        }
+        $anggaran_kph_purbalingga = $anggaran_purbalingga * $persen_kph / 100;
+        if ($anggaran_kph_purbalingga != 0) {
+            $capaian_salur_purbalingga_kph = number_format($purbalingga_jumlah_salur_kph / $anggaran_kph_purbalingga * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_purbalingga_kph = 0;
+        }
+        $anggaran_covid_purbalingga = $anggaran_purbalingga * $persen_covid / 100;
+        if ($anggaran_covid_purbalingga != 0) {
+            $capaian_salur_purbalingga_covid = number_format($purbalingga_jumlah_salur_covid / $anggaran_covid_purbalingga * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_purbalingga_covid = 0;
+        }
+
+        $anggaran_bna = $this->Provinsi5a_model->danadesa_anggaran('33.04');
+        if (isset($anggaran_bna['danadesa'])) {
+            $anggaran_banjarnegara = $anggaran_bna['danadesa'];
+        } else {
+            $anggaran_banjarnegara = 0;
+        }
+        $anggaran_reg_banjarnegara = $anggaran_banjarnegara * $persen_reg / 100;
+        if ($anggaran_reg_banjarnegara != 0) {
+            $capaian_salur_banjarnegara_reg = number_format($banjarnegara_jumlah_salur_reg / $anggaran_reg_banjarnegara * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_banjarnegara_reg = 0;
+        }
+        $anggaran_bltdd_banjarnegara = $anggaran_banjarnegara * $persen_bltdd / 100;
+        if ($anggaran_bltdd_banjarnegara != 0) {
+            $capaian_salur_banjarnegara_bltdd = number_format($banjarnegara_jumlah_salur_bltdd / $anggaran_bltdd_banjarnegara * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_banjarnegara_bltdd = 0;
+        }
+        $anggaran_kph_banjarnegara = $anggaran_banjarnegara * $persen_kph / 100;
+        if ($anggaran_kph_banjarnegara != 0) {
+            $capaian_salur_banjarnegara_kph = number_format($banjarnegara_jumlah_salur_kph / $anggaran_kph_banjarnegara * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_banjarnegara_kph = 0;
+        }
+        $anggaran_covid_banjarnegara = $anggaran_banjarnegara * $persen_covid / 100;
+        if ($anggaran_covid_banjarnegara != 0) {
+            $capaian_salur_banjarnegara_covid = number_format($banjarnegara_jumlah_salur_covid / $anggaran_covid_banjarnegara * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_banjarnegara_covid = 0;
+        }
+
+        $anggaran_kbn = $this->Provinsi5a_model->danadesa_anggaran('33.05');
+        if (isset($anggaran_kbn['danadesa'])) {
+            $anggaran_kebumen = $anggaran_kbn['danadesa'];
+        } else {
+            $anggaran_kebumen = 0;
+        }
+        $anggaran_reg_kebumen = $anggaran_kebumen * $persen_reg / 100;
+        if ($anggaran_reg_kebumen != 0) {
+            $capaian_salur_kebumen_reg = number_format($kebumen_jumlah_salur_reg / $anggaran_reg_kebumen * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kebumen_reg = 0;
+        }
+        $anggaran_bltdd_kebumen = $anggaran_kebumen * $persen_bltdd / 100;
+        if ($anggaran_bltdd_kebumen != 0) {
+            $capaian_salur_kebumen_bltdd = number_format($kebumen_jumlah_salur_bltdd / $anggaran_bltdd_kebumen * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kebumen_bltdd = 0;
+        }
+        $anggaran_kph_kebumen = $anggaran_kebumen * $persen_kph / 100;
+        if ($anggaran_kph_kebumen != 0) {
+            $capaian_salur_kebumen_kph = number_format($kebumen_jumlah_salur_kph / $anggaran_kph_kebumen * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kebumen_kph = 0;
+        }
+        $anggaran_covid_kebumen = $anggaran_kebumen * $persen_covid / 100;
+        if ($anggaran_covid_kebumen != 0) {
+            $capaian_salur_kebumen_covid = number_format($kebumen_jumlah_salur_covid / $anggaran_covid_kebumen * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kebumen_covid = 0;
+        }
+
+        $anggaran_pwj = $this->Provinsi5a_model->danadesa_anggaran('33.06');
+        if (isset($anggaran_pwj['danadesa'])) {
+            $anggaran_purworejo = $anggaran_pwj['danadesa'];
+        } else {
+            $anggaran_purworejo = 0;
+        }
+        $anggaran_reg_purworejo = $anggaran_purworejo * $persen_reg / 100;
+        if ($anggaran_reg_purworejo != 0) {
+            $capaian_salur_purworejo_reg = number_format($purworejo_jumlah_salur_reg / $anggaran_reg_purworejo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_purworejo_reg = 0;
+        }
+        $anggaran_bltdd_purworejo = $anggaran_purworejo * $persen_bltdd / 100;
+        if ($anggaran_bltdd_purworejo != 0) {
+            $capaian_salur_purworejo_bltdd = number_format($purworejo_jumlah_salur_bltdd / $anggaran_bltdd_purworejo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_purworejo_bltdd = 0;
+        }
+        $anggaran_kph_purworejo = $anggaran_purworejo * $persen_kph / 100;
+        if ($anggaran_kph_purworejo != 0) {
+            $capaian_salur_purworejo_kph = number_format($purworejo_jumlah_salur_kph / $anggaran_kph_purworejo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_purworejo_kph = 0;
+        }
+        $anggaran_covid_purworejo = $anggaran_purworejo * $persen_covid / 100;
+        if ($anggaran_covid_purworejo != 0) {
+            $capaian_salur_purworejo_covid = number_format($purworejo_jumlah_salur_covid / $anggaran_covid_purworejo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_purworejo_covid = 0;
+        }
+
+        $anggaran_wnb = $this->Provinsi5a_model->danadesa_anggaran('33.07');
+        if (isset($anggaran_wnb['danadesa'])) {
+            $anggaran_wonosobo = $anggaran_wnb['danadesa'];
+        } else {
+            $anggaran_wonosobo = 0;
+        }
+        $anggaran_reg_wonosobo = $anggaran_wonosobo * $persen_reg / 100;
+        if ($anggaran_reg_wonosobo != 0) {
+            $capaian_salur_wonosobo_reg = number_format($wonosobo_jumlah_salur_reg / $anggaran_reg_wonosobo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_wonosobo_reg = 0;
+        }
+        $anggaran_bltdd_wonosobo = $anggaran_wonosobo * $persen_bltdd / 100;
+        if ($anggaran_bltdd_wonosobo != 0) {
+            $capaian_salur_wonosobo_bltdd = number_format($wonosobo_jumlah_salur_bltdd / $anggaran_bltdd_wonosobo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_wonosobo_bltdd = 0;
+        }
+        $anggaran_kph_wonosobo = $anggaran_wonosobo * $persen_kph / 100;
+        if ($anggaran_kph_wonosobo != 0) {
+            $capaian_salur_wonosobo_kph = number_format($wonosobo_jumlah_salur_kph / $anggaran_kph_wonosobo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_wonosobo_kph = 0;
+        }
+        $anggaran_covid_wonosobo = $anggaran_wonosobo * $persen_covid / 100;
+        if ($anggaran_covid_wonosobo != 0) {
+            $capaian_salur_wonosobo_covid = number_format($wonosobo_jumlah_salur_covid / $anggaran_covid_wonosobo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_wonosobo_covid = 0;
+        }
+
+        $anggaran_mgl = $this->Provinsi5a_model->danadesa_anggaran('33.08');
+        if (isset($anggaran_mgl['danadesa'])) {
+            $anggaran_magelang = $anggaran_mgl['danadesa'];
+        } else {
+            $anggaran_magelang = 0;
+        }
+        $anggaran_reg_magelang = $anggaran_magelang * $persen_reg / 100;
+        if ($anggaran_reg_magelang != 0) {
+            $capaian_salur_magelang_reg = number_format($magelang_jumlah_salur_reg / $anggaran_reg_magelang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_magelang_reg = 0;
+        }
+        $anggaran_bltdd_magelang = $anggaran_magelang * $persen_bltdd / 100;
+        if ($anggaran_bltdd_magelang != 0) {
+            $capaian_salur_magelang_bltdd = number_format($magelang_jumlah_salur_bltdd / $anggaran_bltdd_magelang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_magelang_bltdd = 0;
+        }
+        $anggaran_kph_magelang = $anggaran_magelang * $persen_kph / 100;
+        if ($anggaran_kph_magelang != 0) {
+            $capaian_salur_magelang_kph = number_format($magelang_jumlah_salur_kph / $anggaran_kph_magelang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_magelang_kph = 0;
+        }
+        $anggaran_covid_magelang = $anggaran_magelang * $persen_covid / 100;
+        if ($anggaran_covid_magelang != 0) {
+            $capaian_salur_magelang_covid = number_format($magelang_jumlah_salur_covid / $anggaran_covid_magelang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_magelang_covid = 0;
+        }
+
+        $anggaran_byl = $this->Provinsi5a_model->danadesa_anggaran('33.09');
+        if (isset($anggaran_byl['danadesa'])) {
+            $anggaran_boyolali = $anggaran_byl['danadesa'];
+        } else {
+            $anggaran_boyolali = 0;
+        }
+        $anggaran_reg_boyolali = $anggaran_boyolali * $persen_reg / 100;
+        if ($anggaran_reg_boyolali != 0) {
+            $capaian_salur_boyolali_reg = number_format($boyolali_jumlah_salur_reg / $anggaran_reg_boyolali * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_boyolali_reg = 0;
+        }
+        $anggaran_bltdd_boyolali = $anggaran_boyolali * $persen_bltdd / 100;
+        if ($anggaran_bltdd_boyolali != 0) {
+            $capaian_salur_boyolali_bltdd = number_format($boyolali_jumlah_salur_bltdd / $anggaran_bltdd_boyolali * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_boyolali_bltdd = 0;
+        }
+        $anggaran_kph_boyolali = $anggaran_boyolali * $persen_kph / 100;
+        if ($anggaran_kph_boyolali != 0) {
+            $capaian_salur_boyolali_kph = number_format($boyolali_jumlah_salur_kph / $anggaran_kph_boyolali * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_boyolali_kph = 0;
+        }
+        $anggaran_covid_boyolali = $anggaran_boyolali * $persen_covid / 100;
+        if ($anggaran_covid_boyolali != 0) {
+            $capaian_salur_boyolali_covid = number_format($boyolali_jumlah_salur_covid / $anggaran_covid_boyolali * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_boyolali_covid = 0;
+        }
+
+        $anggaran_klt = $this->Provinsi5a_model->danadesa_anggaran('33.10');
+        if (isset($anggaran_klt['danadesa'])) {
+            $anggaran_klaten = $anggaran_klt['danadesa'];
+        } else {
+            $anggaran_klaten = 0;
+        }
+        $anggaran_reg_klaten = $anggaran_klaten * $persen_reg / 100;
+        if ($anggaran_reg_klaten != 0) {
+            $capaian_salur_klaten_reg = number_format($klaten_jumlah_salur_reg / $anggaran_reg_klaten * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_klaten_reg = 0;
+        }
+        $anggaran_bltdd_klaten = $anggaran_klaten * $persen_bltdd / 100;
+        if ($anggaran_bltdd_klaten != 0) {
+            $capaian_salur_klaten_bltdd = number_format($klaten_jumlah_salur_bltdd / $anggaran_bltdd_klaten * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_klaten_bltdd = 0;
+        }
+        $anggaran_kph_klaten = $anggaran_klaten * $persen_kph / 100;
+        if ($anggaran_kph_klaten != 0) {
+            $capaian_salur_klaten_kph = number_format($klaten_jumlah_salur_kph / $anggaran_kph_klaten * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_klaten_kph = 0;
+        }
+        $anggaran_covid_klaten = $anggaran_klaten * $persen_covid / 100;
+        if ($anggaran_covid_klaten != 0) {
+            $capaian_salur_klaten_covid = number_format($klaten_jumlah_salur_covid / $anggaran_covid_klaten * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_klaten_covid = 0;
+        }
+
+        $anggaran_sjo = $this->Provinsi5a_model->danadesa_anggaran('33.11');
+        if (isset($anggaran_sjo['danadesa'])) {
+            $anggaran_sukoharjo = $anggaran_sjo['danadesa'];
+        } else {
+            $anggaran_sukoharjo = 0;
+        }
+        $anggaran_reg_sukoharjo = $anggaran_sukoharjo * $persen_reg / 100;
+        if ($anggaran_reg_sukoharjo != 0) {
+            $capaian_salur_sukoharjo_reg = number_format($sukoharjo_jumlah_salur_reg / $anggaran_reg_sukoharjo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_sukoharjo_reg = 0;
+        }
+        $anggaran_bltdd_sukoharjo = $anggaran_sukoharjo * $persen_bltdd / 100;
+        if ($anggaran_bltdd_sukoharjo != 0) {
+            $capaian_salur_sukoharjo_bltdd = number_format($sukoharjo_jumlah_salur_bltdd / $anggaran_bltdd_sukoharjo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_sukoharjo_bltdd = 0;
+        }
+        $anggaran_kph_sukoharjo = $anggaran_sukoharjo * $persen_kph / 100;
+        if ($anggaran_kph_sukoharjo != 0) {
+            $capaian_salur_sukoharjo_kph = number_format($sukoharjo_jumlah_salur_kph / $anggaran_kph_sukoharjo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_sukoharjo_kph = 0;
+        }
+        $anggaran_covid_sukoharjo = $anggaran_sukoharjo * $persen_covid / 100;
+        if ($anggaran_covid_sukoharjo != 0) {
+            $capaian_salur_sukoharjo_covid = number_format($sukoharjo_jumlah_salur_covid / $anggaran_covid_sukoharjo * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_sukoharjo_covid = 0;
+        }
+
+        $anggaran_wgi = $this->Provinsi5a_model->danadesa_anggaran('33.12');
+        if (isset($anggaran_wgi['danadesa'])) {
+            $anggaran_wonogiri = $anggaran_wgi['danadesa'];
+        } else {
+            $anggaran_wonogiri = 0;
+        }
+        $anggaran_reg_wonogiri = $anggaran_wonogiri * $persen_reg / 100;
+        if ($anggaran_reg_wonogiri != 0) {
+            $capaian_salur_wonogiri_reg = number_format($wonogiri_jumlah_salur_reg / $anggaran_reg_wonogiri * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_wonogiri_reg = 0;
+        }
+        $anggaran_bltdd_wonogiri = $anggaran_wonogiri * $persen_bltdd / 100;
+        if ($anggaran_bltdd_wonogiri != 0) {
+            $capaian_salur_wonogiri_bltdd = number_format($wonogiri_jumlah_salur_bltdd / $anggaran_bltdd_wonogiri * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_wonogiri_bltdd = 0;
+        }
+        $anggaran_kph_wonogiri = $anggaran_wonogiri * $persen_kph / 100;
+        if ($anggaran_kph_wonogiri != 0) {
+            $capaian_salur_wonogiri_kph = number_format($wonogiri_jumlah_salur_kph / $anggaran_kph_wonogiri * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_wonogiri_kph = 0;
+        }
+        $anggaran_covid_wonogiri = $anggaran_wonogiri * $persen_covid / 100;
+        if ($anggaran_covid_wonogiri != 0) {
+            $capaian_salur_wonogiri_covid = number_format($wonogiri_jumlah_salur_covid / $anggaran_covid_wonogiri * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_wonogiri_covid = 0;
+        }
+
+        $anggaran_kra = $this->Provinsi5a_model->danadesa_anggaran('33.13');
+        if (isset($anggaran_kra['danadesa'])) {
+            $anggaran_karanganyar = $anggaran_kra['danadesa'];
+        } else {
+            $anggaran_karanganyar = 0;
+        }
+        $anggaran_reg_karanganyar = $anggaran_karanganyar * $persen_reg / 100;
+        if ($anggaran_reg_karanganyar != 0) {
+            $capaian_salur_karanganyar_reg = number_format($karanganyar_jumlah_salur_reg / $anggaran_reg_karanganyar * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_karanganyar_reg = 0;
+        }
+        $anggaran_bltdd_karanganyar = $anggaran_karanganyar * $persen_bltdd / 100;
+        if ($anggaran_bltdd_karanganyar != 0) {
+            $capaian_salur_karanganyar_bltdd = number_format($karanganyar_jumlah_salur_bltdd / $anggaran_bltdd_karanganyar * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_karanganyar_bltdd = 0;
+        }
+        $anggaran_kph_karanganyar = $anggaran_karanganyar * $persen_kph / 100;
+        if ($anggaran_kph_karanganyar != 0) {
+            $capaian_salur_karanganyar_kph = number_format($karanganyar_jumlah_salur_kph / $anggaran_kph_karanganyar * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_karanganyar_kph = 0;
+        }
+        $anggaran_covid_karanganyar = $anggaran_karanganyar * $persen_covid / 100;
+        if ($anggaran_covid_karanganyar != 0) {
+            $capaian_salur_karanganyar_covid = number_format($karanganyar_jumlah_salur_covid / $anggaran_covid_karanganyar * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_karanganyar_covid = 0;
+        }
+
+        $anggaran_sgn = $this->Provinsi5a_model->danadesa_anggaran('33.14');
+        if (isset($anggaran_sgn['danadesa'])) {
+            $anggaran_sragen = $anggaran_sgn['danadesa'];
+        } else {
+            $anggaran_sragen = 0;
+        }
+        $anggaran_reg_sragen = $anggaran_sragen * $persen_reg / 100;
+        if ($anggaran_reg_sragen != 0) {
+            $capaian_salur_sragen_reg = number_format($sragen_jumlah_salur_reg / $anggaran_reg_sragen * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_sragen_reg = 0;
+        }
+        $anggaran_bltdd_sragen = $anggaran_sragen * $persen_bltdd / 100;
+        if ($anggaran_bltdd_sragen != 0) {
+            $capaian_salur_sragen_bltdd = number_format($sragen_jumlah_salur_bltdd / $anggaran_bltdd_sragen * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_sragen_bltdd = 0;
+        }
+        $anggaran_kph_sragen = $anggaran_sragen * $persen_kph / 100;
+        if ($anggaran_kph_sragen != 0) {
+            $capaian_salur_sragen_kph = number_format($sragen_jumlah_salur_kph / $anggaran_kph_sragen * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_sragen_kph = 0;
+        }
+        $anggaran_covid_sragen = $anggaran_sragen * $persen_covid / 100;
+        if ($anggaran_covid_sragen != 0) {
+            $capaian_salur_sragen_covid = number_format($sragen_jumlah_salur_covid / $anggaran_covid_sragen * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_sragen_covid = 0;
+        }
+
+        $anggaran_gbn = $this->Provinsi5a_model->danadesa_anggaran('33.15');
+        if (isset($anggaran_gbn['danadesa'])) {
+            $anggaran_grobogan = $anggaran_gbn['danadesa'];
+        } else {
+            $anggaran_grobogan = 0;
+        }
+        $anggaran_reg_grobogan = $anggaran_grobogan * $persen_reg / 100;
+        if ($anggaran_reg_grobogan != 0) {
+            $capaian_salur_grobogan_reg = number_format($grobogan_jumlah_salur_reg / $anggaran_reg_grobogan * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_grobogan_reg = 0;
+        }
+        $anggaran_bltdd_grobogan = $anggaran_grobogan * $persen_bltdd / 100;
+        if ($anggaran_bltdd_grobogan != 0) {
+            $capaian_salur_grobogan_bltdd = number_format($grobogan_jumlah_salur_bltdd / $anggaran_bltdd_grobogan * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_grobogan_bltdd = 0;
+        }
+        $anggaran_kph_grobogan = $anggaran_grobogan * $persen_kph / 100;
+        if ($anggaran_kph_grobogan != 0) {
+            $capaian_salur_grobogan_kph = number_format($grobogan_jumlah_salur_kph / $anggaran_kph_grobogan * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_grobogan_kph = 0;
+        }
+        $anggaran_covid_grobogan = $anggaran_grobogan * $persen_covid / 100;
+        if ($anggaran_covid_grobogan != 0) {
+            $capaian_salur_grobogan_covid = number_format($grobogan_jumlah_salur_covid / $anggaran_covid_grobogan * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_grobogan_covid = 0;
+        }
+
+        $anggaran_blr = $this->Provinsi5a_model->danadesa_anggaran('33.16');
+        if (isset($anggaran_blr['danadesa'])) {
+            $anggaran_blora = $anggaran_blr['danadesa'];
+        } else {
+            $anggaran_blora = 0;
+        }
+        $anggaran_reg_blora = $anggaran_blora * $persen_reg / 100;
+        if ($anggaran_reg_blora != 0) {
+            $capaian_salur_blora_reg = number_format($blora_jumlah_salur_reg / $anggaran_reg_blora * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_blora_reg = 0;
+        }
+        $anggaran_bltdd_blora = $anggaran_blora * $persen_bltdd / 100;
+        if ($anggaran_bltdd_blora != 0) {
+            $capaian_salur_blora_bltdd = number_format($blora_jumlah_salur_bltdd / $anggaran_bltdd_blora * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_blora_bltdd = 0;
+        }
+        $anggaran_kph_blora = $anggaran_blora * $persen_kph / 100;
+        if ($anggaran_kph_blora != 0) {
+            $capaian_salur_blora_kph = number_format($blora_jumlah_salur_kph / $anggaran_kph_blora * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_blora_kph = 0;
+        }
+        $anggaran_covid_blora = $anggaran_blora * $persen_covid / 100;
+        if ($anggaran_covid_blora != 0) {
+            $capaian_salur_blora_covid = number_format($blora_jumlah_salur_covid / $anggaran_covid_blora * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_blora_covid = 0;
+        }
+
+        $anggaran_rbg = $this->Provinsi5a_model->danadesa_anggaran('33.17');
+        if (isset($anggaran_rbg['danadesa'])) {
+            $anggaran_rembang = $anggaran_rbg['danadesa'];
+        } else {
+            $anggaran_rembang = 0;
+        }
+        $anggaran_reg_rembang = $anggaran_rembang * $persen_reg / 100;
+        if ($anggaran_reg_rembang != 0) {
+            $capaian_salur_rembang_reg = number_format($rembang_jumlah_salur_reg / $anggaran_reg_rembang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_rembang_reg = 0;
+        }
+        $anggaran_bltdd_rembang = $anggaran_rembang * $persen_bltdd / 100;
+        if ($anggaran_bltdd_rembang != 0) {
+            $capaian_salur_rembang_bltdd = number_format($rembang_jumlah_salur_bltdd / $anggaran_bltdd_rembang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_rembang_bltdd = 0;
+        }
+        $anggaran_kph_rembang = $anggaran_rembang * $persen_kph / 100;
+        if ($anggaran_kph_rembang != 0) {
+            $capaian_salur_rembang_kph = number_format($rembang_jumlah_salur_kph / $anggaran_kph_rembang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_rembang_kph = 0;
+        }
+        $anggaran_covid_rembang = $anggaran_rembang * $persen_covid / 100;
+        if ($anggaran_covid_rembang != 0) {
+            $capaian_salur_rembang_covid = number_format($rembang_jumlah_salur_covid / $anggaran_covid_rembang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_rembang_covid = 0;
+        }
+
+        $anggaran_pti = $this->Provinsi5a_model->danadesa_anggaran('33.18');
+        if (isset($anggaran_pti['danadesa'])) {
+            $anggaran_pati = $anggaran_pti['danadesa'];
+        } else {
+            $anggaran_pati = 0;
+        }
+        $anggaran_reg_pati = $anggaran_pati * $persen_reg / 100;
+        if ($anggaran_reg_pati != 0) {
+            $capaian_salur_pati_reg = number_format($pati_jumlah_salur_reg / $anggaran_reg_pati * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pati_reg = 0;
+        }
+        $anggaran_bltdd_pati = $anggaran_pati * $persen_bltdd / 100;
+        if ($anggaran_bltdd_pati != 0) {
+            $capaian_salur_pati_bltdd = number_format($pati_jumlah_salur_bltdd / $anggaran_bltdd_pati * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pati_bltdd = 0;
+        }
+        $anggaran_kph_pati = $anggaran_pati * $persen_kph / 100;
+        if ($anggaran_kph_pati != 0) {
+            $capaian_salur_pati_kph = number_format($pati_jumlah_salur_kph / $anggaran_kph_pati * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pati_kph = 0;
+        }
+        $anggaran_covid_pati = $anggaran_pati * $persen_covid / 100;
+        if ($anggaran_covid_pati != 0) {
+            $capaian_salur_pati_covid = number_format($pati_jumlah_salur_covid / $anggaran_covid_pati * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pati_covid = 0;
+        }
+
+        $anggaran_kds = $this->Provinsi5a_model->danadesa_anggaran('33.19');
+        if (isset($anggaran_kds['danadesa'])) {
+            $anggaran_kudus = $anggaran_kds['danadesa'];
+        } else {
+            $anggaran_kudus = 0;
+        }
+        $anggaran_reg_kudus = $anggaran_kudus * $persen_reg / 100;
+        if ($anggaran_reg_kudus != 0) {
+            $capaian_salur_kudus_reg = number_format($kudus_jumlah_salur_reg / $anggaran_reg_kudus * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kudus_reg = 0;
+        }
+        $anggaran_bltdd_kudus = $anggaran_kudus * $persen_bltdd / 100;
+        if ($anggaran_bltdd_kudus != 0) {
+            $capaian_salur_kudus_bltdd = number_format($kudus_jumlah_salur_bltdd / $anggaran_bltdd_kudus * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kudus_bltdd = 0;
+        }
+        $anggaran_kph_kudus = $anggaran_kudus * $persen_kph / 100;
+        if ($anggaran_kph_kudus != 0) {
+            $capaian_salur_kudus_kph = number_format($kudus_jumlah_salur_kph / $anggaran_kph_kudus * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kudus_kph = 0;
+        }
+        $anggaran_covid_kudus = $anggaran_kudus * $persen_covid / 100;
+        if ($anggaran_covid_kudus != 0) {
+            $capaian_salur_kudus_covid = number_format($kudus_jumlah_salur_covid / $anggaran_covid_kudus * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kudus_covid = 0;
+        }
+
+        $anggaran_jpr = $this->Provinsi5a_model->danadesa_anggaran('33.20');
+        if (isset($anggaran_jpr['danadesa'])) {
+            $anggaran_jepara = $anggaran_jpr['danadesa'];
+        } else {
+            $anggaran_jepara = 0;
+        }
+        $anggaran_reg_jepara = $anggaran_jepara * $persen_reg / 100;
+        if ($anggaran_reg_jepara != 0) {
+            $capaian_salur_jepara_reg = number_format($jepara_jumlah_salur_reg / $anggaran_reg_jepara * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_jepara_reg = 0;
+        }
+        $anggaran_bltdd_jepara = $anggaran_jepara * $persen_bltdd / 100;
+        if ($anggaran_bltdd_jepara != 0) {
+            $capaian_salur_jepara_bltdd = number_format($jepara_jumlah_salur_bltdd / $anggaran_bltdd_jepara * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_jepara_bltdd = 0;
+        }
+        $anggaran_kph_jepara = $anggaran_jepara * $persen_kph / 100;
+        if ($anggaran_kph_jepara != 0) {
+            $capaian_salur_jepara_kph = number_format($jepara_jumlah_salur_kph / $anggaran_kph_jepara * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_jepara_kph = 0;
+        }
+        $anggaran_covid_jepara = $anggaran_jepara * $persen_covid / 100;
+        if ($anggaran_covid_jepara != 0) {
+            $capaian_salur_jepara_covid = number_format($jepara_jumlah_salur_covid / $anggaran_covid_jepara * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_jepara_covid = 0;
+        }
+
+        $anggaran_dmk = $this->Provinsi5a_model->danadesa_anggaran('33.21');
+        if (isset($anggaran_dmk['danadesa'])) {
+            $anggaran_demak = $anggaran_dmk['danadesa'];
+        } else {
+            $anggaran_demak = 0;
+        }
+        $anggaran_reg_demak = $anggaran_demak * $persen_reg / 100;
+        if ($anggaran_reg_demak != 0) {
+            $capaian_salur_demak_reg = number_format($demak_jumlah_salur_reg / $anggaran_reg_demak * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_demak_reg = 0;
+        }
+        $anggaran_bltdd_demak = $anggaran_demak * $persen_bltdd / 100;
+        if ($anggaran_bltdd_demak != 0) {
+            $capaian_salur_demak_bltdd = number_format($demak_jumlah_salur_bltdd / $anggaran_bltdd_demak * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_demak_bltdd = 0;
+        }
+        $anggaran_kph_demak = $anggaran_demak * $persen_kph / 100;
+        if ($anggaran_kph_demak != 0) {
+            $capaian_salur_demak_kph = number_format($demak_jumlah_salur_kph / $anggaran_kph_demak * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_demak_kph = 0;
+        }
+        $anggaran_covid_demak = $anggaran_demak * $persen_covid / 100;
+        if ($anggaran_covid_demak != 0) {
+            $capaian_salur_demak_covid = number_format($demak_jumlah_salur_covid / $anggaran_covid_demak * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_demak_covid = 0;
+        }
+
+        $anggaran_smg = $this->Provinsi5a_model->danadesa_anggaran('33.22');
+        if (isset($anggaran_smg['danadesa'])) {
+            $anggaran_semarang = $anggaran_smg['danadesa'];
+        } else {
+            $anggaran_semarang = 0;
+        }
+        $anggaran_reg_semarang = $anggaran_semarang * $persen_reg / 100;
+        if ($anggaran_reg_semarang != 0) {
+            $capaian_salur_semarang_reg = number_format($semarang_jumlah_salur_reg / $anggaran_reg_semarang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_semarang_reg = 0;
+        }
+        $anggaran_bltdd_semarang = $anggaran_semarang * $persen_bltdd / 100;
+        if ($anggaran_bltdd_semarang != 0) {
+            $capaian_salur_semarang_bltdd = number_format($semarang_jumlah_salur_bltdd / $anggaran_bltdd_semarang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_semarang_bltdd = 0;
+        }
+        $anggaran_kph_semarang = $anggaran_semarang * $persen_kph / 100;
+        if ($anggaran_kph_semarang != 0) {
+            $capaian_salur_semarang_kph = number_format($semarang_jumlah_salur_kph / $anggaran_kph_semarang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_semarang_kph = 0;
+        }
+        $anggaran_covid_semarang = $anggaran_semarang * $persen_covid / 100;
+        if ($anggaran_covid_semarang != 0) {
+            $capaian_salur_semarang_covid = number_format($semarang_jumlah_salur_covid / $anggaran_covid_semarang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_semarang_covid = 0;
+        }
+
+        $anggaran_tmg = $this->Provinsi5a_model->danadesa_anggaran('33.23');
+        if (isset($anggaran_tmg['danadesa'])) {
+            $anggaran_temanggung = $anggaran_tmg['danadesa'];
+        } else {
+            $anggaran_temanggung = 0;
+        }
+        $anggaran_reg_temanggung = $anggaran_temanggung * $persen_reg / 100;
+        if ($anggaran_reg_temanggung != 0) {
+            $capaian_salur_temanggung_reg = number_format($temanggung_jumlah_salur_reg / $anggaran_reg_temanggung * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_temanggung_reg = 0;
+        }
+        $anggaran_bltdd_temanggung = $anggaran_temanggung * $persen_bltdd / 100;
+        if ($anggaran_bltdd_temanggung != 0) {
+            $capaian_salur_temanggung_bltdd = number_format($temanggung_jumlah_salur_bltdd / $anggaran_bltdd_temanggung * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_temanggung_bltdd = 0;
+        }
+        $anggaran_kph_temanggung = $anggaran_temanggung * $persen_kph / 100;
+        if ($anggaran_kph_temanggung != 0) {
+            $capaian_salur_temanggung_kph = number_format($temanggung_jumlah_salur_kph / $anggaran_kph_temanggung * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_temanggung_kph = 0;
+        }
+        $anggaran_covid_temanggung = $anggaran_temanggung * $persen_covid / 100;
+        if ($anggaran_covid_temanggung != 0) {
+            $capaian_salur_temanggung_covid = number_format($temanggung_jumlah_salur_covid / $anggaran_covid_temanggung * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_temanggung_covid = 0;
+        }
+
+        $anggaran_kdl = $this->Provinsi5a_model->danadesa_anggaran('33.24');
+        if (isset($anggaran_kdl['danadesa'])) {
+            $anggaran_kendal = $anggaran_kdl['danadesa'];
+        } else {
+            $anggaran_kendal = 0;
+        }
+        $anggaran_reg_kendal = $anggaran_kendal * $persen_reg / 100;
+        if ($anggaran_reg_kendal != 0) {
+            $capaian_salur_kendal_reg = number_format($kendal_jumlah_salur_reg / $anggaran_reg_kendal * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kendal_reg = 0;
+        }
+        $anggaran_bltdd_kendal = $anggaran_kendal * $persen_bltdd / 100;
+        if ($anggaran_bltdd_kendal != 0) {
+            $capaian_salur_kendal_bltdd = number_format($kendal_jumlah_salur_bltdd / $anggaran_bltdd_kendal * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kendal_bltdd = 0;
+        }
+        $anggaran_kph_kendal = $anggaran_kendal * $persen_kph / 100;
+        if ($anggaran_kph_kendal != 0) {
+            $capaian_salur_kendal_kph = number_format($kendal_jumlah_salur_kph / $anggaran_kph_kendal * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kendal_kph = 0;
+        }
+        $anggaran_covid_kendal = $anggaran_kendal * $persen_covid / 100;
+        if ($anggaran_covid_kendal != 0) {
+            $capaian_salur_kendal_covid = number_format($kendal_jumlah_salur_covid / $anggaran_covid_kendal * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_kendal_covid = 0;
+        }
+
+        $anggaran_btg = $this->Provinsi5a_model->danadesa_anggaran('33.25');
+        if (isset($anggaran_btg['danadesa'])) {
+            $anggaran_batang = $anggaran_btg['danadesa'];
+        } else {
+            $anggaran_batang = 0;
+        }
+        $anggaran_reg_batang = $anggaran_batang * $persen_reg / 100;
+        if ($anggaran_reg_batang != 0) {
+            $capaian_salur_batang_reg = number_format($batang_jumlah_salur_reg / $anggaran_reg_batang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_batang_reg = 0;
+        }
+        $anggaran_bltdd_batang = $anggaran_batang * $persen_bltdd / 100;
+        if ($anggaran_bltdd_batang != 0) {
+            $capaian_salur_batang_bltdd = number_format($batang_jumlah_salur_bltdd / $anggaran_bltdd_batang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_batang_bltdd = 0;
+        }
+        $anggaran_kph_batang = $anggaran_batang * $persen_kph / 100;
+        if ($anggaran_kph_batang != 0) {
+            $capaian_salur_batang_kph = number_format($batang_jumlah_salur_kph / $anggaran_kph_batang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_batang_kph = 0;
+        }
+        $anggaran_covid_batang = $anggaran_batang * $persen_covid / 100;
+        if ($anggaran_covid_batang != 0) {
+            $capaian_salur_batang_covid = number_format($batang_jumlah_salur_covid / $anggaran_covid_batang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_batang_covid = 0;
+        }
+
+        $anggaran_pkl = $this->Provinsi5a_model->danadesa_anggaran('33.26');
+        if (isset($anggaran_pkl['danadesa'])) {
+            $anggaran_pekalongan = $anggaran_pkl['danadesa'];
+        } else {
+            $anggaran_pekalongan = 0;
+        }
+        $anggaran_reg_pekalongan = $anggaran_pekalongan * $persen_reg / 100;
+        if ($anggaran_reg_pekalongan != 0) {
+            $capaian_salur_pekalongan_reg = number_format($pekalongan_jumlah_salur_reg / $anggaran_reg_pekalongan * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pekalongan_reg = 0;
+        }
+        $anggaran_bltdd_pekalongan = $anggaran_pekalongan * $persen_bltdd / 100;
+        if ($anggaran_bltdd_pekalongan != 0) {
+            $capaian_salur_pekalongan_bltdd = number_format($pekalongan_jumlah_salur_bltdd / $anggaran_bltdd_pekalongan * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pekalongan_bltdd = 0;
+        }
+        $anggaran_kph_pekalongan = $anggaran_pekalongan * $persen_kph / 100;
+        if ($anggaran_kph_pekalongan != 0) {
+            $capaian_salur_pekalongan_kph = number_format($pekalongan_jumlah_salur_kph / $anggaran_kph_pekalongan * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pekalongan_kph = 0;
+        }
+        $anggaran_covid_pekalongan = $anggaran_pekalongan * $persen_covid / 100;
+        if ($anggaran_covid_pekalongan != 0) {
+            $capaian_salur_pekalongan_covid = number_format($pekalongan_jumlah_salur_covid / $anggaran_covid_pekalongan * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pekalongan_covid = 0;
+        }
+
+        $anggaran_pml = $this->Provinsi5a_model->danadesa_anggaran('33.27');
+        if (isset($anggaran_pml['danadesa'])) {
+            $anggaran_pemalang = $anggaran_pml['danadesa'];
+        } else {
+            $anggaran_pemalang = 0;
+        }
+        $anggaran_reg_pemalang = $anggaran_pemalang * $persen_reg / 100;
+        if ($anggaran_reg_pemalang != 0) {
+            $capaian_salur_pemalang_reg = number_format($pemalang_jumlah_salur_reg / $anggaran_reg_pemalang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pemalang_reg = 0;
+        }
+        $anggaran_bltdd_pemalang = $anggaran_pemalang * $persen_bltdd / 100;
+        if ($anggaran_bltdd_pemalang != 0) {
+            $capaian_salur_pemalang_bltdd = number_format($pemalang_jumlah_salur_bltdd / $anggaran_bltdd_pemalang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pemalang_bltdd = 0;
+        }
+        $anggaran_kph_pemalang = $anggaran_pemalang * $persen_kph / 100;
+        if ($anggaran_kph_pemalang != 0) {
+            $capaian_salur_pemalang_kph = number_format($pemalang_jumlah_salur_kph / $anggaran_kph_pemalang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pemalang_kph = 0;
+        }
+        $anggaran_covid_pemalang = $anggaran_pemalang * $persen_covid / 100;
+        if ($anggaran_covid_pemalang != 0) {
+            $capaian_salur_pemalang_covid = number_format($pemalang_jumlah_salur_covid / $anggaran_covid_pemalang * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_pemalang_covid = 0;
+        }
+
+        $anggaran_tgl = $this->Provinsi5a_model->danadesa_anggaran('33.28');
+        if (isset($anggaran_tgl['danadesa'])) {
+            $anggaran_tegal = $anggaran_tgl['danadesa'];
+        } else {
+            $anggaran_tegal = 0;
+        }
+        $anggaran_reg_tegal = $anggaran_tegal * $persen_reg / 100;
+        if ($anggaran_reg_tegal != 0) {
+            $capaian_salur_tegal_reg = number_format($tegal_jumlah_salur_reg / $anggaran_reg_tegal * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_tegal_reg = 0;
+        }
+        $anggaran_bltdd_tegal = $anggaran_tegal * $persen_bltdd / 100;
+        if ($anggaran_bltdd_tegal != 0) {
+            $capaian_salur_tegal_bltdd = number_format($tegal_jumlah_salur_bltdd / $anggaran_bltdd_tegal * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_tegal_bltdd = 0;
+        }
+        $anggaran_kph_tegal = $anggaran_tegal * $persen_kph / 100;
+        if ($anggaran_kph_tegal != 0) {
+            $capaian_salur_tegal_kph = number_format($tegal_jumlah_salur_kph / $anggaran_kph_tegal * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_tegal_kph = 0;
+        }
+        $anggaran_covid_tegal = $anggaran_tegal * $persen_covid / 100;
+        if ($anggaran_covid_tegal != 0) {
+            $capaian_salur_tegal_covid = number_format($tegal_jumlah_salur_covid / $anggaran_covid_tegal * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_tegal_covid = 0;
+        }
+
+        $anggaran_brb = $this->Provinsi5a_model->danadesa_anggaran('33.29');
+        if (isset($anggaran_brb['danadesa'])) {
+            $anggaran_brebes = $anggaran_brb['danadesa'];
+        } else {
+            $anggaran_brebes = 0;
+        }
+        $anggaran_reg_brebes = $anggaran_brebes * $persen_reg / 100;
+        if ($anggaran_reg_brebes != 0) {
+            $capaian_salur_brebes_reg = number_format($brebes_jumlah_salur_reg / $anggaran_reg_brebes * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_brebes_reg = 0;
+        }
+        $anggaran_bltdd_brebes = $anggaran_brebes * $persen_bltdd / 100;
+        if ($anggaran_bltdd_brebes != 0) {
+            $capaian_salur_brebes_bltdd = number_format($brebes_jumlah_salur_bltdd / $anggaran_bltdd_brebes * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_brebes_bltdd = 0;
+        }
+        $anggaran_kph_brebes = $anggaran_brebes * $persen_kph / 100;
+        if ($anggaran_kph_brebes != 0) {
+            $capaian_salur_brebes_kph = number_format($brebes_jumlah_salur_kph / $anggaran_kph_brebes * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_brebes_kph = 0;
+        }
+        $anggaran_covid_brebes = $anggaran_brebes * $persen_covid / 100;
+        if ($anggaran_covid_brebes != 0) {
+            $capaian_salur_brebes_covid = number_format($brebes_jumlah_salur_covid / $anggaran_covid_brebes * 100, 2, '.', '.');
+        } else {
+            $capaian_salur_brebes_covid = 0;
+        }
+
+        // logic capaian persentase realisasi terhadap DIPA
         $anggaran_clp = $this->Provinsi5a_model->danadesa_anggaran('33.01');
         if (isset($anggaran_clp['danadesa'])) {
             $anggaran_cilacap = $anggaran_clp['danadesa'];
@@ -1894,8 +4389,16 @@ class Provinsi5a extends BaseController
             'title' => 'Dashboard',
             'page_title' => view('sidesa/layout/user/content-page-title', ['title' => 'Dashboard', 'li_1' => 'Provinsi', 'li_2' => 'Dashboard']),
             'user' => $this->db->table('sidesa_user')->getWhere(['email' => $this->session->get('email_sidesa')])->getRowArray(),
-            'salur_cilacap' => $cilacap_salur,
+            'cilacap_jumlah_salur_reg' => $cilacap_jumlah_salur_reg,
+            'cilacap_jumlah_salur_bltdd' => $cilacap_jumlah_salur_bltdd,
+            'cilacap_jumlah_salur_kph' => $cilacap_jumlah_salur_kph,
+            'cilacap_jumlah_salur_covid' => $cilacap_jumlah_salur_covid,
+            'cilacap_salur_total' => $cilacap_jumlah_salur_reg + $cilacap_jumlah_salur_bltdd + $cilacap_jumlah_salur_kph + $cilacap_jumlah_salur_covid,
             'realisasi_cilacap' => $cilacap_reg + $cilacap_bltdd + $cilacap_kph + $cilacap_covid,
+            'capaian_salur_cilacap_reg' => $capaian_salur_cilacap_reg,
+            'capaian_salur_cilacap_bltdd' => $capaian_salur_cilacap_bltdd,
+            'capaian_salur_cilacap_kph' => $capaian_salur_cilacap_kph,
+            'capaian_salur_cilacap_covid' => $capaian_salur_cilacap_covid,
             'capaian_cilacap_reg' => $capaian_cilacap_reg,
             'capaian_cilacap_bltdd' => $capaian_cilacap_bltdd,
             'capaian_cilacap_kph' => $capaian_cilacap_kph,
@@ -1904,8 +4407,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_cilacap' => $cilacap_bltdd,
             'realisasi_kph_cilacap' => $cilacap_kph,
             'realisasi_covid_cilacap' => $cilacap_covid,
-            'salur_banyumas' => $banyumas_salur,
+            'banyumas_jumlah_salur_reg' => $banyumas_jumlah_salur_reg,
+            'banyumas_jumlah_salur_bltdd' => $banyumas_jumlah_salur_bltdd,
+            'banyumas_jumlah_salur_kph' => $banyumas_jumlah_salur_kph,
+            'banyumas_jumlah_salur_covid' => $banyumas_jumlah_salur_covid,
+            'banyumas_salur_total' => $banyumas_jumlah_salur_reg + $banyumas_jumlah_salur_bltdd + $banyumas_jumlah_salur_kph + $banyumas_jumlah_salur_covid,
             'realisasi_banyumas' => $banyumas_reg + $banyumas_bltdd + $banyumas_kph + $banyumas_covid,
+            'capaian_salur_banyumas_reg' => $capaian_salur_banyumas_reg,
+            'capaian_salur_banyumas_bltdd' => $capaian_salur_banyumas_bltdd,
+            'capaian_salur_banyumas_kph' => $capaian_salur_banyumas_kph,
+            'capaian_salur_banyumas_covid' => $capaian_salur_banyumas_covid,
             'capaian_banyumas_reg' => $capaian_banyumas_reg,
             'capaian_banyumas_bltdd' => $capaian_banyumas_bltdd,
             'capaian_banyumas_kph' => $capaian_banyumas_kph,
@@ -1914,8 +4425,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_banyumas' => $banyumas_bltdd,
             'realisasi_kph_banyumas' => $banyumas_kph,
             'realisasi_covid_banyumas' => $banyumas_covid,
-            'salur_purbalingga' => $purbalingga_salur,
+            'purbalingga_jumlah_salur_reg' => $purbalingga_jumlah_salur_reg,
+            'purbalingga_jumlah_salur_bltdd' => $purbalingga_jumlah_salur_bltdd,
+            'purbalingga_jumlah_salur_kph' => $purbalingga_jumlah_salur_kph,
+            'purbalingga_jumlah_salur_covid' => $purbalingga_jumlah_salur_covid,
+            'purbalingga_salur_total' => $purbalingga_jumlah_salur_reg + $purbalingga_jumlah_salur_bltdd + $purbalingga_jumlah_salur_kph + $purbalingga_jumlah_salur_covid,
             'realisasi_purbalingga' => $purbalingga_reg + $purbalingga_bltdd + $purbalingga_kph + $purbalingga_covid,
+            'capaian_salur_purbalingga_reg' => $capaian_salur_purbalingga_reg,
+            'capaian_salur_purbalingga_bltdd' => $capaian_salur_purbalingga_bltdd,
+            'capaian_salur_purbalingga_kph' => $capaian_salur_purbalingga_kph,
+            'capaian_salur_purbalingga_covid' => $capaian_salur_purbalingga_covid,
             'capaian_purbalingga_reg' => $capaian_purbalingga_reg,
             'capaian_purbalingga_bltdd' => $capaian_purbalingga_bltdd,
             'capaian_purbalingga_kph' => $capaian_purbalingga_kph,
@@ -1924,8 +4443,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_purbalingga' => $purbalingga_bltdd,
             'realisasi_kph_purbalingga' => $purbalingga_kph,
             'realisasi_covid_purbalingga' => $purbalingga_covid,
-            'salur_banjarnegara' => $banjarnegara_salur,
+            'banjarnegara_jumlah_salur_reg' => $banjarnegara_jumlah_salur_reg,
+            'banjarnegara_jumlah_salur_bltdd' => $banjarnegara_jumlah_salur_bltdd,
+            'banjarnegara_jumlah_salur_kph' => $banjarnegara_jumlah_salur_kph,
+            'banjarnegara_jumlah_salur_covid' => $banjarnegara_jumlah_salur_covid,
+            'banjarnegara_salur_total' => $banjarnegara_jumlah_salur_reg + $banjarnegara_jumlah_salur_bltdd + $banjarnegara_jumlah_salur_kph + $banjarnegara_jumlah_salur_covid,
             'realisasi_banjarnegara' => $banjarnegara_reg + $banjarnegara_bltdd + $banjarnegara_kph + $banjarnegara_covid,
+            'capaian_salur_banjarnegara_reg' => $capaian_salur_banjarnegara_reg,
+            'capaian_salur_banjarnegara_bltdd' => $capaian_salur_banjarnegara_bltdd,
+            'capaian_salur_banjarnegara_kph' => $capaian_salur_banjarnegara_kph,
+            'capaian_salur_banjarnegara_covid' => $capaian_salur_banjarnegara_covid,
             'capaian_banjarnegara_reg' => $capaian_banjarnegara_reg,
             'capaian_banjarnegara_bltdd' => $capaian_banjarnegara_bltdd,
             'capaian_banjarnegara_kph' => $capaian_banjarnegara_kph,
@@ -1934,8 +4461,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_banjarnegara' => $banjarnegara_bltdd,
             'realisasi_kph_banjarnegara' => $banjarnegara_kph,
             'realisasi_covid_banjarnegara' => $banjarnegara_covid,
-            'salur_kebumen' => $kebumen_salur,
+            'kebumen_jumlah_salur_reg' => $kebumen_jumlah_salur_reg,
+            'kebumen_jumlah_salur_bltdd' => $kebumen_jumlah_salur_bltdd,
+            'kebumen_jumlah_salur_kph' => $kebumen_jumlah_salur_kph,
+            'kebumen_jumlah_salur_covid' => $kebumen_jumlah_salur_covid,
+            'kebumen_salur_total' => $kebumen_jumlah_salur_reg + $kebumen_jumlah_salur_bltdd + $kebumen_jumlah_salur_kph + $kebumen_jumlah_salur_covid,
             'realisasi_kebumen' => $kebumen_reg + $kebumen_bltdd + $kebumen_kph + $kebumen_covid,
+            'capaian_salur_kebumen_reg' => $capaian_salur_kebumen_reg,
+            'capaian_salur_kebumen_bltdd' => $capaian_salur_kebumen_bltdd,
+            'capaian_salur_kebumen_kph' => $capaian_salur_kebumen_kph,
+            'capaian_salur_kebumen_covid' => $capaian_salur_kebumen_covid,
             'capaian_kebumen_reg' => $capaian_kebumen_reg,
             'capaian_kebumen_bltdd' => $capaian_kebumen_bltdd,
             'capaian_kebumen_kph' => $capaian_kebumen_kph,
@@ -1944,8 +4479,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_kebumen' => $kebumen_bltdd,
             'realisasi_kph_kebumen' => $kebumen_kph,
             'realisasi_covid_kebumen' => $kebumen_covid,
-            'salur_purworejo' => $purworejo_salur,
+            'purworejo_jumlah_salur_reg' => $purworejo_jumlah_salur_reg,
+            'purworejo_jumlah_salur_bltdd' => $purworejo_jumlah_salur_bltdd,
+            'purworejo_jumlah_salur_kph' => $purworejo_jumlah_salur_kph,
+            'purworejo_jumlah_salur_covid' => $purworejo_jumlah_salur_covid,
+            'purworejo_salur_total' => $purworejo_jumlah_salur_reg + $purworejo_jumlah_salur_bltdd + $purworejo_jumlah_salur_kph + $purworejo_jumlah_salur_covid,
             'realisasi_purworejo' => $purworejo_reg + $purworejo_bltdd + $purworejo_kph + $purworejo_covid,
+            'capaian_salur_purworejo_reg' => $capaian_salur_purworejo_reg,
+            'capaian_salur_purworejo_bltdd' => $capaian_salur_purworejo_bltdd,
+            'capaian_salur_purworejo_kph' => $capaian_salur_purworejo_kph,
+            'capaian_salur_purworejo_covid' => $capaian_salur_purworejo_covid,
             'capaian_purworejo_reg' => $capaian_purworejo_reg,
             'capaian_purworejo_bltdd' => $capaian_purworejo_bltdd,
             'capaian_purworejo_kph' => $capaian_purworejo_kph,
@@ -1954,8 +4497,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_purworejo' => $purworejo_bltdd,
             'realisasi_kph_purworejo' => $purworejo_kph,
             'realisasi_covid_purworejo' => $purworejo_covid,
-            'salur_wonosobo' => $wonosobo_salur,
+            'wonosobo_jumlah_salur_reg' => $wonosobo_jumlah_salur_reg,
+            'wonosobo_jumlah_salur_bltdd' => $wonosobo_jumlah_salur_bltdd,
+            'wonosobo_jumlah_salur_kph' => $wonosobo_jumlah_salur_kph,
+            'wonosobo_jumlah_salur_covid' => $wonosobo_jumlah_salur_covid,
+            'wonosobo_salur_total' => $wonosobo_jumlah_salur_reg + $wonosobo_jumlah_salur_bltdd + $wonosobo_jumlah_salur_kph + $wonosobo_jumlah_salur_covid,
             'realisasi_wonosobo' => $wonosobo_reg + $wonosobo_bltdd + $wonosobo_kph + $wonosobo_covid,
+            'capaian_salur_wonosobo_reg' => $capaian_salur_wonosobo_reg,
+            'capaian_salur_wonosobo_bltdd' => $capaian_salur_wonosobo_bltdd,
+            'capaian_salur_wonosobo_kph' => $capaian_salur_wonosobo_kph,
+            'capaian_salur_wonosobo_covid' => $capaian_salur_wonosobo_covid,
             'capaian_wonosobo_reg' => $capaian_wonosobo_reg,
             'capaian_wonosobo_bltdd' => $capaian_wonosobo_bltdd,
             'capaian_wonosobo_kph' => $capaian_wonosobo_kph,
@@ -1964,8 +4515,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_wonosobo' => $wonosobo_bltdd,
             'realisasi_kph_wonosobo' => $wonosobo_kph,
             'realisasi_covid_wonosobo' => $wonosobo_covid,
-            'salur_magelang' => $magelang_salur,
+            'magelang_jumlah_salur_reg' => $magelang_jumlah_salur_reg,
+            'magelang_jumlah_salur_bltdd' => $magelang_jumlah_salur_bltdd,
+            'magelang_jumlah_salur_kph' => $magelang_jumlah_salur_kph,
+            'magelang_jumlah_salur_covid' => $magelang_jumlah_salur_covid,
+            'magelang_salur_total' => $magelang_jumlah_salur_reg + $magelang_jumlah_salur_bltdd + $magelang_jumlah_salur_kph + $magelang_jumlah_salur_covid,
             'realisasi_magelang' => $magelang_reg + $magelang_bltdd + $magelang_kph + $magelang_covid,
+            'capaian_salur_magelang_reg' => $capaian_salur_magelang_reg,
+            'capaian_salur_magelang_bltdd' => $capaian_salur_magelang_bltdd,
+            'capaian_salur_magelang_kph' => $capaian_salur_magelang_kph,
+            'capaian_salur_magelang_covid' => $capaian_salur_magelang_covid,
             'capaian_magelang_reg' => $capaian_magelang_reg,
             'capaian_magelang_bltdd' => $capaian_magelang_bltdd,
             'capaian_magelang_kph' => $capaian_magelang_kph,
@@ -1974,8 +4533,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_magelang' => $magelang_bltdd,
             'realisasi_kph_magelang' => $magelang_kph,
             'realisasi_covid_magelang' => $magelang_covid,
-            'salur_boyolali' => $boyolali_salur,
+            'boyolali_jumlah_salur_reg' => $boyolali_jumlah_salur_reg,
+            'boyolali_jumlah_salur_bltdd' => $boyolali_jumlah_salur_bltdd,
+            'boyolali_jumlah_salur_kph' => $boyolali_jumlah_salur_kph,
+            'boyolali_jumlah_salur_covid' => $boyolali_jumlah_salur_covid,
+            'boyolali_salur_total' => $boyolali_jumlah_salur_reg + $boyolali_jumlah_salur_bltdd + $boyolali_jumlah_salur_kph + $boyolali_jumlah_salur_covid,
             'realisasi_boyolali' => $boyolali_reg + $boyolali_bltdd + $boyolali_kph + $boyolali_covid,
+            'capaian_salur_boyolali_reg' => $capaian_salur_boyolali_reg,
+            'capaian_salur_boyolali_bltdd' => $capaian_salur_boyolali_bltdd,
+            'capaian_salur_boyolali_kph' => $capaian_salur_boyolali_kph,
+            'capaian_salur_boyolali_covid' => $capaian_salur_boyolali_covid,
             'capaian_boyolali_reg' => $capaian_boyolali_reg,
             'capaian_boyolali_bltdd' => $capaian_boyolali_bltdd,
             'capaian_boyolali_kph' => $capaian_boyolali_kph,
@@ -1984,8 +4551,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_boyolali' => $boyolali_bltdd,
             'realisasi_kph_boyolali' => $boyolali_kph,
             'realisasi_covid_boyolali' => $boyolali_covid,
-            'salur_klaten' => $klaten_salur,
+            'klaten_jumlah_salur_reg' => $klaten_jumlah_salur_reg,
+            'klaten_jumlah_salur_bltdd' => $klaten_jumlah_salur_bltdd,
+            'klaten_jumlah_salur_kph' => $klaten_jumlah_salur_kph,
+            'klaten_jumlah_salur_covid' => $klaten_jumlah_salur_covid,
+            'klaten_salur_total' => $klaten_jumlah_salur_reg + $klaten_jumlah_salur_bltdd + $klaten_jumlah_salur_kph + $klaten_jumlah_salur_covid,
             'realisasi_klaten' => $klaten_reg + $klaten_bltdd + $klaten_kph + $klaten_covid,
+            'capaian_salur_klaten_reg' => $capaian_salur_klaten_reg,
+            'capaian_salur_klaten_bltdd' => $capaian_salur_klaten_bltdd,
+            'capaian_salur_klaten_kph' => $capaian_salur_klaten_kph,
+            'capaian_salur_klaten_covid' => $capaian_salur_klaten_covid,
             'capaian_klaten_reg' => $capaian_klaten_reg,
             'capaian_klaten_bltdd' => $capaian_klaten_bltdd,
             'capaian_klaten_kph' => $capaian_klaten_kph,
@@ -1994,8 +4569,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_klaten' => $klaten_bltdd,
             'realisasi_kph_klaten' => $klaten_kph,
             'realisasi_covid_klaten' => $klaten_covid,
-            'salur_sukoharjo' => $sukoharjo_salur,
+            'sukoharjo_jumlah_salur_reg' => $sukoharjo_jumlah_salur_reg,
+            'sukoharjo_jumlah_salur_bltdd' => $sukoharjo_jumlah_salur_bltdd,
+            'sukoharjo_jumlah_salur_kph' => $sukoharjo_jumlah_salur_kph,
+            'sukoharjo_jumlah_salur_covid' => $sukoharjo_jumlah_salur_covid,
+            'sukoharjo_salur_total' => $sukoharjo_jumlah_salur_reg + $sukoharjo_jumlah_salur_bltdd + $sukoharjo_jumlah_salur_kph + $sukoharjo_jumlah_salur_covid,
             'realisasi_sukoharjo' => $sukoharjo_reg + $sukoharjo_bltdd + $sukoharjo_kph + $sukoharjo_covid,
+            'capaian_salur_sukoharjo_reg' => $capaian_salur_sukoharjo_reg,
+            'capaian_salur_sukoharjo_bltdd' => $capaian_salur_sukoharjo_bltdd,
+            'capaian_salur_sukoharjo_kph' => $capaian_salur_sukoharjo_kph,
+            'capaian_salur_sukoharjo_covid' => $capaian_salur_sukoharjo_covid,
             'capaian_sukoharjo_reg' => $capaian_sukoharjo_reg,
             'capaian_sukoharjo_bltdd' => $capaian_sukoharjo_bltdd,
             'capaian_sukoharjo_kph' => $capaian_sukoharjo_kph,
@@ -2004,8 +4587,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_sukoharjo' => $sukoharjo_bltdd,
             'realisasi_kph_sukoharjo' => $sukoharjo_kph,
             'realisasi_covid_sukoharjo' => $sukoharjo_covid,
-            'salur_wonogiri' => $wonogiri_salur,
+            'wonogiri_jumlah_salur_reg' => $wonogiri_jumlah_salur_reg,
+            'wonogiri_jumlah_salur_bltdd' => $wonogiri_jumlah_salur_bltdd,
+            'wonogiri_jumlah_salur_kph' => $wonogiri_jumlah_salur_kph,
+            'wonogiri_jumlah_salur_covid' => $wonogiri_jumlah_salur_covid,
+            'wonogiri_salur_total' => $wonogiri_jumlah_salur_reg + $wonogiri_jumlah_salur_bltdd + $wonogiri_jumlah_salur_kph + $wonogiri_jumlah_salur_covid,
             'realisasi_wonogiri' => $wonogiri_reg + $wonogiri_bltdd + $wonogiri_kph + $wonogiri_covid,
+            'capaian_salur_wonogiri_reg' => $capaian_salur_wonogiri_reg,
+            'capaian_salur_wonogiri_bltdd' => $capaian_salur_wonogiri_bltdd,
+            'capaian_salur_wonogiri_kph' => $capaian_salur_wonogiri_kph,
+            'capaian_salur_wonogiri_covid' => $capaian_salur_wonogiri_covid,
             'capaian_wonogiri_reg' => $capaian_wonogiri_reg,
             'capaian_wonogiri_bltdd' => $capaian_wonogiri_bltdd,
             'capaian_wonogiri_kph' => $capaian_wonogiri_kph,
@@ -2014,8 +4605,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_wonogiri' => $wonogiri_bltdd,
             'realisasi_kph_wonogiri' => $wonogiri_kph,
             'realisasi_covid_wonogiri' => $wonogiri_covid,
-            'salur_karanganyar' => $karanganyar_salur,
+            'karanganyar_jumlah_salur_reg' => $karanganyar_jumlah_salur_reg,
+            'karanganyar_jumlah_salur_bltdd' => $karanganyar_jumlah_salur_bltdd,
+            'karanganyar_jumlah_salur_kph' => $karanganyar_jumlah_salur_kph,
+            'karanganyar_jumlah_salur_covid' => $karanganyar_jumlah_salur_covid,
+            'karanganyar_salur_total' => $karanganyar_jumlah_salur_reg + $karanganyar_jumlah_salur_bltdd + $karanganyar_jumlah_salur_kph + $karanganyar_jumlah_salur_covid,
             'realisasi_karanganyar' => $karanganyar_reg + $karanganyar_bltdd + $karanganyar_kph + $karanganyar_covid,
+            'capaian_salur_karanganyar_reg' => $capaian_salur_karanganyar_reg,
+            'capaian_salur_karanganyar_bltdd' => $capaian_salur_karanganyar_bltdd,
+            'capaian_salur_karanganyar_kph' => $capaian_salur_karanganyar_kph,
+            'capaian_salur_karanganyar_covid' => $capaian_salur_karanganyar_covid,
             'capaian_karanganyar_reg' => $capaian_karanganyar_reg,
             'capaian_karanganyar_bltdd' => $capaian_karanganyar_bltdd,
             'capaian_karanganyar_kph' => $capaian_karanganyar_kph,
@@ -2024,8 +4623,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_karanganyar' => $karanganyar_bltdd,
             'realisasi_kph_karanganyar' => $karanganyar_kph,
             'realisasi_covid_karanganyar' => $karanganyar_covid,
-            'salur_sragen' => $sragen_salur,
+            'sragen_jumlah_salur_reg' => $sragen_jumlah_salur_reg,
+            'sragen_jumlah_salur_bltdd' => $sragen_jumlah_salur_bltdd,
+            'sragen_jumlah_salur_kph' => $sragen_jumlah_salur_kph,
+            'sragen_jumlah_salur_covid' => $sragen_jumlah_salur_covid,
+            'sragen_salur_total' => $sragen_jumlah_salur_reg + $sragen_jumlah_salur_bltdd + $sragen_jumlah_salur_kph + $sragen_jumlah_salur_covid,
             'realisasi_sragen' => $sragen_reg + $sragen_bltdd + $sragen_kph + $sragen_covid,
+            'capaian_salur_sragen_reg' => $capaian_salur_sragen_reg,
+            'capaian_salur_sragen_bltdd' => $capaian_salur_sragen_bltdd,
+            'capaian_salur_sragen_kph' => $capaian_salur_sragen_kph,
+            'capaian_salur_sragen_covid' => $capaian_salur_sragen_covid,
             'capaian_sragen_reg' => $capaian_sragen_reg,
             'capaian_sragen_bltdd' => $capaian_sragen_bltdd,
             'capaian_sragen_kph' => $capaian_sragen_kph,
@@ -2034,8 +4641,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_sragen' => $sragen_bltdd,
             'realisasi_kph_sragen' => $sragen_kph,
             'realisasi_covid_sragen' => $sragen_covid,
-            'salur_grobogan' => $grobogan_salur,
+            'grobogan_jumlah_salur_reg' => $grobogan_jumlah_salur_reg,
+            'grobogan_jumlah_salur_bltdd' => $grobogan_jumlah_salur_bltdd,
+            'grobogan_jumlah_salur_kph' => $grobogan_jumlah_salur_kph,
+            'grobogan_jumlah_salur_covid' => $grobogan_jumlah_salur_covid,
+            'grobogan_salur_total' => $grobogan_jumlah_salur_reg + $grobogan_jumlah_salur_bltdd + $grobogan_jumlah_salur_kph + $grobogan_jumlah_salur_covid,
             'realisasi_grobogan' => $grobogan_reg + $grobogan_bltdd + $grobogan_kph + $grobogan_covid,
+            'capaian_salur_grobogan_reg' => $capaian_salur_grobogan_reg,
+            'capaian_salur_grobogan_bltdd' => $capaian_salur_grobogan_bltdd,
+            'capaian_salur_grobogan_kph' => $capaian_salur_grobogan_kph,
+            'capaian_salur_grobogan_covid' => $capaian_salur_grobogan_covid,
             'capaian_grobogan_reg' => $capaian_grobogan_reg,
             'capaian_grobogan_bltdd' => $capaian_grobogan_bltdd,
             'capaian_grobogan_kph' => $capaian_grobogan_kph,
@@ -2044,8 +4659,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_grobogan' => $grobogan_bltdd,
             'realisasi_kph_grobogan' => $grobogan_kph,
             'realisasi_covid_grobogan' => $grobogan_covid,
-            'salur_blora' => $blora_salur,
+            'blora_jumlah_salur_reg' => $blora_jumlah_salur_reg,
+            'blora_jumlah_salur_bltdd' => $blora_jumlah_salur_bltdd,
+            'blora_jumlah_salur_kph' => $blora_jumlah_salur_kph,
+            'blora_jumlah_salur_covid' => $blora_jumlah_salur_covid,
+            'blora_salur_total' => $blora_jumlah_salur_reg + $blora_jumlah_salur_bltdd + $blora_jumlah_salur_kph + $blora_jumlah_salur_covid,
             'realisasi_blora' => $blora_reg + $blora_bltdd + $blora_kph + $blora_covid,
+            'capaian_salur_blora_reg' => $capaian_salur_blora_reg,
+            'capaian_salur_blora_bltdd' => $capaian_salur_blora_bltdd,
+            'capaian_salur_blora_kph' => $capaian_salur_blora_kph,
+            'capaian_salur_blora_covid' => $capaian_salur_blora_covid,
             'capaian_blora_reg' => $capaian_blora_reg,
             'capaian_blora_bltdd' => $capaian_blora_bltdd,
             'capaian_blora_kph' => $capaian_blora_kph,
@@ -2054,8 +4677,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_blora' => $blora_bltdd,
             'realisasi_kph_blora' => $blora_kph,
             'realisasi_covid_blora' => $blora_covid,
-            'salur_rembang' => $rembang_salur,
+            'rembang_jumlah_salur_reg' => $rembang_jumlah_salur_reg,
+            'rembang_jumlah_salur_bltdd' => $rembang_jumlah_salur_bltdd,
+            'rembang_jumlah_salur_kph' => $rembang_jumlah_salur_kph,
+            'rembang_jumlah_salur_covid' => $rembang_jumlah_salur_covid,
+            'rembang_salur_total' => $rembang_jumlah_salur_reg + $rembang_jumlah_salur_bltdd + $rembang_jumlah_salur_kph + $rembang_jumlah_salur_covid,
             'realisasi_rembang' => $rembang_reg + $rembang_bltdd + $rembang_kph + $rembang_covid,
+            'capaian_salur_rembang_reg' => $capaian_salur_rembang_reg,
+            'capaian_salur_rembang_bltdd' => $capaian_salur_rembang_bltdd,
+            'capaian_salur_rembang_kph' => $capaian_salur_rembang_kph,
+            'capaian_salur_rembang_covid' => $capaian_salur_rembang_covid,
             'capaian_rembang_reg' => $capaian_rembang_reg,
             'capaian_rembang_bltdd' => $capaian_rembang_bltdd,
             'capaian_rembang_kph' => $capaian_rembang_kph,
@@ -2064,8 +4695,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_rembang' => $rembang_bltdd,
             'realisasi_kph_rembang' => $rembang_kph,
             'realisasi_covid_rembang' => $rembang_covid,
-            'salur_pati' => $pati_salur,
+            'pati_jumlah_salur_reg' => $pati_jumlah_salur_reg,
+            'pati_jumlah_salur_bltdd' => $pati_jumlah_salur_bltdd,
+            'pati_jumlah_salur_kph' => $pati_jumlah_salur_kph,
+            'pati_jumlah_salur_covid' => $pati_jumlah_salur_covid,
+            'pati_salur_total' => $pati_jumlah_salur_reg + $pati_jumlah_salur_bltdd + $pati_jumlah_salur_kph + $pati_jumlah_salur_covid,
             'realisasi_pati' => $pati_reg + $pati_bltdd + $pati_kph + $pati_covid,
+            'capaian_salur_pati_reg' => $capaian_salur_pati_reg,
+            'capaian_salur_pati_bltdd' => $capaian_salur_pati_bltdd,
+            'capaian_salur_pati_kph' => $capaian_salur_pati_kph,
+            'capaian_salur_pati_covid' => $capaian_salur_pati_covid,
             'capaian_pati_reg' => $capaian_pati_reg,
             'capaian_pati_bltdd' => $capaian_pati_bltdd,
             'capaian_pati_kph' => $capaian_pati_kph,
@@ -2074,8 +4713,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_pati' => $pati_bltdd,
             'realisasi_kph_pati' => $pati_kph,
             'realisasi_covid_pati' => $pati_covid,
-            'salur_kudus' => $kudus_salur,
+            'kudus_jumlah_salur_reg' => $kudus_jumlah_salur_reg,
+            'kudus_jumlah_salur_bltdd' => $kudus_jumlah_salur_bltdd,
+            'kudus_jumlah_salur_kph' => $kudus_jumlah_salur_kph,
+            'kudus_jumlah_salur_covid' => $kudus_jumlah_salur_covid,
+            'kudus_salur_total' => $kudus_jumlah_salur_reg + $kudus_jumlah_salur_bltdd + $kudus_jumlah_salur_kph + $kudus_jumlah_salur_covid,
             'realisasi_kudus' => $kudus_reg + $kudus_bltdd + $kudus_kph + $kudus_covid,
+            'capaian_salur_kudus_reg' => $capaian_salur_kudus_reg,
+            'capaian_salur_kudus_bltdd' => $capaian_salur_kudus_bltdd,
+            'capaian_salur_kudus_kph' => $capaian_salur_kudus_kph,
+            'capaian_salur_kudus_covid' => $capaian_salur_kudus_covid,
             'capaian_kudus_reg' => $capaian_kudus_reg,
             'capaian_kudus_bltdd' => $capaian_kudus_bltdd,
             'capaian_kudus_kph' => $capaian_kudus_kph,
@@ -2084,8 +4731,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_kudus' => $kudus_bltdd,
             'realisasi_kph_kudus' => $kudus_kph,
             'realisasi_covid_kudus' => $kudus_covid,
-            'salur_jepara' => $jepara_salur,
+            'jepara_jumlah_salur_reg' => $jepara_jumlah_salur_reg,
+            'jepara_jumlah_salur_bltdd' => $jepara_jumlah_salur_bltdd,
+            'jepara_jumlah_salur_kph' => $jepara_jumlah_salur_kph,
+            'jepara_jumlah_salur_covid' => $jepara_jumlah_salur_covid,
+            'jepara_salur_total' => $jepara_jumlah_salur_reg + $jepara_jumlah_salur_bltdd + $jepara_jumlah_salur_kph + $jepara_jumlah_salur_covid,
             'realisasi_jepara' => $jepara_reg + $jepara_bltdd + $jepara_kph + $jepara_covid,
+            'capaian_salur_jepara_reg' => $capaian_salur_jepara_reg,
+            'capaian_salur_jepara_bltdd' => $capaian_salur_jepara_bltdd,
+            'capaian_salur_jepara_kph' => $capaian_salur_jepara_kph,
+            'capaian_salur_jepara_covid' => $capaian_salur_jepara_covid,
             'capaian_jepara_reg' => $capaian_jepara_reg,
             'capaian_jepara_bltdd' => $capaian_jepara_bltdd,
             'capaian_jepara_kph' => $capaian_jepara_kph,
@@ -2094,8 +4749,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_jepara' => $jepara_bltdd,
             'realisasi_kph_jepara' => $jepara_kph,
             'realisasi_covid_jepara' => $jepara_covid,
-            'salur_demak' => $demak_salur,
+            'demak_jumlah_salur_reg' => $demak_jumlah_salur_reg,
+            'demak_jumlah_salur_bltdd' => $demak_jumlah_salur_bltdd,
+            'demak_jumlah_salur_kph' => $demak_jumlah_salur_kph,
+            'demak_jumlah_salur_covid' => $demak_jumlah_salur_covid,
+            'demak_salur_total' => $demak_jumlah_salur_reg + $demak_jumlah_salur_bltdd + $demak_jumlah_salur_kph + $demak_jumlah_salur_covid,
             'realisasi_demak' => $demak_reg + $demak_bltdd + $demak_kph + $demak_covid,
+            'capaian_salur_demak_reg' => $capaian_salur_demak_reg,
+            'capaian_salur_demak_bltdd' => $capaian_salur_demak_bltdd,
+            'capaian_salur_demak_kph' => $capaian_salur_demak_kph,
+            'capaian_salur_demak_covid' => $capaian_salur_demak_covid,
             'capaian_demak_reg' => $capaian_demak_reg,
             'capaian_demak_bltdd' => $capaian_demak_bltdd,
             'capaian_demak_kph' => $capaian_demak_kph,
@@ -2104,8 +4767,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_demak' => $demak_bltdd,
             'realisasi_kph_demak' => $demak_kph,
             'realisasi_covid_demak' => $demak_covid,
-            'salur_semarang' => $semarang_salur,
+            'semarang_jumlah_salur_reg' => $semarang_jumlah_salur_reg,
+            'semarang_jumlah_salur_bltdd' => $semarang_jumlah_salur_bltdd,
+            'semarang_jumlah_salur_kph' => $semarang_jumlah_salur_kph,
+            'semarang_jumlah_salur_covid' => $semarang_jumlah_salur_covid,
+            'semarang_salur_total' => $semarang_jumlah_salur_reg + $semarang_jumlah_salur_bltdd + $semarang_jumlah_salur_kph + $semarang_jumlah_salur_covid,
             'realisasi_semarang' => $semarang_reg + $semarang_bltdd + $semarang_kph + $semarang_covid,
+            'capaian_salur_semarang_reg' => $capaian_salur_semarang_reg,
+            'capaian_salur_semarang_bltdd' => $capaian_salur_semarang_bltdd,
+            'capaian_salur_semarang_kph' => $capaian_salur_semarang_kph,
+            'capaian_salur_semarang_covid' => $capaian_salur_semarang_covid,
             'capaian_semarang_reg' => $capaian_semarang_reg,
             'capaian_semarang_bltdd' => $capaian_semarang_bltdd,
             'capaian_semarang_kph' => $capaian_semarang_kph,
@@ -2114,8 +4785,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_semarang' => $semarang_bltdd,
             'realisasi_kph_semarang' => $semarang_kph,
             'realisasi_covid_semarang' => $semarang_covid,
-            'salur_temanggung' => $temanggung_salur,
+            'temanggung_jumlah_salur_reg' => $temanggung_jumlah_salur_reg,
+            'temanggung_jumlah_salur_bltdd' => $temanggung_jumlah_salur_bltdd,
+            'temanggung_jumlah_salur_kph' => $temanggung_jumlah_salur_kph,
+            'temanggung_jumlah_salur_covid' => $temanggung_jumlah_salur_covid,
+            'temanggung_salur_total' => $temanggung_jumlah_salur_reg + $temanggung_jumlah_salur_bltdd + $temanggung_jumlah_salur_kph + $temanggung_jumlah_salur_covid,
             'realisasi_temanggung' => $temanggung_reg + $temanggung_bltdd + $temanggung_kph + $temanggung_covid,
+            'capaian_salur_temanggung_reg' => $capaian_salur_temanggung_reg,
+            'capaian_salur_temanggung_bltdd' => $capaian_salur_temanggung_bltdd,
+            'capaian_salur_temanggung_kph' => $capaian_salur_temanggung_kph,
+            'capaian_salur_temanggung_covid' => $capaian_salur_temanggung_covid,
             'capaian_temanggung_reg' => $capaian_temanggung_reg,
             'capaian_temanggung_bltdd' => $capaian_temanggung_bltdd,
             'capaian_temanggung_kph' => $capaian_temanggung_kph,
@@ -2124,8 +4803,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_temanggung' => $temanggung_bltdd,
             'realisasi_kph_temanggung' => $temanggung_kph,
             'realisasi_covid_temanggung' => $temanggung_covid,
-            'salur_kendal' => $kendal_salur,
+            'kendal_jumlah_salur_reg' => $kendal_jumlah_salur_reg,
+            'kendal_jumlah_salur_bltdd' => $kendal_jumlah_salur_bltdd,
+            'kendal_jumlah_salur_kph' => $kendal_jumlah_salur_kph,
+            'kendal_jumlah_salur_covid' => $kendal_jumlah_salur_covid,
+            'kendal_salur_total' => $kendal_jumlah_salur_reg + $kendal_jumlah_salur_bltdd + $kendal_jumlah_salur_kph + $kendal_jumlah_salur_covid,
             'realisasi_kendal' => $kendal_reg + $kendal_bltdd + $kendal_kph + $kendal_covid,
+            'capaian_salur_kendal_reg' => $capaian_salur_kendal_reg,
+            'capaian_salur_kendal_bltdd' => $capaian_salur_kendal_bltdd,
+            'capaian_salur_kendal_kph' => $capaian_salur_kendal_kph,
+            'capaian_salur_kendal_covid' => $capaian_salur_kendal_covid,
             'capaian_kendal_reg' => $capaian_kendal_reg,
             'capaian_kendal_bltdd' => $capaian_kendal_bltdd,
             'capaian_kendal_kph' => $capaian_kendal_kph,
@@ -2134,8 +4821,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_kendal' => $kendal_bltdd,
             'realisasi_kph_kendal' => $kendal_kph,
             'realisasi_covid_kendal' => $kendal_covid,
-            'salur_batang' => $batang_salur,
+            'batang_jumlah_salur_reg' => $batang_jumlah_salur_reg,
+            'batang_jumlah_salur_bltdd' => $batang_jumlah_salur_bltdd,
+            'batang_jumlah_salur_kph' => $batang_jumlah_salur_kph,
+            'batang_jumlah_salur_covid' => $batang_jumlah_salur_covid,
+            'batang_salur_total' => $batang_jumlah_salur_reg + $batang_jumlah_salur_bltdd + $batang_jumlah_salur_kph + $batang_jumlah_salur_covid,
             'realisasi_batang' => $batang_reg + $batang_bltdd + $batang_kph + $batang_covid,
+            'capaian_salur_batang_reg' => $capaian_salur_batang_reg,
+            'capaian_salur_batang_bltdd' => $capaian_salur_batang_bltdd,
+            'capaian_salur_batang_kph' => $capaian_salur_batang_kph,
+            'capaian_salur_batang_covid' => $capaian_salur_batang_covid,
             'capaian_batang_reg' => $capaian_batang_reg,
             'capaian_batang_bltdd' => $capaian_batang_bltdd,
             'capaian_batang_kph' => $capaian_batang_kph,
@@ -2144,8 +4839,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_batang' => $batang_bltdd,
             'realisasi_kph_batang' => $batang_kph,
             'realisasi_covid_batang' => $batang_covid,
-            'salur_pekalongan' => $pekalongan_salur,
+            'pekalongan_jumlah_salur_reg' => $pekalongan_jumlah_salur_reg,
+            'pekalongan_jumlah_salur_bltdd' => $pekalongan_jumlah_salur_bltdd,
+            'pekalongan_jumlah_salur_kph' => $pekalongan_jumlah_salur_kph,
+            'pekalongan_jumlah_salur_covid' => $pekalongan_jumlah_salur_covid,
+            'pekalongan_salur_total' => $pekalongan_jumlah_salur_reg + $pekalongan_jumlah_salur_bltdd + $pekalongan_jumlah_salur_kph + $pekalongan_jumlah_salur_covid,
             'realisasi_pekalongan' => $pekalongan_reg + $pekalongan_bltdd + $pekalongan_kph + $pekalongan_covid,
+            'capaian_salur_pekalongan_reg' => $capaian_salur_pekalongan_reg,
+            'capaian_salur_pekalongan_bltdd' => $capaian_salur_pekalongan_bltdd,
+            'capaian_salur_pekalongan_kph' => $capaian_salur_pekalongan_kph,
+            'capaian_salur_pekalongan_covid' => $capaian_salur_pekalongan_covid,
             'capaian_pekalongan_reg' => $capaian_pekalongan_reg,
             'capaian_pekalongan_bltdd' => $capaian_pekalongan_bltdd,
             'capaian_pekalongan_kph' => $capaian_pekalongan_kph,
@@ -2154,8 +4857,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_pekalongan' => $pekalongan_bltdd,
             'realisasi_kph_pekalongan' => $pekalongan_kph,
             'realisasi_covid_pekalongan' => $pekalongan_covid,
-            'salur_pemalang' => $pemalang_salur,
+            'pemalang_jumlah_salur_reg' => $pemalang_jumlah_salur_reg,
+            'pemalang_jumlah_salur_bltdd' => $pemalang_jumlah_salur_bltdd,
+            'pemalang_jumlah_salur_kph' => $pemalang_jumlah_salur_kph,
+            'pemalang_jumlah_salur_covid' => $pemalang_jumlah_salur_covid,
+            'pemalang_salur_total' => $pemalang_jumlah_salur_reg + $pemalang_jumlah_salur_bltdd + $pemalang_jumlah_salur_kph + $pemalang_jumlah_salur_covid,
             'realisasi_pemalang' => $pemalang_reg + $pemalang_bltdd + $pemalang_kph + $pemalang_covid,
+            'capaian_salur_pemalang_reg' => $capaian_salur_pemalang_reg,
+            'capaian_salur_pemalang_bltdd' => $capaian_salur_pemalang_bltdd,
+            'capaian_salur_pemalang_kph' => $capaian_salur_pemalang_kph,
+            'capaian_salur_pemalang_covid' => $capaian_salur_pemalang_covid,
             'capaian_pemalang_reg' => $capaian_pemalang_reg,
             'capaian_pemalang_bltdd' => $capaian_pemalang_bltdd,
             'capaian_pemalang_kph' => $capaian_pemalang_kph,
@@ -2164,8 +4875,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_pemalang' => $pemalang_bltdd,
             'realisasi_kph_pemalang' => $pemalang_kph,
             'realisasi_covid_pemalang' => $pemalang_covid,
-            'salur_tegal' => $tegal_salur,
+            'tegal_jumlah_salur_reg' => $tegal_jumlah_salur_reg,
+            'tegal_jumlah_salur_bltdd' => $tegal_jumlah_salur_bltdd,
+            'tegal_jumlah_salur_kph' => $tegal_jumlah_salur_kph,
+            'tegal_jumlah_salur_covid' => $tegal_jumlah_salur_covid,
+            'tegal_salur_total' => $tegal_jumlah_salur_reg + $tegal_jumlah_salur_bltdd + $tegal_jumlah_salur_kph + $tegal_jumlah_salur_covid,
             'realisasi_tegal' => $tegal_reg + $tegal_bltdd + $tegal_kph + $tegal_covid,
+            'capaian_salur_tegal_reg' => $capaian_salur_tegal_reg,
+            'capaian_salur_tegal_bltdd' => $capaian_salur_tegal_bltdd,
+            'capaian_salur_tegal_kph' => $capaian_salur_tegal_kph,
+            'capaian_salur_tegal_covid' => $capaian_salur_tegal_covid,
             'capaian_tegal_reg' => $capaian_tegal_reg,
             'capaian_tegal_bltdd' => $capaian_tegal_bltdd,
             'capaian_tegal_kph' => $capaian_tegal_kph,
@@ -2174,8 +4893,16 @@ class Provinsi5a extends BaseController
             'realisasi_bltdd_tegal' => $tegal_bltdd,
             'realisasi_kph_tegal' => $tegal_kph,
             'realisasi_covid_tegal' => $tegal_covid,
-            'salur_brebes' => $brebes_salur,
+            'brebes_jumlah_salur_reg' => $brebes_jumlah_salur_reg,
+            'brebes_jumlah_salur_bltdd' => $brebes_jumlah_salur_bltdd,
+            'brebes_jumlah_salur_kph' => $brebes_jumlah_salur_kph,
+            'brebes_jumlah_salur_covid' => $brebes_jumlah_salur_covid,
+            'brebes_salur_total' => $brebes_jumlah_salur_reg + $brebes_jumlah_salur_bltdd + $brebes_jumlah_salur_kph + $brebes_jumlah_salur_covid,
             'realisasi_brebes' => $brebes_reg + $brebes_bltdd + $brebes_kph + $brebes_covid,
+            'capaian_salur_brebes_reg' => $capaian_salur_brebes_reg,
+            'capaian_salur_brebes_bltdd' => $capaian_salur_brebes_bltdd,
+            'capaian_salur_brebes_kph' => $capaian_salur_brebes_kph,
+            'capaian_salur_brebes_covid' => $capaian_salur_brebes_covid,
             'capaian_brebes_reg' => $capaian_brebes_reg,
             'capaian_brebes_bltdd' => $capaian_brebes_bltdd,
             'capaian_brebes_kph' => $capaian_brebes_kph,

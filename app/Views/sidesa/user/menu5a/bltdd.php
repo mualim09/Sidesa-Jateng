@@ -25,10 +25,10 @@
                 height: 100%;
             }
         </style>
-        <!-- Page Heading -->
 
+        <!-- Page Heading -->
         <?= session()->getFlashdata('message'); ?>
-        <?php if (isset($danadesa['danadesa'], $jumlah_realisasi) && $grand_total_realisasi < $jumlah_salur) : ?>
+        <?php if (isset($danadesa['danadesa'], $jumlah_realisasi) && $jumlah_realisasi < $jumlah_salur_bltdd) : ?>
             <table>
                 <tr>
                     <td><small class="form-text"><i>Dana Desa</i></small></td>
@@ -38,7 +38,7 @@
                 <tr>
                     <td><small class="form-text"><i>Total Salur</i></small></td>
                     <td><small><i>:</i></small></td>
-                    <td><small><i>Rp. <?= isset($jumlah_salur) ? number_format($jumlah_salur, 0, '', '.') : ''; ?></i></small></td>
+                    <td><small><i>Rp. <?= isset($grand_total_salur) ? number_format($grand_total_salur, 0, '', '.') : ''; ?></i></small></td>
                 </tr>
                 <tr>
                     <td><small class="form-text"><i>Total Realisasi</i></small></td>
@@ -60,7 +60,7 @@
                     <thead>
                         <hr>
                         <tr>
-                            <th scope="col" rowspan="2" style="text-align: center; vertical-align: middle;">Reguler <?= $bltdd['persentase']; ?>% (Rp)</th>
+                            <th scope="col" rowspan="2" style="text-align: center; vertical-align: middle;">Salur (Rp)</th>
                             <th scope="col" rowspan="2" style="text-align: center; vertical-align: middle;">Realisasi (Rp)</th>
                             <th scope="col" colspan="13" style="text-align: center; vertical-align: middle;">Realisasi BLTDD <b style="color: crimson;">(Rp. <?= number_format($danadesa['bantuan_per_kpm'], 0, '', '.'); ?> / KPM)</b> - Berdasarkan bulan</th>
                         </tr>
@@ -75,8 +75,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="col" style="text-align: center; vertical-align: middle;"><?= number_format($danadesa['danadesa'] * $bltdd['persentase'] / 100, 0, '', '.'); ?></th>
-                            <td scope="col" <?php if ($danadesa['danadesa'] * $bltdd['persentase'] / 100 > $jumlah_realisasi) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa['danadesa'] * $bltdd['persentase'] / 100 == $jumlah_realisasi) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($jumlah_realisasi, 0, '', '.'); ?></td>
+                            <th scope="col" style="text-align: center; vertical-align: middle;"><?= number_format($jumlah_salur_bltdd, 0, '', '.'); ?></th>
+                            <td scope="col" <?php if ($jumlah_salur_bltdd > $jumlah_realisasi) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($jumlah_salur_bltdd == $jumlah_realisasi) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($jumlah_realisasi, 0, '', '.'); ?></td>
 
                             <!-- inputan realisasi reguler -->
                             <td scope="col" style="text-align: center; vertical-align: middle;">
@@ -103,7 +103,7 @@
                 <table class="table table-hover table-sm mt-3">
                     <thead>
                         <tr>
-                            <th scope="col" rowspan="2" style="text-align: center; vertical-align: middle; opacity:0">Reguler <?= $bltdd['persentase']; ?>% (Rp)</th>
+                            <th scope="col" rowspan="2" style="text-align: center; vertical-align: middle; opacity:0">Salur (Rp)</th>
                             <th scope="col" rowspan="2" style="text-align: center; vertical-align: middle; opacity:0">Realisasi (Rp)</th>
                         </tr>
                         <tr>

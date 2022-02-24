@@ -103,7 +103,7 @@
                 <table class="table table-hover table-sm mt-3">
                     <thead>
                         <tr>
-                            <th scope="col" rowspan="2" style="text-align: center; vertical-align: middle; opacity:0">Reguler <?= $reguler['persentase']; ?>% (Rp)</th>
+                            <th scope="col" rowspan="2" style="text-align: center; vertical-align: middle; opacity:0">Salur (Rp)</th>
                             <th scope="col" rowspan="2" style="text-align: center; vertical-align: middle; opacity:0">Realisasi (Rp)</th>
                         </tr>
                         <tr>
@@ -117,8 +117,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="col" style="text-align: center; vertical-align: middle; opacity:0"><?= number_format($danadesa['danadesa'] * $reguler['persentase'] / 100, 0, '', '.'); ?></th>
-                            <td scope="col" <?php if ($danadesa['danadesa'] * $reguler['persentase'] / 100 > $jumlah_realisasi) : ?> style="color: red; vertical-align: middle; text-align: center; opacity:0" <?php elseif ($danadesa['danadesa'] <= $jumlah_realisasi) : ?> style="color: green; vertical-align: middle; text-align: center; opacity:0" <?php else : ?> style="vertical-align: middle; text-align: center; opacity:0" <?php endif; ?>><?= number_format($jumlah_realisasi, 0, '', '.'); ?></td>
+                            <th scope="col" style="text-align: center; vertical-align: middle; opacity:0"><?= number_format($jumlah_salur_reg, 0, '', '.'); ?></th>
+                            <td scope="col" <?php if ($jumlah_salur_reg > $jumlah_realisasi) : ?> style="color: red; vertical-align: middle; text-align: center; opacity:0" <?php elseif ($jumlah_salur_reg == $jumlah_realisasi) : ?> style="color: green; vertical-align: middle; text-align: center; opacity:0" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center; opacity:0" <?php endif; ?> /><?= number_format($jumlah_realisasi, 0, '', '.'); ?></td>
 
                             <!-- inputan realisasi reguler -->
                             <td scope="col" style="text-align: center; vertical-align: middle;">

@@ -64,21 +64,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[0]['danadesa'], $salur_cilacap)) : ?>
+                        <?php if ($danadesa[0]['danadesa'] != 0 && $salur_cilacap != 0) : ?>
                             <td scope="col" <?php if ($danadesa[0]['danadesa'] > $salur_cilacap) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[0]['danadesa'] == $salur_cilacap) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_cilacap, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_cilacap, $realisasi_cilacap)) : ?>
+                        <?php if ($realisasi_cilacap != 0 && $salur_cilacap != 0) : ?>
                             <td scope="col" <?php if ($salur_cilacap > $realisasi_cilacap) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_cilacap == $realisasi_cilacap) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_cilacap, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_cilacap, $salur_cilacap)) : ?>
+                        <?php if ($realisasi_cilacap != 0 && $salur_cilacap != 0) : ?>
                             <td scope="col" <?php if ($salur_cilacap > $realisasi_cilacap) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_cilacap == $realisasi_cilacap) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_cilacap / $salur_cilacap * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -100,21 +100,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[1]['danadesa'], $salur_banyumas)) : ?>
+                        <?php if ($danadesa[1]['danadesa'] != 0 && $salur_banyumas != 0) : ?>
                             <td scope="col" <?php if ($danadesa[1]['danadesa'] > $salur_banyumas) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[1]['danadesa'] == $salur_banyumas) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_banyumas, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_banyumas, $realisasi_banyumas)) : ?>
+                        <?php if ($realisasi_banyumas != 0 && $salur_banyumas != 0) : ?>
                             <td scope="col" <?php if ($salur_banyumas > $realisasi_banyumas) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_banyumas == $realisasi_banyumas) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_banyumas, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_banyumas, $salur_banyumas)) : ?>
+                        <?php if ($realisasi_banyumas != 0 && $salur_banyumas != 0) : ?>
                             <td scope="col" <?php if ($salur_banyumas > $realisasi_banyumas) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_banyumas == $realisasi_banyumas) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_banyumas / $salur_banyumas * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -136,21 +136,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[2]['danadesa'], $salur_purbalingga)) : ?>
+                        <?php if ($danadesa[2]['danadesa'] != 0 && $salur_purbalingga != 0) : ?>
                             <td scope="col" <?php if ($danadesa[2]['danadesa'] > $salur_purbalingga) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[2]['danadesa'] == $salur_purbalingga) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_purbalingga, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_purbalingga, $realisasi_purbalingga)) : ?>
+                        <?php if ($realisasi_purbalingga != 0 && $salur_purbalingga != 0) : ?>
                             <td scope="col" <?php if ($salur_purbalingga > $realisasi_purbalingga) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_purbalingga == $realisasi_purbalingga) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_purbalingga, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_purbalingga, $salur_purbalingga)) : ?>
+                        <?php if ($realisasi_purbalingga != 0 && $salur_purbalingga != 0) : ?>
                             <td scope="col" <?php if ($salur_purbalingga > $realisasi_purbalingga) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_purbalingga == $realisasi_purbalingga) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_purbalingga / $salur_purbalingga * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -172,21 +172,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[3]['danadesa'], $salur_banjarnegara)) : ?>
+                        <?php if ($danadesa[3]['danadesa'] != 0 && $salur_banjarnegara != 0) : ?>
                             <td scope="col" <?php if ($danadesa[3]['danadesa'] > $salur_banjarnegara) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[3]['danadesa'] == $salur_banjarnegara) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_banjarnegara, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_banjarnegara, $realisasi_banjarnegara)) : ?>
+                        <?php if ($realisasi_banjarnegara != 0 && $salur_banjarnegara != 0) : ?>
                             <td scope="col" <?php if ($salur_banjarnegara > $realisasi_banjarnegara) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_banjarnegara == $realisasi_banjarnegara) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_banjarnegara, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_banjarnegara, $salur_banjarnegara)) : ?>
+                        <?php if ($realisasi_banjarnegara != 0 && $salur_banjarnegara != 0) : ?>
                             <td scope="col" <?php if ($salur_banjarnegara > $realisasi_banjarnegara) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_banjarnegara == $realisasi_banjarnegara) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_banjarnegara / $salur_banjarnegara * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -208,21 +208,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[4]['danadesa'], $salur_kebumen)) : ?>
+                        <?php if ($danadesa[4]['danadesa'] != 0 && $salur_kebumen != 0) : ?>
                             <td scope="col" <?php if ($danadesa[4]['danadesa'] > $salur_kebumen) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[4]['danadesa'] == $salur_kebumen) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_kebumen, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_kebumen, $realisasi_kebumen)) : ?>
+                        <?php if ($realisasi_kebumen != 0 && $salur_kebumen != 0) : ?>
                             <td scope="col" <?php if ($salur_kebumen > $realisasi_kebumen) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_kebumen == $realisasi_kebumen) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_kebumen, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_kebumen, $salur_kebumen)) : ?>
+                        <?php if ($realisasi_kebumen != 0 && $salur_kebumen != 0) : ?>
                             <td scope="col" <?php if ($salur_kebumen > $realisasi_kebumen) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_kebumen == $realisasi_kebumen) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_kebumen / $salur_kebumen * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -244,21 +244,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[5]['danadesa'], $salur_purworejo)) : ?>
+                        <?php if ($danadesa[5]['danadesa'] != 0 && $salur_purworejo != 0) : ?>
                             <td scope="col" <?php if ($danadesa[5]['danadesa'] > $salur_purworejo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[5]['danadesa'] == $salur_purworejo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_purworejo, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_purworejo, $realisasi_purworejo)) : ?>
+                        <?php if ($realisasi_purworejo != 0 && $salur_purworejo != 0) : ?>
                             <td scope="col" <?php if ($salur_purworejo > $realisasi_purworejo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_purworejo == $realisasi_purworejo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_purworejo, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_purworejo, $salur_purworejo)) : ?>
+                        <?php if ($realisasi_purworejo != 0 && $salur_purworejo != 0) : ?>
                             <td scope="col" <?php if ($salur_purworejo > $realisasi_purworejo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_purworejo == $realisasi_purworejo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_purworejo / $salur_purworejo * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -280,21 +280,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[6]['danadesa'], $salur_wonosobo)) : ?>
+                        <?php if ($danadesa[6]['danadesa'] != 0 && $salur_wonosobo != 0) : ?>
                             <td scope="col" <?php if ($danadesa[6]['danadesa'] > $salur_wonosobo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[6]['danadesa'] == $salur_wonosobo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_wonosobo, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_wonosobo, $realisasi_wonosobo)) : ?>
+                        <?php if ($realisasi_wonosobo != 0 && $salur_wonosobo != 0) : ?>
                             <td scope="col" <?php if ($salur_wonosobo > $realisasi_wonosobo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_wonosobo == $realisasi_wonosobo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_wonosobo, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_wonosobo, $salur_wonosobo)) : ?>
+                        <?php if ($realisasi_wonosobo != 0 && $salur_wonosobo != 0) : ?>
                             <td scope="col" <?php if ($salur_wonosobo > $realisasi_wonosobo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_wonosobo == $realisasi_wonosobo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_wonosobo / $salur_wonosobo * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -316,21 +316,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[7]['danadesa'], $salur_magelang)) : ?>
+                        <?php if ($danadesa[7]['danadesa'] != 0 && $salur_magelang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[7]['danadesa'] > $salur_magelang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[7]['danadesa'] == $salur_magelang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_magelang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_magelang, $realisasi_magelang)) : ?>
+                        <?php if ($realisasi_magelang != 0 && $salur_magelang != 0) : ?>
                             <td scope="col" <?php if ($salur_magelang > $realisasi_magelang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_magelang == $realisasi_magelang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_magelang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_magelang, $salur_magelang)) : ?>
+                        <?php if ($realisasi_magelang != 0 && $salur_magelang != 0) : ?>
                             <td scope="col" <?php if ($salur_magelang > $realisasi_magelang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_magelang == $realisasi_magelang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_magelang / $salur_magelang * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -352,21 +352,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[8]['danadesa'], $salur_boyolali)) : ?>
+                        <?php if ($danadesa[8]['danadesa'] != 0 && $salur_boyolali != 0) : ?>
                             <td scope="col" <?php if ($danadesa[8]['danadesa'] > $salur_boyolali) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[8]['danadesa'] == $salur_boyolali) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_boyolali, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_boyolali, $realisasi_boyolali)) : ?>
+                        <?php if ($realisasi_boyolali != 0 && $salur_boyolali != 0) : ?>
                             <td scope="col" <?php if ($salur_boyolali > $realisasi_boyolali) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_boyolali == $realisasi_boyolali) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_boyolali, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_boyolali, $salur_boyolali)) : ?>
+                        <?php if ($realisasi_boyolali != 0 && $salur_boyolali != 0) : ?>
                             <td scope="col" <?php if ($salur_boyolali > $realisasi_boyolali) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_boyolali == $realisasi_boyolali) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_boyolali / $salur_boyolali * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -388,21 +388,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[9]['danadesa'], $salur_klaten)) : ?>
+                        <?php if ($danadesa[9]['danadesa'] != 0 && $salur_klaten != 0) : ?>
                             <td scope="col" <?php if ($danadesa[9]['danadesa'] > $salur_klaten) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[9]['danadesa'] == $salur_klaten) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_klaten, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_klaten, $realisasi_klaten)) : ?>
+                        <?php if ($realisasi_klaten != 0 && $salur_klaten != 0) : ?>
                             <td scope="col" <?php if ($salur_klaten > $realisasi_klaten) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_klaten == $realisasi_klaten) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_klaten, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_klaten, $salur_klaten)) : ?>
+                        <?php if ($realisasi_klaten != 0 && $salur_klaten != 0) : ?>
                             <td scope="col" <?php if ($salur_klaten > $realisasi_klaten) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_klaten == $realisasi_klaten) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_klaten / $salur_klaten * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -424,21 +424,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[10]['danadesa'], $salur_sukoharjo)) : ?>
+                        <?php if ($danadesa[10]['danadesa'] != 0 && $salur_sukoharjo != 0) : ?>
                             <td scope="col" <?php if ($danadesa[10]['danadesa'] > $salur_sukoharjo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[10]['danadesa'] == $salur_sukoharjo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_sukoharjo, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_sukoharjo, $realisasi_sukoharjo)) : ?>
+                        <?php if ($realisasi_sukoharjo != 0 && $salur_sukoharjo != 0) : ?>
                             <td scope="col" <?php if ($salur_sukoharjo > $realisasi_sukoharjo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_sukoharjo == $realisasi_sukoharjo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_sukoharjo, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_sukoharjo, $salur_sukoharjo)) : ?>
+                        <?php if ($realisasi_sukoharjo != 0 && $salur_sukoharjo != 0) : ?>
                             <td scope="col" <?php if ($salur_sukoharjo > $realisasi_sukoharjo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_sukoharjo == $realisasi_sukoharjo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_sukoharjo / $salur_sukoharjo * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -460,21 +460,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[11]['danadesa'], $salur_wonogiri)) : ?>
+                        <?php if ($danadesa[11]['danadesa'] != 0 && $salur_wonogiri != 0) : ?>
                             <td scope="col" <?php if ($danadesa[11]['danadesa'] > $salur_wonogiri) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[11]['danadesa'] == $salur_wonogiri) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_wonogiri, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_wonogiri, $realisasi_wonogiri)) : ?>
+                        <?php if ($realisasi_wonogiri != 0 && $salur_wonogiri != 0) : ?>
                             <td scope="col" <?php if ($salur_wonogiri > $realisasi_wonogiri) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_wonogiri == $realisasi_wonogiri) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_wonogiri, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_wonogiri, $salur_wonogiri)) : ?>
+                        <?php if ($realisasi_wonogiri != 0 && $salur_wonogiri != 0) : ?>
                             <td scope="col" <?php if ($salur_wonogiri > $realisasi_wonogiri) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_wonogiri == $realisasi_wonogiri) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_wonogiri / $salur_wonogiri * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -496,21 +496,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[12]['danadesa'], $salur_karanganyar)) : ?>
+                        <?php if ($danadesa[12]['danadesa'] != 0 && $salur_karanganyar != 0) : ?>
                             <td scope="col" <?php if ($danadesa[12]['danadesa'] > $salur_karanganyar) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[12]['danadesa'] == $salur_karanganyar) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_karanganyar, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_karanganyar, $realisasi_karanganyar)) : ?>
+                        <?php if ($realisasi_karanganyar != 0 && $salur_karanganyar != 0) : ?>
                             <td scope="col" <?php if ($salur_karanganyar > $realisasi_karanganyar) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_karanganyar == $realisasi_karanganyar) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_karanganyar, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_karanganyar, $salur_karanganyar)) : ?>
+                        <?php if ($realisasi_karanganyar != 0 && $salur_karanganyar != 0) : ?>
                             <td scope="col" <?php if ($salur_karanganyar > $realisasi_karanganyar) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_karanganyar == $realisasi_karanganyar) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_karanganyar / $salur_karanganyar * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -532,21 +532,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[13]['danadesa'], $salur_sragen)) : ?>
+                        <?php if ($danadesa[13]['danadesa'] != 0 && $salur_sragen != 0) : ?>
                             <td scope="col" <?php if ($danadesa[13]['danadesa'] > $salur_sragen) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[13]['danadesa'] == $salur_sragen) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_sragen, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_sragen, $realisasi_sragen)) : ?>
+                        <?php if ($realisasi_sragen != 0 && $salur_sragen != 0) : ?>
                             <td scope="col" <?php if ($salur_sragen > $realisasi_sragen) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_sragen == $realisasi_sragen) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_sragen, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_sragen, $salur_sragen)) : ?>
+                        <?php if ($realisasi_sragen != 0 && $salur_sragen != 0) : ?>
                             <td scope="col" <?php if ($salur_sragen > $realisasi_sragen) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_sragen == $realisasi_sragen) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_sragen / $salur_sragen * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -568,21 +568,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[14]['danadesa'], $salur_grobogan)) : ?>
+                        <?php if ($danadesa[14]['danadesa'] != 0 && $salur_grobogan != 0) : ?>
                             <td scope="col" <?php if ($danadesa[14]['danadesa'] > $salur_grobogan) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[14]['danadesa'] == $salur_grobogan) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_grobogan, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_grobogan, $realisasi_grobogan)) : ?>
+                        <?php if ($realisasi_grobogan != 0 && $salur_grobogan != 0) : ?>
                             <td scope="col" <?php if ($salur_grobogan > $realisasi_grobogan) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_grobogan == $realisasi_grobogan) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_grobogan, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_grobogan, $salur_grobogan)) : ?>
+                        <?php if ($realisasi_grobogan != 0 && $salur_grobogan != 0) : ?>
                             <td scope="col" <?php if ($salur_grobogan > $realisasi_grobogan) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_grobogan == $realisasi_grobogan) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_grobogan / $salur_grobogan * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -604,21 +604,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[15]['danadesa'], $salur_blora)) : ?>
+                        <?php if ($danadesa[15]['danadesa'] != 0 && $salur_blora != 0) : ?>
                             <td scope="col" <?php if ($danadesa[15]['danadesa'] > $salur_blora) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[15]['danadesa'] == $salur_blora) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_blora, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_blora, $realisasi_blora)) : ?>
+                        <?php if ($realisasi_blora != 0 && $salur_blora != 0) : ?>
                             <td scope="col" <?php if ($salur_blora > $realisasi_blora) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_blora == $realisasi_blora) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_blora, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_blora, $salur_blora)) : ?>
+                        <?php if ($realisasi_blora != 0 && $salur_blora != 0) : ?>
                             <td scope="col" <?php if ($salur_blora > $realisasi_blora) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_blora == $realisasi_blora) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_blora / $salur_blora * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -640,21 +640,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[16]['danadesa'], $salur_rembang)) : ?>
+                        <?php if ($danadesa[16]['danadesa'] != 0 && $salur_rembang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[16]['danadesa'] > $salur_rembang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[16]['danadesa'] == $salur_rembang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_rembang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_rembang, $realisasi_rembang)) : ?>
+                        <?php if ($realisasi_rembang != 0 && $salur_rembang != 0) : ?>
                             <td scope="col" <?php if ($salur_rembang > $realisasi_rembang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_rembang == $realisasi_rembang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_rembang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_rembang, $salur_rembang)) : ?>
+                        <?php if ($realisasi_rembang != 0 && $salur_rembang != 0) : ?>
                             <td scope="col" <?php if ($salur_rembang > $realisasi_rembang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_rembang == $realisasi_rembang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_rembang / $salur_rembang * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -676,21 +676,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[17]['danadesa'], $salur_pati)) : ?>
+                        <?php if ($danadesa[17]['danadesa'] != 0 && $salur_pati != 0) : ?>
                             <td scope="col" <?php if ($danadesa[17]['danadesa'] > $salur_pati) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[17]['danadesa'] == $salur_pati) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_pati, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_pati, $realisasi_pati)) : ?>
+                        <?php if ($realisasi_pati != 0 && $salur_pati != 0) : ?>
                             <td scope="col" <?php if ($salur_pati > $realisasi_pati) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_pati == $realisasi_pati) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_pati, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_pati, $salur_pati)) : ?>
+                        <?php if ($realisasi_pati != 0 && $salur_pati != 0) : ?>
                             <td scope="col" <?php if ($salur_pati > $realisasi_pati) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_pati == $realisasi_pati) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_pati / $salur_pati * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -712,21 +712,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[18]['danadesa'], $salur_kudus)) : ?>
+                        <?php if ($danadesa[18]['danadesa'] != 0 && $salur_kudus != 0) : ?>
                             <td scope="col" <?php if ($danadesa[18]['danadesa'] > $salur_kudus) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[18]['danadesa'] == $salur_kudus) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_kudus, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_kudus, $realisasi_kudus)) : ?>
+                        <?php if ($realisasi_kudus != 0 && $salur_kudus != 0) : ?>
                             <td scope="col" <?php if ($salur_kudus > $realisasi_kudus) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_kudus == $realisasi_kudus) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_kudus, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_kudus, $salur_kudus)) : ?>
+                        <?php if ($realisasi_kudus != 0 && $salur_kudus != 0) : ?>
                             <td scope="col" <?php if ($salur_kudus > $realisasi_kudus) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_kudus == $realisasi_kudus) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_kudus / $salur_kudus * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -748,21 +748,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[19]['danadesa'], $salur_jepara)) : ?>
+                        <?php if ($danadesa[19]['danadesa'] != 0 && $salur_jepara != 0) : ?>
                             <td scope="col" <?php if ($danadesa[19]['danadesa'] > $salur_jepara) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[19]['danadesa'] == $salur_jepara) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_jepara, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_jepara, $realisasi_jepara)) : ?>
+                        <?php if ($realisasi_jepara != 0 && $salur_jepara != 0) : ?>
                             <td scope="col" <?php if ($salur_jepara > $realisasi_jepara) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_jepara == $realisasi_jepara) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_jepara, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_jepara, $salur_jepara)) : ?>
+                        <?php if ($realisasi_jepara != 0 && $salur_jepara != 0) : ?>
                             <td scope="col" <?php if ($salur_jepara > $realisasi_jepara) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_jepara == $realisasi_jepara) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_jepara / $salur_jepara * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -784,21 +784,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[20]['danadesa'], $salur_demak)) : ?>
+                        <?php if ($danadesa[20]['danadesa'] != 0 && $salur_demak != 0) : ?>
                             <td scope="col" <?php if ($danadesa[20]['danadesa'] > $salur_demak) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[20]['danadesa'] == $salur_demak) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_demak, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_demak, $realisasi_demak)) : ?>
+                        <?php if ($realisasi_demak != 0 && $salur_demak != 0) : ?>
                             <td scope="col" <?php if ($salur_demak > $realisasi_demak) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_demak == $realisasi_demak) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_demak, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_demak, $salur_demak)) : ?>
+                        <?php if ($realisasi_demak != 0 && $salur_demak != 0) : ?>
                             <td scope="col" <?php if ($salur_demak > $realisasi_demak) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_demak == $realisasi_demak) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_demak / $salur_demak * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -820,21 +820,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[21]['danadesa'], $salur_semarang)) : ?>
+                        <?php if ($danadesa[21]['danadesa'] != 0 && $salur_semarang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[21]['danadesa'] > $salur_semarang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[21]['danadesa'] == $salur_semarang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_semarang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_semarang, $realisasi_semarang)) : ?>
+                        <?php if ($realisasi_semarang != 0 && $salur_semarang != 0) : ?>
                             <td scope="col" <?php if ($salur_semarang > $realisasi_semarang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_semarang == $realisasi_semarang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_semarang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_semarang, $salur_semarang)) : ?>
+                        <?php if ($realisasi_semarang != 0 && $salur_semarang != 0) : ?>
                             <td scope="col" <?php if ($salur_semarang > $realisasi_semarang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_semarang == $realisasi_semarang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_semarang / $salur_semarang * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -856,21 +856,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[22]['danadesa'], $salur_temanggung)) : ?>
+                        <?php if ($danadesa[22]['danadesa'] != 0 && $salur_temanggung != 0) : ?>
                             <td scope="col" <?php if ($danadesa[22]['danadesa'] > $salur_temanggung) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[22]['danadesa'] == $salur_temanggung) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_temanggung, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_temanggung, $realisasi_temanggung)) : ?>
+                        <?php if ($realisasi_temanggung != 0 && $salur_temanggung != 0) : ?>
                             <td scope="col" <?php if ($salur_temanggung > $realisasi_temanggung) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_temanggung == $realisasi_temanggung) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_temanggung, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_temanggung, $salur_temanggung)) : ?>
+                        <?php if ($realisasi_temanggung != 0 && $salur_temanggung != 0) : ?>
                             <td scope="col" <?php if ($salur_temanggung > $realisasi_temanggung) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_temanggung == $realisasi_temanggung) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_temanggung / $salur_temanggung * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -892,21 +892,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[23]['danadesa'], $salur_kendal)) : ?>
+                        <?php if ($danadesa[23]['danadesa'] != 0 && $salur_kendal != 0) : ?>
                             <td scope="col" <?php if ($danadesa[23]['danadesa'] > $salur_kendal) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[23]['danadesa'] == $salur_kendal) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_kendal, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_kendal, $realisasi_kendal)) : ?>
+                        <?php if ($realisasi_kendal != 0 && $salur_kendal != 0) : ?>
                             <td scope="col" <?php if ($salur_kendal > $realisasi_kendal) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_kendal == $realisasi_kendal) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_kendal, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_kendal, $salur_kendal)) : ?>
+                        <?php if ($realisasi_kendal != 0 && $salur_kendal != 0) : ?>
                             <td scope="col" <?php if ($salur_kendal > $realisasi_kendal) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_kendal == $realisasi_kendal) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_kendal / $salur_kendal * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -928,21 +928,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[24]['danadesa'], $salur_batang)) : ?>
+                        <?php if ($danadesa[24]['danadesa'] != 0 && $salur_batang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[24]['danadesa'] > $salur_batang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[24]['danadesa'] == $salur_batang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_batang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_batang, $realisasi_batang)) : ?>
+                        <?php if ($realisasi_batang != 0 && $salur_batang != 0) : ?>
                             <td scope="col" <?php if ($salur_batang > $realisasi_batang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_batang == $realisasi_batang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_batang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_batang, $salur_batang)) : ?>
+                        <?php if ($realisasi_batang != 0 && $salur_batang != 0) : ?>
                             <td scope="col" <?php if ($salur_batang > $realisasi_batang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_batang == $realisasi_batang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_batang / $salur_batang * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -964,21 +964,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[25]['danadesa'], $salur_pekalongan)) : ?>
+                        <?php if ($danadesa[25]['danadesa'] != 0 && $salur_pekalongan != 0) : ?>
                             <td scope="col" <?php if ($danadesa[25]['danadesa'] > $salur_pekalongan) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[25]['danadesa'] == $salur_pekalongan) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_pekalongan, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_pekalongan, $realisasi_pekalongan)) : ?>
+                        <?php if ($realisasi_pekalongan != 0 && $salur_pekalongan != 0) : ?>
                             <td scope="col" <?php if ($salur_pekalongan > $realisasi_pekalongan) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_pekalongan == $realisasi_pekalongan) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_pekalongan, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_pekalongan, $salur_pekalongan)) : ?>
+                        <?php if ($realisasi_pekalongan != 0 && $salur_pekalongan != 0) : ?>
                             <td scope="col" <?php if ($salur_pekalongan > $realisasi_pekalongan) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_pekalongan == $realisasi_pekalongan) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_pekalongan / $salur_pekalongan * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -1000,21 +1000,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[26]['danadesa'], $salur_pemalang)) : ?>
+                        <?php if ($danadesa[26]['danadesa'] != 0 && $salur_pemalang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[26]['danadesa'] > $salur_pemalang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[26]['danadesa'] == $salur_pemalang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_pemalang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_pemalang, $realisasi_pemalang)) : ?>
+                        <?php if ($realisasi_pemalang != 0 && $salur_pemalang != 0) : ?>
                             <td scope="col" <?php if ($salur_pemalang > $realisasi_pemalang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_pemalang == $realisasi_pemalang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_pemalang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_pemalang, $salur_pemalang)) : ?>
+                        <?php if ($realisasi_pemalang != 0 && $salur_pemalang != 0) : ?>
                             <td scope="col" <?php if ($salur_pemalang > $realisasi_pemalang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_pemalang == $realisasi_pemalang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_pemalang / $salur_pemalang * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -1036,21 +1036,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[27]['danadesa'], $salur_tegal)) : ?>
+                        <?php if ($danadesa[27]['danadesa'] != 0 && $salur_tegal != 0) : ?>
                             <td scope="col" <?php if ($danadesa[27]['danadesa'] > $salur_tegal) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[27]['danadesa'] == $salur_tegal) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_tegal, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_tegal, $realisasi_tegal)) : ?>
+                        <?php if ($realisasi_tegal != 0 && $salur_tegal != 0) : ?>
                             <td scope="col" <?php if ($salur_tegal > $realisasi_tegal) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_tegal == $realisasi_tegal) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_tegal, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_tegal, $salur_tegal)) : ?>
+                        <?php if ($realisasi_tegal != 0 && $salur_tegal != 0) : ?>
                             <td scope="col" <?php if ($salur_tegal > $realisasi_tegal) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_tegal == $realisasi_tegal) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_tegal / $salur_tegal * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>
@@ -1072,21 +1072,21 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if (isset($danadesa[28]['danadesa'], $salur_brebes)) : ?>
+                        <?php if ($danadesa[28]['danadesa'] != 0 && $salur_brebes != 0) : ?>
                             <td scope="col" <?php if ($danadesa[28]['danadesa'] > $salur_brebes) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[28]['danadesa'] == $salur_brebes) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_brebes, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- realisasi -->
-                        <?php if (isset($salur_brebes, $realisasi_brebes)) : ?>
+                        <?php if ($realisasi_brebes != 0 && $salur_brebes != 0) : ?>
                             <td scope="col" <?php if ($salur_brebes > $realisasi_brebes) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_brebes == $realisasi_brebes) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($realisasi_brebes, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
                         <?php endif; ?>
 
                         <!-- persentase salur - realisasi -->
-                        <?php if (isset($realisasi_brebes, $salur_brebes)) : ?>
+                        <?php if ($realisasi_brebes != 0 && $salur_brebes != 0) : ?>
                             <td scope="col" <?php if ($salur_brebes > $realisasi_brebes) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($salur_brebes == $realisasi_brebes) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($realisasi_brebes / $salur_brebes * 100, 2, ',', '.'); ?> %</td>
                         <?php else : ?>
                             <td></td>

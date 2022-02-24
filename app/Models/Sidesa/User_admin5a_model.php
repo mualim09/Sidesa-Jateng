@@ -29,6 +29,46 @@ class User_admin5a_model extends Model
         return $query->getRowArray();
     }
 
+    public function salur_reguler($kd_wilayah)
+    {
+        $builder = $this->db->table('danadesa_reguler');
+        $builder->select('kabupaten, persentase, salur_januari, salur_februari, salur_maret, salur_april, salur_mei, salur_juni, salur_juli, salur_agustus, salur_september, salur_oktober, salur_november, salur_desember, tahun, created, salur_created');
+        $builder->where('tahun', date('Y'));
+        $builder->where('kd_wilayah', $kd_wilayah);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
+    public function salur_bltdd($kd_wilayah)
+    {
+        $builder = $this->db->table('danadesa_bltdd');
+        $builder->select('kabupaten, persentase, salur_januari, salur_februari, salur_maret, salur_april, salur_mei, salur_juni, salur_juli, salur_agustus, salur_september, salur_oktober, salur_november, salur_desember, tahun, created, salur_created');
+        $builder->where('tahun', date('Y'));
+        $builder->where('kd_wilayah', $kd_wilayah);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
+    public function salur_kph($kd_wilayah)
+    {
+        $builder = $this->db->table('danadesa_kph');
+        $builder->select('kabupaten, persentase, salur_januari, salur_februari, salur_maret, salur_april, salur_mei, salur_juni, salur_juli, salur_agustus, salur_september, salur_oktober, salur_november, salur_desember, tahun, created, salur_created');
+        $builder->where('tahun', date('Y'));
+        $builder->where('kd_wilayah', $kd_wilayah);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
+    public function salur_covid($kd_wilayah)
+    {
+        $builder = $this->db->table('danadesa_covid');
+        $builder->select('kabupaten, persentase, salur_januari, salur_februari, salur_maret, salur_april, salur_mei, salur_juni, salur_juli, salur_agustus, salur_september, salur_oktober, salur_november, salur_desember, tahun, created, salur_created');
+        $builder->where('tahun', date('Y'));
+        $builder->where('kd_wilayah', $kd_wilayah);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
     public function danadesa_reguler()
     {
         $builder = $this->db->table('danadesa_reguler');

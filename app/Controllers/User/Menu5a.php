@@ -338,7 +338,7 @@ class Menu5a extends BaseController
             'page_title' => view('sidesa/layout/user/content-page-title', ['title' => 'Realisasi Dana Desa Reguler ' . $namakab . ' ' . date("Y"), 'li_1' => 'Menu5a', 'li_2' => 'Realisasi']),
             'user' => $this->db->table('sidesa_user')->getWhere(['email' => $this->session->get('email_sidesa')])->getRowArray(),
             'danadesa' => $this->Menu5a_model->danadesa_anggaran($sessionKdwil),
-            'salur' => $this->Menu5a_model->danadesa_salur($sessionKdwil),
+            // 'salur' => $this->Menu5a_model->danadesa_salur($sessionKdwil),
             'jumlah_salur_reg' => $jumlah_salur_reg,
             'reguler' => $this->Menu5a_model->danadesa_reguler($sessionKdwil),
             'jumlah_realisasi' => $jumlah_realisasi_reg,
@@ -368,21 +368,68 @@ class Menu5a extends BaseController
             $namakab = '-';
         }
 
-        $jml_salur = $this->Menu5a_model->danadesa_salur($sessionKdwil);
-        $januari = isset($jml_salur['januari']) ? $jml_salur['januari'] : 0;
-        $februari = isset($jml_salur['februari']) ? $jml_salur['februari'] : 0;
-        $maret = isset($jml_salur['maret']) ? $jml_salur['maret'] : 0;
-        $april = isset($jml_salur['april']) ? $jml_salur['april'] : 0;
-        $mei = isset($jml_salur['mei']) ? $jml_salur['mei'] : 0;
-        $juni = isset($jml_salur['juni']) ? $jml_salur['juni'] : 0;
-        $juli = isset($jml_salur['juli']) ? $jml_salur['juli'] : 0;
-        $agustus = isset($jml_salur['agustus']) ? $jml_salur['agustus'] : 0;
-        $september = isset($jml_salur['september']) ? $jml_salur['september'] : 0;
-        $oktober = isset($jml_salur['oktober']) ? $jml_salur['oktober'] : 0;
-        $november = isset($jml_salur['november']) ? $jml_salur['november'] : 0;
-        $desember = isset($jml_salur['desember']) ? $jml_salur['desember'] : 0;
-        $jumlah_salur = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+        // salur
+        $jml_salur_reg = $this->Menu5a_model->salur_reguler($sessionKdwil);
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
 
+        $jml_salur_bltdd = $this->Menu5a_model->salur_bltdd($sessionKdwil);
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Menu5a_model->salur_kph($sessionKdwil);
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Menu5a_model->salur_covid($sessionKdwil);
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $jml_realisasi_reg = $this->Menu5a_model->danadesa_reguler($sessionKdwil);
         $januari_reg = isset($jml_realisasi_reg['januari']) ? $jml_realisasi_reg['januari'] : 0;
         $februari_reg = isset($jml_realisasi_reg['februari']) ? $jml_realisasi_reg['februari'] : 0;
@@ -448,10 +495,11 @@ class Menu5a extends BaseController
             'page_title' => view('sidesa/layout/user/content-page-title', ['title' => 'Realisasi Bantuan Langsung Tunai Dana Desa ' . $namakab . ' ' . date("Y"), 'li_1' => 'Menu5a', 'li_2' => 'Realisasi']),
             'user' => $this->db->table('sidesa_user')->getWhere(['email' => $this->session->get('email_sidesa')])->getRowArray(),
             'danadesa' => $this->Menu5a_model->danadesa_anggaran($sessionKdwil),
-            'salur' => $this->Menu5a_model->danadesa_salur($sessionKdwil),
-            'jumlah_salur' => $jumlah_salur,
+            // 'salur' => $this->Menu5a_model->danadesa_salur($sessionKdwil),
+            'jumlah_salur_bltdd' => $jumlah_salur_bltdd,
             'bltdd' => $this->Menu5a_model->danadesa_bltdd($sessionKdwil),
             'jumlah_realisasi' => $jumlah_realisasi_bltdd,
+            'grand_total_salur' => $jumlah_salur_reg + $jumlah_salur_bltdd + $jumlah_salur_kph + $jumlah_salur_covid,
             'grand_total_realisasi' => $jumlah_realisasi_reg + $jumlah_realisasi_bltdd + $jumlah_realisasi_kph + $jumlah_realisasi_covid,
             // 'validation' =>  $this->validation
         ];
@@ -477,21 +525,68 @@ class Menu5a extends BaseController
             $namakab = '-';
         }
 
-        $jml_salur = $this->Menu5a_model->danadesa_salur($sessionKdwil);
-        $januari = isset($jml_salur['januari']) ? $jml_salur['januari'] : 0;
-        $februari = isset($jml_salur['februari']) ? $jml_salur['februari'] : 0;
-        $maret = isset($jml_salur['maret']) ? $jml_salur['maret'] : 0;
-        $april = isset($jml_salur['april']) ? $jml_salur['april'] : 0;
-        $mei = isset($jml_salur['mei']) ? $jml_salur['mei'] : 0;
-        $juni = isset($jml_salur['juni']) ? $jml_salur['juni'] : 0;
-        $juli = isset($jml_salur['juli']) ? $jml_salur['juli'] : 0;
-        $agustus = isset($jml_salur['agustus']) ? $jml_salur['agustus'] : 0;
-        $september = isset($jml_salur['september']) ? $jml_salur['september'] : 0;
-        $oktober = isset($jml_salur['oktober']) ? $jml_salur['oktober'] : 0;
-        $november = isset($jml_salur['november']) ? $jml_salur['november'] : 0;
-        $desember = isset($jml_salur['desember']) ? $jml_salur['desember'] : 0;
-        $jumlah_salur = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+        // salur
+        $jml_salur_reg = $this->Menu5a_model->salur_reguler($sessionKdwil);
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
 
+        $jml_salur_bltdd = $this->Menu5a_model->salur_bltdd($sessionKdwil);
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Menu5a_model->salur_kph($sessionKdwil);
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Menu5a_model->salur_covid($sessionKdwil);
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $jml_realisasi_reg = $this->Menu5a_model->danadesa_reguler($sessionKdwil);
         $januari_reg = isset($jml_realisasi_reg['januari']) ? $jml_realisasi_reg['januari'] : 0;
         $februari_reg = isset($jml_realisasi_reg['februari']) ? $jml_realisasi_reg['februari'] : 0;
@@ -557,10 +652,11 @@ class Menu5a extends BaseController
             'page_title' => view('sidesa/layout/user/content-page-title', ['title' => 'Realisasi Dana Desa Ketahanan Pangan dan Hewani ' . $namakab . ' ' . date("Y"), 'li_1' => 'Menu5a', 'li_2' => 'Realisasi']),
             'user' => $this->db->table('sidesa_user')->getWhere(['email' => $this->session->get('email_sidesa')])->getRowArray(),
             'danadesa' => $this->Menu5a_model->danadesa_anggaran($sessionKdwil),
-            'salur' => $this->Menu5a_model->danadesa_salur($sessionKdwil),
-            'jumlah_salur' => $jumlah_salur,
+            // 'salur' => $this->Menu5a_model->danadesa_salur($sessionKdwil),
+            'jumlah_salur_kph' => $jumlah_salur_kph,
             'kph' => $this->Menu5a_model->danadesa_kph($sessionKdwil),
             'jumlah_realisasi' => $jumlah_realisasi_kph,
+            'grand_total_salur' => $jumlah_salur_reg + $jumlah_salur_bltdd + $jumlah_salur_kph + $jumlah_salur_covid,
             'grand_total_realisasi' => $jumlah_realisasi_reg + $jumlah_realisasi_bltdd + $jumlah_realisasi_kph + $jumlah_realisasi_covid,
             // 'validation' =>  $this->validation
         ];
@@ -586,21 +682,68 @@ class Menu5a extends BaseController
             $namakab = '-';
         }
 
-        $jml_salur = $this->Menu5a_model->danadesa_salur($sessionKdwil);
-        $januari = isset($jml_salur['januari']) ? $jml_salur['januari'] : 0;
-        $februari = isset($jml_salur['februari']) ? $jml_salur['februari'] : 0;
-        $maret = isset($jml_salur['maret']) ? $jml_salur['maret'] : 0;
-        $april = isset($jml_salur['april']) ? $jml_salur['april'] : 0;
-        $mei = isset($jml_salur['mei']) ? $jml_salur['mei'] : 0;
-        $juni = isset($jml_salur['juni']) ? $jml_salur['juni'] : 0;
-        $juli = isset($jml_salur['juli']) ? $jml_salur['juli'] : 0;
-        $agustus = isset($jml_salur['agustus']) ? $jml_salur['agustus'] : 0;
-        $september = isset($jml_salur['september']) ? $jml_salur['september'] : 0;
-        $oktober = isset($jml_salur['oktober']) ? $jml_salur['oktober'] : 0;
-        $november = isset($jml_salur['november']) ? $jml_salur['november'] : 0;
-        $desember = isset($jml_salur['desember']) ? $jml_salur['desember'] : 0;
-        $jumlah_salur = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+        // salur
+        $jml_salur_reg = $this->Menu5a_model->salur_reguler($sessionKdwil);
+        $januari = isset($jml_salur_reg['salur_januari']) ? $jml_salur_reg['salur_januari'] : 0;
+        $februari = isset($jml_salur_reg['salur_februari']) ? $jml_salur_reg['salur_februari'] : 0;
+        $maret = isset($jml_salur_reg['salur_maret']) ? $jml_salur_reg['salur_maret'] : 0;
+        $april = isset($jml_salur_reg['salur_april']) ? $jml_salur_reg['salur_april'] : 0;
+        $mei = isset($jml_salur_reg['salur_mei']) ? $jml_salur_reg['salur_mei'] : 0;
+        $juni = isset($jml_salur_reg['salur_juni']) ? $jml_salur_reg['salur_juni'] : 0;
+        $juli = isset($jml_salur_reg['salur_juli']) ? $jml_salur_reg['salur_juli'] : 0;
+        $agustus = isset($jml_salur_reg['salur_agustus']) ? $jml_salur_reg['salur_agustus'] : 0;
+        $september = isset($jml_salur_reg['salur_september']) ? $jml_salur_reg['salur_september'] : 0;
+        $oktober = isset($jml_salur_reg['salur_oktober']) ? $jml_salur_reg['salur_oktober'] : 0;
+        $november = isset($jml_salur_reg['salur_november']) ? $jml_salur_reg['salur_november'] : 0;
+        $desember = isset($jml_salur_reg['salur_desember']) ? $jml_salur_reg['salur_desember'] : 0;
+        $jumlah_salur_reg = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
 
+        $jml_salur_bltdd = $this->Menu5a_model->salur_bltdd($sessionKdwil);
+        $januari = isset($jml_salur_bltdd['salur_januari']) ? $jml_salur_bltdd['salur_januari'] : 0;
+        $februari = isset($jml_salur_bltdd['salur_februari']) ? $jml_salur_bltdd['salur_februari'] : 0;
+        $maret = isset($jml_salur_bltdd['salur_maret']) ? $jml_salur_bltdd['salur_maret'] : 0;
+        $april = isset($jml_salur_bltdd['salur_april']) ? $jml_salur_bltdd['salur_april'] : 0;
+        $mei = isset($jml_salur_bltdd['salur_mei']) ? $jml_salur_bltdd['salur_mei'] : 0;
+        $juni = isset($jml_salur_bltdd['salur_juni']) ? $jml_salur_bltdd['salur_juni'] : 0;
+        $juli = isset($jml_salur_bltdd['salur_juli']) ? $jml_salur_bltdd['salur_juli'] : 0;
+        $agustus = isset($jml_salur_bltdd['salur_agustus']) ? $jml_salur_bltdd['salur_agustus'] : 0;
+        $september = isset($jml_salur_bltdd['salur_september']) ? $jml_salur_bltdd['salur_september'] : 0;
+        $oktober = isset($jml_salur_bltdd['salur_oktober']) ? $jml_salur_bltdd['salur_oktober'] : 0;
+        $november = isset($jml_salur_bltdd['salur_november']) ? $jml_salur_bltdd['salur_november'] : 0;
+        $desember = isset($jml_salur_bltdd['salur_desember']) ? $jml_salur_bltdd['salur_desember'] : 0;
+        $jumlah_salur_bltdd = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_kph = $this->Menu5a_model->salur_kph($sessionKdwil);
+        $januari = isset($jml_salur_kph['salur_januari']) ? $jml_salur_kph['salur_januari'] : 0;
+        $februari = isset($jml_salur_kph['salur_februari']) ? $jml_salur_kph['salur_februari'] : 0;
+        $maret = isset($jml_salur_kph['salur_maret']) ? $jml_salur_kph['salur_maret'] : 0;
+        $april = isset($jml_salur_kph['salur_april']) ? $jml_salur_kph['salur_april'] : 0;
+        $mei = isset($jml_salur_kph['salur_mei']) ? $jml_salur_kph['salur_mei'] : 0;
+        $juni = isset($jml_salur_kph['salur_juni']) ? $jml_salur_kph['salur_juni'] : 0;
+        $juli = isset($jml_salur_kph['salur_juli']) ? $jml_salur_kph['salur_juli'] : 0;
+        $agustus = isset($jml_salur_kph['salur_agustus']) ? $jml_salur_kph['salur_agustus'] : 0;
+        $september = isset($jml_salur_kph['salur_september']) ? $jml_salur_kph['salur_september'] : 0;
+        $oktober = isset($jml_salur_kph['salur_oktober']) ? $jml_salur_kph['salur_oktober'] : 0;
+        $november = isset($jml_salur_kph['salur_november']) ? $jml_salur_kph['salur_november'] : 0;
+        $desember = isset($jml_salur_kph['salur_desember']) ? $jml_salur_kph['salur_desember'] : 0;
+        $jumlah_salur_kph = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        $jml_salur_covid = $this->Menu5a_model->salur_covid($sessionKdwil);
+        $januari = isset($jml_salur_covid['salur_januari']) ? $jml_salur_covid['salur_januari'] : 0;
+        $februari = isset($jml_salur_covid['salur_februari']) ? $jml_salur_covid['salur_februari'] : 0;
+        $maret = isset($jml_salur_covid['salur_maret']) ? $jml_salur_covid['salur_maret'] : 0;
+        $april = isset($jml_salur_covid['salur_april']) ? $jml_salur_covid['salur_april'] : 0;
+        $mei = isset($jml_salur_covid['salur_mei']) ? $jml_salur_covid['salur_mei'] : 0;
+        $juni = isset($jml_salur_covid['salur_juni']) ? $jml_salur_covid['salur_juni'] : 0;
+        $juli = isset($jml_salur_covid['salur_juli']) ? $jml_salur_covid['salur_juli'] : 0;
+        $agustus = isset($jml_salur_covid['salur_agustus']) ? $jml_salur_covid['salur_agustus'] : 0;
+        $september = isset($jml_salur_covid['salur_september']) ? $jml_salur_covid['salur_september'] : 0;
+        $oktober = isset($jml_salur_covid['salur_oktober']) ? $jml_salur_covid['salur_oktober'] : 0;
+        $november = isset($jml_salur_covid['salur_november']) ? $jml_salur_covid['salur_november'] : 0;
+        $desember = isset($jml_salur_covid['salur_desember']) ? $jml_salur_covid['salur_desember'] : 0;
+        $jumlah_salur_covid = intval($januari) + intval($februari) + intval($maret) + intval($april) + intval($mei) + intval($juni) + intval($juli) + intval($agustus) + intval($september) + intval($oktober) + intval($november) + intval($desember);
+
+        // realisasi
         $jml_realisasi_reg = $this->Menu5a_model->danadesa_reguler($sessionKdwil);
         $januari_reg = isset($jml_realisasi_reg['januari']) ? $jml_realisasi_reg['januari'] : 0;
         $februari_reg = isset($jml_realisasi_reg['februari']) ? $jml_realisasi_reg['februari'] : 0;
@@ -666,10 +809,11 @@ class Menu5a extends BaseController
             'page_title' => view('sidesa/layout/user/content-page-title', ['title' => 'Realisasi Dana Desa Covid-19 ' . $namakab . ' ' . date("Y"), 'li_1' => 'Menu5a', 'li_2' => 'Realisasi']),
             'user' => $this->db->table('sidesa_user')->getWhere(['email' => $this->session->get('email_sidesa')])->getRowArray(),
             'danadesa' => $this->Menu5a_model->danadesa_anggaran($sessionKdwil),
-            'salur' => $this->Menu5a_model->danadesa_salur($sessionKdwil),
-            'jumlah_salur' => $jumlah_salur,
+            // 'salur' => $this->Menu5a_model->danadesa_salur($sessionKdwil),
+            'jumlah_salur_covid' => $jumlah_salur_covid,
             'covid' => $this->Menu5a_model->danadesa_covid($sessionKdwil),
             'jumlah_realisasi' => $jumlah_realisasi_covid,
+            'grand_total_salur' => $jumlah_salur_reg + $jumlah_salur_bltdd + $jumlah_salur_kph + $jumlah_salur_covid,
             'grand_total_realisasi' => $jumlah_realisasi_reg + $jumlah_realisasi_bltdd + $jumlah_realisasi_kph + $jumlah_realisasi_covid,
             // 'validation' =>  $this->validation
         ];
