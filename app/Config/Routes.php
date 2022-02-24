@@ -110,6 +110,7 @@ $routes->get('/user/kabupaten5a', 'User\kabupaten5a::dashboard', ['filter' => 'a
 $routes->match(['get', 'post'], '/user/kabupaten5a/infokabupaten', 'User\Kabupaten5a::infokabupaten', ['filter' => 'authusersidesa']);
 
 // SIDESA USER PROVINSI5A KONTEN
+$routes->match(['get', 'post'], 'sidesa/provinsi5a/download', 'User\Provinsi5a::download', ['filter' => 'authusersidesa']);
 $routes->match(['get', 'post'], '/user/provinsi5a/(:any)', 'User\Provinsi5a::$1', ['filter' => 'authusersidesa']);
 $routes->get('/user/provinsi5a', 'User\provinsi5a::dashboard', ['filter' => 'authusersidesa']);
 

@@ -4,6 +4,8 @@ namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
 use App\Models\Sidesa\User_provinsi5a_model;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Provinsi5a extends BaseController
 {
@@ -4933,9 +4935,132 @@ class Provinsi5a extends BaseController
 
     public function download()
     {
-        if (isset($_POST['download'])) {
-            # code...
+        $spreadsheet = new Spreadsheet();
+        $tahun = date("Y");
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->mergeCells('A1:V1');
+        $sheet->setCellValue('A1', 'REKAPITULASI SALUR DANA DESA PROVINSI JAWA TENGAH');
+        $sheet->mergeCells('A2:V2');
+        $sheet->setCellValue('A2', 'TAHUN ' . $tahun);
+        $sheet->mergeCells('A4:A5');
+        $sheet->setCellValue('A4', 'KABUPATEN');
+        $sheet->mergeCells('B4:B5');
+        $sheet->setCellValue('B4', 'DIPA (Rp.)');
+        $sheet->mergeCells('C4:C5');
+        $sheet->setCellValue('C4', 'Total Salur (Rp.)');
+        $sheet->mergeCells('D4:L4');
+        $sheet->setCellValue('D4', 'Laporan Salur - Prioritas (live)');
+        $sheet->setCellValue('D5', 'REG (Rp.)');
+        $sheet->setCellValue('E5', 'Capaian (%)');
+        $sheet->setCellValue('F5', 'BLTDD (Rp.)');
+        $sheet->setCellValue('G5', 'Capaian (%)');
+        $sheet->setCellValue('H5', 'KPH (Rp.)');
+        $sheet->setCellValue('I5', 'Capaian (%)');
+        $sheet->setCellValue('J5', 'COVID-19 (Rp.)');
+        $sheet->setCellValue('K5', 'Capaian (%)');
+        $sheet->setCellValue('L5', 'Update');
+        $sheet->mergeCells('M4:M5');
+        $sheet->setCellValue('M4', 'Total Realisasi (Rp.)');
+        $sheet->mergeCells('N4:V4');
+        $sheet->setCellValue('N4', 'Laporan Realisasi - Prioritas (live)');
+        $sheet->setCellValue('N5', 'REG (Rp.)');
+        $sheet->setCellValue('O5', 'Capaian (%)');
+        $sheet->setCellValue('P5', 'BLTDD (Rp.)');
+        $sheet->setCellValue('Q5', 'Capaian (%)');
+        $sheet->setCellValue('R5', 'KPH (Rp.)');
+        $sheet->setCellValue('S5', 'Capaian (%)');
+        $sheet->setCellValue('T5', 'COVID-19 (Rp.)');
+        $sheet->setCellValue('U5', 'Capaian (%)');
+        $sheet->setCellValue('V5', 'Update');
+
+        $spreadsheet->getActiveSheet()->getStyle('A1:V5')
+            ->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+
+        $styleArray = [
+            'font' => [
+                'bold' => true,
+            ],
+            'alignment' => [
+                'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+            ],
+        ];
+
+        $spreadsheet->getActiveSheet()->getStyle('A1:V5')->applyFromArray($styleArray);
+
+        $rekap = $this->Excel_model->getDokumenSukses();
+        $x = 6;
+
+        foreach ($rekap as $row) {
+            $sheet->setCellValue('A' . $x, $row->kabupaten);
+            $sheet->setCellValue('B' . $x, $row->danadesa);
+            $sheet->setCellValue('C' . $x, $row->kabupaten);
+            $sheet->setCellValue('D' . $x, $row->desa);
+            $sheet->setCellValue('E' . $x, $row->kecamatan);
+            $sheet->setCellValue('F' . $x, $row->luas_tkd);
+            $sheet->setCellValue('G' . $x, $row->pengganti);
+            $sheet->setCellValue('H' . $x, $row->ugr);
+            $sheet->setCellValue('I' . $x, $row->sisa_ugr);
+            $sheet->setCellValue('J' . $x, $row->nama_trans);
+            $sheet->setCellValue('K' . $x, $row->nama_trans);
+            $sheet->setCellValue('L' . $x, $row->nama_trans);
+            $sheet->setCellValue('M' . $x, $row->nama_trans);
+            $sheet->setCellValue('N' . $x, $row->nama_trans);
+            $sheet->setCellValue('O' . $x, $row->nama_trans);
+            $sheet->setCellValue('P' . $x, $row->nama_trans);
+            $sheet->setCellValue('Q' . $x, $row->nama_trans);
+            $sheet->setCellValue('R' . $x, $row->nama_trans);
+            $sheet->setCellValue('S' . $x, $row->nama_trans);
+            $sheet->setCellValue('T' . $x, $row->nama_trans);
+            $sheet->setCellValue('U' . $x, $row->nama_trans);
+            $sheet->setCellValue('V' . $x, $row->nama_trans);
+            $x++;
         }
+
+        $spreadsheet->getActiveSheet()->getColumnDimension('B')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('C')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('F')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('G')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('H')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('I')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('J')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('K')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('L')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('M')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('N')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('O')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('P')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('Q')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('R')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('S')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('T')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('U')->setAutoSize(true);
+        $spreadsheet->getActiveSheet()->getColumnDimension('V')->setAutoSize(true);
+
+        $styleArray = [
+            'borders' => [
+                'allBorders' => [
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                ],
+            ],
+            'alignment' => [
+                'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+            ],
+        ];
+        $x = $x - 1;
+        $sheet->getStyle('A5:V' . $x)->applyFromArray($styleArray);
+
+        $tahun = date("Y");
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'Rekapitulasi-Danadesa-Salur-Realisasi-';
+
+        ob_end_clean();
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="' . $filename . $tahun . '.xlsx"');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
     }
 
     public function profile()
