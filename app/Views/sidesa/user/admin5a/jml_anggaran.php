@@ -64,7 +64,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[0]['danadesa'] != 0 && $salur_cilacap != 0) : ?>
+                        <?php if (isset($danadesa[0]['danadesa']) && $salur_cilacap != 0) : ?>
                             <td scope="col" <?php if ($danadesa[0]['danadesa'] > $salur_cilacap) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[0]['danadesa'] == $salur_cilacap) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_cilacap, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -100,7 +100,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[1]['danadesa'] != 0 && $salur_banyumas != 0) : ?>
+                        <?php if (isset($danadesa[1]['danadesa']) && $salur_banyumas != 0) : ?>
                             <td scope="col" <?php if ($danadesa[1]['danadesa'] > $salur_banyumas) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[1]['danadesa'] == $salur_banyumas) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_banyumas, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -136,7 +136,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[2]['danadesa'] != 0 && $salur_purbalingga != 0) : ?>
+                        <?php if (isset($danadesa[2]['danadesa']) && $salur_purbalingga != 0) : ?>
                             <td scope="col" <?php if ($danadesa[2]['danadesa'] > $salur_purbalingga) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[2]['danadesa'] == $salur_purbalingga) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_purbalingga, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -172,7 +172,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[3]['danadesa'] != 0 && $salur_banjarnegara != 0) : ?>
+                        <?php if (isset($danadesa[3]['danadesa']) && $salur_banjarnegara != 0) : ?>
                             <td scope="col" <?php if ($danadesa[3]['danadesa'] > $salur_banjarnegara) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[3]['danadesa'] == $salur_banjarnegara) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_banjarnegara, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -208,7 +208,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[4]['danadesa'] != 0 && $salur_kebumen != 0) : ?>
+                        <?php if (isset($danadesa[4]['danadesa']) && $salur_kebumen != 0) : ?>
                             <td scope="col" <?php if ($danadesa[4]['danadesa'] > $salur_kebumen) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[4]['danadesa'] == $salur_kebumen) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_kebumen, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -244,7 +244,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[5]['danadesa'] != 0 && $salur_purworejo != 0) : ?>
+                        <?php if (isset($danadesa[5]['danadesa']) && $salur_purworejo != 0) : ?>
                             <td scope="col" <?php if ($danadesa[5]['danadesa'] > $salur_purworejo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[5]['danadesa'] == $salur_purworejo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_purworejo, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -280,7 +280,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[6]['danadesa'] != 0 && $salur_wonosobo != 0) : ?>
+                        <?php if (isset($danadesa[6]['danadesa']) && $salur_wonosobo != 0) : ?>
                             <td scope="col" <?php if ($danadesa[6]['danadesa'] > $salur_wonosobo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[6]['danadesa'] == $salur_wonosobo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_wonosobo, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -316,7 +316,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[7]['danadesa'] != 0 && $salur_magelang != 0) : ?>
+                        <?php if (isset($danadesa[7]['danadesa']) && $salur_magelang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[7]['danadesa'] > $salur_magelang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[7]['danadesa'] == $salur_magelang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_magelang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -352,7 +352,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[8]['danadesa'] != 0 && $salur_boyolali != 0) : ?>
+                        <?php if (isset($danadesa[8]['danadesa']) && $salur_boyolali != 0) : ?>
                             <td scope="col" <?php if ($danadesa[8]['danadesa'] > $salur_boyolali) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[8]['danadesa'] == $salur_boyolali) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_boyolali, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -388,7 +388,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[9]['danadesa'] != 0 && $salur_klaten != 0) : ?>
+                        <?php if (isset($danadesa[9]['danadesa']) && $salur_klaten != 0) : ?>
                             <td scope="col" <?php if ($danadesa[9]['danadesa'] > $salur_klaten) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[9]['danadesa'] == $salur_klaten) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_klaten, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -424,7 +424,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[10]['danadesa'] != 0 && $salur_sukoharjo != 0) : ?>
+                        <?php if (isset($danadesa[10]['danadesa']) && $salur_sukoharjo != 0) : ?>
                             <td scope="col" <?php if ($danadesa[10]['danadesa'] > $salur_sukoharjo) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[10]['danadesa'] == $salur_sukoharjo) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_sukoharjo, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -460,7 +460,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[11]['danadesa'] != 0 && $salur_wonogiri != 0) : ?>
+                        <?php if (isset($danadesa[11]['danadesa']) && $salur_wonogiri != 0) : ?>
                             <td scope="col" <?php if ($danadesa[11]['danadesa'] > $salur_wonogiri) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[11]['danadesa'] == $salur_wonogiri) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_wonogiri, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -496,7 +496,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[12]['danadesa'] != 0 && $salur_karanganyar != 0) : ?>
+                        <?php if (isset($danadesa[12]['danadesa']) && $salur_karanganyar != 0) : ?>
                             <td scope="col" <?php if ($danadesa[12]['danadesa'] > $salur_karanganyar) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[12]['danadesa'] == $salur_karanganyar) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_karanganyar, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -532,7 +532,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[13]['danadesa'] != 0 && $salur_sragen != 0) : ?>
+                        <?php if (isset($danadesa[13]['danadesa']) && $salur_sragen != 0) : ?>
                             <td scope="col" <?php if ($danadesa[13]['danadesa'] > $salur_sragen) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[13]['danadesa'] == $salur_sragen) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_sragen, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -568,7 +568,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[14]['danadesa'] != 0 && $salur_grobogan != 0) : ?>
+                        <?php if (isset($danadesa[14]['danadesa']) && $salur_grobogan != 0) : ?>
                             <td scope="col" <?php if ($danadesa[14]['danadesa'] > $salur_grobogan) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[14]['danadesa'] == $salur_grobogan) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_grobogan, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -604,7 +604,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[15]['danadesa'] != 0 && $salur_blora != 0) : ?>
+                        <?php if (isset($danadesa[15]['danadesa']) && $salur_blora != 0) : ?>
                             <td scope="col" <?php if ($danadesa[15]['danadesa'] > $salur_blora) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[15]['danadesa'] == $salur_blora) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_blora, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -640,7 +640,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[16]['danadesa'] != 0 && $salur_rembang != 0) : ?>
+                        <?php if (isset($danadesa[16]['danadesa']) && $salur_rembang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[16]['danadesa'] > $salur_rembang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[16]['danadesa'] == $salur_rembang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_rembang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -676,7 +676,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[17]['danadesa'] != 0 && $salur_pati != 0) : ?>
+                        <?php if (isset($danadesa[17]['danadesa']) && $salur_pati != 0) : ?>
                             <td scope="col" <?php if ($danadesa[17]['danadesa'] > $salur_pati) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[17]['danadesa'] == $salur_pati) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_pati, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -712,7 +712,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[18]['danadesa'] != 0 && $salur_kudus != 0) : ?>
+                        <?php if (isset($danadesa[18]['danadesa']) && $salur_kudus != 0) : ?>
                             <td scope="col" <?php if ($danadesa[18]['danadesa'] > $salur_kudus) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[18]['danadesa'] == $salur_kudus) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_kudus, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -748,7 +748,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[19]['danadesa'] != 0 && $salur_jepara != 0) : ?>
+                        <?php if (isset($danadesa[19]['danadesa']) && $salur_jepara != 0) : ?>
                             <td scope="col" <?php if ($danadesa[19]['danadesa'] > $salur_jepara) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[19]['danadesa'] == $salur_jepara) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_jepara, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -784,7 +784,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[20]['danadesa'] != 0 && $salur_demak != 0) : ?>
+                        <?php if (isset($danadesa[20]['danadesa']) && $salur_demak != 0) : ?>
                             <td scope="col" <?php if ($danadesa[20]['danadesa'] > $salur_demak) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[20]['danadesa'] == $salur_demak) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_demak, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -820,7 +820,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[21]['danadesa'] != 0 && $salur_semarang != 0) : ?>
+                        <?php if (isset($danadesa[21]['danadesa']) && $salur_semarang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[21]['danadesa'] > $salur_semarang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[21]['danadesa'] == $salur_semarang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_semarang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -856,7 +856,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[22]['danadesa'] != 0 && $salur_temanggung != 0) : ?>
+                        <?php if (isset($danadesa[22]['danadesa']) && $salur_temanggung != 0) : ?>
                             <td scope="col" <?php if ($danadesa[22]['danadesa'] > $salur_temanggung) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[22]['danadesa'] == $salur_temanggung) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_temanggung, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -892,7 +892,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[23]['danadesa'] != 0 && $salur_kendal != 0) : ?>
+                        <?php if (isset($danadesa[23]['danadesa']) && $salur_kendal != 0) : ?>
                             <td scope="col" <?php if ($danadesa[23]['danadesa'] > $salur_kendal) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[23]['danadesa'] == $salur_kendal) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_kendal, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -928,7 +928,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[24]['danadesa'] != 0 && $salur_batang != 0) : ?>
+                        <?php if (isset($danadesa[24]['danadesa']) && $salur_batang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[24]['danadesa'] > $salur_batang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[24]['danadesa'] == $salur_batang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_batang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -964,7 +964,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[25]['danadesa'] != 0 && $salur_pekalongan != 0) : ?>
+                        <?php if (isset($danadesa[25]['danadesa']) && $salur_pekalongan != 0) : ?>
                             <td scope="col" <?php if ($danadesa[25]['danadesa'] > $salur_pekalongan) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[25]['danadesa'] == $salur_pekalongan) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_pekalongan, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -1000,7 +1000,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[26]['danadesa'] != 0 && $salur_pemalang != 0) : ?>
+                        <?php if (isset($danadesa[26]['danadesa']) && $salur_pemalang != 0) : ?>
                             <td scope="col" <?php if ($danadesa[26]['danadesa'] > $salur_pemalang) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[26]['danadesa'] == $salur_pemalang) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_pemalang, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -1036,7 +1036,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[27]['danadesa'] != 0 && $salur_tegal != 0) : ?>
+                        <?php if (isset($danadesa[27]['danadesa']) && $salur_tegal != 0) : ?>
                             <td scope="col" <?php if ($danadesa[27]['danadesa'] > $salur_tegal) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[27]['danadesa'] == $salur_tegal) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_tegal, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
@@ -1072,7 +1072,7 @@
                         </td>
 
                         <!-- salur -->
-                        <?php if ($danadesa[28]['danadesa'] != 0 && $salur_brebes != 0) : ?>
+                        <?php if (isset($danadesa[28]['danadesa']) && $salur_brebes != 0) : ?>
                             <td scope="col" <?php if ($danadesa[28]['danadesa'] > $salur_brebes) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa[28]['danadesa'] == $salur_brebes) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?>><?= number_format($salur_brebes, 0, '', '.'); ?></td>
                         <?php else : ?>
                             <td></td>
