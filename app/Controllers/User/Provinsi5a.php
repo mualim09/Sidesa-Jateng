@@ -4987,7 +4987,7 @@ class Provinsi5a extends BaseController
 
         $spreadsheet->getActiveSheet()->getStyle('A1:V5')->applyFromArray($styleArray);
 
-        $rekap = $this->Excel_model->getDokumenSukses();
+        $rekap = $this->Provinsi5a_model->downloadrekap();
         $x = 6;
 
         foreach ($rekap as $row) {
@@ -5016,6 +5016,7 @@ class Provinsi5a extends BaseController
             $x++;
         }
 
+        $spreadsheet->getActiveSheet()->getColumnDimension('A')->setAutoSize(true);
         $spreadsheet->getActiveSheet()->getColumnDimension('B')->setAutoSize(true);
         $spreadsheet->getActiveSheet()->getColumnDimension('C')->setAutoSize(true);
         $spreadsheet->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
