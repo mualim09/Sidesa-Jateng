@@ -83,17 +83,19 @@
                     </ul>
                 </li>
                 <li>
-                    <?php if ($kodekab === "33.11") : ?>
-                        <a href="https://pidekso.sukoharjokab.go.id/" target="_blank">
-                            <i data-feather="monitor"></i>
-                            <span data-key="t-dashboard">SID Kabupaten</span>
-                        </a>
-                    <?php else : ?>
-                        <a class="disabled text-muted" aria-disabled="true">
-                            <i class="disabled text-muted" aria-disabled="true" data-feather="monitor"></i>
-                            <span class="disabled text-muted" aria-disabled="true" disabled>SID Kabupaten</span>
-                        </a>
-                    <?php endif; ?>
+                    <?php foreach ($urlkab as $url) : ?>
+                        <?php if ($url->url != "") : ?>
+                            <a href="<?= $url->url; ?>" target="_blank">
+                                <i data-feather="monitor"></i>
+                                <span data-key="t-dashboard">SID Kabupaten</span>
+                            </a>
+                        <?php else : ?>
+                            <a class="disabled text-muted" aria-disabled="true">
+                                <i class="disabled text-muted" aria-disabled="true" data-feather="monitor"></i>
+                                <span class="disabled text-muted" aria-disabled="true" disabled>SID Kabupaten</span>
+                            </a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </li>
 
                 <li class="menu-title mt-2" data-key="t-componentskecamatan">Elemen</li>

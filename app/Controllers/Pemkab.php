@@ -118,8 +118,10 @@ class Pemkab extends BaseController
             'idmthsblm' => $idmthsblm != null ? array_count_values($idmthsblm) : 0,
             'idmnowgrafik' => $idmnowgrafik != null ? array_count_values($idmnowgrafik) : 0,
             'datakab' => $this->db->table('dashboard_kabupaten')->getWhere(['kodekab' => $kode])->getRowArray(),
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => $kode])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => $kode])->getResult(),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
+        // dd($data['urlkab']);
 
         return view('sidesa/pemkab/kabupaten', $data);
     }
@@ -209,7 +211,8 @@ class Pemkab extends BaseController
             'idmthsblm' => $idmthsblm, //buat grafik dashboard 1thn sebelum
             'idmnowgrafik' => $idmnowgrafik, //buat grafik dashboard thn saat ini
             'datades' => $this->db->table('dashboard_desa')->getWhere(['kodedes' => substr($kode, 0, 13)])->getRowArray(),
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
             // 'namadesa' => $namadesa
         ];
 

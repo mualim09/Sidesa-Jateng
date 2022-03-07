@@ -77,6 +77,21 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <?php foreach ($urldes as $url) : ?>
+                        <?php if ($url->url != "") : ?>
+                            <a href="<?= $url->url; ?>" target="_blank">
+                                <i data-feather="monitor"></i>
+                                <span data-key="t-dashboard">Web Desa</span>
+                            </a>
+                        <?php else : ?>
+                            <a class="disabled text-muted" aria-disabled="true">
+                                <i class="disabled text-muted" aria-disabled="true" data-feather="monitor"></i>
+                                <span class="disabled text-muted" aria-disabled="true" disabled>Web Desa</span>
+                            </a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
