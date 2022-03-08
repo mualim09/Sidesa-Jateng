@@ -3,14 +3,14 @@
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
-use App\Models\Sidesa\USer_notifikasi_model;
+use App\Models\Sidesa\User_notifikasi_model;
 
 class Notifikasi extends BaseController
 {
     public function __construct()
     {
         date_default_timezone_set('Asia/Jakarta');
-        $this->Notifikasi_model = new USer_notifikasi_model();
+        $this->Notifikasi_model = new User_notifikasi_model();
         session()->remove('keyword');
         session()->remove('keywordregapi');
     }
