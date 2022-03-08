@@ -55,7 +55,7 @@
                     <tbody>
                         <tr>
                             <th scope="col" style="text-align: center; vertical-align: middle;"><?= number_format($danadesa['danadesa'] * $salur_bltdd['persentase'] / 100, 0, '', '.'); ?></th>
-                            <td scope="col" <?php if ($danadesa['danadesa'] > $jumlah_salur) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa['danadesa'] == $jumlah_salur) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($jumlah_salur, 0, '', '.'); ?></td>
+                            <td scope="col" <?php if ($danadesa['danadesa'] * $salur_bltdd['persentase'] / 100 > $jumlah_salur) : ?> style="color: red; vertical-align: middle; text-align: center;" <?php elseif ($danadesa['danadesa'] * $salur_bltdd['persentase'] / 100 == $jumlah_salur) : ?> style="color: green; vertical-align: middle; text-align: center;" <?php else : ?> style="color:goldenrod; vertical-align: middle; text-align: center;" <?php endif; ?> /><?= number_format($jumlah_salur, 0, '', '.'); ?></td>
                             <!-- inputan salur -->
                             <td scope="col" style="text-align: center; vertical-align: middle;">
                                 <input type="text" class="form-control" id="januari" name="januari" <?php if (isset($salur_bltdd['salur_januari']) && $salur_bltdd['salur_januari'] != 0) : ?> value="<?= number_format(htmlspecialchars($salur_bltdd['salur_januari']), 0, '', '.'); ?>" <?php else : ?> value="<?= old('januari'); ?>" <?php endif; ?> />
