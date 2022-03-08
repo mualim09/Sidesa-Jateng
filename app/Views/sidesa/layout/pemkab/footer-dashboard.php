@@ -80,7 +80,7 @@
     var options = {
         series: [{
             data: [
-                <?= isset($idm2thsblm['MANDIRI']) ? $idm2thsblm['MANDIRI'] : 0 ?>, <?= isset($idmthsblm['MANDIRI']) ? $idmthsblm['MANDIRI'] : 0 ?>, <?= isset($idmnowgrafik['MANDIRI']) ? $idmnowgrafik['MANDIRI'] : 0 ?>
+                <?= isset($idm2019['MANDIRI']) ? $idm2019['MANDIRI'] : 0 ?>, <?= isset($idm2020['MANDIRI']) ? $idm2020['MANDIRI'] : 0 ?>, <?= isset($idm2021['MANDIRI']) ? $idm2021['MANDIRI'] : 0 ?>
             ]
         }],
         yaxis: {
@@ -91,7 +91,7 @@
             },
         },
         xaxis: {
-            categories: [<?= date("Y") - 2 ?>, <?= date("Y") - 1 ?>, <?= date("Y") ?>],
+            categories: [2019, 2020, 2021],
             labels: {
                 formatter: function(value) {
                     return "Tahun: " + value;
@@ -137,7 +137,7 @@
     var options = {
         series: [{
             data: [
-                <?= isset($idm2thsblm['MAJU']) ? $idm2thsblm['MAJU'] : 0 ?>, <?= isset($idmthsblm['MAJU']) ? $idmthsblm['MAJU'] : 0 ?>, <?= isset($idmnowgrafik['MAJU']) ? $idmnowgrafik['MAJU'] : 0 ?>
+                <?= isset($idm2019['MAJU']) ? $idm2019['MAJU'] : 0 ?>, <?= isset($idm2020['MAJU']) ? $idm2020['MAJU'] : 0 ?>, <?= isset($idm2021['MAJU']) ? $idm2021['MAJU'] : 0 ?>
             ]
         }],
         yaxis: {
@@ -148,7 +148,7 @@
             },
         },
         xaxis: {
-            categories: [<?= date("Y") - 2 ?>, <?= date("Y") - 1 ?>, <?= date("Y") ?>],
+            categories: [2019, 2020, 2021],
             labels: {
                 formatter: function(value) {
                     return "Tahun: " + value;
@@ -194,7 +194,7 @@
     var options = {
         series: [{
             data: [
-                <?= isset($idm2thsblm['BERKEMBANG']) ? $idm2thsblm['BERKEMBANG'] : 0 ?>, <?= isset($idmthsblm['BERKEMBANG']) ? $idmthsblm['BERKEMBANG'] : 0 ?>, <?= isset($idmnowgrafik['BERKEMBANG']) ? $idmnowgrafik['BERKEMBANG'] : 0 ?>
+                <?= isset($idm2019['BERKEMBANG']) ? $idm2019['BERKEMBANG'] : 0 ?>, <?= isset($idm2020['BERKEMBANG']) ? $idm2020['BERKEMBANG'] : 0 ?>, <?= isset($idm2021['BERKEMBANG']) ? $idm2021['BERKEMBANG'] : 0 ?>
             ]
         }],
         yaxis: {
@@ -205,7 +205,7 @@
             },
         },
         xaxis: {
-            categories: [<?= date("Y") - 2 ?>, <?= date("Y") - 1 ?>, <?= date("Y") ?>],
+            categories: [2019, 2020, 2021],
             labels: {
                 formatter: function(value) {
                     return "Tahun: " + value;
@@ -251,7 +251,7 @@
     var options = {
         series: [{
             data: [
-                <?= isset($idm2thsblm['TERTINGGAL']) ? $idm2thsblm['TERTINGGAL'] : 0 ?>, <?= isset($idmthsblm['TERTINGGAL']) ? $idmthsblm['TERTINGGAL'] : 0 ?>, <?= isset($idmnowgrafik['TERTINGGAL']) ? $idmnowgrafik['TERTINGGAL'] : 0 ?>
+                <?= isset($idm2019['TERTINGGAL']) ? $idm2019['TERTINGGAL'] : 0 ?>, <?= isset($idm2020['TERTINGGAL']) ? $idm2020['TERTINGGAL'] : 0 ?>, <?= isset($idm2021['TERTINGGAL']) ? $idm2021['TERTINGGAL'] : 0 ?>
             ]
         }],
         yaxis: {
@@ -262,7 +262,7 @@
             },
         },
         xaxis: {
-            categories: [<?= date("Y") - 2 ?>, <?= date("Y") - 1 ?>, <?= date("Y") ?>],
+            categories: [2019, 2020, 2021],
             labels: {
                 formatter: function(value) {
                     return "Tahun: " + value;
@@ -309,7 +309,7 @@
     var options = {
         series: [{
             data: [
-                <?= isset($idm2thsblm['SANGAT TERTINGGAL']) ? $idm2thsblm['SANGAT TERTINGGAL'] : 0 ?>, <?= isset($idmthsblm['SANGAT TERTINGGAL']) ? $idmthsblm['SANGAT TERTINGGAL'] : 0 ?>, <?= isset($idmnowgrafik['SANGAT TERTINGGAL']) ? $idmnowgrafik['SANGAT TERTINGGAL'] : 0 ?>
+                <?= isset($idm2019['SANGAT TERTINGGAL']) ? $idm2019['SANGAT TERTINGGAL'] : 0 ?>, <?= isset($idm2020['SANGAT TERTINGGAL']) ? $idm2020['SANGAT TERTINGGAL'] : 0 ?>, <?= isset($idm2021['SANGAT TERTINGGAL']) ? $idm2021['SANGAT TERTINGGAL'] : 0 ?>
             ]
         }],
         yaxis: {
@@ -320,7 +320,7 @@
             },
         },
         xaxis: {
-            categories: [<?= date("Y") - 2 ?>, <?= date("Y") - 1 ?>, <?= date("Y") ?>],
+            categories: [2019, 2020, 2021],
             labels: {
                 formatter: function(value) {
                     return "Tahun: " + value;

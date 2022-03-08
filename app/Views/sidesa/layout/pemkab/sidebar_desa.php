@@ -86,8 +86,8 @@
                             </a>
                         <?php else : ?>
                             <a class="disabled text-muted" aria-disabled="true">
-                                <i class="disabled text-muted" aria-disabled="true" data-feather="monitor"></i>
-                                <span class="disabled text-muted" aria-disabled="true" disabled>Web Desa</span>
+                                <!-- <i class="disabled text-muted" aria-disabled="true" data-feather="monitor"></i> -->
+                                <span class="disabled text-muted" aria-disabled="true" disabled></span>
                             </a>
                         <?php endif; ?>
                     <?php endforeach; ?>

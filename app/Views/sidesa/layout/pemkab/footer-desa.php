@@ -80,7 +80,7 @@
     var options = {
         series: [{
             data: [
-                <?= isset($idm2thsblm[0]->iks) ? $idm2thsblm[0]->iks : 0 ?>, <?= isset($idmthsblm[0]->iks) ? $idmthsblm[0]->iks : 0 ?>, <?= isset($idmnowgrafik[0]->iks) ? $idmnowgrafik[0]->iks : NULL ?>
+                <?= isset($idm2019[0]->iks) ? $idm2019[0]->iks : 0 ?>, <?= isset($idm2020[0]->iks) ? $idm2020[0]->iks : 0 ?>, <?= isset($idm2021[0]->iks) ? $idm2021[0]->iks : NULL ?>
             ]
         }],
         yaxis: {
@@ -91,7 +91,7 @@
             },
         },
         xaxis: {
-            categories: [<?= date("Y") - 2 ?>, <?= date("Y") - 1 ?>, <?= date("Y") ?>],
+            categories: [2019, 2020, 2021],
             labels: {
                 formatter: function(value) {
                     return "Tahun: " + value;
@@ -137,7 +137,7 @@
     var options = {
         series: [{
             data: [
-                <?= isset($idm2thsblm[0]->ike) ? $idm2thsblm[0]->ike : 0 ?>, <?= isset($idmthsblm[0]->ike) ? $idmthsblm[0]->ike : 0 ?>, <?= isset($idmnowgrafik[0]->ike) ? $idmnowgrafik[0]->ike : NULL ?>
+                <?= isset($idm2019[0]->ike) ? $idm2019[0]->ike : 0 ?>, <?= isset($idm2020[0]->ike) ? $idm2020[0]->ike : 0 ?>, <?= isset($idm2021[0]->ike) ? $idm2021[0]->ike : NULL ?>
             ]
         }],
         yaxis: {
@@ -148,7 +148,7 @@
             },
         },
         xaxis: {
-            categories: [<?= date("Y") - 2 ?>, <?= date("Y") - 1 ?>, <?= date("Y") ?>],
+            categories: [2019, 2020, 2021],
             labels: {
                 formatter: function(value) {
                     return "Tahun: " + value;
@@ -194,7 +194,7 @@
     var options = {
         series: [{
             data: [
-                <?= isset($idm2thsblm[0]->ikl) ? $idm2thsblm[0]->ikl : 0 ?>, <?= isset($idmthsblm[0]->ikl) ? $idmthsblm[0]->ikl : 0 ?>, <?= isset($idmnowgrafik[0]->ikl) ? $idmnowgrafik[0]->ikl : NULL ?>
+                <?= isset($idm2019[0]->ikl) ? $idm2019[0]->ikl : 0 ?>, <?= isset($idm2020[0]->ikl) ? $idm2020[0]->ikl : 0 ?>, <?= isset($idm2021[0]->ikl) ? $idm2021[0]->ikl : NULL ?>
             ]
         }],
         yaxis: {
@@ -205,7 +205,7 @@
             },
         },
         xaxis: {
-            categories: [<?= date("Y") - 2 ?>, <?= date("Y") - 1 ?>, <?= date("Y") ?>],
+            categories: [2019, 2020, 2021],
             labels: {
                 formatter: function(value) {
                     return "Tahun: " + value;
@@ -251,7 +251,7 @@
     var options = {
         series: [{
             data: [
-                <?= isset($idm2thsblm[0]->nilai_idm) ? $idm2thsblm[0]->nilai_idm : 0 ?>, <?= isset($idmthsblm[0]->nilai_idm) ? $idmthsblm[0]->nilai_idm : 0 ?>, <?= isset($idmnowgrafik[0]->nilai_idm) ? $idmnowgrafik[0]->nilai_idm : NULL ?>
+                <?= isset($idm2019[0]->nilai_idm) ? $idm2019[0]->nilai_idm : 0 ?>, <?= isset($idm2020[0]->nilai_idm) ? $idm2020[0]->nilai_idm : 0 ?>, <?= isset($idm2021[0]->nilai_idm) ? $idm2021[0]->nilai_idm : NULL ?>
             ]
         }],
         yaxis: {
@@ -262,7 +262,7 @@
             },
         },
         xaxis: {
-            categories: [<?= date("Y") - 2 ?>, <?= date("Y") - 1 ?>, <?= date("Y") ?>],
+            categories: [2019, 2020, 2021],
             labels: {
                 formatter: function(value) {
                     return "Tahun: " + value;

@@ -42,52 +42,43 @@ class Pemkab extends BaseController
 
     function kabupaten($kode)
     {
-        $getIdmnow = $this->Kabupaten_model->getIdmnow($kode);
-        $getIdmbefore = $this->Kabupaten_model->getIdmbefore($kode);
-        $getIdmbefore2 = $this->Kabupaten_model->getIdmbefore2($kode);
-        // $getIdmbefore3 = $this->Kabupaten_model->getIdmbefore3($kode);
+        $getIdm2022 = $this->Kabupaten_model->getIdm2022($kode);
+        $getIdm2021 = $this->Kabupaten_model->getIdm2021($kode);
+        $getIdm2020 = $this->Kabupaten_model->getIdm2020($kode);
+        $getIdm2019 = $this->Kabupaten_model->getIdm2019($kode);
+        // $getIdm2022 = $this->Kabupaten_model->getIdm2022($kode);
 
-        if ($getIdmbefore2 != null) {
-            foreach ($getIdmbefore2 as $item2thsblm) {
-                $idm2thsblm[] = $item2thsblm->status;
+        if ($getIdm2019 != null) {
+            foreach ($getIdm2019 as $item2019) {
+                $idm2019[] = $item2019->status;
             }
         } else {
-            $idm2thsblm = 0;
+            $idm2019 = 0;
         }
-        if ($getIdmbefore != null) {
-            foreach ($getIdmbefore as $itemthsblm) {
-                $idmthsblm[] = $itemthsblm->status;
+        if ($getIdm2020 != null) {
+            foreach ($getIdm2020 as $item2020) {
+                $idm2020[] = $item2020->status;
             }
         } else {
-            $idmthsblm = 0;
+            $idm2020 = 0;
         }
-        if ($getIdmnow != null) {
-            foreach ($getIdmnow as $itemnow) {
-                $idmnowgrafik[] = $itemnow->status;
+        if ($getIdm2021 != null) {
+            foreach ($getIdm2021 as $item2021) {
+                $idm2021[] = $item2021->status;
             }
         } else {
-            $idmnowgrafik = 0;
+            $idm2021 = 0;
+        }
+        if ($getIdm2022 != null) {
+            foreach ($getIdm2022 as $item2022) {
+                $idm2022[] = $item2022->status;
+            }
+        } else {
+            $idm2022 = 0;
         }
 
-        if ($getIdmnow != null) {
-            foreach ($getIdmnow as $itemnow) {
-                $idmnow[] = $itemnow->status;
-            }
-            foreach ($getIdmbefore as $itembefore) {
-                $idmbefore[] = $itembefore->status;
-            }
-        } else {
-            if ($getIdmbefore != null) {
-                foreach ($getIdmbefore as $itembefore) {
-                    $idmnow[] = $itembefore->status;
-                }
-                foreach ($getIdmbefore2 as $itembefore2) {
-                    $idmbefore[] = $itembefore2->status;
-                }
-            }
-        }
-        $datatahunsebelumnya = array_count_values($idmbefore);
-        $datasaatini = array_count_values($idmnow);
+        $datatahunsebelumnya = array_count_values($idm2020);
+        $datasaatini = array_count_values($idm2021);
         $nilaimandiritahunsebelumnya = isset($datatahunsebelumnya['MANDIRI']) ? $datatahunsebelumnya['MANDIRI'] : 0;
         $nilaimajutahunsebelumnya = isset($datatahunsebelumnya['MAJU']) ? $datatahunsebelumnya['MAJU'] : 0;
         $nilaiberkembangtahunsebelumnya = isset($datatahunsebelumnya['BERKEMBANG']) ? $datatahunsebelumnya['BERKEMBANG'] : 0;
@@ -113,10 +104,10 @@ class Pemkab extends BaseController
             'hasilberkembang' => $nilaiberkembangsaatini - $nilaiberkembangtahunsebelumnya,
             'hasiltertinggal' => $nilaitertinggalsaatini - $nilaitertinggaltahunsebelumnya,
             'hasilsangattertinggal' => $nilaisangattertinggalsaatini - $nilaisangattertinggaltahunsebelumnya,
-            'idmtahun' => $getIdmnow,
-            'idm2thsblm' => $idm2thsblm != null ? array_count_values($idm2thsblm) : 0,
-            'idmthsblm' => $idmthsblm != null ? array_count_values($idmthsblm) : 0,
-            'idmnowgrafik' => $idmnowgrafik != null ? array_count_values($idmnowgrafik) : 0,
+            'idmtahun' => $getIdm2022,
+            'idm2019' => $idm2019 != null ? array_count_values($idm2019) : 0,
+            'idm2020' => $idm2020 != null ? array_count_values($idm2020) : 0,
+            'idm2021' => $idm2021 != null ? array_count_values($idm2021) : 0,
             'datakab' => $this->db->table('dashboard_kabupaten')->getWhere(['kodekab' => $kode])->getRowArray(),
             'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => $kode])->getResult(),
             'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
@@ -128,54 +119,45 @@ class Pemkab extends BaseController
 
     function desa($kode)
     {
-        $getIdmnow = $this->Kabupaten_model->getIdmnow($kode);
-        $getIdmbefore = $this->Kabupaten_model->getIdmbefore($kode);
-        $getIdmbefore2 = $this->Kabupaten_model->getIdmbefore2($kode);
-        // $getIdmbefore3 = $this->Kabupaten_model->getIdmbefore3($kode);
+        $getIdm2022 = $this->Kabupaten_model->getIdm2022($kode);
+        $getIdm2021 = $this->Kabupaten_model->getIdm2021($kode);
+        $getIdm2020 = $this->Kabupaten_model->getIdm2020($kode);
+        $getIdm2019 = $this->Kabupaten_model->getIdm2019($kode);
+        // $getIdm2022 = $this->Kabupaten_model->getIdm2022($kode);
 
         // untuk ditampilkan di grafik dashoboard desa
-        if ($getIdmbefore2 != null) {
-            foreach ($getIdmbefore2 as $item2thsblm) {
-                $idm2thsblm[] = $item2thsblm;
+        if ($getIdm2019 != null) {
+            foreach ($getIdm2019 as $item2019) {
+                $idm2019[] = $item2019;
             }
         } else {
-            $idm2thsblm = 0;
+            $idm2019 = 0;
         }
-        if ($getIdmbefore != null) {
-            foreach ($getIdmbefore as $itemthsblm) {
-                $idmthsblm[] = $itemthsblm;
+        if ($getIdm2020 != null) {
+            foreach ($getIdm2020 as $item2020) {
+                $idm2020[] = $item2020;
             }
         } else {
-            $idmthsblm = 0;
+            $idm2020 = 0;
         }
-        if ($getIdmnow != null) {
-            foreach ($getIdmnow as $itemnow) {
-                $idmnowgrafik[] = $itemnow;
+        if ($getIdm2021 != null) {
+            foreach ($getIdm2021 as $item2021) {
+                $idm2021[] = $item2021;
             }
         } else {
-            $idmnowgrafik = 0;
+            $idm2021 = 0;
+        }
+        if ($getIdm2022 != null) {
+            foreach ($getIdm2022 as $item2022) {
+                $idm2022[] = $item2022;
+            }
+        } else {
+            $idm2022 = 0;
         }
 
         // untuk ditampilkan di bagian selisih indeks
-        if ($getIdmnow != null) {
-            foreach ($getIdmnow as $itemnow) {
-                $idmnow[] = $itemnow;
-            }
-            foreach ($getIdmbefore as $itembefore) {
-                $idmbefore[] = $itembefore;
-            }
-        } else {
-            if ($getIdmbefore != null) {
-                foreach ($getIdmbefore as $itembefore) {
-                    $idmnow[] = $itembefore;
-                }
-                foreach ($getIdmbefore2 as $itembefore2) {
-                    $idmbefore[] = $itembefore2;
-                }
-            }
-        }
-        $datatahunsebelumnya = $idmbefore[0];
-        $datasaatini = $idmnow[0];
+        $datatahunsebelumnya = $idm2020[0];
+        $datasaatini = $idm2021[0];
         $nilaiikstahunsebelumnya = isset($datatahunsebelumnya->iks) ? $datatahunsebelumnya->iks : 0; //iks
         $nilaiiketahunsebelumnya = isset($datatahunsebelumnya->ike) ? $datatahunsebelumnya->ike : 0; //ike
         $nilaiikltahunsebelumnya = isset($datatahunsebelumnya->ikl) ? $datatahunsebelumnya->ikl : 0; //ikl
@@ -197,7 +179,7 @@ class Pemkab extends BaseController
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Kecamatan ' . $whoiskec . ", Desa " . $whoisdes, 'li_1' => 'Menu', 'li_2' => 'Home']),
             'kodedes' => $kode,
             'namades' => $whoisdes, //buat data dibawah judul tulisan IDM
-            'status' => $idmnow[0]->status, //buat data dibawah judul tulisan IDM
+            'status' => $idm2021[0]->status, //buat data dibawah judul tulisan IDM
             'datasaatiniiks' => $nilaiikssaatini,
             'datasaatiniike' => $nilaiikesaatini,
             'datasaatiniikl' => $nilaiiklsaatini,
@@ -206,10 +188,10 @@ class Pemkab extends BaseController
             'hasilike' => $nilaiikesaatini - $nilaiiketahunsebelumnya,
             'hasilikl' => $nilaiiklsaatini - $nilaiikltahunsebelumnya,
             'hasilnilaiidm' => $nilainilaiidmsaatini - $nilainilaiidmtahunsebelumnya,
-            'idmtahun' => $getIdmnow, //buat nampilin tahun di dashboard home
-            'idm2thsblm' => $idm2thsblm, //buat grafik dashboard 2thn sebelum
-            'idmthsblm' => $idmthsblm, //buat grafik dashboard 1thn sebelum
-            'idmnowgrafik' => $idmnowgrafik, //buat grafik dashboard thn saat ini
+            'idmtahun' => $getIdm2022, //buat nampilin tahun di dashboard home
+            'idm2019' => $idm2019, //buat grafik dashboard 2thn sebelum
+            'idm2020' => $idm2020, //buat grafik dashboard 1thn sebelum
+            'idm2021' => $idm2021, //buat grafik dashboard thn saat ini
             'datades' => $this->db->table('dashboard_desa')->getWhere(['kodedes' => substr($kode, 0, 13)])->getRowArray(),
             'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
             'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
@@ -235,7 +217,8 @@ class Pemkab extends BaseController
             'pekerjaan' => $this->Kependudukan_model->pendudukPekerjaan_I_2020($kode),
             'usia' => $this->Kependudukan_model->pendudukKelompokUsia_I_2020($kode),
             'kk' => $this->Kependudukan_model->pendudukKK_I_2020($kode),
-            'goldar' => $this->Kependudukan_model->pendudukGolDar_I_2020($kode)
+            'goldar' => $this->Kependudukan_model->pendudukGolDar_I_2020($kode),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/kependudukan', $data);
     }
@@ -277,7 +260,8 @@ class Pemkab extends BaseController
             'pekerjaan' => $this->Kependudukan_model->pendudukPekerjaan_I_2020($kode),
             'usia' => $this->Kependudukan_model->pendudukKelompokUsia_I_2020($kode),
             'kk' => $this->Kependudukan_model->pendudukKK_I_2020($kode),
-            'goldar' => $this->Kependudukan_model->pendudukGolDar_I_2020($kode)
+            'goldar' => $this->Kependudukan_model->pendudukGolDar_I_2020($kode),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/kependudukan', $data);
     }
@@ -305,7 +289,8 @@ class Pemkab extends BaseController
             'peneranganI20' => $this->Kesejahteraan_model->peneranganpertama2020($kode),
             'peneranganII20' => $this->Kesejahteraan_model->penerangankedua2020($kode),
             'tinggalI20' => $this->Kesejahteraan_model->tinggalpertama2020($kode),
-            'tinggalII20' => $this->Kesejahteraan_model->tinggalkedua2020($kode)
+            'tinggalII20' => $this->Kesejahteraan_model->tinggalkedua2020($kode),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/kesejahteraan', $data);
     }
@@ -361,7 +346,8 @@ class Pemkab extends BaseController
             'peneranganI20' => $this->Kesejahteraan_model->peneranganpertama2020($kode),
             'peneranganII20' => $this->Kesejahteraan_model->penerangankedua2020($kode),
             'tinggalI20' => $this->Kesejahteraan_model->tinggalpertama2020($kode),
-            'tinggalII20' => $this->Kesejahteraan_model->tinggalkedua2020($kode)
+            'tinggalII20' => $this->Kesejahteraan_model->tinggalkedua2020($kode),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/kesejahteraan', $data);
     }
@@ -375,7 +361,8 @@ class Pemkab extends BaseController
             'title' => 'Keuangan',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Keuangan Kabupaten ' . $whois, 'li_1' => 'Data', 'li_2' => 'Keuangan']),
             'kodekab' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/keuangan', $data);
     }
@@ -403,7 +390,8 @@ class Pemkab extends BaseController
             'title' => 'Keuangan',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Keuangan Desa ' . $whois, 'li_1' => 'Data', 'li_2' => 'Keuangan']),
             'kodedes' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/keuangan', $data);
     }
@@ -419,7 +407,8 @@ class Pemkab extends BaseController
             'kodekab' => $kode,
             'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
             'disabilitasI20' => $this->Disabilitas_model->disabilitaspertama2020($kode),
-            'disabilitasII20' => $this->Disabilitas_model->disabilitaskedua2020($kode)
+            'disabilitasII20' => $this->Disabilitas_model->disabilitaskedua2020($kode),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/disabilitas', $data);
     }
@@ -451,7 +440,8 @@ class Pemkab extends BaseController
             'kodedes' => $kode,
             'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
             'disabilitasI20' => $this->Disabilitas_model->disabilitaspertama2020($kode),
-            'disabilitasII20' => $this->Disabilitas_model->disabilitaskedua2020($kode)
+            'disabilitasII20' => $this->Disabilitas_model->disabilitaskedua2020($kode),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/disabilitas', $data);
     }
@@ -654,7 +644,8 @@ class Pemkab extends BaseController
             'persen_bltdd' => $persen_bltdd,
             'persen_kph' => $persen_kph,
             'persen_covid' => $persen_covid,
-            'kab' => $whois
+            'kab' => $whois,
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         if ($data['total_salur'] != 0) {
             return view('sidesa/pemkab/danadesa', $data);
@@ -686,7 +677,8 @@ class Pemkab extends BaseController
             'title' => 'Dana Desa',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Dana Desa Desa ' . $whois, 'li_1' => 'Data', 'li_2' => 'Dana Desa']),
             'kodedes' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/danadesa', $data);
     }
@@ -700,7 +692,8 @@ class Pemkab extends BaseController
             'title' => 'RTLH',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Rumah Tidak Layak Huni Kabupaten ' . $whois, 'li_1' => 'Data', 'li_2' => 'RTLH']),
             'kodekab' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/rtlh', $data);
     }
@@ -728,7 +721,8 @@ class Pemkab extends BaseController
             'title' => 'RTLH',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Rumah Tidak Layak Huni Desa ' . $whois, 'li_1' => 'Data', 'li_2' => 'RTLH']),
             'kodedes' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/rtlh', $data);
     }
@@ -770,7 +764,8 @@ class Pemkab extends BaseController
             'title' => 'IDM',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Indeks Desa Membangun (IDM) Kabupaten ' . $whois, 'li_1' => 'Data', 'li_2' => 'IDM']),
             'kodekab' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         if ($idm2019 != 0) {
             $data['idm2019'] = array_count_values($idm2019);
@@ -895,7 +890,8 @@ class Pemkab extends BaseController
             'idm2019' => $idm2019,
             'idm2020' => $idm2020,
             'idm2021' => $idm2021,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         // dd($idm2019[0]->iks);
 
@@ -929,7 +925,8 @@ class Pemkab extends BaseController
             'title' => 'Bumdes',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Badan Usaha Milik Desa Kabupaten ' . $whois, 'li_1' => 'Data', 'li_2' => 'Bumdes']),
             'kodekab' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         if ($Bumdes2019 != 0) {
             $data['bumdes2019'] = array_count_values($Bumdes2019);
@@ -1015,7 +1012,8 @@ class Pemkab extends BaseController
             'title' => 'Bumdes',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Badan Usaha Milik Desa Desa ' . $whois, 'li_1' => 'Data', 'li_2' => 'Bumdes']),
             'kodedes' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         if ($Bumdes2019 != 0) {
             $data['bumdes2019'] = array_count_values($Bumdes2019);
@@ -1043,7 +1041,8 @@ class Pemkab extends BaseController
             'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
             'posyandu20' => $this->Kesehatan_model->posyandu20($kode),
             'posyandu21' => $this->Kesehatan_model->posyandu21($kode),
-            'posyandu22' => $this->Kesehatan_model->posyandu22($kode)
+            'posyandu22' => $this->Kesehatan_model->posyandu22($kode),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/kesehatan', $data);
     }
@@ -1077,7 +1076,8 @@ class Pemkab extends BaseController
             'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
             'posyandu20' => $this->Kesehatan_model->posyandu20($kode),
             'posyandu21' => $this->Kesehatan_model->posyandu21($kode),
-            'posyandu22' => $this->Kesehatan_model->posyandu22($kode)
+            'posyandu22' => $this->Kesehatan_model->posyandu22($kode),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/kesehatan', $data);
     }
@@ -1091,7 +1091,8 @@ class Pemkab extends BaseController
             'title' => 'Pertanian',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Pertanian Kabupaten ' . $whois, 'li_1' => 'Data', 'li_2' => 'Pertanian']),
             'kodekab' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/pertanian', $data);
     }
@@ -1119,7 +1120,8 @@ class Pemkab extends BaseController
             'title' => 'Pertanian',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Data Pertanian Desa ' . $whois, 'li_1' => 'Data', 'li_2' => 'Pertanian']),
             'kodedes' => $kode,
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult()
+            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/pertanian', $data);
     }
@@ -1146,7 +1148,8 @@ class Pemkab extends BaseController
             'bankeu_salur_2022' => $this->Bankeu_model->bankeu_salur_2022($kode),
             'bankeu_salur_2023' => $this->Bankeu_model->bankeu_salur_2023($kode),
             'bankeu_salur_2024' => $this->Bankeu_model->bankeu_salur_2024($kode),
-            'bankeu_salur_2025' => $this->Bankeu_model->bankeu_salur_2025($kode)
+            'bankeu_salur_2025' => $this->Bankeu_model->bankeu_salur_2025($kode),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/bankeu', $data);
     }
@@ -1164,7 +1167,8 @@ class Pemkab extends BaseController
             'satgas19' => $this->Sosialbudaya_model->satgas19($kode),
             'satgas20' => $this->Sosialbudaya_model->satgas20($kode),
             'satgas21' => $this->Sosialbudaya_model->satgas21($kode),
-            'satgas22' => $this->Sosialbudaya_model->satgas22($kode)
+            'satgas22' => $this->Sosialbudaya_model->satgas22($kode),
+            'urlkab' => $this->db->table('kd_kabupaten')->getWhere(['id_kab' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/sosialbudaya', $data);
     }
@@ -1200,7 +1204,8 @@ class Pemkab extends BaseController
             'satgas19' => $this->Sosialbudaya_model->satgas19($kode),
             'satgas20' => $this->Sosialbudaya_model->satgas20($kode),
             'satgas21' => $this->Sosialbudaya_model->satgas21($kode),
-            'satgas22' => $this->Sosialbudaya_model->satgas22($kode)
+            'satgas22' => $this->Sosialbudaya_model->satgas22($kode),
+            'urldes' => $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getResult()
         ];
         return view('sidesa/pemkab/sosialbudaya', $data);
     }
