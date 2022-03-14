@@ -210,7 +210,7 @@
                     <?php endif; ?>
                 </a>
 
-                <a href="<?= base_url('pemkab/desa/' . substr($kodedes, 0, 5)); ?>" class="logo logo-light">
+                <a href="<?= base_url('pemkab/kabupaten/' . substr($kodedes, 0, 5)); ?>" class="logo logo-light">
                     <?php if (substr($kodedes, 0, 5) == "33.01") : ?>
                         <span class="logo-sm">
                             <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3301.png'); ?>" alt="" height="24">
