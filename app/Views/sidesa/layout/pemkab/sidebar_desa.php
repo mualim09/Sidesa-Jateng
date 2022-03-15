@@ -107,13 +107,13 @@
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li>
-                                <a href="<?= base_url('pemdes/login/' . substr($kodedes, 0, 13)); ?>">
-                                    <span data-key="t-kependudukankab">Login</span>
+                                <a href="<?= base_url('pemdes/auth/loginpage/' . substr($kodedes, 0, 13)); ?>" target="_blank">
+                                    <span data-key="t-authloginpemdes">Login</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url('pemdes/registrasi/' . substr($kodedes, 0, 13)); ?>">
-                                    <span data-key="t-kesejahteraan-sosialkab">Registrasi</span>
+                                <a href="<?= base_url('pemdes/auth/registrasi/' . substr($kodedes, 0, 13)); ?>" target="_blank">
+                                    <span data-key="t-authregistrasipemdes-sosialkab">Registrasi</span>
                                 </a>
                             </li>
                         </ul>

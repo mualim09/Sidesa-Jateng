@@ -8,6 +8,7 @@ use CodeIgniter\Validation\FormatRules;
 use CodeIgniter\Validation\Rules;
 use App\Validation\Userrulesitkd;
 use App\Validation\Userrulesidesa;
+use App\Validation\Userrulepemdes;
 
 class Validation
 {
@@ -27,7 +28,8 @@ class Validation
         FileRules::class,
         CreditCardRules::class,
         Userrulesitkd::class,
-        Userrulesidesa::class
+        Userrulesidesa::class,
+        Userrulepemdes::class
     ];
 
     /**
