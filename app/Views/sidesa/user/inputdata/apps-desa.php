@@ -33,7 +33,7 @@
                     <div class="form-group row">
                         <label for="inputby" class="col-sm-2 col-form-label">Input Oleh</label>
                         <div class="col-sm-6 mb-3">
-                            <input type="text" class="form-control" id="inputby" name="inputby" value="<?= isset($dashboard['input_by']) ? htmlspecialchars($dashboard['input_by'], ENT_QUOTES) : $inputby['nama']; ?>" readonly>
+                            <input type="text" class="form-control" id="inputby" name="inputby" value="<?= htmlspecialchars($inputby['nama'], ENT_QUOTES); ?>" readonly>
                             <small class="form-text text-danger"><?= $validation->getError('inputby'); ?></small>
                         </div>
                     </div>

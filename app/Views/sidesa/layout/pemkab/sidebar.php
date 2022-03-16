@@ -84,7 +84,7 @@
                 </li>
                 <li>
                     <?php foreach ($urlkab as $url) : ?>
-                        <?php if ($url->url != "") : ?>
+                        <?php if ($url->url != NULL) : ?>
                             <a href="<?= $url->url; ?>" target="_blank">
                                 <i data-feather="monitor"></i>
                                 <span data-key="t-dashboard">SID Kabupaten</span>

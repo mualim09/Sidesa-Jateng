@@ -2,7 +2,7 @@
 
 namespace App\Validation;
 
-class Userrulesidesa
+class Userrulepemdes
 {
     protected $validation;
 
@@ -13,8 +13,8 @@ class Userrulesidesa
 
     public function validasiPEMDES(string $str, string $fields, array $data)
     {
-        $builder = $this->db->table('sidesa_user');
-        $user = $builder->getWhere(['nip' => $data['nip']])->getRowArray();
+        $builder = $this->db->table('pemdes_user');
+        $user = $builder->getWhere(['nik_ktp' => $data['nik_ktp']])->getRowArray();
 
         if (!password_verify($data['password'], $user['password']))
             return false;
@@ -25,8 +25,8 @@ class Userrulesidesa
 
     public function aktivasiPEMDES(string $str, string $fields, array $data)
     {
-        $builder = $this->db->table('sidesa_user');
-        $user = $builder->getWhere(['nip' => $data['nip']])->getRowArray();
+        $builder = $this->db->table('pemdes_user');
+        $user = $builder->getWhere(['nik_ktp' => $data['nik_ktp']])->getRowArray();
 
         if ($user['is_active'] != 1)
             return false;
@@ -37,8 +37,8 @@ class Userrulesidesa
 
     public function registrasiPEMDES(string $str, string $fields, array $data)
     {
-        $builder = $this->db->table('sidesa_user');
-        $user = $builder->getWhere(['nip' => $data['nip']])->getRowArray();
+        $builder = $this->db->table('pemdes_user');
+        $user = $builder->getWhere(['nik_ktp' => $data['nik_ktp']])->getRowArray();
 
         if (!$user)
             return false;

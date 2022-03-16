@@ -178,7 +178,8 @@ class Pemkab extends BaseController
             'title' => 'Data',
             'page_title' => view('sidesa/layout/pemkab/page-title', ['title' => 'Kecamatan ' . $whoiskec . ", Desa " . $whoisdes, 'li_1' => 'Menu', 'li_2' => 'Home']),
             'kodedes' => $kode,
-            'namades' => $whoisdes, //buat data dibawah judul tulisan IDM
+            'namades' => $whoisdes,
+            'namakec' => $whoiskec,
             'status' => $idm2021[0]->status, //buat data dibawah judul tulisan IDM
             'datasaatiniiks' => $nilaiikssaatini,
             'datasaatiniike' => $nilaiikesaatini,

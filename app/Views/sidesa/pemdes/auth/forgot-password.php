@@ -8,22 +8,225 @@
                     <div class="w-100">
                         <div class="d-flex flex-column h-100">
                             <div class="mb-4 mb-md-5 text-center">
-                                <a href="<?= base_url('user/panel'); ?>" class="d-block auth-logo">
-                                    <img src="<?= base_url('img/onscreen/home/logov.png'); ?>" alt="" height="60">
+                                <a href="<?= base_url('pemdes/auth/loginpage/' . $kodedes); ?>" class="d-block auth-logo">
+                                    <?php if (substr($kodedes, 0, 5) == "33.01") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3301.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Cilacap</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.02") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3302.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Banyumas</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.03") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3303.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Purbalingga</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.04") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3304.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Banjarnegara</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.05") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3305.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Kebumen</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.06") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3306.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Purworejo</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.07") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3307.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Wonosobo</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.08") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3308.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Magelang</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.09") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3309.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Boyolali</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.10") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3310.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Klaten</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.11") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3311.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Sukoharjo</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.12") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3312.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Wonogiri</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.13") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3313.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Karanganyar</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.14") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3314.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Sragen</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.15") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3315.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Grobogan</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.16") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3316.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Blora</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.17") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3317.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Rembang</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.18") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3318.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Pati</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.19") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3319.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Kudus</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.20") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3320.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Jepara</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.21") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3321.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Demak</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.22") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3322.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Semarang</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.23") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3323.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Temanggung</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.24") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3324.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Kendal</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.25") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3325.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Batang</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.26") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3326.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Pekalongan</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.27") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3327.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Pemalang</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.28") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3328.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Tegal</div>
+                                        </span>
+                                    <?php elseif (substr($kodedes, 0, 5) == "33.29") : ?>
+                                        <span class="logo-lg">
+                                            <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3329.png'); ?>" alt="" height="60">
+                                            <div class="logo-txt">Desa <?= $namades; ?>,</div>
+                                            <div class="logo-txt">Kec. <?= $namakec; ?>,</div>
+                                            <div class="logo-txt">Kab. Brebes</div>
+                                        </span>
+                                    <?php endif; ?>
                                 </a>
                             </div>
                             <div class="auth-content my-auto">
                                 <div class="text-center">
                                     <h5 class="mb-0">Reset Password</h5>
-                                    <p class="text-muted mt-2">Masukan email terdaftar Anda dan instruksi akan terkirim kepada Anda.</p>
+                                    <p class="mt-2" style="color: crimson;">Masukan NIK-KTP terdaftar Anda dan instruksi akan kami kirim kepada Anda melalui nomor whatsapp yang sudah pernah Anda daftarkan sebelumnya</p>
                                 </div>
-                                <form class="custom-form mt-4" method="POST" action="<?= base_url('user/lupa-password'); ?>">
+                                <form class="custom-form mt-4" method="POST" action="">
                                     <?= csrf_field(); ?>
                                     <div class="mb-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('email') ? 'is-invalid' : '') ?>" id="email" name="email" placeholder="Masukan email">
+                                        <label class="form-label">NIK KTP</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('nik_ktp') ? 'is-invalid' : '') ?>" id="nik_ktp" name="nik_ktp" placeholder="Masukan NIK-KTP">
                                         <div class="invalid-feedback">
-                                            <?= $validation->getError('email') ?>
+                                            <?= $validation->getError('nik_ktp') ?>
                                         </div>
                                     </div>
                                     <div class="mb-3 mt-4">
@@ -32,7 +235,7 @@
                                 </form>
 
                                 <div class="mt-5 text-center">
-                                    <p class="text-muted mb-0">Sudah ingat ? <a href="<?= base_url('user/panel'); ?>" class="text-primary fw-semibold"> Login </a> </p>
+                                    <p class="text-muted mb-0">Sudah ingat ? <a href="<?= base_url('pemdes/auth/loginpage/' . $kodedes); ?>" class="text-primary fw-semibold"> Login </a> </p>
                                 </div>
                             </div>
                             <div class="mt-4 mt-md-5 text-center">

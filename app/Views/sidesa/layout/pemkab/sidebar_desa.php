@@ -98,27 +98,13 @@
                 $request = \Config\Services::request();
                 $url = $request->uri->getSegment(3);
                 ?>
-                <?php if ($url === "33.29.15.2007") : ?>
-                    <!-- end sementara -->
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i data-feather="edit"></i>
-                            <span data-key="t-datakabupaten">Layanan Mandiri</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li>
-                                <a href="<?= base_url('pemdes/auth/loginpage/' . substr($kodedes, 0, 13)); ?>" target="_blank">
-                                    <span data-key="t-authloginpemdes">Login</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('pemdes/auth/registrasi/' . substr($kodedes, 0, 13)); ?>" target="_blank">
-                                    <span data-key="t-authregistrasipemdes-sosialkab">Registrasi</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                <?php endif; ?>
+                <!-- end sementara -->
+                <li>
+                    <a href="<?= base_url('pemdes/auth/loginpage/' . substr($kodedes, 0, 13)); ?>" target="_blank">
+                        <i data-feather="edit"></i>
+                        <span data-key="t-authloginpemdes">Layanan Mandiri</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
