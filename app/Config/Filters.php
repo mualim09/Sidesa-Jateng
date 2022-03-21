@@ -13,6 +13,7 @@ use App\Filters\Sistemmember;
 use App\Filters\FilterJWT;
 use App\Filters\Noauthsidesa;
 use App\Filters\Deletedatasidesa;
+use App\Filters\Noauthpemdes;
 
 class Filters extends BaseConfig
 {
@@ -30,6 +31,7 @@ class Filters extends BaseConfig
         'authusersidesa' => Authusersidesa::class,
         'noauthsitkd' => Noauthsitkd::class,
         'noauthsidesa' => Noauthsidesa::class,
+        'noauthpemdes' => Noauthpemdes::class,
         'sistemmember' => Sistemmember::class,
         'deletedatasidesa' => Deletedatasidesa::class,
         'otentikasi' => FilterJWT::class

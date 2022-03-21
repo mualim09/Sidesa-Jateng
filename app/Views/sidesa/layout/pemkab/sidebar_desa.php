@@ -98,13 +98,15 @@
                 $request = \Config\Services::request();
                 $url = $request->uri->getSegment(3);
                 ?>
-                <!-- end sementara -->
-                <li>
-                    <a href="<?= base_url('pemdes/auth/loginpage/' . substr($kodedes, 0, 13)); ?>" target="_blank">
-                        <i data-feather="edit"></i>
-                        <span data-key="t-authloginpemdes">Layanan Mandiri</span>
-                    </a>
-                </li>
+                <?php if ($url == "33.29.15.2007") : ?>
+                    <!-- end sementara -->
+                    <li>
+                        <a href="<?= base_url('pemdes/auth/login/' . substr($kodedes, 0, 13)); ?>" target="_blank">
+                            <i data-feather="edit"></i>
+                            <span data-key="t-authloginpemdes">Layanan Mandiri</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
         <!-- Sidebar -->

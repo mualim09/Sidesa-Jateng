@@ -7,32 +7,32 @@ use App\Controllers\BaseController;
 class Auth extends BaseController
 {
     protected $validation;
-    protected $email;
+    // protected $email;
 
     public function __construct()
     {
         date_default_timezone_set('Asia/Jakarta');
         $this->validation = \Config\Services::validation();
-        $this->email = \Config\Services::email();
+        // $this->email = \Config\Services::email();
     }
 
     function loginpage($kode)
     {
         if (isset($_POST['signin'])) {
-            $this->validation->setRule('nik_ktp', 'NIK', 'required|numeric|min_length[16]|max_length[16]|trim', ['numeric' => 'NIK-KTP hanya diisi angka (tanpa spasi)', 'required' => 'NIK-KTP tidak boleh kosong', 'min_length' => 'NIK harus 16 digit', 'max_length' => 'NIK-KTP harus 16 digit']);
+            $this->validation->setRule('nik_ktp', 'NIK-KTP', 'required|numeric|min_length[16]|max_length[16]|trim', ['numeric' => 'NIK-KTP hanya diisi angka (tanpa spasi)', 'required' => 'NIK-KTP tidak boleh kosong', 'min_length' => 'NIK-KTP harus 16 digit', 'max_length' => 'NIK-KTP harus 16 digit']);
             if (!$this->validation->withRequest($this->request)->run()) {
-                return redirect()->to('pemdes/auth/loginpage')->withInput();
+                return redirect()->to('pemdes/auth/loginpage/' . $kode)->withInput();
             }
             $this->validation->setRule('password', 'Password', 'registrasiPEMDES[nik_ktp,password]|aktivasiPEMDES[nik_ktp,password]|validasiPEMDES[nik_ktp,password]', ['validasiPEMDES' => 'Kesalahan input Password', 'aktivasiPEMDES' => 'Akun belum diaktifkan. Hubungi petugas IT Desa!', 'registrasiPEMDES' => 'NIK-KTP belum terdaftar. Silahkan registrasi']);
             if (!$this->validation->withRequest($this->request)->run()) {
-                return redirect()->to('pemdes/auth/loginpage')->withInput();
+                return redirect()->to('pemdes/auth/loginpage/' . $kode)->withInput();
             } else {
                 $builder = $this->db->table('pemdes_user');
                 $user = $builder->getWhere(['nik_ktp' => $this->request->getVar('nik_ktp')])->getRowArray();
                 $this->login($user);
 
                 if ($user['is_active'] == 1) {
-                    return redirect()->to(site_url('pemdes/masyarakat/dashboard'));
+                    return redirect()->to(site_url('pemdes/masyarakat/dashboard/' . $kode));
                 }
             }
         }
@@ -44,24 +44,80 @@ class Auth extends BaseController
         $whoiskec = ucwords($hurufawalkec);
 
         $data = [
-            'title' => 'Pelayanan ' . $whoisdes,
-            'page_title' => view('sidesa/layout/pemdes/page-title', ['title' => 'Kecamatan ' . $whoiskec . ", Desa " . $whoisdes, 'li_1' => 'Menu', 'li_2' => 'Home']),
+            'title' => 'Login Pelayanan | ' . $whoisdes,
             'kodedes' => $kode,
             'namakec' => $whoiskec,
             'namades' => $whoisdes,
-            'datades' => $this->db->table('dashboard_desa')->getWhere(['kodedes' => substr($kode, 0, 13)])->getRowArray(),
-            'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
+            // 'datades' => $this->db->table('dashboard_desa')->getWhere(['kodedes' => substr($kode, 0, 13)])->getRowArray(),
+            // 'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
             'validation' => $this->validation
         ];
 
         return view('sidesa/pemdes/auth/login', $data);
     }
 
+    function registration($kode)
+    {
+        if (isset($_POST['regis'])) {
+            $this->validation->setRule('nama', 'Nama', 'required|alpha_space|trim', ['required' => 'Nama tidak boleh kosong', 'alpha_space' => 'Nama hanya diisi alphabet dan spasi']);
+            $this->validation->setRule('no_kk', 'NO-KK', 'required|numeric|min_length[16]|max_length[16]|trim', ['numeric' => 'Nomor KK hanya diisi angka (tanpa spasi)', 'required' => 'Nomor KK tidak boleh kosong', 'min_length' => 'Nomor KK harus 16 digit', 'max_length' => 'Nomor KK harus 16 digit']);
+            $this->validation->setRule('nik_ktp', 'NIK-KTP', 'required|numeric|min_length[16]|max_length[16]|trim|is_unique[pemdes_user.nik_ktp]', ['required' => 'NIK-KTP tidak boleh kosong', 'min_length' => 'NIK-KTP harus 16 digit (hanya diisi angka tanpa spasi)', 'max_length' => 'NIK-KTP harus 16 digit (hanya diisi angka tanpa spasi)', 'is_unique' => 'NIK-KTP sudah terdaftar', 'numeric' => 'NIK-KTP hanya diisi angka (tanpa spasi)']);
+            $this->validation->setRule('hp', 'HP', 'required|numeric|min_length[10]|max_length[15]|trim', ['numeric' => 'Nomor HP hanya diisi angka (tanpa spasi)', 'required' => 'Nomor HP tidak boleh kosong', 'min_length' => 'Nomor HP minimal harus 10 digit', 'max_length' => 'Nomor HP maximal harus 15 digit']);
+            $this->validation->setRule('password', 'Password', 'required|trim|min_length[6]', ['required' => 'Password tidak boleh kosong', 'min_length' => 'Password minimal 6 karakter']);
+            if (!$this->validation->withRequest($this->request)->run()) {
+                return redirect()->to('pemdes/auth/registrasi/' . $kode)->withInput();
+            } else {
+                $builderuser = $this->db->table('pemdes_user');
+                $buildertoken = $this->db->table('pemdes_user_token');
+
+                $nik_ktp = $this->request->getVar('nik_ktp');
+                $datareg = [
+                    'kd_wilayah' => $kode,
+                    'nama' => htmlspecialchars($this->request->getVar('nama')),
+                    'no_kk' => htmlspecialchars($this->request->getVar('no_kk')),
+                    'nik_ktp' => htmlspecialchars($this->request->getVar('nik_ktp')),
+                    'hp' => htmlspecialchars($this->request->getVar('hp')),
+                    'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+                    'image' => 'default.jpg',
+                    'is_active' => 0,
+                    'created' => time()
+                ];
+
+                // token untuk Aktivasi dikirim melalui WA dari user panel perangkat desa
+                $token = base64_encode(random_bytes(32));
+                $user_token = [
+                    'nik_ktp' => $nik_ktp,
+                    'token' => $token,
+                    'tanggal' => time()
+                ];
+
+                $builderuser->insert($datareg);
+                $buildertoken->insert($user_token);
+
+                return redirect()->to(site_url('pemdes/auth/konfirmasi-whatsapp/' . $kode));
+            }
+        }
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+        $hurufawalkec = strtolower($cekkodedes['nm_kec']);
+        $whoiskec = ucwords($hurufawalkec);
+
+        $data = [
+            'title' => 'Registrasi Pelayanan | ' . $whoisdes,
+            'kodedes' => $kode,
+            'namakec' => $whoiskec,
+            'namades' => $whoisdes,
+            'validation' => $this->validation
+        ];
+        return view('sidesa/pemdes/auth/registration', $data);
+    }
+
     private function login($user)
     {
         $data = [
             'id_user' => $user['id'],
-            'nik_kk' => $user['nik_kk'],
+            'no_kk' => $user['no_kk'],
             'nik_ktp' => $user['nik_ktp'],
             'is_active' => $user['is_active'],
             'kd_wilayah' => $user['kd_wilayah'],
@@ -78,7 +134,7 @@ class Auth extends BaseController
         if (isset($_POST['forgot'])) {
             $this->validation->setRule('nik_ktp', 'NIK-KTP', 'required|numeric|min_length[16]|max_length[16]|registrasiPEMDES[nik_ktp,password]|trim', ['numeric' => 'NIK-KTP hanya diisi angka (tanpa spasi)', 'required' => 'NIK-KTP tidak boleh kosong', 'min_length' => 'NIK harus 16 digit', 'max_length' => 'NIK-KTP harus 16 digit', 'registrasiPEMDES' => 'NIK-KTP belum terdaftar. Silahkan registrasi']);
             if (!$this->validation->withRequest($this->request)->run()) {
-                return redirect()->to('pemdes/auth/forgotpass/' . $kode)->withInput();
+                return redirect()->to('pemdes/auth/lupa-password/' . $kode)->withInput();
             } else {
                 $builderuser = $this->db->table('pemdes_user');
                 $buildertoken = $this->db->table('pemdes_user_token');
@@ -96,10 +152,10 @@ class Auth extends BaseController
 
                     $buildertoken->insert($user_token);
 
-                    return redirect('user/konfirmasi-resetpass');
+                    return redirect()->to(site_url('pemdes/auth/konfirmasi-resetpass/' . $kode));
                 } else {
-                    $this->session->setFlashdata('message', '<div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-block-helper label-icon"></i>Email belum terdaftar / belum di ACC Perangkat Desa!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
-                    return redirect('pemdes/auth/forgotpass/' . $kode);
+                    $this->session->setFlashdata('message', '<div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-block-helper label-icon"></i>NIK-KTP belum registrasi / belum di ACC Perangkat Desa!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                    return redirect()->to(site_url('pemdes/auth/lupa-password/' . $kode));
                 }
             }
         }
@@ -110,7 +166,7 @@ class Auth extends BaseController
         $whoiskec = ucwords($hurufawalkec);
 
         $data = [
-            'title' => 'Lupa Password | SIDesa JATENG',
+            'title' => 'Lupa Password | ' . $whoisdes,
             'kodedes' => $kode,
             'namakec' => $whoiskec,
             'namades' => $whoisdes,
@@ -119,11 +175,11 @@ class Auth extends BaseController
         return view('sidesa/pemdes/auth/forgot-password', $data);
     }
 
-    public function logout()
+    public function logout($kode)
     {
         $data = [
             'id_user',
-            'nik_kk',
+            'no_kk',
             'nik_ktp',
             'is_active',
             'kd_wilayah',
@@ -131,6 +187,40 @@ class Auth extends BaseController
         ];
         $this->session->remove($data);
         $this->session->setFlashdata('message', '<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-check-all label-icon"></i>Anda telah logged out!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
-        return redirect('user/panel');
+        return redirect('pemdes/auth/login/' . $kode);
+    }
+
+    function confirm_wa($kode)
+    {
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+        $hurufawalkec = strtolower($cekkodedes['nm_kec']);
+        $whoiskec = ucwords($hurufawalkec);
+
+        $data = [
+            'title' => 'Konfirmasi | PEMDES ' . $whoisdes,
+            'kodedes' => $kode,
+            'namakec' => $whoiskec,
+            'namades' => $whoisdes
+        ];
+        return view('sidesa/pemdes/auth/konfirmasiwa', $data);
+    }
+
+    function confirm_resetpass($kode)
+    {
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+        $hurufawalkec = strtolower($cekkodedes['nm_kec']);
+        $whoiskec = ucwords($hurufawalkec);
+
+        $data = [
+            'title' => 'Konfirmasi | PEMDES ' . $whoisdes,
+            'kodedes' => $kode,
+            'namakec' => $whoiskec,
+            'namades' => $whoisdes
+        ];
+        return view('sidesa/pemdes/auth/konfirmasireset', $data);
     }
 }

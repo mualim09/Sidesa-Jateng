@@ -8,7 +8,7 @@
                     <div class="w-100">
                         <div class="d-flex flex-column h-100">
                             <div class="mb-4 mb-md-5 text-center">
-                                <a href="<?= base_url('pemdes/auth/loginpage/' . $kodedes); ?>" class="d-block auth-logo">
+                                <a href="<?= base_url('pemdes/auth/login/' . $kodedes); ?>" class="d-block auth-logo">
                                     <?php if (substr($kodedes, 0, 5) == "33.01") : ?>
                                         <span class="logo-lg">
                                             <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3301.png'); ?>" alt="" height="60">
@@ -230,9 +230,9 @@
                             <div class="auth-content my-auto">
                                 <div class="text-center">
                                     <h5 class="mb-0">Selamat Datang</h5>
-                                    <p class="text-muted mt-2">Login untuk melanjutkan fitur pelayanan Desa</p>
+                                    <p class="text-muted mt-2">Login untuk Layanan Elektronik Mandiri Desa</p>
                                 </div>
-                                <form class="custom-form mt-4 pt-2" method="POST" action="<?= base_url('user/panel'); ?>">
+                                <form class="custom-form mt-4 pt-2" method="POST" action="<?= base_url('pemdes/auth/login/' . $kodedes); ?>">
                                     <?= csrf_field(); ?>
                                     <div class="mb-3">
                                         <label for="nik_ktp" class="form-label">NIK KTP</label>
@@ -248,7 +248,7 @@
                                             </div>
                                             <div class="flex-shrink-0">
                                                 <div class="">
-                                                    <a href="<?= base_url('pemdes/auth/forgotpass/' . $kodedes); ?>" class="text-muted">Lupa password?</a>
+                                                    <a href="<?= base_url('pemdes/auth/lupa-password/' . $kodedes); ?>" class="text-muted">Lupa password?</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -274,7 +274,7 @@
                                 </form>
 
                                 <div class="mt-5 text-center">
-                                    <p class="text-muted mb-0">Belum memiliki akun ? <a href="<?= base_url('user/registrasi'); ?>" class="text-primary fw-semibold"> Registrasi </a> </p>
+                                    <p class="text-muted mb-0">Belum memiliki akun ? <a href="<?= base_url('pemdes/auth/registrasi/' . $kodedes); ?>" class="text-primary fw-semibold"> Registrasi </a> </p>
                                 </div>
                             </div>
                             <div class="mt-4 mt-md-5 text-center">
