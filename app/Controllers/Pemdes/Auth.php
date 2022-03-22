@@ -21,11 +21,11 @@ class Auth extends BaseController
         if (isset($_POST['signin'])) {
             $this->validation->setRule('nik_ktp', 'NIK-KTP', 'required|numeric|min_length[16]|max_length[16]|trim', ['numeric' => 'NIK-KTP hanya diisi angka (tanpa spasi)', 'required' => 'NIK-KTP tidak boleh kosong', 'min_length' => 'NIK-KTP harus 16 digit', 'max_length' => 'NIK-KTP harus 16 digit']);
             if (!$this->validation->withRequest($this->request)->run()) {
-                return redirect()->to('pemdes/auth/loginpage/' . $kode)->withInput();
+                return redirect()->to('pemdes/auth/login/' . $kode)->withInput();
             }
             $this->validation->setRule('password', 'Password', 'registrasiPEMDES[nik_ktp,password]|aktivasiPEMDES[nik_ktp,password]|validasiPEMDES[nik_ktp,password]', ['validasiPEMDES' => 'Kesalahan input Password', 'aktivasiPEMDES' => 'Akun belum diaktifkan. Hubungi petugas IT Desa!', 'registrasiPEMDES' => 'NIK-KTP belum terdaftar. Silahkan registrasi']);
             if (!$this->validation->withRequest($this->request)->run()) {
-                return redirect()->to('pemdes/auth/loginpage/' . $kode)->withInput();
+                return redirect()->to('pemdes/auth/login/' . $kode)->withInput();
             } else {
                 $builder = $this->db->table('pemdes_user');
                 $user = $builder->getWhere(['nik_ktp' => $this->request->getVar('nik_ktp')])->getRowArray();
@@ -222,5 +222,120 @@ class Auth extends BaseController
             'namades' => $whoisdes
         ];
         return view('sidesa/pemdes/auth/konfirmasireset', $data);
+    }
+
+    function verify_wa($kode)
+    {
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+
+        $builderuser = $this->db->table('pemdes_user');
+        $buildertoken = $this->db->table('pemdes_user_token');
+
+        $nik_ktp = $this->request->getVar('nik_ktp');
+        $token = $this->request->getVar('token');
+
+        $user = $builderuser->getWhere(['nik_ktp' => $nik_ktp])->getRowArray();
+
+        if ($user) {
+            $user_token = $buildertoken->getWhere(['token' => $token])->getRowArray();
+            if ($user_token) {
+                if (time() - $user_token['tanggal'] < (60 * 60 * 48)) {
+                    $builderuser->set('is_active', 1);
+                    $builderuser->where('nik_ktp', $nik_ktp);
+                    $builderuser->update();
+                    $buildertoken->delete(['nik_ktp' => $nik_ktp]);
+
+                    $this->session->setFlashdata('message', '<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-check-all label-icon"></i>NIK-KTP </b>' . $nik_ktp . '</b> telah diaktifkan. silahkan login untuk menggunakan Layanan Mandiri Elektronik Desa!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                    return redirect()->to(site_url('pemdes/auth/login/' . $kode));
+                } else {
+
+                    $builderuser->delete(['nik_ktp' => $nik_ktp]);
+                    $buildertoken->delete(['nik_ktp' => $nik_ktp]);
+
+                    $this->session->setFlashdata('message', '<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-alert-outline label-icon"></i>Aktivasi akun gagal: Waktu aktivasi telah expired silahkan register kembali!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                    return redirect()->to(site_url('pemdes/auth/login/' . $kode));
+                }
+            } else {
+                $this->session->setFlashdata('message', '<div class="alert alert-info alert-dismissible alert-label-icon label-arrow fade show mb-0" role="alert"><i class="mdi mdi-alert-circle-outline label-icon"></i>Aktivasi akun gagal: Token sudah pernah digunakan!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                return redirect()->to(site_url('pemdes/auth/login/' . $kode));
+            }
+        } else {
+            $this->session->setFlashdata('message', '<div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-block-helper label-icon"></i>Aktivasi akun gagal: NIK-KTP tidak sesuai dengan database yang ada di Desa ' . $whoisdes . ' !<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+            return redirect()->to(site_url('pemdes/auth/login/' . $kode));
+        }
+    }
+
+    function resetPassword($kode)
+    {
+        $builderuser = $this->db->table('pemdes_user');
+        $buildertoken = $this->db->table('pemdes_user_token');
+
+        $nik_ktp = $this->request->getVar('nik_ktp');
+        $token = $this->request->getVar('token');
+
+        if ($nik_ktp == null) {
+            return redirect()->to(site_url('pemdes/auth/login/' . $kode));
+        }
+        $user = $builderuser->getWhere(['nik_ktp' => $nik_ktp])->getRowArray();
+
+        if ($user) {
+            $user_token = $buildertoken->getWhere(['token' => $token])->getRowArray();
+            if ($user_token) {
+                $reset_nik_ktp = ['reset_pass' => $nik_ktp];
+                $this->session->set($reset_nik_ktp); // untuk bisa masuk ke url (fitur) reset password
+                $this->changePassword($kode);
+            } else {
+                $this->session->setFlashdata('message', '<div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-block-helper label-icon"></i>Reset password gagal! Tautan token tidak valid!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                return redirect()->to(site_url('pemdes/auth/login/' . $kode));
+            }
+        } else {
+            $this->session->setFlashdata('message', '<div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-block-helper label-icon"></i>Reset password gagal! NIK-KTP tidak valid!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+            return redirect()->to(site_url('pemdes/auth/login/' . $kode));
+        }
+    }
+
+    function changePassword($kode)
+    {
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+        $hurufawalkec = strtolower($cekkodedes['nm_kec']);
+        $whoiskec = ucwords($hurufawalkec);
+
+        $builderuser = $this->db->table('pemdes_user');
+        $buildertoken = $this->db->table('pemdes_user_token');
+
+        if (!$this->session->get('reset_pass')) {
+            return redirect()->to(site_url('pemdes/auth/login/' . $kode));
+        }
+        if (isset($_POST['gantipas'])) {
+            $this->validation->setRule('password1', 'Password', 'required|trim|min_length[6]', ['required' => 'Password tidak boleh kosong', 'min_length' => 'Password minimal 6 digit']);
+            $this->validation->setRule('password2', 'Password', 'matches[password1]', ['matches' => 'Pencocokan password tidak sesuai']);
+            if (!$this->validation->withRequest($this->request)->run()) {
+                return redirect()->to('pemdes/auth/ganti-password')->withInput();
+            } else {
+                $password = password_hash($this->request->getVar('password1'), PASSWORD_DEFAULT);
+                $nik_ktp = $this->session->get('reset_pass');
+
+                $builderuser->set('password', $password);
+                $builderuser->where('nik_ktp', $nik_ktp);
+                $builderuser->update();
+                $buildertoken->delete(['nik_ktp' => $nik_ktp]);
+
+                $this->session->remove('reset_pass');
+                $this->session->setFlashdata('message', '<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-check-all label-icon"></i>Password berhasil <b>diubah</b>. Silahkan login!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                return redirect()->to(site_url('pemdes/auth/login/' . $kode));
+            }
+        }
+        $data = [
+            'title' => 'Ganti Password | PEMDES ' . $whoisdes,
+            'kodedes' => $kode,
+            'namakec' => $whoiskec,
+            'namades' => $whoisdes,
+            'validation' => $this->validation
+        ];
+        echo view('sidesa/pemdes/auth/change-password', $data);
     }
 }

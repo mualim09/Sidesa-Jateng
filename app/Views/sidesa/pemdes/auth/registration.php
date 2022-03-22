@@ -219,7 +219,7 @@
                             <div class="auth-content my-auto">
                                 <div class="text-center">
                                     <h5 class="mb-0">Registrasi Akun</h5>
-                                    <p class="text-muted mt-2">Daftarkan Akun Layanan Elektronik Mandiri Desa Anda.</p>
+                                    <p class="text-muted mt-2">Daftarkan Akun Layanan Mandiri Elektronik Desa Anda.</p>
                                 </div>
                                 <form class="needs-validation custom-form mt-4 pt-2" method="POST" action="<?= base_url('pemdes/auth/registrasi/' . $kodedes); ?>">
                                     <?= csrf_field(); ?>

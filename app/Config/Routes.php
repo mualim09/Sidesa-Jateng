@@ -222,20 +222,19 @@ $routes->group('api', ['namespace' => 'App\Controller\Api'], function ($routes) 
 });
 
 // PEMDES USER OTENTIKASI
-$routes->get('/pemdes/auth/blocked', 'Pemdes\Auth::blocked'); //belum
+$routes->get('/pemdes/auth/blocked/(:any)', 'Pemdes\Auth::blocked/$1'); //belum
 $routes->get('/pemdes/auth/logout/(:any)', 'Pemdes\Auth::logout/$1');
 $routes->add('/pemdes/auth/login/(:any)', 'Pemdes\Auth::loginpage/$1', ['filter' => 'noauthpemdes']);
-$routes->add('/pemdes/auth/verify', 'Pemdes\Auth::verify');
-$routes->add('/pemdes/auth/resetpassword', 'Pemdes\Auth::resetpassword'); // belum
+$routes->add('/pemdes/auth/verify/(:any)', 'Pemdes\Auth::verify_wa/$1');
+$routes->add('/pemdes/auth/resetpassword/(:any)', 'Pemdes\Auth::resetpassword/$1'); // belum
 $routes->add('/pemdes/auth/konfirmasi-whatsapp/(:any)', 'Pemdes\Auth::confirm_wa/$1');
 $routes->add('/pemdes/auth/konfirmasi-resetpass/(:any)', 'Pemdes\Auth::confirm_resetpass/$1');
 $routes->match(['get', 'post'], '/pemdes/auth/registrasi/(:any)', 'Pemdes\Auth::registration/$1', ['filter' => 'noauthpemdes']);
 $routes->match(['get', 'post'], '/pemdes/auth/registration/(:any)', 'Pemdes\Auth::registration/$1', ['filter' => 'noauthpemdes']);
 $routes->match(['get', 'post'], '/pemdes/auth/lupa-password/(:any)', 'Pemdes\Auth::forgotpass/$1', ['filter' => 'noauthpemdes']);
 $routes->match(['get', 'post'], '/pemdes/auth/forgotpass/(:any)', 'Pemdes\Auth::forgotpass/$1', ['filter' => 'noauthpemdes']);
-
-$routes->match(['get', 'post'], '/pemdes/auth/auth/changepassword', 'Pemdes\Auth::changepassword', ['filter' => 'noauthpemdes']);
-$routes->match(['get', 'post'], '/pemdes/auth/ganti-password', 'Pemdes\Auth::changepassword', ['filter' => 'noauthpemdes']);
+$routes->match(['get', 'post'], '/pemdes/auth/ganti-password/(:any)', 'Pemdes\Auth::changepassword/$1', ['filter' => 'noauthpemdes']);
+$routes->match(['get', 'post'], '/pemdes/auth/auth/changepassword/(:any)', 'Pemdes\Auth::changepassword/$1', ['filter' => 'noauthpemdes']);
 
 // Geodesa KONTEN
 $routes->get('/geodesa/tematik', 'Geodesa\Tematik::index');

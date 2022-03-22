@@ -230,7 +230,7 @@
                             <div class="auth-content my-auto">
                                 <div class="text-center">
                                     <h5 class="mb-0">Selamat Datang</h5>
-                                    <p class="text-muted mt-2">Login untuk Layanan Elektronik Mandiri Desa</p>
+                                    <p class="text-muted mt-2">Login untuk Layanan Mandiri Elektronik Desa</p>
                                 </div>
                                 <form class="custom-form mt-4 pt-2" method="POST" action="<?= base_url('pemdes/auth/login/' . $kodedes); ?>">
                                     <?= csrf_field(); ?>
