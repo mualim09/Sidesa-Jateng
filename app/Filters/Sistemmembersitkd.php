@@ -7,7 +7,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\URI;
 
-class Sistemmember implements FilterInterface
+class Sistemmembersitkd implements FilterInterface
 {
     public function __construct()
     {

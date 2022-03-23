@@ -9,7 +9,8 @@ use CodeIgniter\Filters\Honeypot;
 use App\Filters\Noauthsitkd;
 use App\Filters\Authusersitkd;
 use App\Filters\Authusersidesa;
-use App\Filters\Sistemmember;
+use App\Filters\Sistemlayananpemdes;
+use App\Filters\Sistemmembersitkd;
 use App\Filters\FilterJWT;
 use App\Filters\Noauthsidesa;
 use App\Filters\Deletedatasidesa;
@@ -32,7 +33,8 @@ class Filters extends BaseConfig
         'noauthsitkd' => Noauthsitkd::class,
         'noauthsidesa' => Noauthsidesa::class,
         'noauthpemdes' => Noauthpemdes::class,
-        'sistemmember' => Sistemmember::class,
+        'sistemmembersitkd' => Sistemmembersitkd::class,
+        'sistemlayananpemdes' => Sistemlayananpemdes::class,
         'deletedatasidesa' => Deletedatasidesa::class,
         'otentikasi' => FilterJWT::class
     ];

@@ -13,7 +13,7 @@ class Noauthpemdes implements FilterInterface
     {
         if (session()->get('kd_wilayah') !== null) {
             $kodedes = session()->get('kd_wilayah');
-            return redirect()->to(site_url('pemdes/masyarakat/dashboard/' . $kodedes));
+            return redirect()->to(site_url('pemdes/member/dashboard/' . $kodedes));
         }
     }
 

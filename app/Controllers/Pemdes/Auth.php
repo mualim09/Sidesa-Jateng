@@ -32,7 +32,8 @@ class Auth extends BaseController
                 $this->login($user);
 
                 if ($user['is_active'] == 1) {
-                    return redirect()->to(site_url('pemdes/masyarakat/dashboard/' . $kode));
+                    $nik_ktp = $this->request->getVar('nik_ktp');
+                    return redirect()->to(site_url('pemdes/member/dashboard/' . $kode . '/' . $nik_ktp));
                 }
             }
         }
@@ -48,8 +49,6 @@ class Auth extends BaseController
             'kodedes' => $kode,
             'namakec' => $whoiskec,
             'namades' => $whoisdes,
-            // 'datades' => $this->db->table('dashboard_desa')->getWhere(['kodedes' => substr($kode, 0, 13)])->getRowArray(),
-            // 'listkec' => $this->db->table('kd_kecamatan')->getWhere(['id_kab' => substr($kode, 0, 5)])->getResult(),
             'validation' => $this->validation
         ];
 
@@ -337,5 +336,22 @@ class Auth extends BaseController
             'validation' => $this->validation
         ];
         echo view('sidesa/pemdes/auth/change-password', $data);
+    }
+
+    public function blocked($kode)
+    {
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+        $hurufawalkec = strtolower($cekkodedes['nm_kec']);
+        $whoiskec = ucwords($hurufawalkec);
+
+        $data = [
+            'kodedes' => $kode,
+            'namakec' => $whoiskec,
+            'namades' => $whoisdes
+        ];
+
+        return view('sidesa/pemdes/auth/blocked', $data);
     }
 }
