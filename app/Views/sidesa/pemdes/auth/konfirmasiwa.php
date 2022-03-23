@@ -224,7 +224,7 @@
                                     </div>
                                     <div class="p-2 mt-4">
                                         <h4>Registrasi Diproses !</h4>
-                                        <p class="text-muted">Kami segera melakukan verifikasi data registrasi Anda dan segera mengirimkan <b>kode aktivasi</b> akun Layanan Mandiri Elektronik Desa Anda melalui nomor HP dengan aplikasi (whatsapp) yang telah Anda registrasi paling lambat 2 x 24 jam, terima kasih.</p>
+                                        <p class="text-muted">Kami segera melakukan verifikasi data registrasi Anda dan segera mengirimkan <b>kode aktivasi</b> akun Layanan Mandiri Elektronik Desa Anda melalui nomor HP dengan aplikasi (whatsapp) yang telah Anda registrasi paling lambat 7 x 24 jam terima kasih.</p>
                                         <div class="mt-4">
                                             <a href="<?= base_url('pemdes/auth/login/' . $kodedes); ?>" class="btn btn-primary w-100">Kembali ke halaman login</a>
                                         </div>

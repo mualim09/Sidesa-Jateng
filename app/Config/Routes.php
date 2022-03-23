@@ -226,7 +226,7 @@ $routes->get('/pemdes/auth/blocked/(:any)', 'Pemdes\Auth::blocked/$1'); //belum
 $routes->get('/pemdes/auth/logout/(:any)', 'Pemdes\Auth::logout/$1');
 $routes->add('/pemdes/auth/login/(:any)', 'Pemdes\Auth::loginpage/$1', ['filter' => 'noauthpemdes']);
 $routes->add('/pemdes/auth/verify/(:any)', 'Pemdes\Auth::verify_wa/$1');
-$routes->add('/pemdes/auth/resetpassword/(:any)', 'Pemdes\Auth::resetpassword/$1'); // belum
+$routes->add('/pemdes/auth/resetpassword/(:any)', 'Pemdes\Auth::resetpass/$1'); // belum
 $routes->add('/pemdes/auth/konfirmasi-whatsapp/(:any)', 'Pemdes\Auth::confirm_wa/$1');
 $routes->add('/pemdes/auth/konfirmasi-resetpass/(:any)', 'Pemdes\Auth::confirm_resetpass/$1');
 $routes->match(['get', 'post'], '/pemdes/auth/registrasi/(:any)', 'Pemdes\Auth::registration/$1', ['filter' => 'noauthpemdes']);

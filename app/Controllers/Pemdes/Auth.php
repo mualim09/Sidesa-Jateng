@@ -241,7 +241,7 @@ class Auth extends BaseController
         if ($user) {
             $user_token = $buildertoken->getWhere(['token' => $token])->getRowArray();
             if ($user_token) {
-                if (time() - $user_token['tanggal'] < (60 * 60 * 48)) {
+                if (time() - $user_token['tanggal'] < (60 * 60 * 168)) {
                     $builderuser->set('is_active', 1);
                     $builderuser->where('nik_ktp', $nik_ktp);
                     $builderuser->update();
@@ -267,7 +267,7 @@ class Auth extends BaseController
         }
     }
 
-    function resetPassword($kode)
+    function resetPass($kode)
     {
         $builderuser = $this->db->table('pemdes_user');
         $buildertoken = $this->db->table('pemdes_user_token');
@@ -314,7 +314,7 @@ class Auth extends BaseController
             $this->validation->setRule('password1', 'Password', 'required|trim|min_length[6]', ['required' => 'Password tidak boleh kosong', 'min_length' => 'Password minimal 6 digit']);
             $this->validation->setRule('password2', 'Password', 'matches[password1]', ['matches' => 'Pencocokan password tidak sesuai']);
             if (!$this->validation->withRequest($this->request)->run()) {
-                return redirect()->to('pemdes/auth/ganti-password')->withInput();
+                return redirect()->to('pemdes/auth/ganti-password/' . $kode)->withInput();
             } else {
                 $password = password_hash($this->request->getVar('password1'), PASSWORD_DEFAULT);
                 $nik_ktp = $this->session->get('reset_pass');

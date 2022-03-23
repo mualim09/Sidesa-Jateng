@@ -220,7 +220,7 @@
                                     <h5 class="mb-0">Reset Password</h5>
                                     <p class="text-muted mt-2">Input kembali password anda.</p>
                                 </div>
-                                <form class="needs-validation custom-form mt-4 pt-2" method="POST" action="<?= base_url('pemdes/auth/ganti-password/' . $kode); ?>">
+                                <form class="needs-validation custom-form mt-4 pt-2" method="POST" action="<?= base_url('pemdes/auth/ganti-password/' . $kodedes); ?>">
                                     <?= csrf_field(); ?>
 
                                     <div class="mb-3">
