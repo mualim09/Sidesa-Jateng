@@ -27,14 +27,11 @@ class Auth extends BaseController
             if (!$this->validation->withRequest($this->request)->run()) {
                 return redirect()->to('pemdes/auth/login/' . $kode)->withInput();
             } else {
+                $nik_ktp = $this->request->getVar('nik_ktp');
                 $builder = $this->db->table('pemdes_user');
-                $user = $builder->getWhere(['nik_ktp' => $this->request->getVar('nik_ktp')])->getRowArray();
+                $user = $builder->getWhere(['nik_ktp' => $nik_ktp])->getRowArray();
                 $this->login($user);
-
-                if ($user['is_active'] == 1) {
-                    $nik_ktp = $this->request->getVar('nik_ktp');
-                    return redirect()->to(site_url('pemdes/member/dashboard/' . $kode . '/' . $nik_ktp));
-                }
+                return redirect()->to(site_url('pemdes/member/home/' . $kode . '/' . $nik_ktp));
             }
         }
 
@@ -186,7 +183,7 @@ class Auth extends BaseController
         ];
         $this->session->remove($data);
         $this->session->setFlashdata('message', '<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-check-all label-icon"></i>Anda telah logged out!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
-        return redirect('pemdes/auth/login/' . $kode);
+        return redirect()->to(site_url('pemdes/auth/login/' . $kode));
     }
 
     function confirm_wa($kode)

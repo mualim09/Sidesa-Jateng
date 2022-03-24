@@ -237,7 +237,7 @@ $routes->match(['get', 'post'], '/pemdes/auth/ganti-password/(:any)', 'Pemdes\Au
 $routes->match(['get', 'post'], '/pemdes/auth/auth/changepassword/(:any)', 'Pemdes\Auth::changepassword/$1', ['filter' => 'noauthpemdes']);
 
 // PEMDES KONTEN LAYANAN MANDIRI ELEKTRONIK MEMBER
-$routes->add('/pemdes/member/dashboard/(:any)', 'Pemdes\Member::home/$1', ['filter' => 'sistemlayananpemdes']);
+$routes->add('/pemdes/member/home/(:any)/(:any)', 'Pemdes\Member::home/$1/$2', ['filter' => 'sistemlayananpemdes']);
 
 
 // Geodesa KONTEN

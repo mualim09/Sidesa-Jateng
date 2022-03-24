@@ -21,13 +21,13 @@ class Sistemlayananpemdes implements FilterInterface
             return redirect()->to('pemdes/auth/login/' . $kode);
         } else {
             $builder = $this->db->table('pemdes_user');
-            $kd_wilayah = session()->get('kd_wilayah'); // butuh kd_wilayah nya tapi berdasarkan nik_ktp user yang login
+            $kd_wilayah = $request->uri->getSegment(4); // butuh kd_wilayah nya tapi berdasarkan nik_ktp user yang login
             $nik_ktp = $request->uri->getSegment(5);
 
-            $builder->where(['kd_wilayah' => $kd_wilayah, 'kd_wilayah' => $nik_ktp]);
+            $builder->where(['kd_wilayah' => $kd_wilayah, 'nik_ktp' => $nik_ktp]);
             $builder->where(['nik_ktp' => $nik_ktp]);
             $userAccess = $builder->countAllResults();
-            // dd($userAccess);
+            // dd($nik_ktp);
 
             if ($userAccess < 1) {
                 return redirect()->to(site_url('pemdes/auth/blocked/' . $kode));
