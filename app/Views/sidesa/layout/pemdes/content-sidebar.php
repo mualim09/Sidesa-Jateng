@@ -22,7 +22,11 @@ $this->db = \Config\Database::connect();
             <!-- LOOPING SI MENU HEADING-->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <?php foreach ($menu as $m) : ?>
-                    <li class="menu-title" data-key="t-menu"><?= $m['menu'] . ' ' . $namades; ?></li>
+                    <?php if ($m['menu'] == "Desa") : ?>
+                        <li class="menu-title" data-key="t-menu"><?= $m['menu'] . ' ' . $namades; ?></li>
+                    <?php else : ?>
+                        <li class="menu-title" data-key="t-menu"><?= $m['menu']; ?></li>
+                    <?php endif; ?>
                     <!-- SIAPKAN SUB-MENU YANG ADA DIDALAM MENU HEADING-->
                     <?php
                     $menuId = $m['id'];
@@ -50,12 +54,22 @@ $this->db = \Config\Database::connect();
                                     <i data-feather="<?= $sm['icon']; ?>"></i>
                                     <span data-key="t-SKHT"><?= $sm['title']; ?></span>
                                 </a>
+                            <?php elseif ($sm['title'] == "Layanan Online Desa") : ?>
+                                <a href="<?= base_url('pemdes/member/layanan_online_desa/' . $kodedes); ?>">
+                                    <i data-feather="<?= $sm['icon']; ?>"></i>
+                                    <span data-key="t-SKHT"><?= $sm['title']; ?></span>
+                                </a>
+                            <?php else : ?>
+                                <a href="<?= base_url($sm['url'] . '/' . $kodedes . '/' . $nik_ktp); ?>">
+                                    <i data-feather="<?= $sm['icon']; ?>"></i>
+                                    <span data-key="t-dashboard"><?= $sm['title']; ?></span>
+                                </a>
                             <?php endif; ?>
                         </li>
                     <?php endforeach; ?>
                     <hr class="sidebar-divider mt-3">
-                    <hr class="sidebar-divider mt-3">
                 <?php endforeach; ?>
+                <hr class="sidebar-divider mt-3">
             </ul>
         </div>
         <div class="logogayeng border-0 text-center mx-4 mb-5">

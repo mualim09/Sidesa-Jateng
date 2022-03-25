@@ -8,7 +8,7 @@
         <?= $page_title ?>
         <style>
             body {
-                background: url(../../img/bg/sitkd/bg-body.png);
+                background: url(../../../../img/bg/sitkd/bg-body.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -17,7 +17,7 @@
             }
 
             body[data-layout-mode=dark] {
-                background: url(../../img/bg/sitkd/bg-body.png);
+                background: url(../../../../img/bg/sitkd/bg-body.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;

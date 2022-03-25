@@ -31,7 +31,7 @@ class Auth extends BaseController
                 $builder = $this->db->table('pemdes_user');
                 $user = $builder->getWhere(['nik_ktp' => $nik_ktp])->getRowArray();
                 $this->login($user);
-                return redirect()->to(site_url('pemdes/member/home/' . $kode . '/' . $nik_ktp));
+                return redirect()->to(site_url('pemdes/member/dasboard/' . $kode . '/' . $nik_ktp));
             }
         }
 
