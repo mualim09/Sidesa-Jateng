@@ -40,27 +40,27 @@ $this->db = \Config\Database::connect();
                     <?php foreach ($subMenu as $sm) : ?>
                         <li>
                             <?php if ($sm['title'] == "SUKET Usaha Petani") : ?>
-                                <a href="<?= base_url('pemdes/member/sk_usahapetani/' . $kodedes); ?>">
+                                <a href="<?= base_url('pemdes/member/sk_usahapetani/' . $kodedes . '/' . $user['nik_ktp']); ?>">
                                     <i data-feather="<?= $sm['icon']; ?>"></i>
                                     <span data-key="t-SKP"><?= $sm['title']; ?></span>
                                 </a>
                             <?php elseif ($sm['title'] == "SUKET Harga Tanah") : ?>
-                                <a href="<?= base_url('pemdes/member/sk_hargatanah/' . $kodedes); ?>">
+                                <a href="<?= base_url('pemdes/member/sk_hargatanah/' . $kodedes . '/' . $user['nik_ktp']); ?>">
                                     <i data-feather="<?= $sm['icon']; ?>"></i>
                                     <span data-key="t-SKHT"><?= $sm['title']; ?></span>
                                 </a>
                             <?php elseif ($sm['title'] == "SUKET Domisili Lembaga") : ?>
-                                <a href="<?= base_url('pemdes/member/sk_domisililembaga/' . $kodedes); ?>">
+                                <a href="<?= base_url('pemdes/member/sk_domisililembaga/' . $kodedes . '/' . $user['nik_ktp']); ?>">
                                     <i data-feather="<?= $sm['icon']; ?>"></i>
                                     <span data-key="t-SKHT"><?= $sm['title']; ?></span>
                                 </a>
                             <?php elseif ($sm['title'] == "Layanan Online Desa") : ?>
-                                <a href="<?= base_url('pemdes/member/layanan_online_desa/' . $kodedes); ?>">
+                                <a href="<?= base_url('pemdes/member/layanan_online_desa/' . $kodedes . '/' . $user['nik_ktp']); ?>">
                                     <i data-feather="<?= $sm['icon']; ?>"></i>
                                     <span data-key="t-SKHT"><?= $sm['title']; ?></span>
                                 </a>
                             <?php else : ?>
-                                <a href="<?= base_url($sm['url'] . '/' . $kodedes . '/' . $nik_ktp); ?>">
+                                <a href="<?= base_url($sm['url'] . '/' . $kodedes . '/' . $user['nik_ktp']); ?>">
                                     <i data-feather="<?= $sm['icon']; ?>"></i>
                                     <span data-key="t-dashboard"><?= $sm['title']; ?></span>
                                 </a>

@@ -1,8 +1,8 @@
 <footer class="footer">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-6">
-                <span>Copyright &copy; 2020 - <?= date("Y"); ?> Sistem Informasi Desa</span>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2020 - <?= date("Y"); ?> Sistem Informasi Desa DISPERMADESDUKCAPIL Prov JATENG</span>
             </div>
         </div>
     </div>

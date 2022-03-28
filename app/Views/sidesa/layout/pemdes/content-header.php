@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?> | <?= $nik_ktp ?> </title>
+    <title><?= $title ?> | <?= $user['nik_ktp'] ?> </title>
     <meta name="description" content="Sistem Informasi Desa Provinsi Jawa Tengah" />
     <meta name="keywords" content="SIDesa, SITKD, GEODESA, Layanan Mandiri Desa, JATENG, PROV JATENG, Provinsi Jawa Tengah" />
     <meta name="author" content="zakezone" />

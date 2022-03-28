@@ -26,9 +26,9 @@
             }
         </style>
 
-        <div class="section-title text-center">
-            <h3 style="text-transform: uppercase;">Dashboard <?= $nik_ktp; ?></h3>
-        </div>
+        <!-- <div class="section-title text-center">
+            <h3 style="text-transform: uppercase;">Dashboard</h3>
+        </div> -->
     </div>
 </div>
 <?= $this->include('sidesa/layout/pemdes/content-footer') ?>

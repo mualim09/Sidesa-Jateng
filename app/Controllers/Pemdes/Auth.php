@@ -31,7 +31,7 @@ class Auth extends BaseController
                 $builder = $this->db->table('pemdes_user');
                 $user = $builder->getWhere(['nik_ktp' => $nik_ktp])->getRowArray();
                 $this->login($user);
-                return redirect()->to(site_url('pemdes/member/dasboard/' . $kode . '/' . $nik_ktp));
+                return redirect()->to(site_url('pemdes/member/dashboard/' . $kode . '/' . $nik_ktp));
             }
         }
 
@@ -55,10 +55,18 @@ class Auth extends BaseController
     function registration($kode)
     {
         if (isset($_POST['regis'])) {
-            $this->validation->setRule('nama', 'Nama', 'required|alpha_space|trim', ['required' => 'Nama tidak boleh kosong', 'alpha_space' => 'Nama hanya diisi alphabet dan spasi']);
             $this->validation->setRule('no_kk', 'NO-KK', 'required|numeric|min_length[16]|max_length[16]|trim', ['numeric' => 'Nomor KK hanya diisi angka (tanpa spasi)', 'required' => 'Nomor KK tidak boleh kosong', 'min_length' => 'Nomor KK harus 16 digit', 'max_length' => 'Nomor KK harus 16 digit']);
             $this->validation->setRule('nik_ktp', 'NIK-KTP', 'required|numeric|min_length[16]|max_length[16]|trim|is_unique[pemdes_user.nik_ktp]', ['required' => 'NIK-KTP tidak boleh kosong', 'min_length' => 'NIK-KTP harus 16 digit (hanya diisi angka tanpa spasi)', 'max_length' => 'NIK-KTP harus 16 digit (hanya diisi angka tanpa spasi)', 'is_unique' => 'NIK-KTP sudah terdaftar', 'numeric' => 'NIK-KTP hanya diisi angka (tanpa spasi)']);
-            $this->validation->setRule('hp', 'HP', 'required|numeric|min_length[10]|max_length[15]|trim', ['numeric' => 'Nomor HP hanya diisi angka (tanpa spasi)', 'required' => 'Nomor HP tidak boleh kosong', 'min_length' => 'Nomor HP minimal harus 10 digit', 'max_length' => 'Nomor HP maximal harus 15 digit']);
+            $this->validation->setRule('nama', 'Nama', 'required|alpha_space|trim', ['required' => 'Nama tidak boleh kosong', 'alpha_space' => 'Nama hanya diisi alphabet dan spasi']);
+            $this->validation->setRule('alamat', 'Alamat', 'required|trim', ['required' => 'Alamat tidak boleh kosong']);
+            $this->validation->setRule('rt', 'RT', 'required|numeric|min_length[2]|max_length[3]|trim', ['required' => 'RT tidak boleh kosong', 'min_length' => 'Nomor RT minimal 2 digit', 'max_length' => 'Nomor RT maximal 3 digit', 'numeric' => 'Nomor RT hanya diisi angka (tanpa spasi)']);
+            $this->validation->setRule('rw', 'RW', 'required|numeric|min_length[2]|max_length[3]|trim', ['required' => 'RW tidak boleh kosong', 'min_length' => 'Nomor RW minimal 2 digit', 'max_length' => 'Nomor RW maximal 3 digit', 'numeric' => 'Nomor RW hanya diisi angka (tanpa spasi)']);
+            $this->validation->setRule('keldesa', 'Keldesa', 'required|alpha_space|trim', ['required' => 'Nama Kel. / Desa tidak boleh kosong', 'alpha_space' => 'Nama Kel. / Desa hanya diisi alphabet dan spasi']);
+            $this->validation->setRule('kecamatan', 'Kecamatan', 'required|alpha_space|trim', ['required' => 'Nama Kecamatan tidak boleh kosong', 'alpha_space' => 'Nama Kecamatan hanya diisi alphabet dan spasi']);
+            $this->validation->setRule('tempat_lahir', 'Tempatlahir', 'required|alpha_space|trim', ['required' => 'Tempat lahir tidak boleh kosong', 'alpha_space' => 'Tempat lahir hanya diisi alphabet dan spasi']);
+            $this->validation->setRule('tanggal_lahir', 'Tanggallahir', 'required|trim', ['required' => 'Tanggal lahir tidak boleh kosong']);
+            $this->validation->setRule('pekerjaan', 'Pekerjaan', 'required|trim', ['required' => 'Pekerjaan tidak boleh kosong']);
+            $this->validation->setRule('hp', 'HP', 'required|numeric|min_length[11]|max_length[15]|trim', ['numeric' => 'Nomor HP hanya diisi angka (tanpa spasi)', 'required' => 'Nomor HP tidak boleh kosong', 'min_length' => 'Nomor HP minimal harus 11 digit', 'max_length' => 'Nomor HP maximal hanya 15 digit']);
             $this->validation->setRule('password', 'Password', 'required|trim|min_length[6]', ['required' => 'Password tidak boleh kosong', 'min_length' => 'Password minimal 6 karakter']);
             if (!$this->validation->withRequest($this->request)->run()) {
                 return redirect()->to('pemdes/auth/registrasi/' . $kode)->withInput();
@@ -67,9 +75,24 @@ class Auth extends BaseController
                 $buildertoken = $this->db->table('pemdes_user_token');
 
                 $nik_ktp = $this->request->getVar('nik_ktp');
+
+                $nama = strtolower($this->request->getVar('nama'));
+                $alamat = strtolower($this->request->getVar('alamat'));
+                $keldesa = strtolower($this->request->getVar('keldesa'));
+                $kecamatan = strtolower($this->request->getVar('kecamatan'));
+                $tempat_lahir = strtolower($this->request->getVar('tempat_lahir'));
+                $pekerjaan = strtolower($this->request->getVar('pekerjaan'));
                 $datareg = [
                     'kd_wilayah' => $kode,
-                    'nama' => htmlspecialchars($this->request->getVar('nama')),
+                    'nama' => htmlspecialchars(ucwords($nama)),
+                    'alamat' => htmlspecialchars(ucwords($alamat)),
+                    'rt' => htmlspecialchars($this->request->getVar('rt')),
+                    'rw' => htmlspecialchars($this->request->getVar('rw')),
+                    'keldesa' => htmlspecialchars(ucwords($keldesa)),
+                    'kecamatan' => htmlspecialchars(ucwords($kecamatan)),
+                    'tempat_lahir' => htmlspecialchars(ucwords($tempat_lahir)),
+                    'tanggal_lahir' => htmlspecialchars($this->request->getVar('tanggal_lahir')),
+                    'pekerjaan' => htmlspecialchars(ucwords($pekerjaan)),
                     'no_kk' => htmlspecialchars($this->request->getVar('no_kk')),
                     'nik_ktp' => htmlspecialchars($this->request->getVar('nik_ktp')),
                     'hp' => htmlspecialchars($this->request->getVar('hp')),

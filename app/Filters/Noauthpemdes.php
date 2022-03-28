@@ -11,9 +11,10 @@ class Noauthpemdes implements FilterInterface
     // ini tu tugasnya = jika pada saat ada yg akses loginpage tapi punya session maka jalankan dibawah ini (untuk yang before) 
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (session()->get('kd_wilayah') !== null) {
+        if (session()->get('kd_wilayah') && session()->get('nik_ktp') !== null) {
             $kodedes = session()->get('kd_wilayah');
-            return redirect()->to(site_url('pemdes/member/dashboard/' . $kodedes));
+            $nik_ktp = session()->get('nik_ktp');
+            return redirect()->to(site_url('pemdes/member/dashboard/' . $kodedes . '/' . $nik_ktp));
         }
     }
 

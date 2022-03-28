@@ -11,6 +11,9 @@
 
     <!-- App favicon -->
     <link href="<?= base_url('img/thumbnail/logodata.ico'); ?>" rel="shortcut icon">
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="<?= base_url('minia/libs/flatpickr/flatpickr.min.css') ?>" type="text/css" />
+
     <!-- preloader css -->
     <link href="<?= base_url('minia/css/preloader.min.css') ?>" rel="stylesheet" type="text/css" />
     <!-- Bootstrap Css -->

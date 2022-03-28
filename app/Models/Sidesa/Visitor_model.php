@@ -41,7 +41,7 @@ class Visitor_model extends BaseBuilder
     {
         $builder = $this->db->table('visitor');
         $data = [
-            'hits' => +1,
+            'hits' => 'hits+1',
             'online' => $waktu
         ];
         $builder->set($data);

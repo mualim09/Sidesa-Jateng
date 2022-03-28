@@ -528,7 +528,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="<?= base_url('user/logout') ?>"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
+                    <a class="dropdown-item" href="<?= base_url('pemdes/logout/' . $kodedes) ?>"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
                 </div>
             </div>
         </div>

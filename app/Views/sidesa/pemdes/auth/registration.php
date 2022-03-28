@@ -1,4 +1,4 @@
-<?= $this->include('sidesa/layout/user/auth_header') ?>
+<?= $this->include('sidesa/layout/pemdes/auth_header') ?>
 
 <!-- <body data-layout="horizontal"> -->
 <div class="auth-page">
@@ -223,42 +223,91 @@
                                 </div>
                                 <form class="needs-validation custom-form mt-4 pt-2" method="POST" action="<?= base_url('pemdes/auth/registrasi/' . $kodedes); ?>">
                                     <?= csrf_field(); ?>
-                                    <div class="mb-3">
+                                    <div class="mb-4">
                                         <label for="no_kk" class="form-label">Nomor Kartu Keluarga</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('no_kk') ? 'is-invalid' : '') ?>" id="no_kk" name="no_kk" placeholder="Masukan Nomor KK (Kartu Keluarga)" value="<?= old('no_kk'); ?>">
+                                        <input type="text" class="form-control <?= ($validation->hasError('no_kk') ? 'is-invalid' : '') ?>" id="no_kk" name="no_kk" placeholder="Tuliskan nomor KK (Kartu Keluarga)" value="<?= old('no_kk'); ?>">
                                         <div class="invalid-feedback">
                                             <?= $validation->getError('no_kk') ?>
                                         </div>
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div class="mb-4">
                                         <label for="nik_ktp" class="form-label">NIK KTP</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('nik_ktp') ? 'is-invalid' : '') ?>" id="nik_ktp" name="nik_ktp" placeholder="Masukan NIK-KTP" value="<?= old('nik_ktp'); ?>">
+                                        <input type="text" class="form-control <?= ($validation->hasError('nik_ktp') ? 'is-invalid' : '') ?>" id="nik_ktp" name="nik_ktp" placeholder="Tuliskan NIK-KTP" value="<?= old('nik_ktp'); ?>">
                                         <div class="invalid-feedback">
                                             <?= $validation->getError('nik_ktp') ?>
                                         </div>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <label for="hp" class="form-label">Nomor HP (terhubung whatsapp)</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('hp') ? 'is-invalid' : '') ?>" id="hp" name="hp" placeholder="Masukan Nomor HP (whatsapp)" value="<?= old('hp'); ?>">
-                                        <div class="invalid-feedback">
-                                            <?= $validation->getError('hp') ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="nama" class="form-label">Nama</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('nama') ? 'is-invalid' : '') ?>" id="nama" name="nama" placeholder="Masukan nama lengkap" value="<?= old('nama'); ?>">
+                                    <div class="mb-4">
+                                        <label for="nama" class="form-label">Nama (sesuai KTP)</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('nama') ? 'is-invalid' : '') ?>" id="nama" name="nama" placeholder="Tuliskan nama lengkap sesuai KTP" value="<?= old('nama'); ?>">
                                         <div class="invalid-feedback">
                                             <?= $validation->getError('nama') ?>
                                         </div>
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div class="mb-4">
+                                        <label class="form-label">Domisili (sesuai KTP)</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('alamat') ? 'is-invalid' : '') ?>" id="alamat" name="alamat" placeholder="Tuliskan nama Dukuh/Dusun/Jalan sesuai KTP" value="<?= old('alamat'); ?>">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('alamat') ?>
+                                        </div>
+
+                                        <input type="text" class="form-control <?= ($validation->hasError('rt') ? 'is-invalid' : '') ?> mt-2" id="rt" name="rt" placeholder="Tuliskan RT sesuai KTP" value="<?= old('rt'); ?>">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('rt') ?>
+                                        </div>
+
+                                        <input type="text" class="form-control <?= ($validation->hasError('rw') ? 'is-invalid' : '') ?> mt-2" id="rw" name="rw" placeholder="Tuliskan RW sesuai KTP" value="<?= old('rw'); ?>">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('rw') ?>
+                                        </div>
+
+                                        <input type="text" class="form-control <?= ($validation->hasError('keldesa') ? 'is-invalid' : '') ?> mt-2" id="keldesa" name="keldesa" placeholder="Tuliskan Kel / Desa sesuai KTP" value="<?= old('keldesa'); ?>">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('keldesa') ?>
+                                        </div>
+
+                                        <input type="text" class="form-control <?= ($validation->hasError('kecamatan') ? 'is-invalid' : '') ?> mt-2" id="kecamatan" name="kecamatan" placeholder="Tuliskan Kecamatan sesuai KTP" value="<?= old('kecamatan'); ?>">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('kecamatan') ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label">Tempat & Tanggal Lahir (sesuai KTP)</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('tempat_lahir') ? 'is-invalid' : '') ?>" id="tempat_lahir" name="tempat_lahir" placeholder="Tuliskan tempat lahir sesuai KTP" value="<?= old('tempat_lahir'); ?>">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('tempat_lahir') ?>
+                                        </div>
+
+                                        <input type="text" class="form-control <?= ($validation->hasError('tanggal_lahir') ? 'is-invalid' : '') ?> mt-2" id="datepicker-basic" name="tanggal_lahir" placeholder="Tuliskan tanggal lahir sesuai KTP" value="<?= old('tanggal_lahir'); ?>">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('tanggal_lahir') ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="pekerjaan" class="form-label">Pekerjaan (sesuai KTP)</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('pekerjaan') ? 'is-invalid' : '') ?>" id="pekerjaan" name="pekerjaan" placeholder="Tuliskan pekerjaan sesuai KTP" value="<?= old('pekerjaan'); ?>">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('pekerjaan') ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="hp" class="form-label">Nomor HP (terhubung whatsapp)</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('hp') ? 'is-invalid' : '') ?>" id="phone-mask" name="hp" placeholder="Contoh: 85234567890 (tanpa angka 0 didepan)" value="<?= old('hp'); ?>">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('hp') ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
                                         <label for="password" class="form-label">Password</label>
                                         <div class="input-group auth-pass-inputgroup">
-                                            <input type="password" class="form-control <?= ($validation->hasError('password') ? 'is-invalid' : '') ?>" id="password" name="password" placeholder="Masukan password" aria-label="Password" aria-describedby="password-addon">
+                                            <input type="password" class="form-control <?= ($validation->hasError('password') ? 'is-invalid' : '') ?>" id="password" name="password" placeholder="Tuliskan password" aria-label="Password" aria-describedby="password-addon">
                                             <button class="btn btn-light ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                         </div>
                                         <div class="invalid-feedback">
@@ -266,7 +315,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="mb-3 mt-5">
+                                    <div class="mb-4 mt-5">
                                         <button class="btn btn-primary w-100 waves-effect waves-light" type="submit" name="regis">Register</button>
                                     </div>
                                 </form>
@@ -429,4 +478,4 @@
     <!-- end container fluid -->
 </div>
 
-<?= $this->include('sidesa/layout/user/auth_footer') ?>
+<?= $this->include('sidesa/layout/pemdes/auth_footer') ?>
