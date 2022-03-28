@@ -8,7 +8,7 @@
                     <div class="w-100">
                         <div class="d-flex flex-column h-100">
                             <div class="mb-4 mb-md-5 text-center">
-                                <a href="<?= base_url('pemdes/auth/lupa-password/' . $kodedes); ?>" class="d-block auth-logo">
+                                <a href="<?= base_url('pemdes/auth/login/' . $kodedes); ?>" class="d-block auth-logo">
                                     <?php if (substr($kodedes, 0, 5) == "33.01") : ?>
                                         <span class="logo-lg">
                                             <img src="<?= base_url('img/onscreen/pemerintahkabupaten/logo_kab/3301.png'); ?>" alt="" height="60">
@@ -215,28 +215,20 @@
                                     <?php endif; ?>
                                 </a>
                             </div>
-                            <?= session()->getFlashdata('message'); ?>
                             <div class="auth-content my-auto">
                                 <div class="text-center">
-                                    <h5 class="mb-0">Reset Password</h5>
-                                    <p class="mt-2" style="color: crimson;">Masukan NIK-KTP terdaftar Anda dan instruksi akan kami kirim kepada Anda melalui nomor whatsapp yang sudah Anda daftarkan sebelumnya</p>
-                                </div>
-                                <form class="custom-form mt-4" method="POST" action="">
-                                    <?= csrf_field(); ?>
-                                    <div class="mb-3">
-                                        <label class="form-label">NIK KTP</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('nik_ktp') ? 'is-invalid' : '') ?>" id="nik_ktp" name="nik_ktp" placeholder="Masukan NIK-KTP">
-                                        <div class="invalid-feedback">
-                                            <?= $validation->getError('nik_ktp') ?>
+                                    <div class="avatar-lg mx-auto">
+                                        <div class="avatar-title rounded-circle bg-light">
+                                            <i class="bx bx-mail-send h2 mb-0 text-primary"></i>
                                         </div>
                                     </div>
-                                    <div class="mb-3 mt-4">
-                                        <button class="btn btn-primary w-100 waves-effect waves-light" type="submit" name="forgot">Reset</button>
+                                    <div class="p-2 mt-4">
+                                        <h4>Registrasi Diproses !</h4>
+                                        <p class="text-muted">Kami segera melakukan verifikasi data registrasi Anda dan segera mengirimkan <b>kode aktivasi</b> akun Layanan Mandiri Elektronik Desa Anda melalui nomor HP dengan aplikasi (whatsapp) yang telah Anda registrasi paling lambat 7 x 24 jam terima kasih.</p>
+                                        <div class="mt-4">
+                                            <a href="<?= base_url('pemdes/auth/login/' . $kodedes); ?>" class="btn btn-primary w-100">Kembali ke halaman login</a>
+                                        </div>
                                     </div>
-                                </form>
-
-                                <div class="mt-5 text-center">
-                                    <p class="text-muted mb-0">Sudah ingat ? <a href="<?= base_url('pemdes/auth/login/' . $kodedes); ?>" class="text-primary fw-semibold"> Login </a> </p>
                                 </div>
                             </div>
                             <div class="mt-4 mt-md-5 text-center">

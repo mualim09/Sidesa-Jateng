@@ -221,6 +221,25 @@ $routes->group('api', ['namespace' => 'App\Controller\Api'], function ($routes) 
     $routes->resource('Wilayah_kec');
 });
 
+// PEMDES USER OTENTIKASI
+$routes->get('/pemdes/auth/blocked/(:any)', 'Pemdes\Auth::blocked/$1'); //belum
+$routes->get('/pemdes/auth/logout/(:any)', 'Pemdes\Auth::logout/$1');
+$routes->add('/pemdes/auth/login/(:any)', 'Pemdes\Auth::loginpage/$1', ['filter' => 'noauthpemdes']);
+$routes->add('/pemdes/auth/verify/(:any)', 'Pemdes\Auth::verify_wa/$1');
+$routes->add('/pemdes/auth/resetpassword/(:any)', 'Pemdes\Auth::resetpass/$1');
+$routes->add('/pemdes/auth/konfirmasi-whatsapp/(:any)', 'Pemdes\Auth::confirm_wa/$1');
+$routes->add('/pemdes/auth/konfirmasi-resetpass/(:any)', 'Pemdes\Auth::confirm_resetpass/$1');
+$routes->match(['get', 'post'], '/pemdes/auth/registrasi/(:any)', 'Pemdes\Auth::registration/$1', ['filter' => 'noauthpemdes']);
+$routes->match(['get', 'post'], '/pemdes/auth/registration/(:any)', 'Pemdes\Auth::registration/$1', ['filter' => 'noauthpemdes']);
+$routes->match(['get', 'post'], '/pemdes/auth/lupa-password/(:any)', 'Pemdes\Auth::forgotpass/$1', ['filter' => 'noauthpemdes']);
+$routes->match(['get', 'post'], '/pemdes/auth/forgotpass/(:any)', 'Pemdes\Auth::forgotpass/$1', ['filter' => 'noauthpemdes']);
+$routes->match(['get', 'post'], '/pemdes/auth/ganti-password/(:any)', 'Pemdes\Auth::changepassword/$1', ['filter' => 'noauthpemdes']);
+$routes->match(['get', 'post'], '/pemdes/auth/auth/changepassword/(:any)', 'Pemdes\Auth::changepassword/$1', ['filter' => 'noauthpemdes']);
+
+// PEMDES KONTEN LAYANAN MANDIRI ELEKTRONIK MEMBER
+$routes->add('/pemdes/member/home/(:any)/(:any)', 'Pemdes\Member::home/$1/$2', ['filter' => 'sistemlayananpemdes']);
+
+
 // Geodesa KONTEN
 $routes->get('/geodesa/tematik', 'Geodesa\Tematik::index');
 $routes->get('/geodesa/tematik/bumdes', 'Geodesa\Tematik::bumdes');
@@ -281,13 +300,13 @@ $routes->get('/sitkd/excel/rekap', 'Sitkd\Excel::rekap', ['filter' => 'authusers
 $routes->get('/sitkd/excel/rekapadmin', 'Sitkd\Excel::rekapadmin', ['filter' => 'authusersitkd']);
 
 // SITKD KONTEN MEMBER
-$routes->get('/sitkd/member/revisifile(:num)/(:num)', 'Sitkd\Member::revisifile$1/$2', ['filter' => 'sistemmember']);
-$routes->get('/sitkd/member/detailfile(:num)/(:num)', 'Sitkd\Member::detailfile$1/$2', ['filter' => 'sistemmember']);
-$routes->match(['get', 'post'], '/sitkd/member/uploadfile(:num)/(:num)', 'Sitkd\Member::uploadfile$1/$2', ['filter' => 'sistemmember']);
-$routes->get('/sitkd/member/viewpersetujuan/(:num)', 'Sitkd\Member::viewpersetujuan/$1', ['filter' => 'sistemmember']);
-$routes->get('/sitkd/member/hapusdata/(:num)', 'Sitkd\Member::hapusdata/$1', ['filter' => 'sistemmember']);
-$routes->get('/sitkd/member/tracking/(:num)', 'Sitkd\Member::tracking/$1', ['filter' => 'sistemmember']);
-$routes->get('/sitkd/member/detailuraian/(:num)', 'Sitkd\Member::detailuraian/$1', ['filter' => 'sistemmember']);
+$routes->get('/sitkd/member/revisifile(:num)/(:num)', 'Sitkd\Member::revisifile$1/$2', ['filter' => 'sistemmembersitkd']);
+$routes->get('/sitkd/member/detailfile(:num)/(:num)', 'Sitkd\Member::detailfile$1/$2', ['filter' => 'sistemmembersitkd']);
+$routes->match(['get', 'post'], '/sitkd/member/uploadfile(:num)/(:num)', 'Sitkd\Member::uploadfile$1/$2', ['filter' => 'sistemmembersitkd']);
+$routes->get('/sitkd/member/viewpersetujuan/(:num)', 'Sitkd\Member::viewpersetujuan/$1', ['filter' => 'sistemmembersitkd']);
+$routes->get('/sitkd/member/hapusdata/(:num)', 'Sitkd\Member::hapusdata/$1', ['filter' => 'sistemmembersitkd']);
+$routes->get('/sitkd/member/tracking/(:num)', 'Sitkd\Member::tracking/$1', ['filter' => 'sistemmembersitkd']);
+$routes->get('/sitkd/member/detailuraian/(:num)', 'Sitkd\Member::detailuraian/$1', ['filter' => 'sistemmembersitkd']);
 $routes->match(['get', 'post'], '/sitkd/member/(:any)', 'Sitkd\Member::$1', ['filter' => 'authusersitkd']);
 $routes->get('/sitkd/member', 'Sitkd\Member::index', ['filter' => 'authusersitkd']);
 

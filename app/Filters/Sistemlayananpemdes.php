@@ -7,7 +7,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\URI;
 
-class Sistemmember implements FilterInterface
+class Sistemlayananpemdes implements FilterInterface
 {
     public function __construct()
     {
@@ -16,20 +16,21 @@ class Sistemmember implements FilterInterface
     // ini tu tugasnya = Membatasi dokumen yang bisa diakses berdasarkan sesion permendagri_id nya harus sesuai dengan file_id yg sedang dibuka(untuk yang before) 
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (!session()->get('email')) {
-            redirect('sitkd/auth');
+        $kode = $request->uri->getSegment(4);
+        if (!session()->get('kd_wilayah')) {
+            return redirect()->to('pemdes/auth/login/' . $kode);
         } else {
-            $builder = $this->db->table('sitkd_dokumen_laporan');
-            $permendagri_id = session()->get('permendagri_id'); // aku butuh permendagri_id nya bukan file_id nya tapi berdasarkan file_id yang di click
-            $file_id = $request->uri->getSegment(4);
+            $builder = $this->db->table('pemdes_user');
+            $kd_wilayah = $request->uri->getSegment(4); // butuh kd_wilayah nya tapi berdasarkan nik_ktp user yang login
+            $nik_ktp = $request->uri->getSegment(5);
 
-            $builder->where(['permendagri_id' => $permendagri_id, 'file_id' => $file_id]);
-            $builder->where(['file_id' => $file_id]);
+            $builder->where(['kd_wilayah' => $kd_wilayah, 'nik_ktp' => $nik_ktp]);
+            $builder->where(['nik_ktp' => $nik_ktp]);
             $userAccess = $builder->countAllResults();
-            // dd($userAccess);
+            // dd($nik_ktp);
 
             if ($userAccess < 1) {
-                return redirect()->to(site_url('sitkd/auth/blocked'));
+                return redirect()->to(site_url('pemdes/auth/blocked/' . $kode));
             }
         }
     }
