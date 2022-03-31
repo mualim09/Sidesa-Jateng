@@ -12,7 +12,7 @@ class Pemdes_member_model extends Model
 
     public function editProfile($user_id, $input, $file)
     {
-        $builder = $this->db->table('sidesa_user');
+        $builder = $this->db->table('pemdes_user');
         // $reviewdata = $this->db->table('sidesa_review_data');
         // $notifikasi = $this->db->table('sidesa_notifikasi');
         // $dashkab = $this->db->table('dashboard_kabupaten');

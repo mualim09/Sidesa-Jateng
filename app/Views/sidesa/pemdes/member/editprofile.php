@@ -30,9 +30,9 @@
                 <form class="needs-validation" novalidate action="" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                     <div class="form-group row">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <label for="nik_ktp" class="col-sm-2 col-form-label">NIK KTP</label>
                         <div class="col-sm-6 mb-3">
-                            <input type="text" class="form-control" id="email" name="email" value="<?= $user['email']; ?>" readonly>
+                            <input type="text" class="form-control" id="nik_ktp" name="nik_ktp" value="<?= $user['nik_ktp']; ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">

@@ -12,6 +12,7 @@
     <div class="pages-nav__item pages-nav__item--small"><a class="link link--page link--faded" href="#page-login">Pengelolaan Data</a></div>
     <div class="pages-nav__item pages-nav__item--small"><a class="link link--page link--faded" href="#page-statistik">Statistik Pengunjung</a></div>
     <div class="pages-nav__item pages-nav__item--small"><a class="link link--page link--faded" href="#page-kontak">Kontak</a></div>
+    <div class="pages-nav__item pages-nav__item--small"><a class="link link--faded" href="https://esurya.organisasi.jatengprov.go.id/sidesadispermadesdukcapil" target="_blank">Survey E-SURYA</a></div>
     <div class="pages-nav__item pages-nav__item--social">
         <a class="link link--social link--faded" href="https://twitter.com/DISPERMADES_JTG" target="_blank"><i class="fab fa-twitter"></i></a>
         <a class="link link--social link--faded" href="https://www.instagram.com/dispermadesdukcapil_jtg/" target="_blank"><i class="fab fa-instagram"></i></a>

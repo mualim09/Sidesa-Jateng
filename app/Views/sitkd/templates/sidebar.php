@@ -76,6 +76,10 @@
                                         <i hidden class="<?= $sm['icon']; ?>"></i>
                                         <span hidden><?= $sm['title']; ?></span></a>
                                     <!-- batas sampe sini kalo sudah upgrade CI4-->
+                                <?php elseif ($sm['title'] == "SURVEY E-SURYA") : ?>
+                                    <a hidden class="nav-link pb-0" href="https://esurya.organisasi.jatengprov.go.id/sitkddispermadesdukcapil">
+                                        <i hidden class="<?= $sm['icon']; ?>"></i>
+                                        <span hidden><?= $sm['title']; ?></span></a>
                                 <?php else : ?>
                                     <a class="nav-link pb-0" href="<?= base_url($sm['url']); ?>">
                                         <i class="<?= $sm['icon']; ?>"></i>

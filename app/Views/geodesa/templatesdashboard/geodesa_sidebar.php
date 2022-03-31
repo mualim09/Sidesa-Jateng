@@ -19,6 +19,12 @@
             <span>Dashboard</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="https://esurya.organisasi.jatengprov.go.id/geodesadispermadesdukcapil" target="_blank">
+            <i class="fas fa-fw fa-poll"></i>
+            <span>SURVEY E-SURYA</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 
