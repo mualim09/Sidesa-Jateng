@@ -12,6 +12,9 @@
     <meta name="author" content="zakezone" />
     <link rel="shortcut icon" href="<?= base_url('img/thumbnail/logodata.ico'); ?>">
 
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="<?= base_url('minia/libs/flatpickr/flatpickr.min.css') ?>" type="text/css" />
+
     <!-- Efek kalo keluar aplikasi lewat dropdown topbar -->
     <link href="<?= base_url('minia/libs/sweetalert2/sweetalert2.min.css') ?>" rel="stylesheet" type="text/css" />
 

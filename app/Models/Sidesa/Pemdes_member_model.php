@@ -10,7 +10,7 @@ class Pemdes_member_model extends Model
     protected $primaryKey = 'id';
     protected $AllowedFields = ['nama', 'hp', 'image', 'password'];
 
-    public function editProfile($user_id, $input, $file)
+    public function editProfile($nik_ktp, $input, $file)
     {
         $builder = $this->db->table('pemdes_user');
         // $reviewdata = $this->db->table('sidesa_review_data');
@@ -19,6 +19,14 @@ class Pemdes_member_model extends Model
         // $dashdesa = $this->db->table('dashboard_desa');
 
         $nama = $input['nama'];
+        $tempat_lahir = $input['tempat_lahir'];
+        $tanggal_lahir = $input['tanggal_lahir'];
+        $alamat = $input['alamat'];
+        $rt = $input['rt'];
+        $rw = $input['rw'];
+        $keldesa = $input['keldesa'];
+        $kecamatan = $input['kecamatan'];
+        $pekerjaan = $input['pekerjaan'];
         $hp = $input['hp'];
 
         if ($file->getError() == 4) {
@@ -32,26 +40,34 @@ class Pemdes_member_model extends Model
         }
         $builder->set('image', $nmfile);
         $builder->set('nama', $nama);
+        $builder->set('tempat_lahir', $tempat_lahir);
+        $builder->set('tanggal_lahir', $tanggal_lahir);
+        $builder->set('alamat', $alamat);
+        $builder->set('rt', $rt);
+        $builder->set('rw', $rw);
+        $builder->set('keldesa', $keldesa);
+        $builder->set('kecamatan', $kecamatan);
+        $builder->set('pekerjaan', $pekerjaan);
         $builder->set('hp', $hp);
-        $builder->where('id', $user_id);
+        $builder->where('nik_ktp', $nik_ktp);
         $builder->update();
 
         // $reviewdata->set('image', $nmfile);
         // $reviewdata->set('upload_by', $nama);
-        // $reviewdata->where('user_id', $user_id);
+        // $reviewdata->where('user_id', $nik_ktp);
         // $reviewdata->update();
 
         // $notifikasi->set('image_user', $nmfile);
         // $notifikasi->set('upload_by', $nama);
-        // $notifikasi->where('user_id', $user_id);
+        // $notifikasi->where('user_id', $nik_ktp);
         // $notifikasi->update();
 
         // $dashkab->set('input_by', $nama);
-        // $dashkab->where('user_id', $user_id);
+        // $dashkab->where('user_id', $nik_ktp);
         // $dashkab->update();
 
         // $dashdesa->set('input_by', $nama);
-        // $dashdesa->where('user_id', $user_id);
+        // $dashdesa->where('user_id', $nik_ktp);
         // $dashdesa->update();
     }
 

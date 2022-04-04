@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <span>Copyright &copy; 2020 - <?= date("Y"); ?> Sistem Informasi Desa DISPERMADESDUKCAPIL Prov JATENG</span>
+                <span>Copyright &copy; 2020 - <?= date("Y"); ?> . Sistem Informasi Desa . Provinsi Jawa Tengah</span>
             </div>
         </div>
     </div>
@@ -28,8 +28,15 @@
 <script src="<?= base_url('minia/libs/node-waves/waves.min.js'); ?>"></script>
 <script src="<?= base_url('minia/libs/feather-icons/feather.min.js'); ?>"></script>
 
+<!-- datepicker js -->
+<script src="<?= base_url('minia/libs/flatpickr/flatpickr.min.js'); ?>"></script>
+<!-- form mask -->
+<script src="<?= base_url('minia/libs/imask/imask.min.js'); ?>"></script>
+
 <!-- Sweet alert init js-->
 <script src="<?= base_url('minia/libs/sweetalert2/sweetalert2.min.js'); ?>"></script>
+<script src="<?= base_url('minia/js/pages/form-advancedmember.init.js'); ?>"></script>
+<script src="<?= base_url('minia/js/pages/form-maskindo.init.js'); ?>"></script>
 <!-- App js -->
 <script src="<?= base_url('minia/js/app.js'); ?>"></script>
 
