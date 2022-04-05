@@ -248,6 +248,20 @@
                                     </div>
 
                                     <div class="mb-4">
+                                        <div>
+                                            <label class="form-label">Pilih jenis Kelamin (sesuai KTP)</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios1" value="Laki-laki">
+                                            <label class="form-check-label" for="formRadios1">Laki-laki</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios2" value="Perempuan">
+                                            <label class="form-check-label" for="formRadios2">Perempuan</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
                                         <label class="form-label">Domisili (sesuai KTP)</label>
                                         <input type="text" class="form-control <?= ($validation->hasError('alamat') ? 'is-invalid' : '') ?>" id="alamat" name="alamat" placeholder="Tuliskan nama Dukuh/Dusun/Jalan sesuai KTP" value="<?= old('alamat'); ?>">
                                         <div class="invalid-feedback">
@@ -309,9 +323,9 @@
                                         <div class="input-group auth-pass-inputgroup">
                                             <input type="password" class="form-control <?= ($validation->hasError('password') ? 'is-invalid' : '') ?>" id="password" name="password" placeholder="Tuliskan password" aria-label="Password" aria-describedby="password-addon">
                                             <button class="btn btn-light ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            <?= $validation->getError('password') ?>
+                                            <div class="invalid-feedback">
+                                                <?= $validation->getError('password') ?>
+                                            </div>
                                         </div>
                                     </div>
 

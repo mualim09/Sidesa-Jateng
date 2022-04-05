@@ -30,11 +30,22 @@
             <div class="col-lg-12">
                 <form class="needs-validation" action="" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-                    <div class="form-group row">
+                    <div class="form-group row mt-3">
                         <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                         <div class="col-sm-6 mb-3">
                             <input type="text" class="form-control" id="nama" name="nama" value="<?= htmlspecialchars($user['nama'], ENT_QUOTES); ?>">
                             <small class="form-text text-danger"><?= $validation->getError('nama'); ?></small>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="col-sm-2 col-form-label">Pilih jenis Kelamin</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios1" value="Laki-laki">
+                            <label class="form-check-label" for="formRadios1">Laki-laki</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios2" value="Perempuan">
+                            <label class="form-check-label" for="formRadios2">Perempuan</label>
                         </div>
                     </div>
                     <div class="form-group row">

@@ -39,8 +39,8 @@ $this->db = \Config\Database::connect();
                     ?>
                     <?php foreach ($subMenu as $sm) : ?>
                         <li>
-                            <?php if ($sm['title'] == "SUKET Usaha Petani") : ?>
-                                <a href="<?= base_url('pemdes/member/sk_usahapetani/' . $kodedes . '/' . $user['nik_ktp']); ?>">
+                            <?php if ($sm['title'] == "SUKET Usaha") : ?>
+                                <a href="<?= base_url('pemdes/member/sk_usaha/' . $kodedes . '/' . $user['nik_ktp']); ?>">
                                     <i data-feather="<?= $sm['icon']; ?>"></i>
                                     <span data-key="t-SKP"><?= $sm['title']; ?></span>
                                 </a>

@@ -58,6 +58,7 @@ class Auth extends BaseController
             $this->validation->setRule('no_kk', 'NO-KK', 'required|numeric|min_length[16]|max_length[16]|trim', ['numeric' => 'Nomor KK hanya diisi angka (tanpa spasi)', 'required' => 'Nomor KK tidak boleh kosong', 'min_length' => 'Nomor KK harus 16 digit', 'max_length' => 'Nomor KK harus 16 digit']);
             $this->validation->setRule('nik_ktp', 'NIK-KTP', 'required|numeric|min_length[16]|max_length[16]|trim|is_unique[pemdes_user.nik_ktp]', ['required' => 'NIK-KTP tidak boleh kosong', 'min_length' => 'NIK-KTP harus 16 digit (hanya diisi angka tanpa spasi)', 'max_length' => 'NIK-KTP harus 16 digit (hanya diisi angka tanpa spasi)', 'is_unique' => 'NIK-KTP sudah terdaftar', 'numeric' => 'NIK-KTP hanya diisi angka (tanpa spasi)']);
             $this->validation->setRule('nama', 'Nama', 'required|alpha_space|trim', ['required' => 'Nama tidak boleh kosong', 'alpha_space' => 'Nama hanya diisi alphabet dan spasi']);
+            $this->validation->setRule('gender', 'Gender', 'required|trim', ['required' => 'Jenis kelamin tidak boleh kosong']);
             $this->validation->setRule('alamat', 'Alamat', 'required|trim', ['required' => 'Alamat tidak boleh kosong']);
             $this->validation->setRule('rt', 'RT', 'required|numeric|min_length[2]|max_length[3]|trim', ['required' => 'RT tidak boleh kosong', 'min_length' => 'Nomor RT minimal 2 digit', 'max_length' => 'Nomor RT maximal 3 digit', 'numeric' => 'Nomor RT hanya diisi angka (tanpa spasi)']);
             $this->validation->setRule('rw', 'RW', 'required|numeric|min_length[2]|max_length[3]|trim', ['required' => 'RW tidak boleh kosong', 'min_length' => 'Nomor RW minimal 2 digit', 'max_length' => 'Nomor RW maximal 3 digit', 'numeric' => 'Nomor RW hanya diisi angka (tanpa spasi)']);
@@ -82,9 +83,15 @@ class Auth extends BaseController
                 $kecamatan = strtolower($this->request->getVar('kecamatan'));
                 $tempat_lahir = strtolower($this->request->getVar('tempat_lahir'));
                 $pekerjaan = strtolower($this->request->getVar('pekerjaan'));
+                if ($this->request->getVar('gender') == 'Laki-laki') {
+                    $image = 'default.jpg';
+                } else {
+                    $image = 'defaultfemale.png';
+                }
                 $datareg = [
                     'kd_wilayah' => $kode,
                     'nama' => htmlspecialchars(ucwords($nama)),
+                    'gender' => htmlspecialchars($this->request->getVar('gender')),
                     'alamat' => htmlspecialchars(ucwords($alamat)),
                     'rt' => htmlspecialchars($this->request->getVar('rt')),
                     'rw' => htmlspecialchars($this->request->getVar('rw')),
@@ -97,7 +104,7 @@ class Auth extends BaseController
                     'nik_ktp' => htmlspecialchars($this->request->getVar('nik_ktp')),
                     'hp' => htmlspecialchars($this->request->getVar('hp')),
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-                    'image' => 'default.jpg',
+                    'image' => $image,
                     'is_active' => 0,
                     'created' => time()
                 ];

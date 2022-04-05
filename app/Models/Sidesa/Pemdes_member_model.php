@@ -34,7 +34,7 @@ class Pemdes_member_model extends Model
         } else {
             $nmfile = $file->getRandomName();
             $file->move('img/user/profile/', $nmfile);
-            if ($input['imagelama'] != 'default.jpg') {
+            if ($input['imagelama'] != 'default.jpg' || $input['imagelama'] != 'defaultfemale.jpg') {
                 unlink('img/user/profile/' . $input['imagelama']);
             }
         }

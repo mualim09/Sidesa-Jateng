@@ -40,6 +40,7 @@ class Member extends BaseController
     {
         if (isset($_POST['submit'])) {
             $this->validation->setRule('nama', 'Nama', 'required|alpha_space|trim', ['required' => 'Nama tidak boleh kosong', 'alpha_space' => 'Nama hanya diisi alphabet dan spasi']);
+            $this->validation->setRule('gender', 'Gender', 'required|trim', ['required' => 'Jenis kelamin tidak boleh kosong']);
             $this->validation->setRule('tempat_lahir', 'Tempatlahir', 'required|alpha_space|trim', ['required' => 'Tempat lahir tidak boleh kosong', 'alpha_space' => 'Tempat lahir hanya diisi alphabet dan spasi']);
             $this->validation->setRule('tanggal_lahir', 'Tanggallahir', 'required|trim', ['required' => 'Tanggal lahir tidak boleh kosong']);
             $this->validation->setRule('alamat', 'Alamat', 'required|trim', ['required' => 'Alamat tidak boleh kosong']);
@@ -68,14 +69,62 @@ class Member extends BaseController
         $whoiskec = ucwords($hurufawalkec);
         $data = [
             'title' => 'Edit Profile',
-            'page_title' => view('sidesa/layout/pemdes/content-page-title', ['title' => 'Edit Profile', 'li_1' => $nik_ktp, 'li_2' => 'Edit Profile']),
+            'page_title' => view('sidesa/layout/pemdes/content-page-title', ['title' => 'Edit Profile | ' . $nik_ktp, 'li_1' => $nik_ktp, 'li_2' => 'Edit Profile']),
             'user' => $this->db->table('pemdes_user')->getWhere(['nik_ktp' => $this->session->get('nik_ktp')])->getRowArray(),
             'kodedes' => $kode,
             'namakec' => $whoiskec,
             'namades' => $whoisdes,
             'validation' =>  $this->validation
         ];
-
         return view('sidesa/pemdes/member/editprofile', $data);
+    }
+
+    function changepassword($kode, $nik_ktp)
+    {
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+        $hurufawalkec = strtolower($cekkodedes['nm_kec']);
+        $whoiskec = ucwords($hurufawalkec);
+
+        $data = [
+            'title' => 'Ganti Password',
+            'page_title' => view('sidesa/layout/pemdes/content-page-title', ['title' => 'Ganti Password | ' . $nik_ktp, 'li_1' => $nik_ktp, 'li_2' => 'Ganti Password']),
+            'user' => $this->db->table('pemdes_user')->getWhere(['nik_ktp' => $this->session->get('nik_ktp')])->getRowArray(),
+            'kodedes' => $kode,
+            'namakec' => $whoiskec,
+            'namades' => $whoisdes,
+            'validation' => $this->validation
+        ];
+
+        if (isset($_POST['gantipas'])) {
+            $this->validation->setRule('password', 'Current Password', 'required|trim', ['required' => 'Form tidak boleh dikosongkan']);
+            $this->validation->setRule('password1', 'Password', 'required|trim|min_length[6]', ['required' => 'Password tidak boleh kosong', 'min_length' => 'Password minimal 6 digit']);
+            $this->validation->setRule('password2', 'Password', 'matches[password1]', ['matches' => 'Pencocokan password tidak sesuai']);
+            if (!$this->validation->withRequest($this->request)->run()) {
+                return redirect()->to('pemdes/member/gantipassword/' . $kode . '/' . $nik_ktp)->withInput();
+            } else {
+                $current_password = $this->request->getVar('password');
+                $password = password_hash($this->request->getVar('password1'), PASSWORD_DEFAULT);
+                if (!password_verify($current_password, $data['user']['password'])) {
+                    $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert">Gagal! Password awal tidak sesuai</div>');
+                    return redirect()->to('pemdes/member/gantipassword/' . $kode . '/' . $nik_ktp)->withInput();
+                } else {
+                    if ($current_password == $password) {
+                        $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert">Gagal! Password ini telah digunakan sebelumnya</div>');
+                        return redirect()->to('pemdes/member/gantipassword/' . $kode . '/' . $nik_ktp)->withInput();
+                    } else {
+                        $builderuser = $this->db->table('pemdes_user');
+                        $builderuser->set('password', $password);
+                        $builderuser->where('nik_ktp', $nik_ktp);
+                        $builderuser->update();
+
+                        $this->session->setFlashdata('message', '<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert"><i class="mdi mdi-check-all label-icon"></i>Password berhasil <b>diubah</b><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                        return redirect()->to(site_url('pemdes/member/gantipassword/' . $kode . '/' . $nik_ktp));
+                    }
+                }
+            }
+        }
+        echo view('sidesa/pemdes/member/gantipassword', $data);
     }
 }
