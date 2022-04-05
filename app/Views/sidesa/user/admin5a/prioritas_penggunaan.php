@@ -59,7 +59,7 @@
                         </tr>
                         <tr>
                             <th style="vertical-align: middle;">2</th>
-                            <td scope="col" style="vertical-align: middle;">BLT DESA</td>
+                            <td scope="col" style="vertical-align: middle;">BLTDD</td>
                             <td scope="col" style="vertical-align: middle; text-align: right;">(%)</td>
                             <td scope="col" style="text-align: left;">
                                 <input type="text" class="form-control" id="bltdd" name="bltdd" <?php if (isset($bltdd[0]['persentase'])) : ?> value="<?= number_format(htmlspecialchars($bltdd[0]['persentase']), 0, '', '.'); ?>" <?php else : ?> value="<?= old('bltdd'); ?>" <?php endif; ?> />
@@ -68,7 +68,7 @@
                         </tr>
                         <tr>
                             <th style="vertical-align: middle;">3</th>
-                            <td scope="col" style="vertical-align: middle;">KETAHANAN PANGAN</td>
+                            <td scope="col" style="vertical-align: middle;">KETAHANAN PANGAN & HEWANI</td>
                             <td scope="col" style="vertical-align: middle; text-align: right;">(%)</td>
                             <td scope="col" style="text-align: left;">
                                 <input type="text" class="form-control" id="kph" name="kph" <?php if (isset($kph[0]['persentase'])) : ?> value="<?= number_format(htmlspecialchars($kph[0]['persentase']), 0, '', '.'); ?>" <?php else : ?> value="<?= old('kph'); ?>" <?php endif; ?> />
@@ -77,7 +77,7 @@
                         </tr>
                         <tr>
                             <th style="vertical-align: middle;">4</th>
-                            <td scope="col" style="vertical-align: middle;">PENANGANAN COVID-19</td>
+                            <td scope="col" style="vertical-align: middle;">PENANGANAN COVID-19 (PPKM)</td>
                             <td scope="col" style="vertical-align: middle; text-align: right;">(%)</td>
                             <td scope="col" style="text-align: left;">
                                 <input type="text" class="form-control" id="covid" name="covid" <?php if (isset($covid[0]['persentase'])) : ?> value="<?= number_format(htmlspecialchars($covid[0]['persentase']), 0, '', '.'); ?>" <?php else : ?> value="<?= old('covid'); ?>" <?php endif; ?> />

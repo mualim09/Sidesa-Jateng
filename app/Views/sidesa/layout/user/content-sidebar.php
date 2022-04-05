@@ -90,7 +90,7 @@ $this->db = \Config\Database::connect();
                                             </li>
                                             <li>
                                                 <a href="<?= base_url('user/menu5a/salur_covid'); ?>">
-                                                    <span data-key="t-covid">Covid-19</span>
+                                                    <span data-key="t-covid">PPKM</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -117,7 +117,7 @@ $this->db = \Config\Database::connect();
                                             </li>
                                             <li>
                                                 <a href="<?= base_url('user/menu5a/covid'); ?>">
-                                                    <span data-key="t-covid">Covid-19</span>
+                                                    <span data-key="t-covid">PPKM</span>
                                                 </a>
                                             </li>
                                         </ul>

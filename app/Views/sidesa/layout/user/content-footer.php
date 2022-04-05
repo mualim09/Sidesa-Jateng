@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <span>Copyright &copy; 2020 - <?= date("Y"); ?> Sistem Informasi Desa DISPERMADESDUKCAPIL Prov JATENG</span>
+                <span>Copyright &copy; 2020 - <?= date("Y"); ?> . Sistem Informasi Desa . Provinsi Jawa Tengah</span>
             </div>
         </div>
     </div>
@@ -1405,7 +1405,7 @@
                         y: <?= $grand_total_kph ?>
                     },
                     {
-                        name: 'Covid-19 (<?= $persen_covid ?>%)',
+                        name: 'PPKM (<?= $persen_covid ?>%)',
                         y: <?= $grand_total_covid ?>
                     },
                 ]
@@ -1419,7 +1419,7 @@
                 type: 'bar'
             },
             title: {
-                text: 'PERSENTASE CAPAIAN REALISASI DANADESA REGULER (<?= $persen_reg ?>%)'
+                text: 'PERSENTASE CAPAIAN DANADESA REGULER (<?= $persen_reg ?>%)'
             },
             subtitle: {
                 text: 'Per Kabupaten'
@@ -1469,12 +1469,19 @@
                 enabled: false
             },
             series: [{
+                name: 'Salur',
+                data: [<?= $capaian_salur_cilacap_reg ?>, <?= $capaian_salur_banyumas_reg ?>, <?= $capaian_salur_purbalingga_reg ?>, <?= $capaian_salur_banjarnegara_reg ?>, <?= $capaian_salur_kebumen_reg ?>, <?= $capaian_salur_purworejo_reg ?>, <?= $capaian_salur_wonosobo_reg ?>, <?= $capaian_salur_magelang_reg ?>, <?= $capaian_salur_boyolali_reg ?>, <?= $capaian_salur_klaten_reg ?>, <?= $capaian_salur_sukoharjo_reg ?>, <?= $capaian_salur_wonogiri_reg ?>, <?= $capaian_salur_karanganyar_reg ?>, <?= $capaian_salur_sragen_reg ?>, <?= $capaian_salur_grobogan_reg ?>, <?= $capaian_salur_blora_reg ?>, <?= $capaian_salur_rembang_reg ?>, <?= $capaian_salur_pati_reg ?>, <?= $capaian_salur_kudus_reg ?>, <?= $capaian_salur_jepara_reg ?>, <?= $capaian_salur_demak_reg ?>, <?= $capaian_salur_semarang_reg ?>, <?= $capaian_salur_temanggung_reg ?>, <?= $capaian_salur_kendal_reg ?>, <?= $capaian_salur_batang_reg ?>, <?= $capaian_salur_pekalongan_reg ?>, <?= $capaian_salur_pemalang_reg ?>, <?= $capaian_salur_tegal_reg ?>, <?= $capaian_salur_brebes_reg ?>],
+                tooltip: {
+                    valueSuffix: ' %'
+                },
+                showInLegend: true,
+            }, {
                 name: 'Realisasi',
                 data: [<?= $capaian_cilacap_reg ?>, <?= $capaian_banyumas_reg ?>, <?= $capaian_purbalingga_reg ?>, <?= $capaian_banjarnegara_reg ?>, <?= $capaian_kebumen_reg ?>, <?= $capaian_purworejo_reg ?>, <?= $capaian_wonosobo_reg ?>, <?= $capaian_magelang_reg ?>, <?= $capaian_boyolali_reg ?>, <?= $capaian_klaten_reg ?>, <?= $capaian_sukoharjo_reg ?>, <?= $capaian_wonogiri_reg ?>, <?= $capaian_karanganyar_reg ?>, <?= $capaian_sragen_reg ?>, <?= $capaian_grobogan_reg ?>, <?= $capaian_blora_reg ?>, <?= $capaian_rembang_reg ?>, <?= $capaian_pati_reg ?>, <?= $capaian_kudus_reg ?>, <?= $capaian_jepara_reg ?>, <?= $capaian_demak_reg ?>, <?= $capaian_semarang_reg ?>, <?= $capaian_temanggung_reg ?>, <?= $capaian_kendal_reg ?>, <?= $capaian_batang_reg ?>, <?= $capaian_pekalongan_reg ?>, <?= $capaian_pemalang_reg ?>, <?= $capaian_tegal_reg ?>, <?= $capaian_brebes_reg ?>],
                 tooltip: {
                     valueSuffix: ' %'
                 },
-                showInLegend: false,
+                showInLegend: true,
             }]
         });
 
@@ -1484,7 +1491,7 @@
                 type: 'bar'
             },
             title: {
-                text: 'PERSENTASE CAPAIAN REALISASI DANADESA BLTDD (<?= $persen_bltdd ?>%)'
+                text: 'PERSENTASE CAPAIAN DANADESA BLTDD (<?= $persen_bltdd ?>%)'
             },
             subtitle: {
                 text: 'Per Kabupaten'
@@ -1534,12 +1541,19 @@
                 enabled: false
             },
             series: [{
+                name: 'Salur',
+                data: [<?= $capaian_salur_cilacap_bltdd ?>, <?= $capaian_salur_banyumas_bltdd ?>, <?= $capaian_salur_purbalingga_bltdd ?>, <?= $capaian_salur_banjarnegara_bltdd ?>, <?= $capaian_salur_kebumen_bltdd ?>, <?= $capaian_salur_purworejo_bltdd ?>, <?= $capaian_salur_wonosobo_bltdd ?>, <?= $capaian_salur_magelang_bltdd ?>, <?= $capaian_salur_boyolali_bltdd ?>, <?= $capaian_salur_klaten_bltdd ?>, <?= $capaian_salur_sukoharjo_bltdd ?>, <?= $capaian_salur_wonogiri_bltdd ?>, <?= $capaian_salur_karanganyar_bltdd ?>, <?= $capaian_salur_sragen_bltdd ?>, <?= $capaian_salur_grobogan_bltdd ?>, <?= $capaian_salur_blora_bltdd ?>, <?= $capaian_salur_rembang_bltdd ?>, <?= $capaian_salur_pati_bltdd ?>, <?= $capaian_salur_kudus_bltdd ?>, <?= $capaian_salur_jepara_bltdd ?>, <?= $capaian_salur_demak_bltdd ?>, <?= $capaian_salur_semarang_bltdd ?>, <?= $capaian_salur_temanggung_bltdd ?>, <?= $capaian_salur_kendal_bltdd ?>, <?= $capaian_salur_batang_bltdd ?>, <?= $capaian_salur_pekalongan_bltdd ?>, <?= $capaian_salur_pemalang_bltdd ?>, <?= $capaian_salur_tegal_bltdd ?>, <?= $capaian_salur_brebes_bltdd ?>],
+                tooltip: {
+                    valueSuffix: ' %'
+                },
+                showInLegend: true,
+            }, {
                 name: 'Realisasi',
                 data: [<?= $capaian_cilacap_bltdd ?>, <?= $capaian_banyumas_bltdd ?>, <?= $capaian_purbalingga_bltdd ?>, <?= $capaian_banjarnegara_bltdd ?>, <?= $capaian_kebumen_bltdd ?>, <?= $capaian_purworejo_bltdd ?>, <?= $capaian_wonosobo_bltdd ?>, <?= $capaian_magelang_bltdd ?>, <?= $capaian_boyolali_bltdd ?>, <?= $capaian_klaten_bltdd ?>, <?= $capaian_sukoharjo_bltdd ?>, <?= $capaian_wonogiri_bltdd ?>, <?= $capaian_karanganyar_bltdd ?>, <?= $capaian_sragen_bltdd ?>, <?= $capaian_grobogan_bltdd ?>, <?= $capaian_blora_bltdd ?>, <?= $capaian_rembang_bltdd ?>, <?= $capaian_pati_bltdd ?>, <?= $capaian_kudus_bltdd ?>, <?= $capaian_jepara_bltdd ?>, <?= $capaian_demak_bltdd ?>, <?= $capaian_semarang_bltdd ?>, <?= $capaian_temanggung_bltdd ?>, <?= $capaian_kendal_bltdd ?>, <?= $capaian_batang_bltdd ?>, <?= $capaian_pekalongan_bltdd ?>, <?= $capaian_pemalang_bltdd ?>, <?= $capaian_tegal_bltdd ?>, <?= $capaian_brebes_bltdd ?>],
                 tooltip: {
                     valueSuffix: ' %'
                 },
-                showInLegend: false,
+                showInLegend: true,
             }]
         });
 
@@ -1549,7 +1563,7 @@
                 type: 'bar'
             },
             title: {
-                text: 'PERSENTASE CAPAIAN REALISASI DANADESA KETAHANAN PANGAN & HEWANI (<?= $persen_kph ?>%)'
+                text: 'PERSENTASE CAPAIAN DANADESA KETAHANAN PANGAN & HEWANI (<?= $persen_kph ?>%)'
             },
             subtitle: {
                 text: 'Per Kabupaten'
@@ -1599,12 +1613,19 @@
                 enabled: false
             },
             series: [{
+                name: 'Salur',
+                data: [<?= $capaian_salur_cilacap_kph ?>, <?= $capaian_salur_banyumas_kph ?>, <?= $capaian_salur_purbalingga_kph ?>, <?= $capaian_salur_banjarnegara_kph ?>, <?= $capaian_salur_kebumen_kph ?>, <?= $capaian_salur_purworejo_kph ?>, <?= $capaian_salur_wonosobo_kph ?>, <?= $capaian_salur_magelang_kph ?>, <?= $capaian_salur_boyolali_kph ?>, <?= $capaian_salur_klaten_kph ?>, <?= $capaian_salur_sukoharjo_kph ?>, <?= $capaian_salur_wonogiri_kph ?>, <?= $capaian_salur_karanganyar_kph ?>, <?= $capaian_salur_sragen_kph ?>, <?= $capaian_salur_grobogan_kph ?>, <?= $capaian_salur_blora_kph ?>, <?= $capaian_salur_rembang_kph ?>, <?= $capaian_salur_pati_kph ?>, <?= $capaian_salur_kudus_kph ?>, <?= $capaian_salur_jepara_kph ?>, <?= $capaian_salur_demak_kph ?>, <?= $capaian_salur_semarang_kph ?>, <?= $capaian_salur_temanggung_kph ?>, <?= $capaian_salur_kendal_kph ?>, <?= $capaian_salur_batang_kph ?>, <?= $capaian_salur_pekalongan_kph ?>, <?= $capaian_salur_pemalang_kph ?>, <?= $capaian_salur_tegal_kph ?>, <?= $capaian_salur_brebes_kph ?>],
+                tooltip: {
+                    valueSuffix: ' %'
+                },
+                showInLegend: true,
+            }, {
                 name: 'Realisasi',
                 data: [<?= $capaian_cilacap_kph ?>, <?= $capaian_banyumas_kph ?>, <?= $capaian_purbalingga_kph ?>, <?= $capaian_banjarnegara_kph ?>, <?= $capaian_kebumen_kph ?>, <?= $capaian_purworejo_kph ?>, <?= $capaian_wonosobo_kph ?>, <?= $capaian_magelang_kph ?>, <?= $capaian_boyolali_kph ?>, <?= $capaian_klaten_kph ?>, <?= $capaian_sukoharjo_kph ?>, <?= $capaian_wonogiri_kph ?>, <?= $capaian_karanganyar_kph ?>, <?= $capaian_sragen_kph ?>, <?= $capaian_grobogan_kph ?>, <?= $capaian_blora_kph ?>, <?= $capaian_rembang_kph ?>, <?= $capaian_pati_kph ?>, <?= $capaian_kudus_kph ?>, <?= $capaian_jepara_kph ?>, <?= $capaian_demak_kph ?>, <?= $capaian_semarang_kph ?>, <?= $capaian_temanggung_kph ?>, <?= $capaian_kendal_kph ?>, <?= $capaian_batang_kph ?>, <?= $capaian_pekalongan_kph ?>, <?= $capaian_pemalang_kph ?>, <?= $capaian_tegal_kph ?>, <?= $capaian_brebes_kph ?>],
                 tooltip: {
                     valueSuffix: ' %'
                 },
-                showInLegend: false,
+                showInLegend: true,
             }]
         });
 
@@ -1614,7 +1635,7 @@
                 type: 'bar'
             },
             title: {
-                text: 'PERSENTASE CAPAIAN REALISASI DANADESA COVID-19 (<?= $persen_covid ?>%)'
+                text: 'PERSENTASE CAPAIAN DANADESA PPKM (<?= $persen_covid ?>%)'
             },
             subtitle: {
                 text: 'Per Kabupaten'
@@ -1664,12 +1685,19 @@
                 enabled: false
             },
             series: [{
+                name: 'Salur',
+                data: [<?= $capaian_salur_cilacap_covid ?>, <?= $capaian_salur_banyumas_covid ?>, <?= $capaian_salur_purbalingga_covid ?>, <?= $capaian_salur_banjarnegara_covid ?>, <?= $capaian_salur_kebumen_covid ?>, <?= $capaian_salur_purworejo_covid ?>, <?= $capaian_salur_wonosobo_covid ?>, <?= $capaian_salur_magelang_covid ?>, <?= $capaian_salur_boyolali_covid ?>, <?= $capaian_salur_klaten_covid ?>, <?= $capaian_salur_sukoharjo_covid ?>, <?= $capaian_salur_wonogiri_covid ?>, <?= $capaian_salur_karanganyar_covid ?>, <?= $capaian_salur_sragen_covid ?>, <?= $capaian_salur_grobogan_covid ?>, <?= $capaian_salur_blora_covid ?>, <?= $capaian_salur_rembang_covid ?>, <?= $capaian_salur_pati_covid ?>, <?= $capaian_salur_kudus_covid ?>, <?= $capaian_salur_jepara_covid ?>, <?= $capaian_salur_demak_covid ?>, <?= $capaian_salur_semarang_covid ?>, <?= $capaian_salur_temanggung_covid ?>, <?= $capaian_salur_kendal_covid ?>, <?= $capaian_salur_batang_covid ?>, <?= $capaian_salur_pekalongan_covid ?>, <?= $capaian_salur_pemalang_covid ?>, <?= $capaian_salur_tegal_covid ?>, <?= $capaian_salur_brebes_covid ?>],
+                tooltip: {
+                    valueSuffix: ' %'
+                },
+                showInLegend: true,
+            }, {
                 name: 'Realisasi',
                 data: [<?= $capaian_cilacap_covid ?>, <?= $capaian_banyumas_covid ?>, <?= $capaian_purbalingga_covid ?>, <?= $capaian_banjarnegara_covid ?>, <?= $capaian_kebumen_covid ?>, <?= $capaian_purworejo_covid ?>, <?= $capaian_wonosobo_covid ?>, <?= $capaian_magelang_covid ?>, <?= $capaian_boyolali_covid ?>, <?= $capaian_klaten_covid ?>, <?= $capaian_sukoharjo_covid ?>, <?= $capaian_wonogiri_covid ?>, <?= $capaian_karanganyar_covid ?>, <?= $capaian_sragen_covid ?>, <?= $capaian_grobogan_covid ?>, <?= $capaian_blora_covid ?>, <?= $capaian_rembang_covid ?>, <?= $capaian_pati_covid ?>, <?= $capaian_kudus_covid ?>, <?= $capaian_jepara_covid ?>, <?= $capaian_demak_covid ?>, <?= $capaian_semarang_covid ?>, <?= $capaian_temanggung_covid ?>, <?= $capaian_kendal_covid ?>, <?= $capaian_batang_covid ?>, <?= $capaian_pekalongan_covid ?>, <?= $capaian_pemalang_covid ?>, <?= $capaian_tegal_covid ?>, <?= $capaian_brebes_covid ?>],
                 tooltip: {
                     valueSuffix: ' %'
                 },
-                showInLegend: false,
+                showInLegend: true,
             }]
         });
     </script>
@@ -1753,7 +1781,7 @@
                         y: <?= $grand_total_kph ?>
                     },
                     {
-                        name: 'Covid-19 (<?= $persen_covid ?>%)',
+                        name: 'PPKM (<?= $persen_covid ?>%)',
                         y: <?= $grand_total_covid ?>
                     },
                 ]
@@ -1766,13 +1794,13 @@
                 type: 'bar'
             },
             title: {
-                text: 'PERSENTASE CAPAIAN REALISASI DANADESA'
+                text: 'PERSENTASE CAPAIAN DANADESA'
             },
             subtitle: {
                 text: 'Kabupaten <?= $kab ?>'
             },
             xAxis: {
-                categories: ['Reguler', 'BLTDD', 'KPH', 'Covid-19'],
+                categories: ['Reguler', 'BLTDD', 'KPH', 'PPKM'],
                 title: {
                     text: null
                 }
@@ -1780,7 +1808,7 @@
             yAxis: [{
                 min: 0,
                 title: {
-                    text: 'Persentase Realisasi (%)',
+                    text: 'Persentase Capaian (%)',
                     align: 'high'
                 },
                 labels: {
@@ -1803,12 +1831,19 @@
                 enabled: false
             },
             series: [{
-                name: 'Realisasi',
-                data: [<?= $capaian_reg ?>, <?= $capaian_bltdd ?>, <?= $capaian_kph ?>, <?= $capaian_covid ?>],
+                name: 'Salur',
+                data: [<?= $capaian_salur_reg ?>, <?= $capaian_salur_bltdd ?>, <?= $capaian_salur_kph ?>, <?= $capaian_salur_covid ?>],
                 tooltip: {
                     valueSuffix: ' %'
                 },
-                showInLegend: false,
+                showInLegend: true,
+            }, {
+                name: 'Realisasi',
+                data: [<?= $capaian_realisasi_reg ?>, <?= $capaian_realisasi_bltdd ?>, <?= $capaian_realisasi_kph ?>, <?= $capaian_realisasi_covid ?>],
+                tooltip: {
+                    valueSuffix: ' %'
+                },
+                showInLegend: true,
             }]
         });
 
@@ -1817,7 +1852,7 @@
                 backgroundColor: 'rgba(0,0,0,0)'
             },
             title: {
-                text: 'REALISASI DANA DESA REGULER'
+                text: 'DANA DESA REGULER'
             },
             subtitle: {
                 text: 'Kabupaten <?= $kab ?>'
@@ -1827,7 +1862,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Realisasi (Rp.)'
+                    text: 'Rupiah'
                 },
                 labels: {
                     formatter: function() {
@@ -1839,11 +1874,24 @@
                 enabled: false
             },
             series: [{
+                name: 'Salur',
+                type: 'column',
+                color: 'tomato',
+                data: [<?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_januari'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_februari'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_maret'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_april'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_mei'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_juni'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_juli'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_agustus'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_september'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_oktober'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_november'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_desember'] : 0 ?>],
+                showInLegend: true,
+                // dataLabels: {
+                //     enabled: true,
+                //     format: 'Rp. {point.y:,.0f}'
+                // },
+                tooltip: {
+                    valuePrefix: 'Rp. '
+                },
+            }, {
                 name: 'Realisasi',
                 type: 'column',
-                colorByPoint: true,
+                color: 'cyan',
                 data: [<?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['januari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['februari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['maret'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['april'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['mei'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['juni'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['juli'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['agustus'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['september'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['oktober'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['november'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['desember'] : 0 ?>],
-                showInLegend: false,
+                showInLegend: true,
                 // dataLabels: {
                 //     enabled: true,
                 //     format: 'Rp. {point.y:,.0f}'
@@ -1859,7 +1907,7 @@
                 backgroundColor: 'rgba(0,0,0,0)'
             },
             title: {
-                text: 'REALISASI DANA DESA BLTDD'
+                text: 'DANA DESA BLTDD'
             },
             subtitle: {
                 text: 'Kabupaten <?= $kab ?>'
@@ -1869,7 +1917,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Realisasi (Rp.)'
+                    text: 'Rupiah'
                 },
                 labels: {
                     formatter: function() {
@@ -1881,11 +1929,24 @@
                 enabled: false
             },
             series: [{
+                name: 'Salur',
+                type: 'column',
+                color: 'tomato',
+                data: [<?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_januari'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_februari'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_maret'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_april'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_mei'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_juni'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_juli'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_agustus'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_september'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_oktober'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_november'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_desember'] : 0 ?>],
+                showInLegend: true,
+                // dataLabels: {
+                //     enabled: true,
+                //     format: 'Rp. {point.y:,.0f}'
+                // },
+                tooltip: {
+                    valuePrefix: 'Rp. '
+                },
+            }, {
                 name: 'Realisasi',
                 type: 'column',
-                colorByPoint: true,
+                color: 'cyan',
                 data: [<?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['januari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['februari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['maret'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['april'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['mei'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['juni'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['juli'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['agustus'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['september'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['oktober'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['november'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['desember'] : 0 ?>],
-                showInLegend: false,
+                showInLegend: true,
                 // dataLabels: {
                 //     enabled: true,
                 //     format: 'Rp. {point.y:,.0f}'
@@ -1901,7 +1962,7 @@
                 backgroundColor: 'rgba(0,0,0,0)'
             },
             title: {
-                text: 'REALISASI DANA DESA KPH'
+                text: 'DANA DESA KPH'
             },
             subtitle: {
                 text: 'Kabupaten <?= $kab ?>'
@@ -1911,7 +1972,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Realisasi (Rp.)'
+                    text: 'Rupiah'
                 },
                 labels: {
                     formatter: function() {
@@ -1923,11 +1984,24 @@
                 enabled: false
             },
             series: [{
+                name: 'Salur',
+                type: 'column',
+                color: 'tomato',
+                data: [<?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_januari'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_februari'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_maret'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_april'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_mei'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_juni'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_juli'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_agustus'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_september'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_oktober'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_november'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_desember'] : 0 ?>],
+                showInLegend: true,
+                // dataLabels: {
+                //     enabled: true,
+                //     format: 'Rp. {point.y:,.0f}'
+                // },
+                tooltip: {
+                    valuePrefix: 'Rp. '
+                },
+            }, {
                 name: 'Realisasi',
                 type: 'column',
-                colorByPoint: true,
+                color: 'cyan',
                 data: [<?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['januari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['februari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['maret'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['april'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['mei'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['juni'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['juli'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['agustus'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['september'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['oktober'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['november'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['desember'] : 0 ?>],
-                showInLegend: false,
+                showInLegend: true,
                 // dataLabels: {
                 //     enabled: true,
                 //     format: 'Rp. {point.y:,.0f}'
@@ -1943,7 +2017,7 @@
                 backgroundColor: 'rgba(0,0,0,0)'
             },
             title: {
-                text: 'REALISASI DANA DESA COVID-19'
+                text: 'DANA DESA PPKM'
             },
             subtitle: {
                 text: 'Kabupaten <?= $kab ?>'
@@ -1953,7 +2027,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Realisasi (Rp.)'
+                    text: 'Rupiah'
                 },
                 labels: {
                     formatter: function() {
@@ -1965,11 +2039,24 @@
                 enabled: false
             },
             series: [{
+                name: 'Salur',
+                type: 'column',
+                color: 'tomato',
+                data: [<?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_januari'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_februari'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_maret'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_april'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_mei'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_juni'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_juli'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_agustus'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_september'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_oktober'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_november'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_desember'] : 0 ?>],
+                showInLegend: true,
+                // dataLabels: {
+                //     enabled: true,
+                //     format: 'Rp. {point.y:,.0f}'
+                // },
+                tooltip: {
+                    valuePrefix: 'Rp. '
+                },
+            }, {
                 name: 'Realisasi',
                 type: 'column',
-                colorByPoint: true,
+                color: 'cyan',
                 data: [<?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['januari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['februari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['maret'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['april'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['mei'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['juni'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['juli'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['agustus'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['september'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['oktober'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['november'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['desember'] : 0 ?>],
-                showInLegend: false,
+                showInLegend: true,
                 // dataLabels: {
                 //     enabled: true,
                 //     format: 'Rp. {point.y:,.0f}'

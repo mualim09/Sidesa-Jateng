@@ -56,7 +56,7 @@
                                 <th scope="col" style="vertical-align: middle; text-align: center;">Capaian (%)</th>
                                 <th scope="col" style="vertical-align: middle; text-align: center;">KPH (Rp)</th>
                                 <th scope="col" style="vertical-align: middle; text-align: center;">Capaian (%)</th>
-                                <th scope="col" style="vertical-align: middle; text-align: center;">COVID-19 (Rp)</th>
+                                <th scope="col" style="vertical-align: middle; text-align: center;">PPKM (Rp)</th>
                                 <th scope="col" style="vertical-align: middle; text-align: center;">Capaian (%)</th>
                                 <th scope="col" style="vertical-align: middle; text-align: center;">Update</th>
                             </tr>
@@ -811,7 +811,7 @@
                                 <th scope="col" style="vertical-align: middle; text-align: center;">Capaian (%)</th>
                                 <th scope="col" style="vertical-align: middle; text-align: center;">KPH (Rp)</th>
                                 <th scope="col" style="vertical-align: middle; text-align: center;">Capaian (%)</th>
-                                <th scope="col" style="vertical-align: middle; text-align: center;">COVID-19 (Rp)</th>
+                                <th scope="col" style="vertical-align: middle; text-align: center;">PPKM (Rp)</th>
                                 <th scope="col" style="vertical-align: middle; text-align: center;">Capaian (%)</th>
                                 <th scope="col" style="vertical-align: middle; text-align: center;">Update</th>
                             </tr>

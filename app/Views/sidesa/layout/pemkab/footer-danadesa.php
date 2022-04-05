@@ -113,7 +113,7 @@
                     y: <?= $grand_total_kph ?>
                 },
                 {
-                    name: 'Covid-19 (<?= $persen_covid ?>%)',
+                    name: 'PPKM (<?= $persen_covid ?>%)',
                     y: <?= $grand_total_covid ?>
                 },
             ]
@@ -126,13 +126,13 @@
             type: 'bar'
         },
         title: {
-            text: 'PERSENTASE CAPAIAN REALISASI DANADESA'
+            text: 'PERSENTASE CAPAIAN DANADESA'
         },
         subtitle: {
             text: 'Kabupaten <?= $kab ?>' + ' ' + '<?= date("Y") ?>'
         },
         xAxis: {
-            categories: ['Reguler', 'BLTDD', 'KPH', 'Covid-19'],
+            categories: ['Reguler', 'BLTDD', 'KPH', 'PPKM'],
             title: {
                 text: null
             }
@@ -140,7 +140,7 @@
         yAxis: [{
             min: 0,
             title: {
-                text: 'Persentase Realisasi (%)',
+                text: 'Persentase (%)',
                 align: 'high'
             },
             labels: {
@@ -163,12 +163,19 @@
             enabled: false
         },
         series: [{
-            name: 'Realisasi',
-            data: [<?= $capaian_reg ?>, <?= $capaian_bltdd ?>, <?= $capaian_kph ?>, <?= $capaian_covid ?>],
+            name: 'Salur',
+            data: [<?= $capaian_salur_reg ?>, <?= $capaian_salur_bltdd ?>, <?= $capaian_salur_kph ?>, <?= $capaian_salur_covid ?>],
             tooltip: {
                 valueSuffix: ' %'
             },
-            showInLegend: false,
+            showInLegend: true,
+        }, {
+            name: 'Realisasi',
+            data: [<?= $capaian_realisasi_reg ?>, <?= $capaian_realisasi_bltdd ?>, <?= $capaian_realisasi_kph ?>, <?= $capaian_realisasi_covid ?>],
+            tooltip: {
+                valueSuffix: ' %'
+            },
+            showInLegend: true,
         }]
     });
 
@@ -177,7 +184,7 @@
             backgroundColor: 'rgba(0,0,0,0)'
         },
         title: {
-            text: 'REALISASI DANA DESA REGULER'
+            text: 'DANA DESA REGULER'
         },
         subtitle: {
             text: 'Kabupaten <?= $kab ?>' + ' ' + '<?= date("Y") ?>'
@@ -199,11 +206,24 @@
             enabled: false
         },
         series: [{
+            name: 'Salur',
+            type: 'column',
+            color: 'tomato',
+            data: [<?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_januari'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_februari'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_maret'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_april'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_mei'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_juni'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_juli'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_agustus'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_september'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_oktober'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_november'] : 0 ?>, <?= $salur_bulanan_danadesa_reguler != null ? $salur_bulanan_danadesa_reguler['salur_desember'] : 0 ?>],
+            showInLegend: true,
+            // dataLabels: {
+            //     enabled: true,
+            //     format: 'Rp. {point.y:,.0f}'
+            // },
+            tooltip: {
+                valuePrefix: 'Rp. '
+            },
+        }, {
             name: 'Realisasi',
             type: 'column',
-            colorByPoint: true,
+            color: 'cyan',
             data: [<?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['januari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['februari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['maret'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['april'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['mei'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['juni'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['juli'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['agustus'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['september'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['oktober'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['november'] : 0 ?>, <?= $realisasi_bulanan_danadesa_reguler != null ? $realisasi_bulanan_danadesa_reguler['desember'] : 0 ?>],
-            showInLegend: false,
+            showInLegend: true,
             // dataLabels: {
             //     enabled: true,
             //     format: 'Rp. {point.y:,.0f}'
@@ -219,7 +239,7 @@
             backgroundColor: 'rgba(0,0,0,0)'
         },
         title: {
-            text: 'REALISASI DANA DESA BLTDD'
+            text: 'DANA DESA BLTDD'
         },
         subtitle: {
             text: 'Kabupaten <?= $kab ?>' + ' ' + '<?= date("Y") ?>'
@@ -241,11 +261,24 @@
             enabled: false
         },
         series: [{
+            name: 'Salur',
+            type: 'column',
+            color: 'tomato',
+            data: [<?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_januari'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_februari'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_maret'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_april'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_mei'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_juni'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_juli'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_agustus'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_september'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_oktober'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_november'] : 0 ?>, <?= $salur_bulanan_danadesa_bltdd != null ? $salur_bulanan_danadesa_bltdd['salur_desember'] : 0 ?>],
+            showInLegend: true,
+            // dataLabels: {
+            //     enabled: true,
+            //     format: 'Rp. {point.y:,.0f}'
+            // },
+            tooltip: {
+                valuePrefix: 'Rp. '
+            },
+        }, {
             name: 'Realisasi',
             type: 'column',
-            colorByPoint: true,
+            color: 'cyan',
             data: [<?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['januari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['februari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['maret'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['april'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['mei'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['juni'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['juli'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['agustus'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['september'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['oktober'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['november'] : 0 ?>, <?= $realisasi_bulanan_danadesa_bltdd != null ? $realisasi_bulanan_danadesa_bltdd['desember'] : 0 ?>],
-            showInLegend: false,
+            showInLegend: true,
             // dataLabels: {
             //     enabled: true,
             //     format: 'Rp. {point.y:,.0f}'
@@ -261,7 +294,7 @@
             backgroundColor: 'rgba(0,0,0,0)'
         },
         title: {
-            text: 'REALISASI DANA DESA KPH'
+            text: 'DANA DESA KPH'
         },
         subtitle: {
             text: 'Kabupaten <?= $kab ?>' + ' ' + '<?= date("Y") ?>'
@@ -283,11 +316,24 @@
             enabled: false
         },
         series: [{
+            name: 'Salur',
+            type: 'column',
+            color: 'tomato',
+            data: [<?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_januari'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_februari'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_maret'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_april'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_mei'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_juni'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_juli'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_agustus'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_september'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_oktober'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_november'] : 0 ?>, <?= $salur_bulanan_danadesa_kph != null ? $salur_bulanan_danadesa_kph['salur_desember'] : 0 ?>],
+            showInLegend: true,
+            // dataLabels: {
+            //     enabled: true,
+            //     format: 'Rp. {point.y:,.0f}'
+            // },
+            tooltip: {
+                valuePrefix: 'Rp. '
+            },
+        }, {
             name: 'Realisasi',
             type: 'column',
-            colorByPoint: true,
+            color: 'cyan',
             data: [<?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['januari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['februari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['maret'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['april'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['mei'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['juni'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['juli'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['agustus'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['september'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['oktober'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['november'] : 0 ?>, <?= $realisasi_bulanan_danadesa_kph != null ? $realisasi_bulanan_danadesa_kph['desember'] : 0 ?>],
-            showInLegend: false,
+            showInLegend: true,
             // dataLabels: {
             //     enabled: true,
             //     format: 'Rp. {point.y:,.0f}'
@@ -303,7 +349,7 @@
             backgroundColor: 'rgba(0,0,0,0)'
         },
         title: {
-            text: 'REALISASI DANA DESA COVID-19'
+            text: 'DANA DESA PPKM'
         },
         subtitle: {
             text: 'Kabupaten <?= $kab ?>' + ' ' + '<?= date("Y") ?>'
@@ -325,11 +371,24 @@
             enabled: false
         },
         series: [{
+            name: 'Salur',
+            type: 'column',
+            color: 'tomato',
+            data: [<?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_januari'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_februari'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_maret'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_april'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_mei'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_juni'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_juli'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_agustus'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_september'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_oktober'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_november'] : 0 ?>, <?= $salur_bulanan_danadesa_covid != null ? $salur_bulanan_danadesa_covid['salur_desember'] : 0 ?>],
+            showInLegend: true,
+            // dataLabels: {
+            //     enabled: true,
+            //     format: 'Rp. {point.y:,.0f}'
+            // },
+            tooltip: {
+                valuePrefix: 'Rp. '
+            },
+        }, {
             name: 'Realisasi',
             type: 'column',
-            colorByPoint: true,
+            color: 'cyan',
             data: [<?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['januari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['februari'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['maret'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['april'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['mei'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['juni'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['juli'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['agustus'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['september'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['oktober'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['november'] : 0 ?>, <?= $realisasi_bulanan_danadesa_covid != null ? $realisasi_bulanan_danadesa_covid['desember'] : 0 ?>],
-            showInLegend: false,
+            showInLegend: true,
             // dataLabels: {
             //     enabled: true,
             //     format: 'Rp. {point.y:,.0f}'

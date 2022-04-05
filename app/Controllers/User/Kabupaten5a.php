@@ -147,30 +147,38 @@ class Kabupaten5a extends BaseController
         }
         $anggaran_reg = $anggaran_danadesa * $persen_reg / 100;
         if ($anggaran_reg != 0) {
-            $capaian_reg = number_format($total_reg / $anggaran_reg * 100, 2, '.', '.');
+            $capaian_realisasi_reg = number_format($total_reg / $anggaran_reg * 100, 2, '.', '.');
+            $capaian_salur_reg = number_format($jumlah_salur_reg / $anggaran_reg * 100, 2, '.', '.');
         } else {
-            $capaian_reg = 0;
+            $capaian_realisasi_reg = 0;
+            $capaian_salur_reg = 0;
         }
         $anggaran_bltdd = $anggaran_danadesa * $persen_bltdd / 100;
         if ($anggaran_bltdd != 0) {
-            $capaian_bltdd = number_format($total_bltdd / $anggaran_bltdd * 100, 2, '.', '.');
+            $capaian_realisasi_bltdd = number_format($total_bltdd / $anggaran_bltdd * 100, 2, '.', '.');
+            $capaian_salur_bltdd = number_format($jumlah_salur_bltdd / $anggaran_bltdd * 100, 2, '.', '.');
         } else {
-            $capaian_bltdd = 0;
+            $capaian_realisasi_bltdd = 0;
+            $capaian_salur_bltdd = 0;
         }
         $anggaran_kph = $anggaran_danadesa * $persen_kph / 100;
         if ($anggaran_kph != 0) {
-            $capaian_kph = number_format($total_kph / $anggaran_kph * 100, 2, '.', '.');
+            $capaian_realisasi_kph = number_format($total_kph / $anggaran_kph * 100, 2, '.', '.');
+            $capaian_salur_kph = number_format($jumlah_salur_kph / $anggaran_kph * 100, 2, '.', '.');
         } else {
-            $capaian_kph = 0;
+            $capaian_realisasi_kph = 0;
+            $capaian_salur_kph = 0;
         }
         $anggaran_covid = $anggaran_danadesa * $persen_covid / 100;
         if ($anggaran_covid != 0) {
-            $capaian_covid = number_format($total_covid / $anggaran_covid * 100, 2, '.', '.');
+            $capaian_realisasi_covid = number_format($total_covid / $anggaran_covid * 100, 2, '.', '.');
+            $capaian_salur_covid = number_format($jumlah_salur_covid / $anggaran_covid * 100, 2, '.', '.');
         } else {
-            $capaian_covid = 0;
+            $capaian_realisasi_covid = 0;
+            $capaian_salur_covid = 0;
         }
 
-        // dd($capaian_kph);
+        // dd($capaian_realisasi_kph);
 
         // logic grand total setelah dipersentasekan
         $grn_total = $this->Kabupaten5a_model->danadesa_anggaran($sessionKdwil);
@@ -196,10 +204,14 @@ class Kabupaten5a extends BaseController
             'anggaran_danadesa' => $anggaran_danadesa,
             'total_salur' => $jumlah_salur_reg + $jumlah_salur_bltdd + $jumlah_salur_kph + $jumlah_salur_covid,
             'total_realisasi' => $total_reg + $total_bltdd + $total_kph + $total_covid,
-            'capaian_reg' => $capaian_reg,
-            'capaian_bltdd' => $capaian_bltdd,
-            'capaian_kph' => $capaian_kph,
-            'capaian_covid' => $capaian_covid,
+            'capaian_realisasi_reg' => $capaian_realisasi_reg,
+            'capaian_realisasi_bltdd' => $capaian_realisasi_bltdd,
+            'capaian_realisasi_kph' => $capaian_realisasi_kph,
+            'capaian_realisasi_covid' => $capaian_realisasi_covid,
+            'capaian_salur_reg' => $capaian_salur_reg,
+            'capaian_salur_bltdd' => $capaian_salur_bltdd,
+            'capaian_salur_kph' => $capaian_salur_kph,
+            'capaian_salur_covid' => $capaian_salur_covid,
             'realisasi_reg' => $total_reg,
             'realisasi_bltdd' => $total_bltdd,
             'realisasi_kph' => $total_kph,
@@ -208,6 +220,10 @@ class Kabupaten5a extends BaseController
             'realisasi_bulanan_danadesa_bltdd' => $this->Kabupaten5a_model->danadesa_bltdd($sessionKdwil),
             'realisasi_bulanan_danadesa_kph' => $this->Kabupaten5a_model->danadesa_kph($sessionKdwil),
             'realisasi_bulanan_danadesa_covid' => $this->Kabupaten5a_model->danadesa_covid($sessionKdwil),
+            'salur_bulanan_danadesa_reguler' => $this->Kabupaten5a_model->salur_reguler($sessionKdwil),
+            'salur_bulanan_danadesa_bltdd' => $this->Kabupaten5a_model->salur_bltdd($sessionKdwil),
+            'salur_bulanan_danadesa_kph' => $this->Kabupaten5a_model->salur_kph($sessionKdwil),
+            'salur_bulanan_danadesa_covid' => $this->Kabupaten5a_model->salur_covid($sessionKdwil),
             'grand_total_anggaran' => $grand_total,
             'grand_total_reg' => $grand_total_reg,
             'grand_total_bltdd' => $grand_total_bltdd,
