@@ -28,6 +28,9 @@
     <script src="<?= base_url('minia/libs/jquery/jquery.min.js'); ?>"></script>
     <script src="<?= base_url('minia/libs/pace-js/pace.min.js'); ?>"></script>
 
+    <?php if ($request->uri->getSegment(2) === "danadesa") : ?>
+        <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/highchart/css/dashboard_kabupaten5a.css">
+    <?php endif; ?>
     <!-- highchart style -->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/highchart/css/basicliner.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/highchart/css/piegradients.css">

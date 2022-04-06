@@ -19,6 +19,7 @@ class Pemdes_member_model extends Model
         // $dashdesa = $this->db->table('dashboard_desa');
 
         $nama = $input['nama'];
+        $gender = $input['gender'];
         $tempat_lahir = $input['tempat_lahir'];
         $tanggal_lahir = $input['tanggal_lahir'];
         $alamat = $input['alamat'];
@@ -40,6 +41,7 @@ class Pemdes_member_model extends Model
         }
         $builder->set('image', $nmfile);
         $builder->set('nama', $nama);
+        $builder->set('gender', $gender);
         $builder->set('tempat_lahir', $tempat_lahir);
         $builder->set('tanggal_lahir', $tanggal_lahir);
         $builder->set('alamat', $alamat);

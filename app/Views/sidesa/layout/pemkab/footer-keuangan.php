@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
-                <span>Copyright &copy; 2020 - <?= date("Y"); ?> Sistem Informasi Desa</span>
+                <span>Copyright &copy; 2020 - <?= date("Y"); ?>. Sistem Informasi Desa . Provinsi Jawa Tengah</span>
             </div>
         </div>
     </div>

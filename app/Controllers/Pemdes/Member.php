@@ -50,7 +50,7 @@ class Member extends BaseController
             $this->validation->setRule('kecamatan', 'Kecamatan', 'required|alpha_space|trim', ['required' => 'Nama Kecamatan tidak boleh kosong', 'alpha_space' => 'Nama Kecamatan hanya diisi alphabet dan spasi']);
             $this->validation->setRule('pekerjaan', 'Pekerjaan', 'required|trim', ['required' => 'Pekerjaan tidak boleh kosong']);
             $this->validation->setRule('hp', 'HP', 'required|numeric|min_length[11]|max_length[15]|trim', ['numeric' => 'Nomor HP hanya diisi angka (tanpa spasi)', 'required' => 'Nomor HP tidak boleh kosong', 'min_length' => 'Nomor HP minimal harus 11 digit', 'max_length' => 'Nomor HP maximal hanya 15 digit']);
-            // $this->validation->setRule('image', 'Upload Persetujuan', 'trim|mime_in[image,image/jpg,image/JPG,image/jpeg,image/png]|max_size[image,2048]', ['mime_in' => 'File yang anda pilih bukan JPG', 'max_size' => 'File anda melebihi 2mb']);
+            $this->validation->setRule('image', 'Image', 'trim|mime_in[image,image/jpg,image/JPG,image/jpeg,image/png]|max_size[image,2048]', ['mime_in' => 'File yang anda pilih bukan JPG', 'max_size' => 'File anda melebihi 2mb']);
             if (!$this->validation->withRequest($this->request)->run()) {
                 return redirect()->to('pemdes/member/editprofile/' . $kode . '/' . $nik_ktp)->withInput();
             } else {

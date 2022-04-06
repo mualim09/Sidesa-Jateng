@@ -39,14 +39,25 @@
                     </div>
                     <div class="mb-3">
                         <label class="col-sm-2 col-form-label">Pilih jenis Kelamin</label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios1" value="Laki-laki">
-                            <label class="form-check-label" for="formRadios1">Laki-laki</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios2" value="Perempuan">
-                            <label class="form-check-label" for="formRadios2">Perempuan</label>
-                        </div>
+                        <?php if ($user['gender'] == "Laki-laki") : ?>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios1" value="Laki-laki" checked>
+                                <label class="form-check-label" for="formRadios1">Laki-laki</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios2" value="Perempuan">
+                                <label class="form-check-label" for="formRadios2">Perempuan</label>
+                            </div>
+                        <?php elseif ($user['gender'] == "Perempuan") : ?>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios1" value="Laki-laki">
+                                <label class="form-check-label" for="formRadios1">Laki-laki</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('gender') ? 'is-invalid' : '') ?>" type="radio" name="gender" id="formRadios2" value="Perempuan" checked>
+                                <label class="form-check-label" for="formRadios2">Perempuan</label>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <div class="form-group row">
                         <label for="tempat_lahir" class="col-sm-2 col-form-label">Tempat Lahir</label>
@@ -105,7 +116,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="hp" class="col-sm-2 col-form-label">Nomor Handphone</label>
+                        <label for="hp" class="col-sm-2 col-form-label">Nomor Whatsapp</label>
                         <div class="col-sm-6 mb-3">
                             <input type="text" class="form-control" id="phone-mask" name="hp" placeholder="Contoh: 85234567890 (tanpa angka 0 didepan)" value="<?= htmlspecialchars($user['hp'], ENT_QUOTES); ?>">
                             <small class="form-text text-danger"><?= $validation->getError('hp'); ?></small>
