@@ -127,4 +127,8 @@ class Member extends BaseController
         }
         echo view('sidesa/pemdes/member/gantipassword', $data);
     }
+
+    function suket_usaha($kode, $nik_ktp)
+    {
+    }
 }

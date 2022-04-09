@@ -262,6 +262,20 @@
                                     </div>
 
                                     <div class="mb-4">
+                                        <div>
+                                            <label class="form-label">Pilih status perkawinan (sesuai KTP)</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios3" value="kawin">
+                                            <label class="form-check-label" for="formRadios3">Kawin</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios4" value="belum_kawin">
+                                            <label class="form-check-label" for="formRadios4">Belum Kawin</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
                                         <label class="form-label">Domisili (sesuai KTP)</label>
                                         <input type="text" class="form-control <?= ($validation->hasError('alamat') ? 'is-invalid' : '') ?>" id="alamat" name="alamat" placeholder="Tuliskan nama Dukuh/Dusun/Jalan sesuai KTP" value="<?= old('alamat'); ?>">
                                         <div class="invalid-feedback">
