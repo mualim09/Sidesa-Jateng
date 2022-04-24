@@ -18,16 +18,17 @@ class Pemdes_member_model extends Model
         // $dashkab = $this->db->table('dashboard_kabupaten');
         // $dashdesa = $this->db->table('dashboard_desa');
 
-        $nama = $input['nama'];
+        $nama = strtolower($input['nama']);
         $gender = $input['gender'];
-        $tempat_lahir = $input['tempat_lahir'];
+        $status = $input['status'];
+        $tempat_lahir = strtolower($input['tempat_lahir']);
         $tanggal_lahir = $input['tanggal_lahir'];
-        $alamat = $input['alamat'];
+        $alamat = strtolower($input['alamat']);
         $rt = $input['rt'];
         $rw = $input['rw'];
-        $keldesa = $input['keldesa'];
-        $kecamatan = $input['kecamatan'];
-        $pekerjaan = $input['pekerjaan'];
+        $keldesa = strtolower($input['keldesa']);
+        $kecamatan = strtolower($input['kecamatan']);
+        $pekerjaan = strtolower($input['pekerjaan']);
         $hp = $input['hp'];
 
         if ($file->getError() == 4) {
@@ -40,16 +41,17 @@ class Pemdes_member_model extends Model
             }
         }
         $builder->set('image', $nmfile);
-        $builder->set('nama', $nama);
+        $builder->set('nama', ucwords($nama));
         $builder->set('gender', $gender);
-        $builder->set('tempat_lahir', $tempat_lahir);
+        $builder->set('status', $status);
+        $builder->set('tempat_lahir', ucwords($tempat_lahir));
         $builder->set('tanggal_lahir', $tanggal_lahir);
-        $builder->set('alamat', $alamat);
+        $builder->set('alamat', ucwords($alamat));
         $builder->set('rt', $rt);
         $builder->set('rw', $rw);
-        $builder->set('keldesa', $keldesa);
-        $builder->set('kecamatan', $kecamatan);
-        $builder->set('pekerjaan', $pekerjaan);
+        $builder->set('keldesa', ucwords($keldesa));
+        $builder->set('kecamatan', ucwords($kecamatan));
+        $builder->set('pekerjaan', ucwords($pekerjaan));
         $builder->set('hp', $hp);
         $builder->where('nik_ktp', $nik_ktp);
         $builder->update();

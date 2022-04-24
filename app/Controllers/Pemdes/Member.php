@@ -41,6 +41,7 @@ class Member extends BaseController
         if (isset($_POST['submit'])) {
             $this->validation->setRule('nama', 'Nama', 'required|alpha_space|trim', ['required' => 'Nama tidak boleh kosong', 'alpha_space' => 'Nama hanya diisi alphabet dan spasi']);
             $this->validation->setRule('gender', 'Gender', 'required|trim', ['required' => 'Jenis kelamin tidak boleh kosong']);
+            $this->validation->setRule('status', 'Status', 'required|trim', ['required' => 'Status perkawinan tidak boleh kosong']);
             $this->validation->setRule('tempat_lahir', 'Tempatlahir', 'required|alpha_space|trim', ['required' => 'Tempat lahir tidak boleh kosong', 'alpha_space' => 'Tempat lahir hanya diisi alphabet dan spasi']);
             $this->validation->setRule('tanggal_lahir', 'Tanggallahir', 'required|trim', ['required' => 'Tanggal lahir tidak boleh kosong']);
             $this->validation->setRule('alamat', 'Alamat', 'required|trim', ['required' => 'Alamat tidak boleh kosong']);

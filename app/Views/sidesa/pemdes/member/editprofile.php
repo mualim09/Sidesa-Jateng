@@ -37,7 +37,7 @@
                             <small class="form-text text-danger"><?= $validation->getError('nama'); ?></small>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label class="col-sm-2 col-form-label">Pilih jenis Kelamin</label>
                         <?php if ($user['gender'] == "Laki-laki") : ?>
                             <div class="form-check form-check-inline">
@@ -59,6 +59,78 @@
                             </div>
                         <?php endif; ?>
                     </div>
+                    <div class="mb-3">
+                        <label class="col-sm-2 col-form-label">Pilih status perkawinan</label>
+                        <?php if ($user['status'] == "kawin") : ?>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios3" value="kawin" checked>
+                                <label class="form-check-label" for="formRadios3">Kawin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios4" value="belum_kawin">
+                                <label class="form-check-label" for="formRadios4">Belum Kawin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios5" value="cerai_hidup">
+                                <label class="form-check-label" for="formRadios5">Cerai Hidup</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios6" value="cerai_mati">
+                                <label class="form-check-label" for="formRadios6">Cerai Mati</label>
+                            </div>
+                        <?php elseif ($user['status'] == "belum_kawin") : ?>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios3" value="kawin">
+                                <label class="form-check-label" for="formRadios3">Kawin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios4" value="belum_kawin" checked>
+                                <label class="form-check-label" for="formRadios4">Belum Kawin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios5" value="cerai_hidup">
+                                <label class="form-check-label" for="formRadios5">Cerai Hidup</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios6" value="cerai_mati">
+                                <label class="form-check-label" for="formRadios6">Cerai Mati</label>
+                            </div>
+                        <?php elseif ($user['status'] == "cerai_hidup") : ?>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios3" value="kawin">
+                                <label class="form-check-label" for="formRadios3">Kawin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios4" value="belum_kawin">
+                                <label class="form-check-label" for="formRadios4">Belum Kawin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios5" value="cerai_hidup" checked>
+                                <label class="form-check-label" for="formRadios5">Cerai Hidup</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios6" value="cerai_mati">
+                                <label class="form-check-label" for="formRadios6">Cerai Mati</label>
+                            </div>
+                        <?php elseif ($user['status'] == "cerai_mati") : ?>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios3" value="kawin">
+                                <label class="form-check-label" for="formRadios3">Kawin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios4" value="belum_kawin">
+                                <label class="form-check-label" for="formRadios4">Belum Kawin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios5" value="cerai_hidup">
+                                <label class="form-check-label" for="formRadios5">Cerai Hidup</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios6" value="cerai_mati" checked>
+                                <label class="form-check-label" for="formRadios6">Cerai Mati</label>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                     <div class="form-group row">
                         <label for="tempat_lahir" class="col-sm-2 col-form-label">Tempat Lahir</label>
                         <div class="col-sm-6 mb-3">
@@ -75,28 +147,28 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Alamat</label>
-                        <div class="col-sm-6 mb-1">
+                        <div class="col-sm-6 mb-3">
                             <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Tuliskan nama Dukuh/Dusun/Jalan sesuai KTP" value="<?= htmlspecialchars($user['alamat'], ENT_QUOTES); ?>">
                             <small class="form-text text-danger"><?= $validation->getError('alamat'); ?></small>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">RT</label>
-                        <div class="col-sm-6 mb-1">
+                        <div class="col-sm-6 mb-3">
                             <input type="text" class="form-control" id="rt" name="rt" placeholder="Tuliskan RT sesuai KTP" value="<?= htmlspecialchars($user['rt'], ENT_QUOTES); ?>">
                             <small class="form-text text-danger"><?= $validation->getError('rt'); ?></small>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">RW</label>
-                        <div class="col-sm-6 mb-1">
+                        <div class="col-sm-6 mb-3">
                             <input type="text" class="form-control" id="rw" name="rw" placeholder="Tuliskan RW sesuai KTP" value="<?= htmlspecialchars($user['rw'], ENT_QUOTES); ?>">
                             <small class="form-text text-danger"><?= $validation->getError('rw'); ?></small>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Kelurahan/Desa</label>
-                        <div class="col-sm-6 mb-1">
+                        <div class="col-sm-6 mb-3">
                             <input type="text" class="form-control" id="keldesa" name="keldesa" placeholder="Tuliskan Desa sesuai KTP" value="<?= htmlspecialchars($user['keldesa'], ENT_QUOTES); ?>">
                             <small class="form-text text-danger"><?= $validation->getError('keldesa'); ?></small>
                         </div>

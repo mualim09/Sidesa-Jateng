@@ -93,6 +93,7 @@ class Auth extends BaseController
                     'kd_wilayah' => $kode,
                     'nama' => htmlspecialchars(ucwords($nama)),
                     'gender' => htmlspecialchars($this->request->getVar('gender')),
+                    'status' => htmlspecialchars($this->request->getVar('status')),
                     'alamat' => htmlspecialchars(ucwords($alamat)),
                     'rt' => htmlspecialchars($this->request->getVar('rt')),
                     'rw' => htmlspecialchars($this->request->getVar('rw')),

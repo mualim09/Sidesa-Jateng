@@ -273,6 +273,15 @@
                                             <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios4" value="belum_kawin">
                                             <label class="form-check-label" for="formRadios4">Belum Kawin</label>
                                         </div>
+                                        <br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios5" value="cerai_hidup">
+                                            <label class="form-check-label" for="formRadios5">Cerai Hidup</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input <?= ($validation->hasError('status') ? 'is-invalid' : '') ?>" type="radio" name="status" id="formRadios6" value="cerai_mati">
+                                            <label class="form-check-label" for="formRadios6">Cerai Mati</label>
+                                        </div>
                                     </div>
 
                                     <div class="mb-4">
