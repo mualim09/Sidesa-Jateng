@@ -40,9 +40,15 @@
     <script src="<?= base_url('minia/js/pages/form-maskindo.init.js'); ?>"></script>
 <?php endif; ?>
 
-<script src="<?= base_url('minia/libs/sweetalert2/sweetalert2.min.js'); ?>"></script>
+<!-- choices js -->
+<script src="<?= base_url('minia/libs/choices.js/public/assets/scripts/choices.min.js') ?>"></script>
+
+<!-- init js -->
+<script src="<?= base_url('minia/js/pages/form-advanced-dsonline.init.js') ?>"></script>
+
+<script src="<?= base_url('minia/libs/sweetalert2/sweetalert2.min.js') ?>"></script>
 <!-- App js -->
-<script src="<?= base_url('minia/js/app.js'); ?>"></script>
+<script src="<?= base_url('minia/js/app.js') ?>"></script>
 
 <!-- auto refreshnya notifikasi -->
 <script>

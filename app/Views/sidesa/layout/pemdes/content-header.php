@@ -17,6 +17,11 @@
         <link rel="stylesheet" href="<?= base_url('minia/libs/flatpickr/flatpickr.min.css') ?>" type="text/css" />
     <?php endif; ?>
 
+    <?php if ($request->uri->getSegment(3) === "sk_usaha") : ?>
+        <!-- choices css -->
+        <link href="<?= base_url('minia/libs/choices.js/public/assets/styles/choices.min.css') ?>" rel="stylesheet" type="text/css" />
+    <?php endif; ?>
+
     <!-- Efek kalo keluar aplikasi lewat dropdown topbar -->
     <link href="<?= base_url('minia/libs/sweetalert2/sweetalert2.min.css') ?>" rel="stylesheet" type="text/css" />
 

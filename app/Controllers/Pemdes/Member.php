@@ -126,10 +126,27 @@ class Member extends BaseController
                 }
             }
         }
-        echo view('sidesa/pemdes/member/gantipassword', $data);
+        return view('sidesa/pemdes/member/gantipassword', $data);
     }
 
     function suket_usaha($kode, $nik_ktp)
     {
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+        $hurufawalkec = strtolower($cekkodedes['nm_kec']);
+        $whoiskec = ucwords($hurufawalkec);
+
+        $data = [
+            'title' => 'SUKET USAHA',
+            'page_title' => view('sidesa/layout/pemdes/content-page-title', ['title' => 'SUKET USAHA | ' . $nik_ktp, 'li_1' => $nik_ktp, 'li_2' => 'SUKET USAHA']),
+            'user' => $this->db->table('pemdes_user')->getWhere(['nik_ktp' => $this->session->get('nik_ktp')])->getRowArray(),
+            'kodedes' => $kode,
+            'namakec' => $whoiskec,
+            'namades' => $whoisdes,
+            'validation' => $this->validation
+        ];
+
+        return view('sidesa/pemdes/member/sk_usaha', $data);
     }
 }
