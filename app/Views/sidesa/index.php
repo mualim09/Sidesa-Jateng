@@ -554,15 +554,15 @@
                     <tbody>
                         <?php foreach ($pencarian as $pr) : ?>
                             <tr>
-                                <td><?= $pr['id_desa']; ?></td>
+                                <!-- <td><?= $pr['id_desa']; ?></td>
                                 <td><?= $pr['nm_kab']; ?></td>
                                 <td><?= $pr['nm_kec']; ?></td>
-                                <td><?= $pr['nm_desa']; ?></td>
+                                <td><?= $pr['nm_desa']; ?></td> -->
 
-                                <!-- <td><?= $pr['id_desa']; ?></td>
+                                <td><?= $pr['id_desa']; ?></td>
                                 <td><a target="_blank" href="<?= base_url('pemkab/kabupaten/' . substr($pr['id_desa'], 0, 5)); ?>" style="text-decoration: none; color: #1266F1;"><?= $pr['nm_kab']; ?></a></td>
                                 <td><?= $pr['nm_kec']; ?></td>
-                                <td><a target="_blank" href="<?= base_url('pemkab/desa/' . $pr['id_desa']); ?>" style="text-decoration: none; color: #1266F1;"><?= $pr['nm_desa']; ?></a></td> -->
+                                <td><a target="_blank" href="<?= base_url('pemkab/desa/' . $pr['id_desa']); ?>" style="text-decoration: none; color: #1266F1;"><?= $pr['nm_desa']; ?></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
