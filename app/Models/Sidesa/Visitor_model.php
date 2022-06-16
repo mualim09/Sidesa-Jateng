@@ -40,11 +40,8 @@ class Visitor_model extends BaseBuilder
     public function updateVisitor($ip, $date, $waktu)
     {
         $builder = $this->db->table('visitor');
-        $data = [
-            'hits' => 'hits+1',
-            'online' => $waktu
-        ];
-        $builder->set($data);
+        $builder->set('hits', 'hits+1', false);
+        $builder->set('online', $waktu);
         $builder->where('ip', $ip);
         $builder->where('date', $date);
         $builder->update();
