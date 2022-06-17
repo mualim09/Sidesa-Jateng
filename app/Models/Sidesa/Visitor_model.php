@@ -18,7 +18,7 @@ class Visitor_model extends BaseBuilder
     {
         $builder = $this->db->table('visitor');
         $builder->where('ip', $ip);
-        $builder->where('date', $date);
+        $builder->like('date', substr($date, 0, 7));
         $query = $builder->countAllResults();
         return $query;
     }
@@ -60,7 +60,8 @@ class Visitor_model extends BaseBuilder
     public function getTotalpengunjung()
     {
         $builder = $this->db->table('visitor');
-        $builder->selectCount('ip');
+        // $builder->distinct(); // aktifkan jika membutuhkan data real pengunjung
+        $builder->select('ip');
         $query = $builder->countAllResults();
         return $query;
     }
