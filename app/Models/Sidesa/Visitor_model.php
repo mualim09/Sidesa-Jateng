@@ -42,8 +42,9 @@ class Visitor_model extends BaseBuilder
         $builder = $this->db->table('visitor');
         $builder->set('hits', 'hits+1', false);
         $builder->set('online', $waktu);
+        $builder->set('date', $date);
         $builder->where('ip', $ip);
-        $builder->where('date', $date);
+        $builder->like('date', substr($date, 0, 7));
         $builder->update();
         return $this->db->affectedRows();
     }
