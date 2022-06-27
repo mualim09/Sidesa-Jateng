@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="<?= base_url('minia/libs/flatpickr/flatpickr.min.css') ?>" type="text/css" />
     <?php endif; ?>
 
-    <?php if ($request->uri->getSegment(3) === "sk_usaha") : ?>
+    <?php if ($request->uri->getSegment(3) === "sk_usaha" || $request->uri->getSegment(3) === "sk_hargatanah") : ?>
         <!-- choices css -->
         <link href="<?= base_url('minia/libs/choices.js/public/assets/styles/choices.min.css') ?>" rel="stylesheet" type="text/css" />
     <?php endif; ?>

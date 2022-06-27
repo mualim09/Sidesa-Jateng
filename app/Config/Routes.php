@@ -241,6 +241,8 @@ $routes->add('/pemdes/member/dashboard/(:any)/(:any)', 'Pemdes\Member::home/$1/$
 $routes->match(['get', 'post'], '/pemdes/member/editprofile/(:any)/(:any)', 'Pemdes\Member::editprofile/$1/$2', ['filter' => 'sistemlayananpemdes']);
 $routes->match(['get', 'post'], '/pemdes/member/gantipassword/(:any)/(:any)', 'Pemdes\Member::changepassword/$1/$2', ['filter' => 'sistemlayananpemdes']);
 $routes->match(['get', 'post'], '/pemdes/member/sk_usaha/(:any)/(:any)', 'Pemdes\Member::suket_usaha/$1/$2', ['filter' => 'sistemlayananpemdes']);
+$routes->match(['get', 'post'], '/pemdes/member/sk_hargatanah/(:any)/(:any)', 'Pemdes\Member::suket_harga_tanah/$1/$2', ['filter' => 'sistemlayananpemdes']);
+$routes->match(['get', 'post'], '/pemdes/member/sk_domisililembaga/(:any)/(:any)', 'Pemdes\Member::suket_domisili_lembaga/$1/$2', ['filter' => 'sistemlayananpemdes']);
 
 // Geodesa KONTEN
 $routes->get('/geodesa/tematik', 'Geodesa\Tematik::index');

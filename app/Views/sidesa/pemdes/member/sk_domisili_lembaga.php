@@ -28,33 +28,12 @@
         <div class="row">
             <form class="needs-validation" action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-                <div class="col-lg-4 col-md-6">
-                    <div class="form-group mt-3">
-                        <label for="choices-single-no-sorting" class="form-label col-form-label">Jenis Usaha</label>
-                        <select class="form-control" name="jenis_usaha" id="choices-single-no-sorting">
-                            <option value="perdagangan">Perdagangan</option>
-                            <option value="pertanian">Pertanian</option>
-                            <option value="peternakan">Peternakan</option>
-                            <option value="perkebunan">Perkebunan</option>
-                            <option value="jasa">Jasa</option>
-                            <option value="kuliner">Kuliner</option>
-                            <option value="barjas">Pengadaan barang/jasa</option>
-                        </select>
-                    </div>
-                </div>
                 <div class="col-lg-8 col-md-6">
                     <div class="form-group mt-3">
-                        <label for="hasil_produksi" class="col-sm-5 col-form-label">Produksi</label>
+                        <label for="namalembaga" class="col-sm-5 col-form-label">Nama Lembaga</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="hasil_produksi" name="hasil_produksi" placeholder="Hasil Produksi...">
-                            <small class="form-text text-danger"><?= $validation->getError('hasil_produksi'); ?></small>
-                        </div>
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="namausaha" class="col-sm-5 col-form-label">Nama Usaha</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="namausaha" name="namausaha" placeholder="Nama Usaha...">
-                            <small class="form-text text-danger"><?= $validation->getError('namausaha'); ?></small>
+                            <input type="text" class="form-control" id="namalembaga" name="namalembaga" placeholder="Nama Sekolah/Usaha/Pemberdayaan/...">
+                            <small class="form-text text-danger"><?= $validation->getError('namalembaga'); ?></small>
                         </div>
                     </div>
                     <div class="form-group mt-4">
@@ -98,10 +77,17 @@
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <label for="lama_usaha" class="col-sm-5 col-form-label">Lama Usaha</label>
+                        <label for="tahun_didirikan" class="col-sm-5 col-form-label">Berdiri Tahun</label>
                         <div class="col-sm-6 mb-3">
-                            <input type="text" class="form-control" id="lama_usaha" name="lama_usaha" placeholder="Lama Usaha...">
-                            <small class="form-text text-danger"><?= $validation->getError('lama_usaha'); ?></small>
+                            <input type="text" class="form-control" id="tahun_didirikan" name="tahun_didirikan" placeholder="Tahun Didirikannya Lembaga...">
+                            <small class="form-text text-danger"><?= $validation->getError('tahun_didirikan'); ?></small>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="pimpinan_lembaga" class="col-sm-5 col-form-label">Pimpinan Lembaga</label>
+                        <div class="col-sm-6 mb-3">
+                            <input type="text" class="form-control" id="pimpinan_lembaga" name="pimpinan_lembaga" placeholder="Pimpinan Lembaga Sekarang...">
+                            <small class="form-text text-danger"><?= $validation->getError('pimpinan_lembaga'); ?></small>
                         </div>
                     </div>
                     <div class="form-group mt-3">
@@ -111,7 +97,7 @@
                             <small class="form-text text-danger"><?= $validation->getError('image'); ?></small>
                         </div>
                     </div>
-                    <button type="submit" name="submit" class="col-sm-6 mt-5 mb-5 btn btn-primary">AJUKAN SURAT KETERANGAN USAHA</button>
+                    <button type="submit" name="submit" class="col-sm-6 mt-5 mb-5 btn btn-primary">AJUKAN SURAT KETERANGAN DOMISILI LEMBAGA</button>
                 </div>
             </form>
         </div>

@@ -19,10 +19,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // multiple Remove CancelButton
-  var multipleCancelButton = new Choices(
-    '#choices-multiple-remove-button', {
-      removeItemButton: true,
-    }
-  );
+  // var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+  //     removeItemButton: true,
+  //   }
+  // );
+
+  // singleNoSorting
+  var singleNoSorting = new Choices('#choices-single-no-sorting', {
+    shouldSort: false,
+  });
 
 });

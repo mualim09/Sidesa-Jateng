@@ -149,4 +149,46 @@ class Member extends BaseController
 
         return view('sidesa/pemdes/member/sk_usaha', $data);
     }
+
+    function suket_harga_tanah($kode, $nik_ktp)
+    {
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+        $hurufawalkec = strtolower($cekkodedes['nm_kec']);
+        $whoiskec = ucwords($hurufawalkec);
+
+        $data = [
+            'title' => 'SUKET HARGA TANAH',
+            'page_title' => view('sidesa/layout/pemdes/content-page-title', ['title' => 'SUKET HARGA TANAH | ' . $nik_ktp, 'li_1' => $nik_ktp, 'li_2' => 'SUKET HARGA TANAH']),
+            'user' => $this->db->table('pemdes_user')->getWhere(['nik_ktp' => $this->session->get('nik_ktp')])->getRowArray(),
+            'kodedes' => $kode,
+            'namakec' => $whoiskec,
+            'namades' => $whoisdes,
+            'validation' => $this->validation
+        ];
+
+        return view('sidesa/pemdes/member/sk_harga_tanah', $data);
+    }
+
+    function suket_domisili_lembaga($kode, $nik_ktp)
+    {
+        $cekkodedes = $this->db->table('wilayah_33')->getWhere(['id_desa' => $kode])->getRowArray();
+        $hurufawaldes = strtolower($cekkodedes['nm_desa']);
+        $whoisdes = ucwords($hurufawaldes);
+        $hurufawalkec = strtolower($cekkodedes['nm_kec']);
+        $whoiskec = ucwords($hurufawalkec);
+
+        $data = [
+            'title' => 'SUKET DOMISILI LEMBAGA',
+            'page_title' => view('sidesa/layout/pemdes/content-page-title', ['title' => 'SUKET DOMISILI LEMBAGA | ' . $nik_ktp, 'li_1' => $nik_ktp, 'li_2' => 'SUKET DOMISILI LEMBAGA']),
+            'user' => $this->db->table('pemdes_user')->getWhere(['nik_ktp' => $this->session->get('nik_ktp')])->getRowArray(),
+            'kodedes' => $kode,
+            'namakec' => $whoiskec,
+            'namades' => $whoisdes,
+            'validation' => $this->validation
+        ];
+
+        return view('sidesa/pemdes/member/sk_domisili_lembaga', $data);
+    }
 }
